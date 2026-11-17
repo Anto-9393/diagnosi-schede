@@ -1,15 +1,19 @@
 {
   "_come_si_usa": [
     "Come in Lezione_13/materiali/claude_desktop_config.snippet.json: lo stesso server, usato da un secondo host.",
-    "1. Apri %APPDATA%\\Claude\\claude_desktop_config.json (Claude Desktop > Impostazioni > Sviluppatore > Modifica config).",
-    "2. Incolla il blocco mcpServers (fondilo con quello esistente se c'è già).",
-    "3. Riavvia Claude Desktop: compariranno i tool cerca_caso, componente_info, suggerisci_misura."
+    "1. Claude Desktop > Impostazioni > Sviluppatore > Modifica config (apre claude_desktop_config.json).",
+    "2. Incolla il blocco mcpServers (fondilo con quello esistente se c'è già) e salva.",
+    "3. Chiudi DEL TUTTO Claude Desktop (anche dall'icona vicino all'orologio) e riaprilo.",
+    "4. Nella chat, icona degli strumenti: compaiono cerca_caso, componente_info, suggerisci_misura.",
+    "Nota: suggerisci_misura usa l'LLM e legge la chiave dal .env del progetto."
   ],
   "mcpServers": {
     "diagnosi-schede": {
       "command": "C:\\Users\\AntoninoGiangreco\\Desktop\\Corso AI\\diagnosi-schede\\.venv\\Scripts\\python.exe",
       "args": ["-m", "diagnosi.mcp_server"],
-      "cwd": "C:\\Users\\AntoninoGiangreco\\Desktop\\Corso AI\\diagnosi-schede"
+      "env": {
+        "PYTHONPATH": "C:\\Users\\AntoninoGiangreco\\Desktop\\Corso AI\\diagnosi-schede\\src"
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ Procedura a ogni messaggio del tecnico:
    Altrimenti leggi l'indice una volta sola (non rileggerlo nei turni successivi).
 2. Leggi la pagina del DISPOSITIVO (se esiste) e le pagine dei SINTOMI e dei COMPONENTI pertinenti.
    Leggi `strumenti/` per sapere quali attrezzi ha il tecnico e proponi misure fattibili con quelli.
-3. Rispondi con un PassoDiagnosi. Nel campo `fonti` metti SOLO i percorsi delle pagine che hai letto davvero
+3. Rispondi con lo schema richiesto (PassoDiagnosi per la diagnosi, Procedura se il tecnico chiede come si fa). Nel campo `fonti` metti SOLO i percorsi delle pagine che hai letto davvero
    (es. "wiki/componenti/tristar.md").
 
 Per risparmiare (ogni passo rimanda all'LLM tutto ciò che hai già letto):

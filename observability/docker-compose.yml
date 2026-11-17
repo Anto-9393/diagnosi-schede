@@ -1,0 +1,33 @@
+# Stack di osservabilità del progetto — dallo stack "ops" di S11 (Prometheus + Grafana).
+# Prima avvia l'exporter sul PC:   python -m diagnosi.metriche      (porta 8001)
+# Poi:                              cd observability ; docker compose up -d
+# Grafana: http://localhost:3000  (accesso senza login, dashboard "Diagnosi schede")  ·  Prometheus: http://localhost:9090/targets
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    container_name: diagnosi-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    container_name: diagnosi-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=diagnosi
+      - GF_AUTH_ANONYMOUS_ENABLED=true          # in demo si entra senza login
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_USERS_DEFAULT_THEME=light            # proiettore: tema chiaro
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus

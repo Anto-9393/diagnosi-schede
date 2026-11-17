@@ -84,7 +84,20 @@ $env:MCP_HTTP=1; python -m diagnosi.mcp_server  # HTTP stateless su http://local
 ```
 Tool: `cerca_caso(sintomo, modello)`, `componente_info(sigla)`, `suggerisci_misura(contesto)` (agente + guardrail).
 Resource: `wiki://indice`, `wiki://{tipo}/{nome}`. Prompt: `diagnosi_guidata`.
+Prova come farebbe un host (stdio): `python scripts/prova_mcp.py` (`--agente` per chiamare anche l'agente).
 Per Claude Desktop: `materiali/claude_desktop_config.example.json`.
+
+### Dashboard Grafana (stack "ops" di S11: Prometheus + Grafana)
+Serve Docker Desktop acceso. Due terminali:
+```powershell
+python -m diagnosi.metriche                      # 1) exporter: http://localhost:8001/metrics (legge docs/log/sessioni.jsonl)
+cd observability ; docker compose up -d          # 2) Prometheus (:9090) + Grafana (:3000)
+```
+Grafana: http://localhost:3000 → dashboard **"Diagnosi schede — agente e guardrail"** (senza login).
+Mostra diagnosi, costo stimato totale e medio, token medi e in cache, latenza p50/p95, tool scelti dall'agente,
+avvisi dei guardrail per tipo, modalità di lettura. Prezzi veri del modello nel `.env`:
+`PREZZO_INPUT_USD_1M`, `PREZZO_CACHE_USD_1M`, `PREZZO_OUTPUT_USD_1M` (default: listino gpt-4o-mini del corso).
+Per fermare: `docker compose down`.
 
 ### Salute della wiki
 ```powershell

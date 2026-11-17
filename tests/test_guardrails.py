@@ -37,6 +37,13 @@ def test_negazione_non_blocca():
     assert not esito.bloccato
 
 
+def test_aria_calda_con_batteria_scollegata_non_blocca():
+    _, esito = controlla(_passo(condizioni="scollega la batteria, poi aria calda 350 °C sul CD3217 lontano dalla batteria"), LETTE)
+    assert not esito.bloccato
+    _, esito = controlla(_passo(condizioni="aria calda sul CD3217 vicino alla batteria"), LETTE)
+    assert esito.bloccato
+
+
 def test_tensione_impossibile_e_batteria_oltre_cella():
     _, esito = controlla(_passo(valore="28 V"), LETTE)
     assert any("fuori dal plausibile" in a for a in esito.avvisi)
@@ -68,3 +75,34 @@ def test_guardrail_funzionano_con_risposta_breve():
                        avvertenze_sicurezza=[], fonti=["wiki/componenti/cd3217.md"], domande_al_tecnico=[])
     passo, esito = controlla(breve, LETTE)
     assert esito.bloccato and passo.fonti == ["wiki/componenti/cd3217.md"]
+
+
+# ── Procedura ("come si fa") ──
+from diagnosi.guardrails import controlla_procedura
+from diagnosi.schemas import PassoProcedura, Procedura
+
+
+def _proc(avvertenze=("protezione ESD",), azione="aria calda sul CD3217, poi pulisci le piazzole", fonti=("wiki/componenti/cd3217.md",)):
+    return Procedura(dispositivo="iPad Air 4 (A2316)", obiettivo="Sostituire il CD3217",
+                     avvertenze_sicurezza=list(avvertenze),
+                     passi=[PassoProcedura(titolo="Rimuovi il CD3217", azione=azione, attrezzo="aria calda", controllo="piazzole pulite")],
+                     fonti=list(fonti))
+
+
+def test_procedura_con_calore_senza_batteria_scollegata_aggiunge_avviso():
+    proc, esito = controlla_procedura(_proc(), LETTE)
+    assert not esito.bloccato
+    assert proc.avvertenze_sicurezza[0].startswith("Prima di aria calda o saldatura: SCOLLEGA")
+
+
+def test_procedura_con_batteria_scollegata_passa():
+    proc, esito = controlla_procedura(_proc(avvertenze=("Scollega la batteria e allontanala", "protezione ESD")), LETTE)
+    assert esito.avvisi == [] and proc.fonti == ["wiki/componenti/cd3217.md"]
+    assert not any(a.startswith("Prima di aria calda") for a in proc.avvertenze_sicurezza)
+
+
+def test_procedura_pericolosa_blocca_e_fonti_non_lette():
+    _, esito = controlla_procedura(_proc(azione="cortocircuita la batteria per scaricarla"), LETTE)
+    assert esito.bloccato
+    proc, esito = controlla_procedura(_proc(fonti=("wiki/tecniche/inventata.md",)), LETTE)
+    assert proc.fonti == [] and any("Nessuna fonte" in a for a in esito.avvisi)

@@ -16,7 +16,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-from diagnosi.schemas import PassoBreve, PassoDiagnosi
+from diagnosi.schemas import PassoBreve, PassoDiagnosi, Procedura
 
 MAX_TENSIONE_USB_V = 20.0
 MAX_TENSIONE_CELLA_V = 4.4
@@ -60,7 +60,12 @@ def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -
         for campo in campi:
             for trovato in re.finditer(patt, campo, re.I):
                 prima = campo[max(0, trovato.start() - 25):trovato.start()]
-                if not re.search(r"\b(non|mai|never|don't|evita\w*)\b", prima, re.I):
+                # "scollega la batteria prima dell'aria calda" è la regola giusta, non un pericolo (falso positivo, 17 nov)
+                intorno = campo[max(0, trovato.start() - 40):trovato.end() + 40]
+                messa_in_sicurezza = re.search(r"scolleg\w*|stacc\w*|disconn\w*|rimuov\w*|rimoss\w*|togli\w*|tolt\w*|"
+                                               r"allontan\w*|senza\s+batteria|disconnect\w*|remove\w*", intorno, re.I)
+                if not re.search(r"\b(non|mai|never|don't|evita\w*)\b", prima, re.I) and \
+                        not (msg.startswith("Mai scaldare") and messa_in_sicurezza):
                     esito.avvisi.append(f"BLOCCATO: {msg}")
                     esito.bloccato = True
     testo_misura = " ".join([m.dove, m.condizioni, m.valore_atteso])
@@ -109,3 +114,62 @@ def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -
         "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + passo.avvertenze_sicurezza,
     })
     return passo, esito
+
+
+# ── Procedura ("come si fa"): stessi controlli, applicati a tutti i passi ─────────────────────────────────────────
+_CALORE = r"aria\s+calda|hot\s+air|dissald\w*|rimuov\w*\s+(il\s+)?(chip|ic)|reball\w*|saldator\w*|stazione\s+saldante|preriscald\w*"
+_BATTERIA_SICURA = r"scolleg\w*\s+(la\s+)?batteria|batteria\s+scollegat\w*|stacc\w*\s+(la\s+)?batteria|" \
+                   r"rimuov\w*\s+(la\s+)?batteria|disconnect\w*\s+(the\s+)?battery"
+
+
+def controlla_procedura(proc: Procedura, pagine_lette: dict[str, str]) -> tuple[Procedura, Esito]:
+    esito = Esito()
+    campi = [*proc.verifica_finale,
+             *[t for p in proc.passi for t in (p.titolo, p.azione, p.attrezzo, p.controllo)]]
+    testo = " ".join([proc.obiettivo, *campi])
+    tutto = testo + " " + " ".join(proc.avvertenze_sicurezza)
+
+    # 1. sicurezza: istruzioni pericolose (bloccanti), con le stesse eccezioni di controlla()
+    for patt, msg in _PERICOLOSI:
+        for campo in campi:
+            for trovato in re.finditer(patt, campo, re.I):
+                prima = campo[max(0, trovato.start() - 25):trovato.start()]
+                intorno = campo[max(0, trovato.start() - 40):trovato.end() + 40]
+                sicura = re.search(r"scolleg\w*|stacc\w*|disconn\w*|rimuov\w*|rimoss\w*|togli\w*|tolt\w*|"
+                                   r"allontan\w*|senza\s+batteria|disconnect\w*|remove\w*", intorno, re.I)
+                if not re.search(r"\b(non|mai|never|don't|evita\w*)\b", prima, re.I) and \
+                        not (msg.startswith("Mai scaldare") and sicura):
+                    esito.avvisi.append(f"BLOCCATO: {msg}")
+                    esito.bloccato = True
+    # Calore senza batteria scollegata da nessuna parte: non blocca, ma lo mette in testa (regola del banco).
+    if re.search(_CALORE, testo, re.I) and not re.search(_BATTERIA_SICURA, tutto, re.I):
+        esito.avvisi.append("Prima di aria calda o saldatura: SCOLLEGA la batteria e allontanala dalla zona di lavoro.")
+    if re.search(_ALIMENTAZIONE, testo, re.I) and not re.search(_LIMITE, tutto, re.I):
+        esito.avvisi.append("Usa l'alimentatore con LIMITE DI CORRENTE (parti basso, es. 0,5–1 A) e osserva l'assorbimento.")
+
+    # 2. valori impossibili
+    for v in _VOLT.findall(testo):
+        if float(v.replace(",", ".")) > MAX_TENSIONE_USB_V:
+            esito.avvisi.append(f"Valore {v} V fuori dal plausibile per questi dispositivi (USB-PD max {MAX_TENSIONE_USB_V:g} V).")
+            break
+
+    # 3. sigle non verificate, 4. fonti
+    corpus = " ".join(pagine_lette.values())
+    esito.sigle_non_verificate = [x for x in sorted(set(_SIGLA.findall(testo))) if x not in corpus]
+    if esito.sigle_non_verificate:
+        esito.avvisi.append("Sigle non presenti nelle pagine consultate (da verificare su schema/boardview): "
+                            + ", ".join(esito.sigle_non_verificate))
+    lette = {p.removeprefix("wiki/") for p in pagine_lette}
+    dichiarate = [f for f in proc.fonti if f.removeprefix("wiki/") in lette]
+    scartate = [f for f in proc.fonti if f not in dichiarate]
+    if scartate:
+        esito.avvisi.append("Fonti dichiarate ma non lette, rimosse: " + ", ".join(scartate))
+    if not dichiarate:
+        esito.avvisi.append("Nessuna fonte dalla wiki: procedura basata solo sul modello, da verificare.")
+
+    esito.avvisi = list(dict.fromkeys(esito.avvisi))
+    proc = proc.model_copy(update={
+        "fonti": dichiarate,
+        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + proc.avvertenze_sicurezza,
+    })
+    return proc, esito

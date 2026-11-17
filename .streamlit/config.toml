@@ -1,0 +1,7 @@
+# Tema dell'interfaccia: colori presi dalla scheda (solder mask, rame) — vedi app/aspetto.py
+[theme]
+base = "light"
+primaryColor = "#1E5B45"
+backgroundColor = "#F2F5F2"
+secondaryBackgroundColor = "#E3EAE5"
+textColor = "#1A2420"

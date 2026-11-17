@@ -49,3 +49,24 @@ class PassoBreve(BaseModel):
     avvertenze_sicurezza: list[str] = Field(default_factory=list, description="Rischi per il tecnico o la scheda")
     fonti: list[str] = Field(default_factory=list, description="Pagine della wiki usate")
     domande_al_tecnico: list[str] = Field(default_factory=list, description="Informazioni mancanti, al massimo 2")
+
+
+# ── Modalità PROCEDURA: il tecnico chiede "come si fa" (sostituire un chip, programmare una ROM...), non una diagnosi.
+# Uno schema diverso perché la forma dell'output decide cosa il modello può dire: con PassoDiagnosi una procedura
+# finiva schiacciata in "ipotesi + una misura" (risposta reale del 17 nov, inutile per il tecnico).
+class PassoProcedura(BaseModel):
+    titolo: str = Field(description="Cosa si fa in questo passo, poche parole (es. 'Rimuovi il CD3217')")
+    azione: str = Field(description="Istruzioni concrete, nell'ordine, come le spiegheresti a un collega al banco")
+    attrezzo: str = Field(default="", description="Attrezzo e impostazioni (es. 'aria calda, temperatura secondo la "
+                                                  "tua stazione'); solo valori presenti nelle fonti, altrimenti dillo")
+    controllo: str = Field(default="", description="Come capisci che il passo è riuscito prima di andare avanti")
+
+
+class Procedura(BaseModel):
+    dispositivo: str = Field(description="nome commerciale più codice modello, oppure 'sconosciuto'")
+    obiettivo: str = Field(description="Cosa ottiene la procedura, in una frase")
+    passi: list[PassoProcedura] = Field(description="Passi in ordine, da 4 a 12")
+    verifica_finale: list[str] = Field(default_factory=list, description="Misure e prove per confermare il lavoro")
+    avvertenze_sicurezza: list[str] = Field(default_factory=list, description="Rischi per il tecnico o la scheda")
+    fonti: list[str] = Field(default_factory=list, description="Pagine della wiki usate")
+    domande_al_tecnico: list[str] = Field(default_factory=list, description="Informazioni mancanti, al massimo 2")

@@ -43,3 +43,25 @@ def test_memoria_compatta_tra_i_turni(monkeypatch):
     assert "Tecnico: non carica" in secondo and "misura X1548" in secondo and "X1548 = 0,1 V" in secondo
     assert "testo lungo" not in secondo                       # il testo delle pagine NON viene ripetuto
     assert "wiki/componenti/cd3217.md" in secondo             # solo il nome delle pagine già lette
+
+
+def test_instradamento_diagnosi_o_procedura():
+    from diagnosi.agent import tipo_richiesta
+    for m in ["Come sostituisco il CD3217 e programmo la ROM", "SPIEGAMI COME SOSTITURE IL CD3217",
+              "come si fa il reball", "procedura per la ROM"]:
+        assert tipo_richiesta(m) == "procedura", m
+    for m in ["non carica, 0,002 A con batteria", "come mai non carica?", "come misuro X1548", "A2316"]:
+        assert tipo_richiesta(m) == "diagnosi", m
+
+
+def test_due_agenti_stessi_tool_e_memoria_della_procedura(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "x")
+    from diagnosi.agent import SessioneDiagnosi
+    from diagnosi.schemas import PassoProcedura, Procedura
+    s = SessioneDiagnosi(dettaglio="breve")
+    assert s.agente_procedura._output_cls is Procedura
+    assert "Modalità PROCEDURA" in s.agente_procedura.system_prompt
+    assert "SOLO la prossima misura" not in s.agente_procedura.system_prompt     # "breve" vale solo per la diagnosi
+    s._ricorda("come sostituisco il CD3217", Procedura(dispositivo="iPad Air 4", obiettivo="Sostituire il CD3217",
+               passi=[PassoProcedura(titolo="Rimuovi", azione="a"), PassoProcedura(titolo="Salda", azione="b")]))
+    assert "procedura 'Sostituire il CD3217' in 2 passi: Rimuovi; Salda" in s.storia[-1]

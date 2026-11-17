@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 5s
+scrape_configs:
+  - job_name: diagnosi-schede
+    static_configs:
+      - targets: ["host.docker.internal:8001"]     # l'exporter `python -m diagnosi.metriche` sul PC
