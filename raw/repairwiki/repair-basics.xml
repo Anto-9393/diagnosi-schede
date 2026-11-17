@@ -1,0 +1,1164 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Repair Wiki</sitename>
+    <dbname>wiki</dbname>
+    <base>https://repair.wiki/w/Main_Page</base>
+    <generator>MediaWiki 1.43.11</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">RepairWiki</namespace>
+      <namespace key="5" case="first-letter">RepairWiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Capacitors - Repair Basics</title>
+    <ns>0</ns>
+    <id>214</id>
+    <revision>
+      <id>4376</id>
+      <parentid>1641</parentid>
+      <timestamp>2024-07-17T14:27:34Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <origin>4376</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="9176" sha1="l3qogrm5ptnfsfenztemw45cq8zngb6" xml:space="preserve">{{Explanatory Guide
+|Device=Capacitors
+|Type=Component
+|Difficulty=1. Easy
+}}
+This article aims to provide a comprehensive overview of capacitors from a repair perspective, detailing their function, types, common issues, testing methods, and replacement considerations.
+[[File:Capacitor symbols.jpg|thumb|Capacitor symbols commonly found in schematics (Figure 1)]]
+
+== What is a Capacitor? ==
+A Capacitor is a fundamental electrical component found in every single electronic device. '''Its primary function is to store and release electrical energy.''' 
+
+Capacitors store and release electrical energy in the form of an electric field. They consist of two conductive plates separated by an insulating material, often referred to as a dielectric. '''This means that there is almost infinite resistance between the plates.'''
+
+'''You can think of a capacitor as a very tiny battery that is able to charge and discharge VERY quickly.'''
+
+Capacitors are measured in "Farads (F)". Though farads are huge units, you'll typically find them in Nano (nF), Micro (uF), and Milli (mF).
+
+Capacitors in schematics look like in Figure 1 and are usually denoted with the letter C followed by an identifier number. (E.g. C211)
+
+=== Function ===
+When voltage is applied across the plates, an electric field forms between them, storing energy in the form of electrostatic charge. Capacitors can store this energy and release it back into the circuit as needed, often used for purposes like filtering, energy storage, and signal coupling or isolation.
+
+==== Energy Storage ====
+[[File:Flash capacitor.jpg|thumb|164x164px|Camera flash Capacitor (Figure 2)]]
+One of the primary functions of capacitors is to store electrical energy. They can store a charge when connected to a voltage source and release it when the voltage is removed or reduced. This feature is essential in applications where high current for a short time is required, such as in camera flashes.
+[[File:Smoothing capacitors.png|thumb|Smoothing capacitors on the input/output of a DC-DC converter circuit (Figure 3)]]
+
+==== Voltage Smoothing ====
+In most circuits, you'll find capacitors close to VCC inputs of most ICs (Integrated circuits) to provide a stable and smooth input for the IC.
+
+Capacitors are used at the input/output stage of DC-DC voltage converters. DC-DC converters inherently produce pulsating or "ripple" DC output voltage due to the switching action of electronic components. Capacitors are employed to filter and smooth this output by storing and releasing electrical energy, reducing voltage fluctuations and ensuring a more stable DC voltage as shown in Figure 3
+
+==== Frequency filtering (low/high pass) ====
+Capacitors, characterized by their high resistance to direct current (DC), '''effectively block DC passage'''. In contrast, with high-frequency alternating current (AC), capacitors cyclically charge and discharge in response to the changing current polarity. This dynamic behavior creates the impression that '''AC flows through the capacitor''', akin to its behavior as a conductor.
+[[File:Capacitor filters.jpg|thumb|Low-pass and High-pass filters (Figure 4)]]
+The most basic filtering circuits are [[wikipedia:Low-pass_filter|Low-pass]] and [[wikipedia:High-pass_filter|High-pass]] filters (Figure 4), they -as the name suggests- either let low or high frequency signals pass though them.
+
+==== Timing circuits ====
+Capacitors are often used in conjunction with resistors to create simple timing circuits. The time constant of an RC (Resistor-Capacitor) circuit is determined by the values of the resistor and capacitor. By selecting appropriate resistor and capacitor values, you can create precise time delays, time constants, or time intervals. These circuits are often used in applications like pulse shaping, oscillators, and time-delay circuits.
+[[File:Astable-555-circuit.webp|thumb|220x220px|Astable 555 timer circuit (Figure 5)]]
+Basic timing circuits make use of the capacitor charge/discharge cycle to generate precise time intervals. A 555 timer circuit is shown in Figure 5 as an example where the capacitor C can change the period of the output signal.
+
+and much more, if you'd like to learn in more detail about capacitor applications, [[wikipedia:Applications_of_capacitors|look here]].
+[[File:Capacitor types packagess.jpg|thumb|226x226px|Some capacitor packages and types (Figure 6)]]
+[[File:Capacitor types.jpg|thumb|Capacitor types (Figure 7)|233x233px]]
+
+=== Types ===
+
+==== Fixed value Capacitors ====
+Fixed value capacitors come in different type depending on their construction
+
+===== Electrolytic Capacitors =====
+These have a high capacitance value and are commonly used for energy storage in power supply circuits. Because of their chemistry, '''Electrolytic capacitors are polarized'''. The negative lead is usually indicated with a strip or a mark.
+
+They come in different sizes. Voltage rating and capacitance is written on them.
+
+===== Ceramic Capacitors =====
+The most commonly used and produced capacitor type, especially multilayer ceramic capacitors (MLCCs). '''Not polarized.'''
+
+They offer a wide range of capacitance values and are used for decoupling, filtering, and timing applications. They however, have much less energy density than electrolytic capacitors.
+
+In almost all cases, you'll find ceramic capacitors in SMD packages. They use the same size standards as resistors. For the most part, there is no writing on those capacitors. So you'll have to rely for a schematic to find value/rated voltage.
+
+===== Film Capacitors =====
+Film capacitors are versatile and can be used for filtering, coupling, and signal processing tasks. They offer very low ESR (equivalent series resistance). Usually they are larger than other types of capacitors but have much higher surge and pulse load capabilities. As film capacitors are '''not polarized''', they can be used in AC voltage applications without DC bias.\
+
+Value and rated voltage are both written on those capacitors.
+
+===== Tantalum Capacitors =====
+Tantalum Capacitors is a form of dry electrolytic capacitors. They offer higher energy density and stability than ceramic caps but '''are polarized.''' The negative lead is usually indicated with a strip or a mark.
+
+Value and rated voltage are both written on those capacitors.
+
+==== Variable Capacitors ====
+These have an adjustable capacitance value and are used in tuning circuits. Not widely used for commercial applications anymore. Found in labs for testing.
+
+== Testing a Capacitor ==
+Begin by visually inspecting the capacitor. If you notice obvious discoloration or any swelling in the case, especially in the case of electrolytic capacitors, it's a clear that the capacitor needs to be replaced.
+
+Before testing the capacitor, ensure it is discharged by shorting its terminals with a resistor (20-100 ohms) until you read the voltage on the capacitor to be zero.
+
+Usually, capacitors fail in a short circuit. To test this, you need to measure it '''outside of the circuit''' in resistance mode of your multimeter. You'll measure low resistance at first because the capacitor is charging but the resistance should rise with time. Ideally within 10s of kilo ohms.
+
+If you've ruled out capacitor shorts but are still encountering abnormal or suboptimal circuit behavior, the next step is to evaluate the capacitors using an LCR meter '''outside the circuit''' as well.  
+
+Testing a capacitor with an LCR meter not only provides you with the actual capacitance values across various frequencies but also reveals the crucial Equivalent Series Resistance (ESR). Keep in mind that ESR values vary among different capacitor types, so it's advisable to compare your results with a similar capacitor in the circuit. Generally, higher ESR values indicate a less desirable capacitor performance.
+
+In normal conditions, a capacitance measurement within a 5% range of the rated value is considered acceptable. However, for electrolytic capacitors, a variation of up to 20% can still fall within acceptable limits.
+
+== Replacement Considerations ==
+he most important things to keep in mind when replacing a faulty Capacitor are as follows:
+
+# '''Capacitance:''' Choose a replacement capacitor with the same capacitance value as the faulty one '''especially if it was used in timing circuits.''' If the capacitor was used for voltage smoothing, larger capacitances will work as well.
+# '''Voltage rating:''' Pick a capacitor with a voltage rating that matches or exceeds the original one. In most cases, a higher voltage rating merely results in a larger physical size, as the voltage rating indicates the capacitor's voltage-handling capacity.
+# '''Type:''' Try to stick to the same type as the original capacitor. However, depending on the application, you can use a different type if the size is not a concern.
+# '''Physical size:''' Preferably, try to choose a replacement capacitor with the same dimensions as the faulty one. If this isn't available and size constraints are not an issue, you can opt for a larger or smaller capacitor as long as it matches the voltage rating, as this will function the exact same way.
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>l3qogrm5ptnfsfenztemw45cq8zngb6</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Diodes - Repair Basics</title>
+    <ns>0</ns>
+    <id>215</id>
+    <revision>
+      <id>14120</id>
+      <parentid>14019</parentid>
+      <timestamp>2026-02-26T15:06:23Z</timestamp>
+      <contributor>
+        <username>Phonograph Steve</username>
+        <id>7041</id>
+      </contributor>
+      <minor/>
+      <comment>/* Regular/Rectifier Diodes */</comment>
+      <origin>14120</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="16643" sha1="n8hssn0gcql36gq5bs1xp0rmw95i4i8" xml:space="preserve">{{stub}}
+{{Explanatory Guide
+|Device=Diodes
+|Type=Component
+|Difficulty=1. Easy
+}}
+This article aims to provide a comprehensive overview of diodes from a repair perspective, detailing their function, types, common issues, testing methods, and replacement considerations.
+[[File:Diode schematic symbols.jpg|thumb|Diode symbols commonly found in schematics (Figure 1)]]
+
+==What is a Diode?==
+A diode is a fundamental semiconductor device commonly found in electronic circuits. A diode has two terminals called Anode and Cathode, and its primary function is to allow the flow of electric current in one direction while blocking it in the opposite direction. This property makes diodes useful for rectifying alternating current (AC) into direct current (DC), protecting circuits from reverse voltage, and more.
+
+Diodes have different characteristics found in their datasheets, the most important value when measuring is the forward voltage drop in "Volts".
+
+Diodes are typically identified by the symbols shown in Figure 1 and are usually denoted with the letter D followed by an identifier number. (E.g., D38)
+
+== Glossary of Basic Diode Terminology ==
+The terminology listed here will be helpful in understanding this article as well as technical literature and discussions elsewhere:
+
+* '''Anode:''' The positive terminal of the diode.
+* '''Cathode:''' The negative terminal of the diode.
+* '''Forward bias:''' Refers to a voltage or current applied to the diode in the direction in which it would normally conduct (positive at anode, negative at cathode).
+* '''Forward drop:''' The voltage that appears across the diode when conducting under forward bias. This voltage is technically dependent on current but usually hovers around closely to a specific value for a large range of currents.
+* '''Reverse bias:''' usually refers to a voltage applied to a diode in the direction in which it would normally block current (positive at the cathode, negative at the anode). This term is often used to discuss diodes such as Zener and Varactor diodes which are operated in this manner.
+* '''Reverse breakdown voltage:''' A specification that can usually be found in a diode's datasheet. It refers to the reverse bias voltage at which a diode stops blocking current and starts conducting. For most diodes this is an unwanted situation that can destroy the diode, but for some, such as Zener, Avalanche and TVS diodes, it is their intended mode of operation and are designed to withstand it up to a specified amount of current.
+
+===Function===
+Diodes serve various functions in electronic circuits, with the most common being:
+
+==== One Way Path ====
+The most basic function of a diode is to serve as a unidirectional pathway for the flow of electrical current. This is the basis for their use as rectifiers listed below.
+
+This check-valve like behavior lends them to be used a lot in things like charge pumps and power converters.
+
+Digital logic using diodes to allow current to flow in specific ways from an input to an output can also be made, and has been used historically, in which context it was called Diode Steering, using diodes to create AND and OR gates (it should be noted that NOT gates cannot be created with diodes, which makes it impossible to create a computer using only diodes).
+
+Diode-Transistor Logic is an obsolete family of logic ICs that used a combination of transistors and diode steering.
+
+====Rectification====
+Diodes are frequently used to convert AC voltage to DC voltage. They allow the current to flow during the positive half-cycle of the AC signal and block it during the negative half-cycle, effectively converting the signal to a unidirectional flow. Different arrangements of individual or multiple diodes exist to achieve this (such as the full bridge rectifier) each having various advantages and disadvantages.
+
+====Voltage Regulation====
+Various types of diodes are used (or can be used) as voltage references for voltage regulators, this is, generating a stable voltage of a specific value from an unstable or unregulated voltage source. This stabilized voltage is rarely used as a power source of it's own, rather it's used by an associated voltage regulator as a reference to control it's own output voltage.
+
+Diodes that are commonly used for such purposes include Zener diodes, which when reverse biased through a resistor,) they block current up to a very specific voltage, at which point they start conducting and loading down the associated resistor to maintain this voltage across the diode.
+
+Zener diodes have the disadvantage that they are not very stable and also produce a lot of electrical noise. Filter capacitors in parallel to them may be necessary in some applications.
+
+Regular diodes have a very stable and low noise voltage drop when forward biased (with voltage applied in the direction in which the diode would normally conduct). Because this voltage is rather low (typically 0.7 Volts for silicon diodes), strings of multiple diodes in series are used for higher quality voltage references, which are used with a series resistor not unlike Zener diodes.
+
+LEDs can also be used in this manner with the advantage of larger voltage drops per diode (2 to 3 volts) though it is uncommon practice, and mostly used by electronics hobbyists.
+
+==== Protection ====
+TVS and Zener diodes are often used to protect sensitive components from voltage spikes and reverse voltage by blocking or clamping excessive voltage levels, serving as surge protectors and fly-back diodes in relays and inductive loads.
+
+Normal diodes can also protect a circuit from being connected to a power source with the wrong polarity, by being wired either in series or in parallel (forward biased when in series to block reverse current, or reverse biased when in parallel to short out reverse voltage and blow an associated fuse.
+
+====Photodetection====
+Photodiodes are used to convert light into electrical signals, making them valuable in various applications, including optical communication, light sensors, and photovoltaic cells in solar panels.
+
+More specialized light-detecting diodes do exist, such as solid state photomultipliers.
+
+== Types ==
+[[File:Diode types packages.png|thumb|222x222px|Some diode packages and types (Figure 2)]]There are multiple types of diodes for different applications, and they also come in different physical cases (technically called ''packages'') that are either SMD or THT. Different diodes can look identical but have different properties, and can only be precisely identified by their part number when available.
+Outlined below are several of the different types of diodes.
+[[File:Diode-bridge-rectifier.jpg|thumb|228x228px|Full bridge rectifier diode in multiple packages + diagram (Figure 3)]]
+
+====Regular/Rectifier Diodes====
+Regular or rectifier diodes are '''the most common type of diodes'''. Mainly used for converting AC to DC. They come in various package types and sizes.
+
+If used to rectify mains AC to DC, you'll typically find 4 diodes in full bridge configuration in one package.
+
+====Schottky Diodes====
+Schottky diodes are known for their '''fast switching speed and low forward voltage drop'''. They are used in high-frequency applications and as rectifiers in power supplies.
+
+Their disadvantage is their higher leakage current when reverse biased.
+
+====Zener Diodes====
+Zener diodes are designed to maintain a constant voltage across their terminals when operated in the reverse-biased breakdown region. '''This means Zener diodes are designed to conduct backwards at (and only at) a specific "Zener" voltage.'''
+
+They are used for voltage regulation and are often labeled with their nominal voltage value.
+
+====Light Emitting Diodes (LEDs)====
+LEDs are a specialized type of diode that emits light when forward-biased. They are commonly used in displays, indicators, and lighting applications.
+
+They also see use as light emitters in some optical fiber media (TOSLINK for example) or otherwise for light-based communication (such as the infrared LEDs in remote controls)
+
+==== Transient Voltage Suppression Diodes (TVS) ====
+TVS diodes are specialized electronic components designed to protect sensitive electronic circuits from voltage spikes, transient over-voltages, and electrostatic discharge (ESD) events.  
+
+They operate by quickly diverting excess voltage away from the circuit they are safeguarding, preventing damage to components.
+
+Internally, they are especially built Zener diodes, or arrangements of Shottky and Zener diodes.
+
+====Varactor Diodes====
+Varactor diodes, also known as varicap diodes, are used in tuning and frequency modulation applications due to their ability to change capacitance with a varying reverse bias voltage. Once common in television and radio tuners, they are rarely used as a discrete component in consumer electronics today.
+
+====Photo-diodes====
+Photodiodes are light-sensitive diodes that produce a current in response to incident light. They are used in light detection and optical communication systems.
+
+=== Historical Types ===
+These are some types of obsolete or no longer common diodes that may be found in older electronics:
+
+==== Crystal Detectors ====
+Primitive diodes made from natural semiconductor minerals such as galena or pyrite, and were used as demodulators ("detectors") in early radio receivers such as crystal radios. Many variants exist such as the popular "Cat's whisker" detector, and the commercially sold Perikon detector. These were often made by hand by hobbyists.
+
+==== Vacuum Diode / Vacuum Rectifier ====
+A diode that is not semiconductor based, consist of a hollow envelope (usually a glass bulb) that has been pumped to a very pure vacuum (it's a type of vacuum tube).
+
+The anode is a metal plate inside the tube, which catches free flying electrons emitted by a cathode which is heated red hot by a filament (and sometimes the filament itself is the cathode). The electrons are released from the cathode by thermionic emission (this is, electrons are released from hot metal surfaces), and current can only flow in one direction because the anode is kept cold and thus cannot emit electrons.
+
+These diodes were also used as detectors in radio circuits, and high power versions were used as rectifiers in many applications including consumer electronics up to the 1960's approximately.
+
+==== Copper Oxide Rectifier ====
+An early type of solid state rectifier which used a layer of oxide grown on copper plates as its semiconductor. Because they can only withstand a few volts in reverse bias, several plates are usually stacked, giving the whole unit a heatsink-like appearance.
+
+The stacks of plates are usually held together with a threaded rod passing through the whole stack, and insulated. Often a whole full bridge or half bridge rectifier would be built into a single stack of plates.
+
+==== Selenium Rectifier ====
+Similar to the copper oxide rectifier and can be considered it's successor. They were composed of steel plates with a layer of selenium on one side, which upon deposition was doped to form a PN junction. They were likewise often constructed by stacking plates on threaded rods.
+
+Because they could be made large relatively cheaply, they remained in use for a long time, especially in high current applications such as battery chargers.
+
+High voltage, low current selenium rectifiers were used in the flybacks of CRT TVs for some time, which in appearance resembled very long ceramic fuses.
+
+When repairing old equipment, selenium rectifiers are typically replaced with silicon diodes regardless of their condition, given that their failure mode is them burning up and releasing a cloud of toxic smoke with an unbearably intense fart-like smell. Their higher forward drop voltage should be considered when replacing them like so, with each plate in the stack dropping approximately 1 V.
+
+==== Tunnel Diode ====
+An unusual device which uses the effect of Quantum Tunneling to produce a diode with a region of negative differential resistance (within this region, an increase in voltage across the diode leads to a drop in current). This allowed them to be used as very high speed bi-stable devices, oscillators and amplifiers. Their use was limited mostly to electronic-scientific instruments and military gear, and they have almost completely been discontinued today.
+
+Large surpluses of ex-soviet tunnel diodes are available however, mostly from vendors in eastern Europe.[[File:Diode measurement.jpg|thumb|248x248px|Measuring a Diode (Figure 4)]]
+
+== Testing a Diode ==
+'''Make sure the diode does not have any physical damage such as liquid damage/corrosion first! That's the quickest way of identifying a faulty diode.'''
+
+Testing a diode can help determine if it is functioning correctly. Most diodes can be tested using a digital multimeter in diode test mode. It's best to test the diode '''outside the circuit'''.
+
+=== Regular / Schottky / Zener / LED ===
+# Identify the anode and cathode terminals of the diode. The cathode is typically marked with a band or line on the diode's body.
+# Set your multimeter to the diode test mode (usually indicated by a diode symbol).
+# Place the red probe on the anode and the black probe on the cathode.
+# The multimeter should display a voltage drop reading (around 0.2 to 0.7 V for silicon diodes). If it shows "OL" or less than 0.2, the diode is likely faulty.
+# '''Polarity is a concern'''. If the diode has a reading when the probes are flipped that means the diode is faulty
+
+These considerations should be taken: 
+
+* Diodes usually either fail in a '''fully open or fully shorted state'''. Rarely, the diode is damaged in such way that the voltage drop across it is outside the range. Other failure/degradation modes include lowered reverse breakdown voltage, increased resistance (which causes the diode to potentially overheat and waste power), and reverse leakage current, which makes the diode behave like a resistor when reverse biased but below breakdown voltage.
+* You can test the diode in-circuit, but keep in mind that other components in the circuit may affect the measurement, though this only lowers the reading of the forward drop voltage (assuming the diode isn't being energized from elsewhere, such as a battery in circuit), or making the diode read as shorted or leaky.
+* Many meters won't be able to get a reading on most LEDs, as these meters max out at 1 or 2 volts, which is below the forward voltage drop of most visible light LEDs.
+* Measuring a full bridge rectifier diode package is the same as measuring 4 regular diodes.
+
+=== Identifying a Zener diode's Zener voltage ===
+
+# Remove the diode from the circuit.
+# Solder a 1 Kilo Ohm resistor in series with the Zener diode, connecting it to the anode terminal, for example.
+# Using a Lab-Bench Power Supply, connect the positive terminal to the cathode of the diode and the negative terminal to the other end of the resistor (ie, reverse biased).
+# Place your multimeter in DC voltage mode and connect its probes across the diode.
+# Gradually increase the power supply voltage until the reading on your multimeter no longer rises.
+# The voltage at which the multimeter reading plateaus represents the Zener voltage for this diode.
+Note that Zener diodes of voltages higher than typical lab bench supplies do exist though they are uncommon.
+
+==Replacement Considerations==
+When replacing a diode, always read the datasheets and pay attention to the following parameters:
+
+# '''Type:''' Ensure the replacement diode is of the same type and has similar electrical characteristics as the faulty diode.
+# '''Forward Voltage:''' Match the forward voltage rating closely to the original diode. Using a diode with a significantly different forward voltage may affect circuit performance.
+# '''Reverse Voltage (Zener):''' Pay attention to the reverse voltage rating. That's the most important parameter for Zener diodes.
+# '''Power Rating:''' Match or exceed the power rating of the replacement diode with the original diode.
+# '''Package Type:''' Choose a replacement diode with a compatible package type and size. Different packages have different mounting and pin configurations. If space is not a concern, you can use any size as it won't affect the circuit behavior.
+# '''Reverse Recovery Time:''' In high-frequency applications, the reverse recovery time of the diode is crucial. Ensure the replacement diode has a similar or faster reverse recovery time.
+
+Replacing a diode with the wrong specifications can lead to circuit malfunctions or failure, so it's essential to choose a replacement carefully.
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>n8hssn0gcql36gq5bs1xp0rmw95i4i8</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Inductors - Repair Basics</title>
+    <ns>0</ns>
+    <id>522</id>
+    <revision>
+      <id>4378</id>
+      <parentid>1174</parentid>
+      <timestamp>2024-07-17T14:28:19Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <origin>4378</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5837" sha1="rhd89fabi76stpd4je0rpvvdqk2codm" xml:space="preserve">{{Explanatory Guide
+|Device=Inductors
+|Type=Component
+|Difficulty=1. Easy
+}}
+This article aims to provide a comprehensive overview of inductors from a repair perspective, detailing their function, types, common issues, testing methods, and replacement considerations.
+[[File:Inductor types.png|thumb|Inductor schematic symbol and common packages (Figure 1)]]
+
+==What is an Inductor?==
+An inductor is an essential passive electronic component that '''stores energy in a magnetic field when an electric current flows through it'''. Inductors resist changes in current flow and are widely used in various electronic circuits.
+
+Inductors are measured in "Henry" but a Henry is a large unit so you'll typically find them in milli-Henry "mH", nano-Henry "nH", or micro-Henry "uH" 
+
+In essence, '''''an inductor consists of a wire coiled around a core''''', with the choice of core material and the number of turns influencing its inductance and magnetic field strength.
+
+Inductors are typically identified by the symbol shown in Figure 1 and are usually denoted with the letter L followed by an identifier number. (E.g., L3)
+
+===Function===
+Inductors serve various functions in electronic circuits, including:
+
+==== Voltage Smoothing ====
+Inductors in the output stage of voltage converter circuits serve to filter and stabilize the output voltage. By smoothing the pulsating DC output, inductors reduce voltage ripples, contributing to a stable and continuous power supply. '''In almost every device that has DC-DC voltage converters you will most likely find an inductor at the output.'''
+
+====Energy Storage====
+Inductors store energy in their magnetic fields, and this property is crucial in applications like boost and buck voltage converters, which are essential in power supplies and voltage regulators.
+
+==== Electro-magnet ====
+When an electric current flows through the coil, it generates a magnetic field, turning the inductor into a temporary magnet. This principle finds practical application in relays, where an inductor serves as the electromagnet to control the switch mechanism.
+
+====Filtering====
+Inductors are used in conjunction with [[Capacitors - Repair Basics|capacitors]] to create low-pass and high-pass filters (LC Filters), allowing certain frequencies to pass while attenuating others. By themselves, Inductors block AC, and let DC pass through.
+
+==== Resonance Circuits ====
+Inductors are crucial in [[wikipedia:LC_circuit|resonance circuits]], where they interact with [[Capacitors - Repair Basics|capacitors]] to establish resonance at a specific frequency. In series resonance, inductors limit current increase, while in parallel resonance, they contribute to maintaining a high impedance at the resonant frequency. The strategic use of inductors in resonance circuits is fundamental for designing efficient filters, antennas, and oscillators in electronic systems.
+
+==== Inductive Sensing ====
+Inductors are used in sensors for inductive sensing applications, such as proximity sensors and metal detectors, where changes in inductance are used to detect the presence or absence of certain materials.
+
+===Types===
+
+====Air Core Inductors====
+Air core inductors have a coil wound around a non-magnetic form, such as plastic or ceramic. They are used in radio-frequency applications and where magnetic interference must be minimized.
+
+====Iron Core Inductors====
+Iron core inductors have a coil wound around a magnetic core, typically made of iron or other magnetic materials. They are used in power applications and [[Transformers - Repair Basics|transformers]].
+
+====Ferrite Core Inductors====
+Ferrite core inductors use a core made of ferrite, a ceramic material with high magnetic permeability. They are common in high-frequency applications and EMI suppression.
+
+====Toroidal Inductors====
+Toroidal inductors have a coil wound around a ring-shaped core. They offer high inductance and are often used where compact size and low magnetic interference are critical.
+[[File:Inductor measurement.jpg|thumb|235x235px|Measuring an Inductor (Figure 2)]]
+
+== Testing an Inductor ==
+Make sure the inductor does not have any physical damage first! That's the quickest way of identifying a faulty inductor.
+
+To measure an inductor, use a digital multimeter and check for continuity. '''Remember, an inductor is just a wire!'''
+
+* Set your multimeter to resistance mode.
+* Connect the multimeter's leads across the inductor
+* The multimeter should display around 1 Ohm since the inductor is just a wire. 
+** If you measure high resistance or OL that means the inductor is blown open.
+
+The inductor is '''the most reliable electrical component.''' If you find a damaged inductor, ''that means it is a symptom and not the cause and you most likely have a short circuit somewhere.'' [[Short Circuits - Repair Basics|How to find short circuits?]]
+
+If an inductor fails, it most likely fails in a "blown open" way. Caused by excessive flow of current, leading to overheating and subsequent failure.
+
+You can also use an LCR meter to measure the inductance the same way but it is usually not necessary.
+
+==Replacement Considerations==
+When replacing an inductor, consider the following factors:
+
+# '''Inductance Value:''' Choose a replacement inductor with the same or very close inductance value to the faulty inductor.
+# '''Current Rating:''' Ensure the replacement inductor can handle the same or higher current than the original, especially in power applications.
+# '''Type of Core:''' Match the type of core (air core, iron core, ferrite core, etc.) to the original inductor, as it can affect the inductor's performance.
+# '''Physical Size:''' Choose a replacement with a similar or compatible physical size.
+
+Replacing an inductor with the wrong specifications can lead to it breaking again.
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>rhd89fabi76stpd4je0rpvvdqk2codm</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Resistors - Repair Basics</title>
+    <ns>0</ns>
+    <id>146</id>
+    <revision>
+      <id>14125</id>
+      <parentid>14124</parentid>
+      <timestamp>2026-02-27T03:58:49Z</timestamp>
+      <contributor>
+        <username>Phonograph Steve</username>
+        <id>7041</id>
+      </contributor>
+      <minor/>
+      <origin>14125</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="18365" sha1="cup14t0kaq472gum9om12x7e5m6i5u9" xml:space="preserve">
+{{Explanatory Guide
+|Device=Resistors
+|Type=Component
+|Difficulty=1. Easy
+}}This article aims to provide a comprehensive overview of resistors from a repair perspective, detailing their function, types, common issues, testing methods, and replacement considerations.
+
+==What is a Resistor?==
+[[File:Resistor symbols.jpg|thumb|Resistor symbols commonly found in schematics (Figure 1)]]A resistor is a fundamental electrical component found in most electronic circuits and devices. '''Their characteristic property is electrical resistance, this is, resisting the passing of electrical current through them, without blocking it completely.''' 
+
+The resistance of a resistor is measured in Ohms, and the symbol of this unit is the uppercase Omega (Ω) from the Greek alphabet. 
+
+Resistors are typically identified by the symbols shown in Figure 1 and are usually denoted with the letter R followed by an identifier number. (E.g., R381) 
+
+=== Glossary of Basic Resistor Terminology ===
+The terminology listed here will be helpful in understanding this article as well as technical literature and discussions elsewhere:
+
+* '''Resistance:''' The "value" of a resistor, measured in Ohms (Ω). Its numerical value is the ratio between voltage and current in the resistor, which are physically related by Ohm's Law.
+* '''Ohm's Law:''' The law of physics that relates the voltage (V) and current (I) through a resistor of a specific value (R): '''V = I * R'''
+
+== Function ==
+When a voltage is applied across a resistor, an electrical current will flow through it, which is restricted to a certain amount by its resistance in accordance with Ohm's law. This process dissipates electrical energy into heat.
+
+Despite their very basic nature, resistors are used for a great variety of tasks, some common ones listed as follows:
+
+==== Voltage Dropper / Current Limiter ====
+A resistor is the most basic solution to cases where an electrical device needs to be powered from a source that produces a higher voltage than the device can use to function. A resistor is wired in series with the load, of a value calculated from the amount of volts it needs to get rid of, and how much current the device needs.
+
+For example, a device that requires 3V at 1A needs to be powered from a 5V supply. To get 3 volts from 5 volts the series resistor R needs to drop 2 volts (5 - 3 = 2). Now we need to find a resistor that will let 1A pass through (the current the device needs) when 2 volts are put across it.
+
+Ohm's law tells us that V = I*R. Plugging the numbers we got, we see that 2 [V] = 1 [A] * R [Ω], and solving for R gives us a value of 2 Ohms.
+
+==== Voltage divider ====
+A voltage divider is an electrical circuit that divides a higher input voltage into a lower output voltage using two or more resistors in series. 
+
+It is generally used to create a lower voltage that is proportional to a higher one from which it is powered, which can be a signal, or a voltage reference or supply. Another variety of uses is to create simple custom voltage sources from an existing supply, as can be necessary for biasing transistors. 
+
+The output voltage of a resistive divider is determined by the ratio of the resistance values in the circuit like so:
+[[File:Resistor divider.png|thumb|233x233px|Voltage divider circuit (Figure 2)]]
+'''Voltage Divider formula (assuming NO LOAD on V&lt;sub&gt;out&lt;/sub&gt;):'''
+
+&lt;math&gt;V_\mathrm{out} = \frac{R_2}{R_1+R_2} \cdot V_\mathrm{in}&lt;/math&gt;
+
+When the circuit is loaded, it is equivalent to an ideal voltage source supplying the unloaded voltage, with a series resistor of a value equal to R1 and R2 in parallel. 
+
+Uses:
+
+* Reference Voltage: Voltage dividers can be used to create stable reference voltages for sensor calibration, analog signal processing, and feedback in voltage converters; provided they are powered from a stable voltage source, as any deviations in the source voltage will likewise appear in the scaled down output.
+* Voltage Scaling: They can be used to scale down high input voltages to levels suitable for analog-to-digital converters (ADCs) or microcontrollers.
+* Biasing Transistors: Voltage dividers set the base voltage of transistors in amplifier and switching circuits to [[wikipedia:Biasing|"bias"]] the voltage to a certain level.
+* Voltage Monitoring: In some battery-powered devices, voltage dividers are used to monitor the battery voltage to determine its state of charge. This is a similar application to the aforementioned voltage scaling for measurements.
+* Voltage Regulation: In some cases, voltage dividers are used in conjunction with other components to approximate voltage regulation in simple power supply circuits.
+* Volume control in analog audio: for this, a potentiometer is used, to have an adjustable ratio in the divider and thus making the volume user-adjustable.
+* Et Cetera.
+
+==== Resistor sensors ====
+Resistor sensors, also known as resistive sensors, are a class of sensors that rely on changes in resistance to detect and measure various physical phenomena, such as temperature or light. Examples of such sensors include thermistors and photoresistors.
+
+==== Pull-up / Pull-down ====
+Pull-up and pull-down resistors are commonly used in digital electronics to ensure that a digital input signal is in a known state when it's not actively being driven by an external source. They are essential for preventing floating or undefined states.
+
+A pull-up resistor connects a digital input to a "high" voltage level (usually V&lt;sub&gt;cc&lt;/sub&gt;, which is the supply voltage). This effectively "pulls up" the input to a logical HIGH state when the switch or sensor is not actively grounding it. Pull-up resistors are often used with switches and sensors that are normally open. When the switch is closed or the sensor is active, it grounds the input, causing it to read as LOW. When the switch is open or the sensor is inactive, the pull-up resistor ensures the input reads as HIGH.
+
+A pull-down resistor connects a digital input to ground (GND). This "pulls down" the input to a logical LOW state when the switch or sensor is not actively driving it HIGH. Pull-down resistors are typically employed with switches and sensors that are normally closed. When the switch is open or the sensor is inactive, it keeps the input grounded (LOW). When the switch is closed or the sensor is active, it drives the input HIGH.
+
+Usually, pullup or pulldown resistors are 2.2k to 10k ohms.
+
+==== Current measurement ====
+Current measurement using shunt resistors is a widely used method in electronics and electrical engineering to accurately measure the current flowing through a circuit. 
+
+The principle behind this technique is Ohm's Law &lt;math&gt;V = I * R&lt;/math&gt;
+
+A low resistance, precise "Shunt" resistor is used in series with the rest of the circuit "load" to measure the current flowing in said circuit by measuring the voltage drop across the shunt. In some cases, the voltage drop is very tiny and needs to be amplified using [[Repair Basics - Operational Amplifiers (Op-Amps)|Op-Amps]]. In modern electronics, specialized Integrated Circuits "ICs" are used to measure the voltage drop/current draw.
+
+The shunt resistor is specifically designed with a known and well-calibrated resistance value, very close to 0 Ohms, usually 0.002.
+
+Usually, the shunt resistor is placed where a fuse might be, where all the current passes through it. Sometimes, the shunt resistor itself acts as a fuse if a short circuit happens since it will be the highest resistance point in the circuit.
+
+[https://www.researchgate.net/figure/Current-measurement-with-a-shunt-resistor-and-low-pass-filteradapted-from-14_fig2_221045514 Example and further reading]
+
+== Resistor Packages and Value Codes ==
+Resistors of different types take on a variety of different shapes or "packages", which use a variety of codes to mark the resistor value. Some of the common ones are as follows:
+
+=== Axial Through-Hole Resistor ===
+Historically the most common form factor, still common today but it has been greatly displaced by surface mount types.
+
+These have an elongated cylindrical shape (often narrower around the middle and rounded at the ends, giving them a "peanut" shape) with a wire coming out of each end.
+
+They most often use a color code made of four or five colored bands around their side. Occasionally they will have their value printed on plain numbers.
+
+=== Surface Mount Device (SMD) ===
+
+These resistors  [https://www.newmatik.com/knowledge-base/KB-EN-00928/resistor-case-sizes come in different sizes] but are usually small in size and have no wire leads, instead their metallized ends get soldered directly to pads on a circuit board.
+
+Appearance wise, they are small rectangular and thin wafers, black on top with a white ceramic substrate underneath, and a three or four digit numerical code denoting the value, where the last digit is the multiplier or "number of zeroes" (for example, 221 on a resistor means 220 ohms).
+
+Another notation has the value written as a number with decimals, where the decimal point is replaced with a letter that represents the multiplier (R for 1, K for 1000, M for 100000), for example, "4k7" denotes a 4700 Ohm resistor. Sometimes the letter will be at the beginning or the end, indicating there would be a zero on the unused side. For example, K33 for a 330 Ohm resistor, or 10R for a 10 Ohm one.
+
+This notation is also occasionally used in power resistors of the through-hole axial and ceramic types.
+
+[https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-smd-resistor-code Here is an online calculator]  for the 3 widely used standards.
+
+== Types ==
+[[File:Resistor types.png|thumb|192x192px|Different types of resistors (Figure 3)]]
+
+=== Wire Wound Resistor ===
+One of the oldest types of resistors and still widely used for power applications. They are made of a length of metal wire coiled around a rigid insulating core for support or potted in a porcelain shell with cement.
+
+The wire is usually Nichrome for its high temperature resistance, and the cores are usually made of some form of ceramic, mica or rarely glass for the same reason. Some antique resistors contained asbestos in the core.
+
+Of the ceramic core types, most have the core covered in glaze, encasing the windings. Sometimes the glaze would leave a strip of uncoated windings along the length of the resistor, in order for a clamp to be attached and make contact at a desirable location, making a tapped resistor. The core itself is hollow to allow a bolt to pass through for fastening.
+
+Some other examples leave the windings uncovered, usually in older high power resistors and rheostats.
+
+Their most common use is as power resistors, and as heating elements. Some high precision resistors for instruments are also wire wound, sometimes with two different thicknesses of wire to trim the value to spec. These sometimes lack the construction meant to withstand high temperatures.
+
+Because of their construction, they can have substantial parasitic inductance, making them unsuitable for high frequency applications. They can also introduce RF noise to a circuit, acting as loop antennas.
+
+=== Metal Film Resistor ===
+Made by depositing a microscopically thin layer of metal on a ceramic substrate, and sometimes with a spiral pattern etched to make something akin to a wirewound resistor. This can give them similar issues with inductance but to a much lesser degree.
+
+=== Carbon Composite Resistors===
+They were the most common in electronics around the middle of the 20th century, and are made of a slug of a graphite-infused composite material, with leads at each end and encased in bakelite. Many have drifted susbtantially in value over the decades.
+
+They most often use the colored bands code, with some examples having only 3 bands, lacking the tolerance band.
+
+One of their advantages was having very low parasitic inductance.
+
+=== Variable resistors ===
+
+==== Potentiometers ====
+These can be adjusted to change the resistance value, usually with a knob or a screw. 
+
+They find applications in volume controls, dimmer switches, and tuning circuits.
+
+==== Thermistors ====
+Thermistors are designed to exhibit a predictable change in resistance in response to changes in temperature, which makes them useful in a wide range of applications, especially in temperature-sensing and temperature-compensation circuits.
+
+There are two common types of thermistors:
+
+==== Negative Temperature Coefficient (NTC) ====
+* NTC thermistors are the most common type. As the temperature increases, their resistance decreases, hence the term "negative temperature coefficient."
+* The resistance-temperature relationship of NTC thermistors is nonlinear, meaning that the change in resistance is more significant at some temperature ranges than others.
+* NTC thermistors are often used in temperature sensors and temperature compensation circuits or protection circuits. For example, they are found in thermostats, thermometers, and devices that require temperature control.
+
+==== Positive Temperature Coefficient (PTC) ====
+* PTC thermistors exhibit an increase in resistance as the temperature rises, hence the term "positive temperature coefficient."
+* The resistance-temperature relationship for PTC thermistors is also nonlinear.
+* '''PTC thermistors can be used as self-resetting fuses or current limiters. When they heat up due to excessive current, their resistance increases, reducing the current flow.'''
+
+==== Varistors ====
+A varistor, despite often being considered a type of resistor, is actually a semiconductor device with a behavior similar to a pair of zener diodes wired in anti-series (in series but in opposite directions). This effectively means that the varistor is non conductive in either direction up to a specific threshold voltage (positive or negative), where it suddenly starts conducing and clamps down the voltage to this limit.
+
+They are used to protect electrical circuits and devices from voltage spikes or transient overvoltage conditions. Varistors are also known as voltage-dependent resistors (VDRs) because their electrical resistance changes with the applied voltage. They are commonly used in various electronic and electrical systems to absorb and dissipate excess voltage, preventing damage to sensitive components.
+
+Modern varistors, called Metal Oxide Varistors, are made by sintering oxidized metal granules into pellets in a controlled manner, the metal oxide forms effectively a mass of randomly oriented, microscopic diodes which end up forming series chains by mere chance; hence the non polarized behavior with a diode-like threshold voltage.
+
+Historical varistors were made by connecting two copper oxide or selenium rectifiers in antiparallel, and were mostly used to protect telephone lines and receivers.
+
+==== Photoresistors ====
+
+Also known as Light Dependent Resistors (LDRs), these exhibit changes in resistance based on the intensity of light falling on them. They are used in light-sensitive applications. They are usually small, though large ones are used in applications such as light-sensing streetlight switches, where they drive a thermal relay dirctly.[[File:Resistor measurement mm.png|thumb|180x180px|Measuring a Resistor (Figure 4)]]
+
+== Testing a Resistor ==
+'''Make sure the resistor does not have any physical damage such as liquid damage/corrosion first! That's the quickest way of identifying a faulty resistor.'''
+
+Once you have identified the resistor and its specified resistance, you can accurately measure its resistance using a multimeter, as depicted in Figure 4.
+
+'''It's important to note that when measuring a resistor, polarity is not a concern.'''
+
+Ideally, you should measure the resistor outside of the circuit.
+* When measuring a resistor within a circuit, the measured value will always be either equal to the ideal resistance or lower. If you happen to measure a resistance higher than the ideal value, this indicates a faulty resistor.
+** The reason the resistance of a resistor within a circuit is lower than its ideal value is because you are effectively measuring not only that specific resistor but also everything else connected to it in parallel. '''When resistors are connected in parallel, they collectively reduce the overall resistance.'''
+Resistors typically fail in an "open" state, which means they will exhibit a significantly higher resistance than normal or even an open circuit. This is often a result of excessive current causing them to overheat.
+
+Rarely, resistors might exhibit a '''Value Drift.''' Over time, a resistor's resistance value might change due to environmental factors or aging.
+[[File:Wirewound resistor.png|thumb|183x183px|Wirewound Resistor (Figure 5)]]
+If the original resistance is '''unknown''', you need to compare with a working device or look up a schematic. 
+
+On THT wire-wound resistors, it is still possible to determine the resistance even if the markings have worn off or got damaged. To do this, scratch the surface of the resistor in the middle to expose the resistive wire underneath. Then, use a multimeter to measure the resistance from the middle to both ends of the exposed wire. One of the ends will register half of the original resistance, while the other will show an "OL" reading, indicating an open circuit. This method works because when these resistors fail, a break or "cut" occurs somewhere in the resistive wire. That cut can be only in one of the halves.
+
+== Replacement Considerations ==
+The most important things to keep in mind when replacing a faulty resistor are as follows:
+
+# '''Resistance:''' Choose a replacement resistor with the same resistance value as the faulty one. Keep in mind that there are different tolerances (1,5,10, or 20 percent). Try to stick to 1% if possible.
+# '''Power rating:''' Ensure the replacement resistor can handle the same or higher power as the original. If you're unsure of the original resistor's power rating, opt for the highest-rated resistor available in a similar size.
+# '''Package size:''' Try to choose a replacement resistor with the same dimensions as the faulty one. If this isn't available and size constraints are not an issue, you can opt for a larger or smaller resistor as long as it matches the power rating, as this will function the exact same way.
+
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>cup14t0kaq472gum9om12x7e5m6i5u9</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Short Circuits - Repair Basics</title>
+    <ns>0</ns>
+    <id>341</id>
+    <revision>
+      <id>4381</id>
+      <parentid>4380</parentid>
+      <timestamp>2024-07-17T14:29:10Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <origin>4381</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="8114" sha1="0975gdci6ggttfwmy0tqazembawae2m" xml:space="preserve">{{Explanatory Guide
+|Device=General
+|Type=Idea/Concept
+|Difficulty=1. Easy
+}}
+This article provides an overview of short circuits, their causes, and how to diagnose and repair them in electrical circuits.
+
+== What is a short circuit? ==
+A short circuit is an electrical circuit that has an improper path to ground with no/low resistance. This usually happens when a component such as a capacitors or MOSFET dies, creating a path to ground. The failure can be caused by corrosion, blown capacitors, and so on.
+
+[https://www.youtube.com/watch?v=hoYIzmItja4 Here's a short introduction video]
+
+== Detecting a short ==
+If you encounter a situation where a voltage rail in your device either remains at 0 V or fails to reach its specified voltage, a potential issue may be a short circuit on that rail. However, it's important to first confirm whether the rail is being enabled since some voltage rails naturally have low resistance to ground between 0 and 1Ω (E.g. Power rails for CPUs, GPUs). When suspecting a short circuit on a rail, the initial step is always a visual inspection of the circuit board, checking for signs of corrosion, burnt or damaged components, discoloration, and similar anomalies.
+
+To determine if the rail is indeed shorted, you can use a multimeter in either diode or resistance mode. Ensure that the negative (black) probe is connected to the lower side of the rail, typically the ground (GND). Reversing the probe connection '''may''' yield low resistance readings due to internal protection diodes in integrated circuits (ICs), even in the absence of a short circuit.
+
+If the measurement shows a 0Ω (or 0V) reading from the rail to GND (0Ω assuming you account for the probe resistance, usually 0.4Ω), this unequivocally indicates the presence of a short circuit. In cases where non-zero values are measured, the severity of the issue depends on the voltage and current specifications of the rail.
+
+== Locating a short ==
+If you're dealing with a shorted rail in your device, the following steps can help you locate and address the issue. First, perform a thorough visual inspection of the circuit board, looking for telltale signs like burn marks, discoloration, solder bridges (particularly if the device has undergone prior repair work), or any components that appear physically damaged. Identifying these visual cues can speed up the repair significantly.
+
+If you find any components matching these descriptions, remove them and then check if the short circuit persists. If a visual inspection doesn't uncover any anomalies, cautiously power up the device and [https://www.youtube.com/watch?v=3GNkrQgiwJs&amp;t=285s check if any components on the affected rail become notably hot]. Remove any shorted components discovered and check if the short remains. It's essential to exercise caution, as not every warm component is necessarily shorted. As a general guideline, components that become too hot to touch are likely damaged. Typically, the shorted component will heat up significantly faster than the rest.
+
+In cases where you cannot identify any additional shorted components using the methods mentioned above, and the short circuit still persists, [https://www.youtube.com/watch?v=0OZZdhLrOKo&amp;t=289s you may need to inject voltage into the motherboard]. This approach is based on the idea that the area of the short circuit will have a higher current flow, resulting in increased heat generation. However, use extreme care when injecting voltage, as excessive voltage or current can potentially harm your device. Never inject voltage beyond a rail's specified voltage or current rating. Try to always start at 1V as it is usually safe for virtually all rails.
+
+Another technique involves injecting power into the shorted line while simultaneously using a thermal imaging camera to identify the hottest component, pinpointing the source of the short. Remove and inspect the identified component. Alternatively, you can use freeze spray (or just compressed air upside down while spraying) or isopropyl alcohol to identify the component that heats up the quickest.
+
+If you still can't locate the short, it suggests that the short might have very low resistance or may not exist at all. In this case, retrace your steps, removing any wires or makeshift connections you've added, and re-check for the short. Perform another visual inspection of the area surrounding the rail. It's also possible that another rail, generated from your suspected "shorted" rail, is shorted and causing the problem. "Dead" shorts, characterized by very low impedance, are often caused by solder bridges or power components like MOSFETs, diodes, or large capacitors. MOSFETs and diodes are typically well heatsinked, making it challenging to detect excessive power dissipation from a short. Voltage rails for the CPU or GPU usually measure as short circuits, making shorts on power rails for them difficult to identify due to their low resistance and high current characteristics. For reference, a CPU drawing 25 W at a 0.8 V core voltage has an equivalent "resistance" of just 25.6 mΩ and requires over 30 A, making it challenging to identify overheating components in such a rail.
+
+== Short Circuit Protection (AKA, "OCP" Over Current Protection) ==
+Nearly all power supplies, which serve as voltage rail generators, incorporate some form of short circuit protection, typically in the form of overcurrent protection. The following lines provide a brief overview of the most commonly utilized protection circuits:
+
+# The simplest method for implementing overcurrent protection involves the use of a resistor placed after the power supply. This approach is primarily employed in low-power circuitry, such as logic signals or low-power battery-operated devices like TV remotes. While it is cost-effective and dependable, it is notably inefficient and unsuitable for rails that demand precise voltage levels. Additionally, resistive overcurrent protection does not completely cut off power in the event of a fault; it merely limits the current to a maximum value determined by the resistor. For efficiency reasons, this limiting value should be set at least four times the nominal power draw.
+# Fusing is another common method of short circuit protection. In this approach, a device physically interrupts the power supply if the current draw exceeds a specified threshold. One of the primary advantages of using fuses is that they effectively disconnect the power, preventing further damage to the short-circuited device, which is crucial in high-power circuits like house wiring or the electricity grid. Fuses are predominantly used in high-power applications (above 100 W), where resistive protection is not cost-effective or feasible. However, most fuses are single-use, necessitating replacement after a fault. Resettable fuses, like circuit breakers, and self-resetting fuses such as Poly-Fuse, for low power applications and [[Resistors - Repair Basics|PTC resistors]] are available for higher power applications.
+# Active current limiting is another method of short circuit protection, commonly found in switching power supplies. In this method, a controller measures the current draw on a supply rail. If the current exceeds a predefined threshold, the controller either reduces the voltage (as seen in lab power supplies) or completely shuts off the supply (as seen in most switching power supplies, except lab power supplies). If the supply is shut off, the controller determines when and if the supply should be reactivated. In most cases, the supply is configured to shut off when an overcurrent (short circuit) is detected, and it is turned on again after a period. If the short circuit has not been rectified, the supply will shut off again. In higher-power supplies, this might manifest as a "clicking" sound (often referred to as "power cycling") and may be observed on a voltmeter as an unstable voltage output.
+
+== YouTube Video Playlist for short circuits ==
+[https://www.youtube.com/playlist?list=PLkVbIsAWN2ltSxcN9uk-ZVJLNmvZvYmsW&amp;pbjreload=102 Click here]
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>0975gdci6ggttfwmy0tqazembawae2m</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Transformers - Repair Basics</title>
+    <ns>0</ns>
+    <id>2977</id>
+    <revision>
+      <id>5653</id>
+      <parentid>5652</parentid>
+      <timestamp>2025-02-06T13:45:57Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <origin>5653</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="6110" sha1="krk7s1oisgsz0lhx6g570sst4weiwo9" xml:space="preserve">{{Explanatory Guide
+|Device=Transformers
+|Type=Component
+|Difficulty=2. Medium
+}}
+{{stub}}
+
+This article aims to provide a comprehensive overview of transformers from a repair perspective, detailing their function, types, common issues, testing methods, and replacement considerations.
+
+[[File:Transformer_schematic_diagram.png|thumb|357x357px|Schematic diagram of transformers (Figure 1)]]
+
+==What is a Transformer?==
+A transformer is an electrical component that '''transfers electrical energy between two or more circuits through electromagnetic induction (without being connected together!)'''. They are widely used in power supplies, audio equipment, and many other electronic and electrical applications to modify voltage and current levels.
+
+Transformers are typically identified by the symbols shown in Figure 1 and are usually denoted with the letters T1, T2 or TR1, TR2 etc., on circuit schematics.
+
+The most basic way to think of a transformer is that it is an [[Inductors - Repair Basics|inductor]] with more than one winding where alternating current in one winding induces alternating current on the other winding(s).
+
+===Function===
+Transformers serve various functions in electrical circuits, including (but not limited to):
+
+====Voltage Conversion====
+Transformers step up or step down AC voltages depending on the turn ratio between the primary and secondary windings. This is one of the most basic way to step up or down voltage. It is used on almost all AC-DC power supplies which require isolation from the AC power lines and the converted DC voltage.
+
+====Isolation====
+Many transformers provide galvanic isolation between circuits by preventing direct electrical connection while allowing energy transfer. This property is crucial when different voltage sources and levels are needed but with different reference levels (grounds).
+
+====Current Sensing====
+Current sensing using a transformer is a widely used technique in power electronics, electrical protection, and measurement applications. A '''current transformer''' is a special type of transformer designed to measure alternating current (AC) by producing a scaled-down replica of the primary current.
+
+==Types==
+[[File:Transformer_types.jpg|thumb|184x184px|Various transformer types and packages (Figure 2)]]Transformers come in various types and shapes but they mostly only differ in size, number of windings and, and core type.
+
+===Power Transformers===
+Used in electrical power distribution, power transformers step voltages up or down in power grids and power supplies. They are built to handle high currents and operate at high efficiency.
+
+===Isolation Transformers===
+These transformers provide electrical isolation between the primary and secondary windings, they are the most common and are used in almost all power supplies powered by mains AC voltage.
+
+===Autotransformers===
+Unlike conventional transformers with separate primary and secondary windings, autotransformers use a single winding with taps at different points. They do not provide galvanic isolation.
+
+===Audio Transformers===
+Designed specifically for audio applications, these transformers match impedance and isolate signals to ensure clarity and minimal distortion in audio circuits (not widely used anymore).
+
+==Testing a Transformer==
+'''Before performing any tests, always inspect the transformer for visible damage such as burn marks, insulation breakdown, or deformations.''' 
+
+Common issues include shorted windings, open circuits, or degraded insulation. Mostly due to overcurrent, overheating and or age.
+
+===Continuity, Resistance, and Inductance Testing===
+You typically only need to verify if the transformer is damaged if you've already made sure every other component in the circuit is functioning. Transformers rarely fail if the circuit is properly designed and just with inductors, a failed transformer is usually a symptom not the cause. In any case, to test if the transformer is working, do the following:
+* '''Desolder the transformer:''' It is hard to measure the transformer in circuit unless it is blown open so it is best if you take it out for measurement.
+* '''Identify the windings:''' Determine the primary and secondary winding terminals as per the schematic or labeling.
+* '''Measure continuity:''' Use the multimeter’s continuity setting to check that each winding is electrically continuous. An open circuit in a winding indicates a cut in the winding wire.
+* '''Resistance Measurement:''' Measure the DC resistance of both the primary and secondary windings. Extremely low resistance may indicate a shorted winding, while abnormally high resistance could suggest internal breaks or degraded connections.
+** It is really hard to measure the "low" resistance of the winding unless you have a reference transformer. A better way it to use an LCR meter and measure the inductance of each winding if you can find the reference datasheet.
+
+==Replacement Considerations==
+In 9/10 cases, you can not directly buy a replacement transformer unless you get it from a donor board/device. Further more, they are usually chosen and designed specifically for this circuit which makes it hard to standardize and substitute. If it is a standard transformer, make sure their specs match.
+
+The main way to "replace" a transformer is by rewiring the faulty winding if identified.
+
+* Open the transformer up, usually the core is split in two sides and joined with glue. Try not to break it as that can degrade performance.
+* Unwind each winding individually while keeping track of the number of turns and the order of the windings '''this is really important!'''
+* If the insulation is not damaged, it can be reused
+* Measure the diameter of the faulty winding (or all of them if you need to replace all windings) core and use the same diameter '''enameled''' core wire to replace it
+* Create identical number of turns on the core in the same order as before and glue it back to place
+
+This usually is the only way to replace the transformer. '''Be careful as incorrect turn ratio can damage the circuits!'''
+[[Category:Repair_Basics| ]]</text>
+      <sha1>krk7s1oisgsz0lhx6g570sst4weiwo9</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Transistors - Repair Basics</title>
+    <ns>0</ns>
+    <id>234</id>
+    <revision>
+      <id>14022</id>
+      <parentid>14021</parentid>
+      <timestamp>2026-02-19T17:13:26Z</timestamp>
+      <contributor>
+        <username>Phonograph Steve</username>
+        <id>7041</id>
+      </contributor>
+      <comment>Added phototransistor section</comment>
+      <origin>14022</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="14735" sha1="oq51ysa11tbdveuxup7meqlu1i7olyw" xml:space="preserve">{{Explanatory Guide
+|Device=Transistors
+|Type=Component
+|Difficulty=2. Medium
+}}
+{{stub}}
+This article aims to provide a comprehensive overview of transistors from a repair perspective, detailing their function, types, common issues, testing methods, and replacement considerations.
+[[File:Transistor schematic symbols.jpg|thumb|357x357px|Transistor symbols commonly found in schematics (Figure 1)]]
+
+==What is a Transistor?==
+A transistor is a crucial semiconductor device in electronics that '''amplifies or switches electronic signals'''. Transistors come in various types, and each type serves a specific purpose in electronic circuits.
+
+There are many types of transistors, with the main ones being: Bipolar Junction Transistors (BJTs), Field-Effect Transistors (FETs), Isolated Gate Bipolar Transistors (IGBTs) and Phototransistors.
+
+Transistors are typically identified by the symbols shown in Figure 1 and are usually denoted with the letter Q followed by an identifier number. (E.g., Q27). Discrete individual transistors come in plastic or metal packages with three or sometimes four terminals.
+
+===Function===
+Transistors serve various functions in electronic circuits, including:
+
+====Amplification====
+Transistors amplify weak electronic signals to higher levels. This is essential in audio amplifiers, signal processing, and more.
+
+====Switching====
+Transistors can be used as electronic switches to control the flow of current in a circuit. They are used in digital logic circuits, microcontrollers, Power manager circuits, and more.
+
+====Voltage Regulation====
+A transistor may be used as a linear voltage regulator by dropping excess voltage from a source across itself, when controlled by a voltage reference, to produce a lower, stabilized voltage.
+
+In switch mode power supplies, transistors are used for power conversion by rapidly switching on and off to either boost or step down the voltage depending on the circuit. By controlling the timing of their switching, voltage regulation can be achieved at the output.
+
+==== Motor Control ====
+Transistors, especially power IGBTs, are used in motor control circuits to drive and control the speed of 3 phase electric motors in appliances, robotics, and industrial equipment.
+[[File:Transistor types packages.png|thumb|184x184px|Some transistor packages and types (Figure 2)]]
+
+===Types===
+
+====Bipolar Junction Transistors (BJTs)====
+BJTs come in two types: 
+
+===== NPN =====
+An NPN transistor has three layers: the collector, base, and emitter. It allows current to flow from the collector to the emitter when a small current is applied to the base. NPN transistors are commonly used in amplification circuits.
+
+===== PNP =====
+A PNP transistor operates similarly to an NPN transistor, but the direction of current flow is reversed. Current flows from the emitter to the collector when a small current is pulled from the base. PNP transistors are also used for amplification and switching though they have become uncommon.
+
+PNP transistors are particulrly common in older devices using Germanium transistors, made in the 1950's through the 1970's.
+
+====Field-Effect Transistors (FETs)====
+FETs are classified into JFETs (Junction Field-Effect Transistors) and MOSFETs (Metal-Oxide-Semiconductor Field-Effect Transistors), they both work in a similar way and both come in two types:
+
+===== N-Channel =====
+N-Channel FETs acts as an electronic switch between the drain and source when the gate is positively charged in relation to the source. The gate-to-source effectively forms a small capacitor, and the magnitude of current between the drain and source is directly linked to the charge on the gate. Consequently, unless the gate is actively discharged, the N-Channel FETs will remain in a conducting state. '''No current flows from the gate to source.''' 
+
+===== P-Channel =====
+
+Works in opposite way to N-Channel, P-Channel FETs also act as an electronic switch between the drain and source but when the gate is '''negatively''' charged in relation to the source. The gate-to-source effectively forms a small capacitor, and the magnitude of current between the drain and source is directly linked to the negative charge on the gate. Consequently, unless the gate is actively being charged, the N-Channel FETs will remain in a conducting state. '''No current flows from the source to gate.''' 
+
+====Insulated Gate Bipolar Transistors (IGBTs)====
+IGBTs combine the characteristics of BJTs and MOSFETs. They are used in high-voltage, high-current switching applications like inverter drives and power inverters. Current flows from the collector to the emitter if the gate is positively charged in relation to the emitter. Same case with the FET, if the gate is not being discharged, the IGBT will stay conducting until the gate is discharged.
+
+Internally, IGBTs are high power bipolar transistors driven by a built in MOSFET.
+
+==== Phototransistors ====
+Phototransistors are bipolar junction transistors housed in translucent packages, allowing incident light to shine onto the internal transistor chip. BJTs are naturally light sensitive, but for most applications this effect is unwanted and the transistor is housed in an opaque package.
+
+Due to the photoelectric effect, shining light onto the transistor chip has the same effect as passing current through the base of the transistor, making it conduct. The base is thus often left disconnected, making a two pin transistor, though in some cases it is made available. This allows for biasing the transistor or attaching a base discharging resistor, which increases it's speed response.
+
+They are used as light detectors, being more sensitive than photodiodes due to their internal gain, but are much slower in response.
+
+They are used inside optocouplers paired with LEDs in order to transmit signals between two parts of a circuit while keeping them electrically isolated.
+
+Paired with LEDs too, they are used in optical tripwire sensors and encoders in electronic devices that require precise tracking of movement, such as printers.
+
+Also they see use as the receivers in fiber optic media, and the receivers for infrared remote controls. The latter are often encased in black resin that is opaque to visible light, but transparent to infrared light.
+
+== Testing a Transistor ==
+Transistor testing methods depend greatly on the type of transistor and the failure modes trying to identify. A visual inspection should always be the first step. Some clear signs of likely deterioration or failure are listed as follows:
+
+* Corrosion of the pins and metal shell (when applicable).
+* Broken pins due to corrosion or mechanical fatigue from prolonged vibration.
+* Discoloration of the transistor, the surrounding circuit or adjacent components, indicating overheating.
+* Burn marks, holes and cracks on the transistor package.
+
+Usually, transistors fail in a short circuit where some or all the pins are shorted together. In such instances, it may be necessary to inspect the rest of the circuit, both to find other components that may have been damaged by this short circuit, or failed components that may have caused the transistor to short in the first place.
+
+Old metal package transistors may develop shorts as a result of the growth of [[wikipedia:Whisker_(metallurgy)|tin whiskers]] inside the shell.
+
+Transistors may also fail open on occasion, often caused by the breaking of internal bond wires due to overcurrent or fatigue. Degradation of the semiconductor due to age, or the intrusion of air or moisture can cause transistors to develop resistive leakages between its electrodes.
+
+=== BJTs ===
+The most basic test for a BJT is to check that the internal [[PN Junction - Repair Basics|PN junctions]] are in good shape. Essentially, a BJT should test as two diodes with a common terminal like is shown on Figure 1. Failing this test is a good indication of transistor failure, but a transistor may still have other issues (such as emitter-collector leakage or short) even if the diode junctions test normally.
+# Identify the transistor's pins and determine which is the base, emitter and collector.
+#* If the pinout can't be found from documentation or inferred from the surrounding circuitry, it may be determined by probing different combinations of pins with the multimeter in diode mode, trying to find one of the two configurations shown on Figure 1. This can also clarify if the transistor is PNP or NPN.  If the transistor has failed, it may not be entirely possible to find the pinout using this method.
+#* Transistors with metal shells often have a tab or a painted dot near the emitter, with the base being the closest pin to the emitter.
+#* It should be noted that some power BJTs have built in flyback diodes between the emitter and collector too.
+# Test for shorts or leakage: Set the multimeter to the highest resistance scale (or autoscale).
+#* Measure the resistance between the collector (C) and the emitter (E). If you measure below 100 Ohms that means the BJT is shorted. You might find values in the tens of kilo ohms to mega ohms, which indicate a leaky transistor but don't necessarily imply the transistor is unusable (this depends on the circuit it's used in).
+#* Measuring this value with the probes reversed may point you towards the presence of an internal flyback diode if you find a low value in one direction and and a high value in the opposite direction. 
+# Test the internal junctions of the transistor: set your multimeter to diode mode.
+#* For an NPN transistor: Connect the red probe to the base (B) and probe the emitter and collector with the black probe. In both cases the multimeter should read a diode drop (typically 0.6 - 0.7 V or 0.2 - 0.5 V for old Germanium transistors).
+#* For a PNP transistor, repeat the same but reverse the meter probes (black on base), you should read the same diode values.
+#* If you measure a voltage drop that is substantially higher or lower or "OL" this means the transistor is faulty.
+
+=== FETs ===
+You can verify the functionality of the FETs by charging or discharging the gate (G), which causes the drain (D) and source (S) to become conducting. This can be tested using a multimeter on diode mode.
+# Identify the transistor's pins and determine which is the gate, drain and source.
+# Firstly, make sure the FET is not shorted, measure the resistance between the drain (D) and the source (S). If you measure below 100 Ohms that means the FET is shorted.
+# If the FET is not shorted, set your multimeter to diode mode.
+# For N-Channel FETs, connect the red probe to the gate (G) and the black probe to the source (S).
+# Quickly switch the red probe to drain (D), you should measure a very very low voltage drop (close to 0) confirming the operation of the FET.
+# For P-Channel FETs, repeat the same but reverse the meter probes (black on gate), you should read the same diode values.
+# If you read a high voltage drop or "OL" that means the FET is faulty.
+
+Alternatively, you can measure the capacitance of the gate (G) against the source (S) if you have access to and LCR meter. Value should be compared to the datasheet or a similar FET.
+
+=== IGBTs ===
+
+# Identify the transistor's pins and determine which is the gate, emitter and collector.
+# Set your multimeter to diode mode.
+# Usually, IGBTs come with a diode connected in reverse parallel "freewheeling diode" (figure 1) to allow current to pass in the other direction. This means that all you have to do to measure an IGBT is check if the diode is still functional.
+# Place the red probe on the emitter (E) and black probe on collector (C), you should measure a diode voltage drop (typically 0.4 - 0.7 V).
+# If you read a high or low voltage drop, or "OL" that means the IGBT is faulty.
+
+If you have access to a LCR meter, measure the gate (G) capacitance against the emitter (E). Value should be compared to the datasheet or a similar IGBT.
+
+==Replacement Considerations==
+If you can't replace the transistor with the exact same one, it is possible to use a different one while considering the following factors for each type. '''Regardless, MAKE SURE THE PIN OUT MATCHES! If not, you most likely will kill everything connected to it!.'''
+
+=== BJTs ===
+
+# '''BJT type:''' Ensure you select the correct type (NPN or PNP) based on the original transistor's function.
+# '''Package Type:''' Choose a replacement transistor with a compatible package type and pinout.
+# '''Voltage and Current Ratings:''' "VCE" and "IC". Match or exceed the voltage and current ratings of the replacement transistor to the original to avoid overloading the transistor.
+# '''Gain:''' In amplification applications, closely match the gain (hFE) of the replacement transistor to the original for proper amplification.
+# '''Power Dissipation:''' Ensure the replacement transistor can handle the same or higher power dissipation as the original.
+
+=== FETs ===
+
+# '''FET type:''' Ensure you select the correct type (N or P channel) based on the original transistor's function.
+# '''Package Type:''' Choose a replacement transistor with a compatible package type and pinout.
+# '''Voltage and Current Ratings:''' "VDS" and "ID". Match or exceed the voltage and current ratings of the replacement transistor to the original to avoid overloading the transistor.
+# '''RDSon:''' Resistance when turned on, It is very important to pick a FET that has the same or '''lower''' on resistance.
+# '''Gate Capacitance:''' Try to stick to a FET with a close gate charge to the faulty one.
+# '''Switching Characteristics:''' Pay attention to "Turn On/Off Delay Time" and "Rise/Fall Time" especially for sensitive switching applications.
+# '''Power Dissipation:''' Ensure the replacement transistor can handle the same or higher power dissipation as the original.
+
+=== IGBT ===
+
+# '''Package Type:''' Choose a replacement transistor with a compatible package type and pinout.
+# '''Voltage and Current Ratings:''' "VDS" and "ID". Match or exceed the voltage and current ratings of the replacement transistor to the original to avoid overloading the transistor.
+# '''RDSon:''' Resistance when turned on, It is very important to pick a FET that has the same or '''lower''' on resistance.
+# '''Gate Capacitance:''' Try to stick to a FET with a close gate charge to the faulty one.
+# '''Switching Characteristics:''' Pay attention to "Turn On/Off Delay Time" and "Rise/Fall Time" especially for sensitive switching applications.
+# '''Power Dissipation:''' Ensure the replacement transistor can handle the same or higher power dissipation as the original.
+
+
+Replacing a transistor with the wrong specifications can lead to circuit damage! It's essential to choose a replacement carefully.
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>oq51ysa11tbdveuxup7meqlu1i7olyw</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Visual Inspection - Repair Basics</title>
+    <ns>0</ns>
+    <id>538</id>
+    <revision>
+      <id>4383</id>
+      <parentid>1179</parentid>
+      <timestamp>2024-07-17T14:29:55Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <origin>4383</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5328" sha1="m8e5a6u94i0evnc73c3rzbc0d5npzch" xml:space="preserve">{{Explanatory Guide
+|Device=General
+|Type=Method
+|Difficulty=1. Easy
+}}
+This guide emphasizes the importance of visual inspection in logic board repairs, highlighting the significance of trusting your eyes before delving into complex problem-solving.
+
+==Trust Your Eyes!==
+Most of the time, your eyes are more important than your brain. Always inspect the edges of the logic board! Majority of the time, the problem is somewhere in that area.
+
+There is no greater time-sink for the new technician than over-intellectualizing a problem. Trying to decode every signal abbreviation and reverse engineering undocumented ICs can lead to unnecessary complexity. Do you need to understand every detail to fix a rusted, green, rotting probe point?
+
+Thinking before acting is crucial, but in board repair, seeing often precedes thinking. Your eyes tell a story, teaching you valuable lessons for future repairs. Corrosion, rust, burned traces, and green dust serve as markers guiding you to the root of the issue.
+
+==Probe Point Damage==
+&lt;gallery mode="packed"&gt;
+File:Inspection1.jpg|Probe point inspection (Figure 1)
+File:Corrosion14 labeled.jpg|Probe point example (Figure 2)
+File:Screenshot 2 Fixing a very badly water damaged Macbook Air.png|Example of corrosion on a MacBook (Figure 3)
+&lt;/gallery&gt;Probe points allow signals and power rails to pass while providing an exposed point for measurements. These points can corrode and break, requiring attention to detail for effective repair.
+
+Let's take the board on figure 1 as an example. Knowledge of the one wire circuit and its role in creating a green light on the charger, would be necessary if using your brain for this board repair. Knowledge of how a logic gate works and the ability to see the data on a logic analyzer would help to see what is going on in the SYS_ONEWIRE line. To fix this board on a brains level, requires quite a bit of knowledge and experience.  
+
+Here are examples of corroded probe points from a liquid-damaged MacBook Air: [https://www.youtube.com/watch?v=62lnfgMqmQU Video Link]
+
+
+An example from a video where a corroded probe point prevented a MacBook Air from turning on: [https://www.youtube.com/watch?v=uMNDHjo_vWQ Video Link]
+
+==Short Circuit by Moisture==
+[[File:Corrosionqfnpointedout.jpg|thumb|244x244px|Corrosion example (Figure 4)]]
+In figure 4, that may look like dust that does negligible damage, but it is partially short circuiting the pins. This can often be fixed with flux and solder.
+
+==Recognizing Corrosion Underneath a BGA Package==
+Sometimes, corrosion may be underneath chips. Most modern technology makes use of BGA chipsets - ball grid array, where all of the conducting points are underneath the chip. The chip is sitting on a bunch of balls that conduct electricity to pads on the logic board. Sometimes it will be obvious, but in cases like below, it will require a trained eye to recognize the corrosion. Can you see it in figure 5?
+[[File:Inspection2.jpg|thumb|194x194px|BGA inspection (Figure 5)]]
+
+==Working Components &amp; Solder Joints That Won't Last==
+&lt;gallery mode="packed"&gt;
+File:Inspection3.jpg|Working circuit that might not last (Figure 6)
+File:Inspection41.jpg|Board view of figure 6's circuit (Figure 7)
+File:Inspection5.jpg|Schematic view of figure 6's circuit (Figure 8)
+File:Corrosion10.jpg|Another example of a board being ultrasonically cleaned before resolving corrosion. (Figure 9)
+File:Corrosion13 spelled out.jpg|after ultrasonic cleaning (Figure 10)
+&lt;/gallery&gt;Components with corrosion may appear functional for testing but won't last. Proper rework is essential to ensure long-lasting repairs. It is generally a good idea to leave ultrasonic cleaning for the end. Once the board is ultrasonically cleaned, and the evidence of the water damage are removed - the corroded areas become very difficult to spot.
+
+Not all test points are crucial however, Look at figure 6. The bad probe point has a signal passing through it - in that case, from a connector, to the chip on the bottom right. Here, the probe point is for testing/measurement purposes only. That path goes to P3V42G3H_BOOST - which only goes to that one capacitor, and nothing else! The schematic and the board view (figure 7 &amp; 8) confirms that pin 3 of U7090 goes to pin 1 of C7094, not any other component/chip. The trace is already intact from the chip to the capacitor. The probe point that is under the capacitor serves no functional purpose. However, the capacitor &amp; its solder pad do, and must be reworked. 
+
+==Bad Legs on Chips==
+[[File:Corrosion15labeled.jpg|thumb|225x225px]]
+Make sure to inspect the legs of various ICs, It might not always be very obvious.
+
+==Inspect at an Angle==
+Tilting the board reveals hidden corrosion that may not be visible straight on.
+[[File:Corrosion11.jpg|thumb|218x218px]]
+
+==Examples of Poor Soldering==
+Ensure even joints that naturally flow into place. Proper soldering prevents clumps and incomplete joints.
+[[File:Solderclump.jpg|thumb|306x306px|Example of bad soldering (Figure 13)]]
+[[File:Solderingbad02edited.jpg|thumb|251x251px|Another example of bad soldering (Figure 14)]]
+
+==Can You See What's Wrong?==
+Here's an exercise for you. Can you spot the issue on figure 15?
+[[File:Cracked capacitor.png|thumb|Bank of capacitors. Do you see a problem? (Figure 15)]]
+
+[[Category:Repair_Basics| ]]</text>
+      <sha1>m8e5a6u94i0evnc73c3rzbc0d5npzch</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Explanatory Guide</title>
+    <ns>10</ns>
+    <id>129</id>
+    <revision>
+      <id>1804</id>
+      <parentid>1296</parentid>
+      <timestamp>2024-01-09T18:11:59Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Add handling for missing device pages</comment>
+      <origin>1804</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="779" sha1="t6t12jac525al0ob6hxwbj4scjxbsij" xml:space="preserve">&lt;noinclude&gt;
+{{#template_params:Type (label=What are you trying to explain?;property=Explanatory Guide Type)|Device (label=Device(s);list;property=Device)|Difficulty (property=Repair Guide difficulty)}}
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class="infobox"
+! class="infobox-heading" colspan="2" |&lt;span style="font-size: larger;"&gt;{{PAGENAME}}&lt;/span&gt;
+|-
+! Type
+| [[Explanatory Guide Type::{{{Type|}}}]]
+|-
+! Device(s)
+| {{#arraymap:{{{Device|}}}|,|x|[[Device::x]]}}
+|-
+! Difficulty
+| {{Repair Guide Difficulty|{{{Difficulty}}}}}
+|-
+|}
+
+[[Repair Guide difficulty::{{{Difficulty|}}}|]]
+
+[[Category:Explanatory guide]]
+
+{{#if: {{{Device|}}} | {{#arraymap: {{{Device}}} |, |@@@@ |[[Category:Explanatory guides for @@@@]] {{#ifexist: @@@@||[[Category:Missing device page]]}} | }} }}
+&lt;/includeonly&gt;</text>
+      <sha1>t6t12jac525al0ob6hxwbj4scjxbsij</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Repair Guide Difficulty</title>
+    <ns>10</ns>
+    <id>513</id>
+    <revision>
+      <id>1129</id>
+      <parentid>1126</parentid>
+      <timestamp>2023-11-12T18:33:25Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <origin>1129</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="192" sha1="ebor4xptaxgw809iru17xssi40ixkle" xml:space="preserve">{{#ifeq:{{{1}}}|1. Easy|◉◌◌◌ Easy|}}{{#ifeq:{{{1}}}|2. Medium|◉◉◌◌ Medium|}}{{#ifeq:{{{1}}}|3. Hard|◉◉◉◌ Hard|}}{{#ifeq:{{{1}}}|4. Specialist|◉◉◉◉ Specialist|}}</text>
+      <sha1>ebor4xptaxgw809iru17xssi40ixkle</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Stub</title>
+    <ns>10</ns>
+    <id>50</id>
+    <revision>
+      <id>14259</id>
+      <parentid>1558</parentid>
+      <timestamp>2026-09-22T22:53:44Z</timestamp>
+      <contributor>
+        <username>ContentBot</username>
+        <id>7210</id>
+      </contributor>
+      <comment>Published from content/templates/Stub.wiki</comment>
+      <origin>14259</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="248" sha1="37n559ti43kdmbfrb7xbst2aj4hcg8s" xml:space="preserve">&lt;div class="stub-notice"&gt;This article is a [[:Category:Stubs|stub]]. You can help {{SITENAME}} grow by {{editlink|{{PAGENAME}}|expanding it}}&lt;/div&gt;&lt;includeonly&gt;[[Category:Stubs]]&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting_templates]]&lt;/noinclude&gt;</text>
+      <sha1>37n559ti43kdmbfrb7xbst2aj4hcg8s</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Editlink</title>
+    <ns>10</ns>
+    <id>53</id>
+    <revision>
+      <id>93</id>
+      <timestamp>2023-09-17T18:56:31Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with "&lt;includeonly&gt;&lt;span class="plainlinks"&gt;[{{fullurl:{{FULLPAGENAME:{{{1|}}} }}|action=edit}} {{#if:{{{2|}}}|{{{2}}}|{{{1}}} }}]&lt;/span&gt;&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting templates]]&lt;/noinclude&gt;"</comment>
+      <origin>93</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="201" sha1="a2ad4llljvcynrwh32savtyd1jk0nwj" xml:space="preserve">&lt;includeonly&gt;&lt;span class="plainlinks"&gt;[{{fullurl:{{FULLPAGENAME:{{{1|}}} }}|action=edit}} {{#if:{{{2|}}}|{{{2}}}|{{{1}}} }}]&lt;/span&gt;&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting templates]]&lt;/noinclude&gt;</text>
+      <sha1>a2ad4llljvcynrwh32savtyd1jk0nwj</sha1>
+    </revision>
+  </page>
+</mediawiki>

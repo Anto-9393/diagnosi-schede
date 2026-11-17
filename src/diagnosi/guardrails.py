@@ -1,0 +1,105 @@
+"""Guardrail sulle risposte dell'agente — deterministici, come in S15 ("output handling": l'output del
+modello è input non fidato per chi lo usa). Nessun LLM: si testano senza chiave.
+
+Quattro controlli su ogni PassoDiagnosi:
+  1. SICUREZZA ELETTRICA — alimentatore/iniezione senza limite di corrente, batteria oltre i limiti Li-ion,
+     calore vicino alla batteria, istruzioni pericolose (bloccanti).
+  2. VALORI IMPOSSIBILI — tensioni oltre i 20 V (massimo USB-PD per questi dispositivi).
+  3. SIGLE NON VERIFICATE — sigle di componenti (U4001, J2201, 343S00264...) che non compaiono in nessuna
+     pagina letta: il modello potrebbe averle inventate.
+  4. FONTI — le fonti dichiarate devono essere pagine lette davvero; senza fonti la risposta è "da verificare".
+
+I guardrail non cancellano la risposta: la ANNOTANO (avvertenze in testa) e la bloccano solo se pericolosa.
+"""
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass, field
+
+from diagnosi.schemas import PassoDiagnosi
+
+MAX_TENSIONE_USB_V = 20.0
+MAX_TENSIONE_CELLA_V = 4.4
+
+_PERICOLOSI = [
+    (r"cortocircuit\w*\s+(la\s+)?batteria|short\w*\s+the\s+battery", "Mai cortocircuitare la batteria."),
+    (r"senza\s+limite\s+di\s+corrente|no\s+current\s+limit", "Mai alimentare senza limite di corrente."),
+    (r"(aria\s+calda|hot\s+air|scald\w+)[^.]{0,60}batteria", "Mai scaldare vicino alla batteria: va scollegata e allontanata."),
+]
+_ALIMENTAZIONE = r"alimentator\w*|banco|dc\s+power|iniezion\w*|inject\w*|power\s+supply"
+_LIMITE = r"limit\w*\s+(di\s+)?corrente|corrente\s+limitat\w*|current\s+limit"
+# Sigle tipiche: designatori (U4001, J2201, C4005, X1548, Q2001, L2020, PP_VCC_MAIN no) e codici di chip.
+_SIGLA = re.compile(r"\b(?:[UJCXQLRDF]\d{3,5}|343S\d{4,5}|338S\d{4,5}|CD\d{4}[A-Z]?\d*|610A3B|SN\d{4,5}[A-Z]*)\b")
+_VOLT = re.compile(r"(\d+(?:[.,]\d+)?)\s*V\b")
+
+
+@dataclass
+class Esito:
+    avvisi: list[str] = field(default_factory=list)
+    bloccato: bool = False
+    sigle_non_verificate: list[str] = field(default_factory=list)
+
+
+def _testo(passo: PassoDiagnosi) -> str:
+    m = passo.prossima_misura
+    return " ".join([passo.riepilogo, m.dove, m.condizioni, m.valore_atteso, m.se_diverso,
+                     *[f"{i.componente} {i.motivo}" for i in passo.ipotesi]])
+
+
+def controlla(passo: PassoDiagnosi, pagine_lette: dict[str, str]) -> tuple[PassoDiagnosi, Esito]:
+    """`pagine_lette`: percorso -> testo delle pagine che l'agente ha letto in questa sessione."""
+    esito = Esito()
+    testo = _testo(passo)
+    tutto = testo + " " + " ".join(passo.avvertenze_sicurezza)
+
+    # 1. sicurezza elettrica — campo per campo: un "non" in un altro campo (es. "non carica") non è una negazione
+    m = passo.prossima_misura
+    campi = [m.dove, m.condizioni, m.valore_atteso, m.se_diverso, passo.riepilogo,
+             *[i.motivo for i in passo.ipotesi]]
+    for patt, msg in _PERICOLOSI:
+        for campo in campi:
+            for trovato in re.finditer(patt, campo, re.I):
+                prima = campo[max(0, trovato.start() - 25):trovato.start()]
+                if not re.search(r"\b(non|mai|never|don't|evita\w*)\b", prima, re.I):
+                    esito.avvisi.append(f"BLOCCATO: {msg}")
+                    esito.bloccato = True
+    testo_misura = " ".join([m.dove, m.condizioni, m.valore_atteso])
+    if re.search(_ALIMENTAZIONE, testo_misura, re.I) and not re.search(_LIMITE, tutto, re.I):
+        esito.avvisi.append("Usa l'alimentatore con LIMITE DI CORRENTE (parti basso, es. 0,5–1 A) e osserva l'assorbimento.")
+    # Il limite Li-ion vale se il PUNTO di misura è la batteria (non se "con batteria" è solo una condizione).
+    if re.search(r"batteria|battery|vbat", m.dove, re.I):
+        for v in _VOLT.findall(m.valore_atteso):
+            if float(v.replace(",", ".")) > MAX_TENSIONE_CELLA_V and float(v.replace(",", ".")) < 30:
+                esito.avvisi.append(f"Tensione {v} V al connettore batteria: oltre il massimo di una cella Li-ion "
+                                    f"(~{MAX_TENSIONE_CELLA_V} V). Verifica.")
+                break
+
+    # 2. valori impossibili
+    for v in _VOLT.findall(testo):
+        if float(v.replace(",", ".")) > MAX_TENSIONE_USB_V:
+            esito.avvisi.append(f"Valore {v} V fuori dal plausibile per questi dispositivi (USB-PD max {MAX_TENSIONE_USB_V:g} V).")
+            break
+
+    # 3. sigle non verificate
+    corpus = " ".join(pagine_lette.values())
+    sigle = sorted(set(_SIGLA.findall(testo)))
+    esito.sigle_non_verificate = [s for s in sigle if s not in corpus]
+    if esito.sigle_non_verificate:
+        esito.avvisi.append("Sigle non presenti nelle pagine consultate (da verificare su schema/boardview): "
+                            + ", ".join(esito.sigle_non_verificate))
+
+    # 4. fonti: solo pagine lette davvero
+    lette = {p.removeprefix("wiki/") for p in pagine_lette}
+    dichiarate = [f for f in passo.fonti if f.removeprefix("wiki/") in lette]
+    scartate = [f for f in passo.fonti if f not in dichiarate]
+    if scartate:
+        esito.avvisi.append("Fonti dichiarate ma non lette, rimosse: " + ", ".join(scartate))
+    if not dichiarate:
+        esito.avvisi.append("Nessuna fonte dalla wiki: risposta basata solo sul modello, da verificare.")
+
+    esito.avvisi = list(dict.fromkeys(esito.avvisi))        # niente doppioni
+    passo = passo.model_copy(update={
+        "fonti": dichiarate,
+        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + passo.avvertenze_sicurezza,
+    })
+    return passo, esito

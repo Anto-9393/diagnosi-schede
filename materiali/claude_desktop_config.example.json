@@ -1,0 +1,15 @@
+{
+  "_come_si_usa": [
+    "Come in Lezione_13/materiali/claude_desktop_config.snippet.json: lo stesso server, usato da un secondo host.",
+    "1. Apri %APPDATA%\\Claude\\claude_desktop_config.json (Claude Desktop > Impostazioni > Sviluppatore > Modifica config).",
+    "2. Incolla il blocco mcpServers (fondilo con quello esistente se c'è già).",
+    "3. Riavvia Claude Desktop: compariranno i tool cerca_caso, componente_info, suggerisci_misura."
+  ],
+  "mcpServers": {
+    "diagnosi-schede": {
+      "command": "C:\\Users\\AntoninoGiangreco\\Desktop\\Corso AI\\diagnosi-schede\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "diagnosi.mcp_server"],
+      "cwd": "C:\\Users\\AntoninoGiangreco\\Desktop\\Corso AI\\diagnosi-schede"
+    }
+  }
+}

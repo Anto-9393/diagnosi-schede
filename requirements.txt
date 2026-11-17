@@ -1,0 +1,6 @@
+datapizza-ai==0.1.0
+datapizza-ai-clients-anthropic==0.0.8
+python-dotenv>=1.0
+pytest>=8
+mcp>=2
+streamlit>=1.40

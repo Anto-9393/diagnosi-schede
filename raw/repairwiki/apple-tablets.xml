@@ -1,0 +1,1905 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Repair Wiki</sitename>
+    <dbname>wiki</dbname>
+    <base>https://repair.wiki/w/Main_Page</base>
+    <generator>MediaWiki 1.43.11</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">RepairWiki</namespace>
+      <namespace key="5" case="first-letter">RepairWiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>IPad Air 4</title>
+    <ns>0</ns>
+    <id>249</id>
+    <revision>
+      <id>13297</id>
+      <parentid>13288</parentid>
+      <timestamp>2025-12-16T21:11:22Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>13297</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1022" sha1="o9ulfz2po8srfxohvcyqigl24fma6rm" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2316, A2324, A2325, A2072
+|Device release date=2020-10-23
+|Device type=Tablet
+}}
+{{stub}}
+== Guides ==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadair4-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Air 4 - Charging Port Diode Mode Readings.jpg|iPad Air 4 - Charging Port Diode Mode Readings
+File:IPad Air 4 A2316 - Mechanic Reader Values.png|iPad Air 4 A2316 - Mechanic Reader Values
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg
+
+iPad Air 4
+
+Model Numbers:
+
+* A2316          Wi-Fi Only
+* A2324          Wi-Fi + Cellular
+* A2325          Wi-Fi + Cellular
+* A2072          Wi-Fi + Cellular</text>
+      <sha1>o9ulfz2po8srfxohvcyqigl24fma6rm</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 12.9 5th Gen</title>
+    <ns>0</ns>
+    <id>1195</id>
+    <revision>
+      <id>13306</id>
+      <parentid>10687</parentid>
+      <timestamp>2025-12-16T21:14:16Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>13306</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1619" sha1="q82xsp8ed117mic1g6an3lyxvrge4sj" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2378,  A2379, A2461, A2462
+|Device release date=2021-05-21
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro129-2021-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Pro 12.9 Gen 5 - Known Good Mechanic USB C Readings.png|iPad Pro 12.9 Gen 5 - Known Good Mechanic USB C Readings
+File:IPad Pro 129 5th gen board overview.jpg|IPad Pro 12.9 5th gen board overview
+File:IPad Pro 129 5th Gen LCD diode mode readings 1.jpg|IPad Pro 12.9 5th Gen LCD diode mode readings - 1
+File:IPad Pro 129 5th Gen LCD diode mode readings 2.jpg|IPad Pro 12.9 5th Gen LCD diode mode readings - 2
+File:IPad Pro 129 5th Gen LCD diode mode readings 3.jpg|IPad Pro 12.9 5th Gen LCD diode mode readings - 3
+File:IPad Pro 129 5th Gen LCD diode mode readings 4.jpg|IPad Pro 12.9 5th Gen LCD diode mode readings - 4
+File:IPad Pro 129 5th Gen charging port diode readings.jpg|IPad Pro 12.9 5th Gen charging port diode readings - 5
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPad Pro 12.9 5Th Gen Schematics: https://www.sendspace.com/file/ftiiby
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>q82xsp8ed117mic1g6an3lyxvrge4sj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 10.5</title>
+    <ns>0</ns>
+    <id>1247</id>
+    <revision>
+      <id>8916</id>
+      <parentid>2802</parentid>
+      <timestamp>2025-07-21T23:27:12Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>8916</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="657" sha1="37ud1wgjoxnn67wh15ni6guy2eoz918" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1701, A1709
+|Device release date=2017-06-13
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Pro 10.5.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>37ud1wgjoxnn67wh15ni6guy2eoz918</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Air</title>
+    <ns>0</ns>
+    <id>1353</id>
+    <revision>
+      <id>10686</id>
+      <parentid>7914</parentid>
+      <timestamp>2025-08-25T22:16:15Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */</comment>
+      <origin>10686</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="572" sha1="svgl86g2qtjejc9dfjzcc9211wl3gxe" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1474, A1475
+|Device release date=2013-11-01
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadair1-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+iPad Air 1 Schematics: https://www.sendspace.com/file/u61go7</text>
+      <sha1>svgl86g2qtjejc9dfjzcc9211wl3gxe</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 9.7</title>
+    <ns>0</ns>
+    <id>1372</id>
+    <revision>
+      <id>7851</id>
+      <parentid>3008</parentid>
+      <timestamp>2025-06-21T19:46:51Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>7851</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="656" sha1="p93m0vgxwend3gvjs6tw0wkrwoh3zat" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1673, A1674
+|Device release date=2016-03-29
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad pro 9.7.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>p93m0vgxwend3gvjs6tw0wkrwoh3zat</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 5</title>
+    <ns>0</ns>
+    <id>1382</id>
+    <revision>
+      <id>11067</id>
+      <parentid>10677</parentid>
+      <timestamp>2025-08-31T20:17:39Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>11067</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="716" sha1="3dkc5oj9jdwybk88uue06ixyiwt80ez" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1822, A1823
+|Device release date=2017-03-24
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad97-gen5-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad 5 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPad 5 Schematics: https://www.sendspace.com/file/qw3fmp</text>
+      <sha1>3dkc5oj9jdwybk88uue06ixyiwt80ez</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 12.9 1st Gen</title>
+    <ns>0</ns>
+    <id>1385</id>
+    <revision>
+      <id>8931</id>
+      <parentid>3032</parentid>
+      <timestamp>2025-07-21T23:33:37Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>8931</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="675" sha1="ez2hf7uz9nv5lkcxfcmptj52pxt9n93" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1584, A1652
+|Device release date=2015-11-25
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Copia-de-ipadpro97-2016-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>ez2hf7uz9nv5lkcxfcmptj52pxt9n93</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 12.9 2nd Gen</title>
+    <ns>0</ns>
+    <id>1389</id>
+    <revision>
+      <id>8932</id>
+      <parentid>3040</parentid>
+      <timestamp>2025-07-21T23:34:07Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>8932</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="667" sha1="72581xocbghpis9pjkdxohlmv2xfy3s" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1670, A1671
+|Device release date=2017-06-27
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro129-gen2-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>72581xocbghpis9pjkdxohlmv2xfy3s</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 6</title>
+    <ns>0</ns>
+    <id>1407</id>
+    <revision>
+      <id>10678</id>
+      <parentid>8883</parentid>
+      <timestamp>2025-08-25T22:07:00Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>10678</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1562" sha1="k5igdgw3rttekl0437yqnj2ewbmy880" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1893, A1954
+|Device release date=2018-03-27
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad97-gen6-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad 6 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad 6 Power Button Component Values.png|Power and volume button connector component values
+File:Ipad 6 A1954 j3800 diode values v1.jpg|Ipad 6 A1954 Home Button Connector - J3800 Diode values. Pins in order with their corresponding values: 14 - GND, 13 - 0.290, 12 - 0.551, 11 - 0.609, 10 - 0.456, 09 - 0.455, 08 - 0.456, 07 - 0.496, 06 - 0.480, 05 - GND, 04 - 0.626, 03 - 0.474, 02 - 0.502, 1 - GND. Provided by A1 Phone Repairs
+File:J4100 ipad 6 a1954 diode values v1.jpg|Ipad 6 A1954 LCD Connector - j4100 Diode values.  Provided by A1 Phone Repairs
+File:Ipad 6 a1954 digitizer diode values v1.jpg|Ipad 6 A1954 Digitizer Connectors - J4040 and J4020 Diode values.  Provided by A1 Phone Repairs
+File:Ipad 6 a1954 charging port values.png|Ipad 6 A1954 Charging port - Diode values. Using Mechanic T-824 USB-C / LIGHTNING PORT TAIL INSERTION TESTER  Provided by A1 Phone Repairs
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPad 6 Schematics:https://www.sendspace.com/file/ds0a7w</text>
+      <sha1>k5igdgw3rttekl0437yqnj2ewbmy880</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 12.9 4th Gen</title>
+    <ns>0</ns>
+    <id>1412</id>
+    <revision>
+      <id>13307</id>
+      <parentid>8934</parentid>
+      <timestamp>2025-12-16T21:14:27Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>13307</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="909" sha1="73frcslm7v7207nmzihpqugwtjuyqu1" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2229, A2069, A2232, A2233
+|Device release date=2020-03-25
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro129-gen4-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+File:Ipad pro 12.9 4th gen.jpeg|ipad pro 12.9 4th gen USB C readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>73frcslm7v7207nmzihpqugwtjuyqu1</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 12.9 3rd Gen</title>
+    <ns>0</ns>
+    <id>1415</id>
+    <revision>
+      <id>13303</id>
+      <parentid>13295</parentid>
+      <timestamp>2025-12-16T21:12:51Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <origin>13303</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1044" sha1="jzxzxihdgj79v6qfcpuuc2e0jzap13z" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1876, A2014, A1895, A1983
+|Device release date=2018-11-07
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro129-gen3-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Pro 129 3rd charging port connector diode readings.jpg|iPad Pro 12.9 3rd Gen charging port connector diode mode measurements
+File:IPad Pro 12.9 Gen 3 - Mechanic Reader.png|iPad Pro 12.9 Gen 3 - Mechanic Reader - Known good readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>jzxzxihdgj79v6qfcpuuc2e0jzap13z</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 7</title>
+    <ns>0</ns>
+    <id>1434</id>
+    <revision>
+      <id>10679</id>
+      <parentid>10675</parentid>
+      <timestamp>2025-08-25T22:07:58Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>Added Link to Schematics</comment>
+      <origin>10679</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="732" sha1="m73eb7xbez7l9gc8k6n8ox6zn21a5c6" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2197, A2200, A2198, A2199
+|Device release date=2019-09-25
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad10.2-gen7-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad 7 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPad 7 Schematics:https://www.sendspace.com/file/g18h6r</text>
+      <sha1>m73eb7xbez7l9gc8k6n8ox6zn21a5c6</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 6</title>
+    <ns>0</ns>
+    <id>1478</id>
+    <revision>
+      <id>13487</id>
+      <parentid>13300</parentid>
+      <timestamp>2026-01-01T18:19:58Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>13487</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="884" sha1="hq6a31lizm741eqb9bszwh7tsne9vzw" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2567, A2568, A2569
+|Device release date=2021-09-24
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadmini6-1-600x600.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Mini 6 Wifi PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Mini 6 - USB C Readings.png|iPad Mini 6 - USB C Readings with Mechanic Reader
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>hq6a31lizm741eqb9bszwh7tsne9vzw</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 10</title>
+    <ns>0</ns>
+    <id>1498</id>
+    <revision>
+      <id>13301</id>
+      <parentid>13293</parentid>
+      <timestamp>2025-12-16T21:12:28Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>13301</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="983" sha1="8id097z8zj3oah9lyibv1lpqtvece4q" xml:space="preserve">{{stub}}
+{{Device page
+|Manufacturer=Apple|Device type=Tablet|Device release date=10-26-2022}}
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad109-2022-768x768.webp|alt=
+File:Apple Ipad 10th InternalView.jpg|Ipad 10 Internal View
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad 10 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad 10 Mechanic Reader.png|iPad 10 Mechanic Reader - Known good readings
+File:IPad 10th Gen Charging IC and ROM Location.png|iPad 10th Gen Charging IC and ROM Location
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>8id097z8zj3oah9lyibv1lpqtvece4q</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 11in 1st Gen</title>
+    <ns>0</ns>
+    <id>1505</id>
+    <revision>
+      <id>10689</id>
+      <parentid>8927</parentid>
+      <timestamp>2025-08-25T22:20:34Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>10689</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="705" sha1="lu7utz2sco7ceioiv2tx02xgfspn8mp" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1934/A1980/A2013
+|Device release date=2018-11-07
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro11-gen1-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Pro 11 1st GEN PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro11 1st.jpg|iPad Pro 1st Gen Mechanic USB-C Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>lu7utz2sco7ceioiv2tx02xgfspn8mp</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 11in 4th Gen</title>
+    <ns>0</ns>
+    <id>1508</id>
+    <revision>
+      <id>13539</id>
+      <parentid>13304</parentid>
+      <timestamp>2026-01-01T22:23:20Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added release date</comment>
+      <origin>13539</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="790" sha1="aoo0fiktpdke5fn8dlx6h6dnznzbjs2" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Device release date=2022}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro11-2022-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>aoo0fiktpdke5fn8dlx6h6dnznzbjs2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Air 3</title>
+    <ns>0</ns>
+    <id>1509</id>
+    <revision>
+      <id>10684</id>
+      <parentid>9036</parentid>
+      <timestamp>2025-08-25T22:13:57Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>10684</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="640" sha1="d7xrhw4fuunz7jp1r2s5fboi8hqi5x3" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A2152, A2123, A2153, A2154}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadair3-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Air 3 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>d7xrhw4fuunz7jp1r2s5fboi8hqi5x3</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Air 5</title>
+    <ns>0</ns>
+    <id>1578</id>
+    <revision>
+      <id>13729</id>
+      <parentid>13298</parentid>
+      <timestamp>2026-01-19T05:04:25Z</timestamp>
+      <contributor>
+        <username>MacbookMedic</username>
+        <id>6906</id>
+      </contributor>
+      <minor/>
+      <comment>added compatibility info for cd3217 replacement</comment>
+      <origin>13729</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1723" sha1="ht7cwyv36bpkusimp937gu6jsr9cgro" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2588, A2589, A2591
+|Device release date=2022-03-18
+|Device type=Tablet
+}}
+{{stub}}
+
+
+==Guides==
+Apple Logo Flashes on and off on iPad Air 5:
+
+Disconnect the power button flex cable.{{List Guides|CD3217B12 replacement=a2588 iPad air 5:
+Successfully replaced CD3217B12 with U3100 from an a2251 Macbook Pro (820-01949).}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadair2022-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery&gt;
+File:A2588ConnectorsOverview.png|iPad Air 5 - Connector Overview
+File:IPad Air 5 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+
+=== Diode Mode Readings: ===
+&lt;gallery showthumbnails="1"&gt;
+File:Air5LCDFPCDiode.jpg|#1 LCD connector
+File:A2588LowerDigitizerFPCDiode.jpg|#2 Lower digitizer connector (next to LCD connector)
+File:A2588UpperDigitizerFPCDiode.jpg|#3 Upper digitizer connector
+File:A2588VolumeConnectorDiode.png|#4 Volume button connector
+File:A2588RearCameraConnector.jpg|#5 Rear camera connector
+File:A2588PowerButtonFPCDiode.jpg|#6 Power button connector (next to rear camera)
+File:A2588FrontCameraFPCDiode.jpg|#7 Front camera connector
+File:A2588LeftAmbientLightSensorFPCDiode.jpg|#8 Left ambient light sensor connector (below front camera)
+File:A2588 iPad Air 5 top mic connector diode readings.jpg|#9 Top mic connector (by front camera)
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg
+
+iPad Air 5 Model Numbers:
+
+A2588          Wi-Fi Only
+
+A2589          Wi-Fi + Cellular
+
+A2591          Wi-Fi + Cellular</text>
+      <sha1>ht7cwyv36bpkusimp937gu6jsr9cgro</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 8</title>
+    <ns>0</ns>
+    <id>2598</id>
+    <revision>
+      <id>10680</id>
+      <parentid>10676</parentid>
+      <timestamp>2025-08-25T22:08:45Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>10680</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="3408" sha1="dru2odcnl7uz03o84zkw16s9d3ptxcq" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A2270 (wifi) / 2428, A2429, A2430 (wifi + Cellular)|Device release date=2020}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad10.2-gen8-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad 8 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad 8 headphone jack and prox sensor FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 charging port FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:IPAD 8 LCD CONNECTOR FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 camera fpc FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:IPAD 8 PORT CONNECTORS FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 LOWER LARGER digi fpc FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 digi and lcd fpc FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:IPAD 8 HOME BUTTON CONNECTOR FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:IPAD 8 FRONT CAM FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 sensor near volume flex FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 power and vol flex FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 smart connector FINAL.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:Ipad 8 battery connector final.jpg|Ipad 8 (wifi) diode measurements provided by A1 Phone Repairs, measurements taken with Fluke 115 - Red probe on ground and black probe on corresponding pins.
+File:IPad 8 - Known Good Mechanic Lightning Readings.jpg|IPad 8 - Known Good Mechanic Lightning Readings
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+iPad 8 Schematics: https://www.sendspace.com/file/erqpcr&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>dru2odcnl7uz03o84zkw16s9d3ptxcq</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 9</title>
+    <ns>0</ns>
+    <id>2599</id>
+    <revision>
+      <id>7908</id>
+      <parentid>5349</parentid>
+      <timestamp>2025-06-22T14:49:50Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added device picture</comment>
+      <origin>7908</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2564" sha1="ff0qn44epe5ijntddouxgvpistmg3do" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad10.2-gen9-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad 9 Lcd connector.jpg|IPAD 9 LCD CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:Ipad 9 charging port speaker flex.jpg|IPAD 9 CHARING PORT CONNECTORS DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 SENSOR NEAR POWER CONNECTOR.jpg|IPAD 9, CONNECTOR NEAR POWER AND VOLUME FLEX SENSOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:Ipad 9 lower digitizer connector.jpg|IPAD 9 LOWER DIGITIZER CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:Top digitizer Connector.jpg|IPAD 9 TOP DIGITIZER CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:Ipad 9 home button and touch id connector.jpg|IPAD 9 HOME BUTTON AND TOUCH ID CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 POWER VOLUME CONNECTOR.jpg|IPAD 9 POWER AND VOLUME CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:Ipad 9 charging port.jpg|IPAD 9 CHARGING PORT DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 REAR CAMERA CONNECTOR.jpg|IPAD 9 REAR CAMERA DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 BATTERY CONNECTOR.jpg|IPAD 9 BATTERY CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 HEADPHONE CONNECTOR.jpg|IPAD 9 HEADPHONE JACK CONNECTOR DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 SMART KEYBOARD CONNECTOR.jpg|IPAD 9 SMART KEYBOARD DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+File:IPAD 9 PROXIMITY AND FRONT CAMERA CONNECTOR.jpg|IPAD 9 FRONT CAMERA AND MICROPHONE DIODE MEASUREMENTS PROVIDED BY A1 PHONE REPAIRS, TAKEN WITH FLUKE 115 MULTIMETER.
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>ff0qn44epe5ijntddouxgvpistmg3do</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 2</title>
+    <ns>0</ns>
+    <id>2600</id>
+    <revision>
+      <id>9038</id>
+      <parentid>9032</parentid>
+      <timestamp>2025-07-26T20:04:12Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added pcb model numbers</comment>
+      <origin>9038</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="697" sha1="r5zrcdko2jt0r54ge76629io6w2ys7t" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1395, A1396, A1397}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad2-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+Logic Board Model Numbers
+
+820-3069 
+
+820-3204 &lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>r5zrcdko2jt0r54ge76629io6w2ys7t</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 3</title>
+    <ns>0</ns>
+    <id>2601</id>
+    <revision>
+      <id>9033</id>
+      <parentid>7902</parentid>
+      <timestamp>2025-07-26T19:54:34Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added model code</comment>
+      <origin>9033</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="650" sha1="1mcmffn3kzgzzs216oa216otlkhzrxu" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1416, A1430, A1403}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad3-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>1mcmffn3kzgzzs216oa216otlkhzrxu</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad 4</title>
+    <ns>0</ns>
+    <id>2602</id>
+    <revision>
+      <id>9034</id>
+      <parentid>7903</parentid>
+      <timestamp>2025-07-26T19:55:05Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added model code</comment>
+      <origin>9034</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="650" sha1="aahqio2vprrwn1ne94h0nn9c73dmyvo" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1458, A1459, A1460}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad4-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>aahqio2vprrwn1ne94h0nn9c73dmyvo</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Air 2</title>
+    <ns>0</ns>
+    <id>2603</id>
+    <revision>
+      <id>10681</id>
+      <parentid>9035</parentid>
+      <timestamp>2025-08-25T22:10:59Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>10681</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="706" sha1="dg0na8lp2i0zswwicrnrjpsuhyhq1p2" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1566, A1567}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadair2-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+iPad Air 2 Schematics: https://www.sendspace.com/file/c2p42q&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>dg0na8lp2i0zswwicrnrjpsuhyhq1p2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 11in 2nd Gen</title>
+    <ns>0</ns>
+    <id>2604</id>
+    <revision>
+      <id>9037</id>
+      <parentid>8928</parentid>
+      <timestamp>2025-07-26T19:58:14Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added model code</comment>
+      <origin>9037</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="690" sha1="o9y3ozlk7iqegz20f30fux790c48h85" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A2228, A2068, A2230, A2231}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro11-gen2-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro11 2ndgen.jpg|iPad Pro 11" 2nd Gen USB-C Readings
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>o9y3ozlk7iqegz20f30fux790c48h85</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 11in 3rd Gen</title>
+    <ns>0</ns>
+    <id>2605</id>
+    <revision>
+      <id>13302</id>
+      <parentid>13294</parentid>
+      <timestamp>2025-12-16T21:12:37Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>13302</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="782" sha1="hsgepf4a650gs0ygpsbru32qij1q76h" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro11-2021-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>hsgepf4a650gs0ygpsbru32qij1q76h</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Pro 12.9 6th Gen</title>
+    <ns>0</ns>
+    <id>2606</id>
+    <revision>
+      <id>13305</id>
+      <parentid>8936</parentid>
+      <timestamp>2025-12-16T21:14:06Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>13305</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="852" sha1="0dp5pp41lm4mk8n1jzc7v4o6g6tg05i" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadpro129-2022-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Pro 12.9 Gen 6 - Mechanic Readings.png|iPad Pro 12.9 Gen 6 - Mechanic Tester Known Good Readings
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>0dp5pp41lm4mk8n1jzc7v4o6g6tg05i</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 1</title>
+    <ns>0</ns>
+    <id>2607</id>
+    <revision>
+      <id>9027</id>
+      <parentid>7925</parentid>
+      <timestamp>2025-07-26T19:51:02Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added model code</comment>
+      <origin>9027</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="654" sha1="dtcdsry7tahp6bpm44ot1lp2t39buwj" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1432, A1454, A1455}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadmini1-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>dtcdsry7tahp6bpm44ot1lp2t39buwj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 2</title>
+    <ns>0</ns>
+    <id>2608</id>
+    <revision>
+      <id>9028</id>
+      <parentid>7926</parentid>
+      <timestamp>2025-07-26T19:51:44Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added model code</comment>
+      <origin>9028</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="654" sha1="mzm3qdbqx88d5l8xbalkdevxk8ax5yg" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1489, A1490, A1491}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadmini2-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>mzm3qdbqx88d5l8xbalkdevxk8ax5yg</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 3</title>
+    <ns>0</ns>
+    <id>2609</id>
+    <revision>
+      <id>9029</id>
+      <parentid>7927</parentid>
+      <timestamp>2025-07-26T19:52:26Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added model code</comment>
+      <origin>9029</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="656" sha1="iepxiaf224gefq47x0sd551bbs5pv63" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1599, A1600, A1601}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadmini3-1-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>iepxiaf224gefq47x0sd551bbs5pv63</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 4</title>
+    <ns>0</ns>
+    <id>2610</id>
+    <revision>
+      <id>13491</id>
+      <parentid>9030</parentid>
+      <timestamp>2026-01-01T18:22:55Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>13491</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="652" sha1="burhduyr3f9sd2la6n6i5vkx7rjvyu5" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A1538, A1550}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadmini4-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Mini 4 Wifi PCB.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>burhduyr3f9sd2la6n6i5vkx7rjvyu5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 5</title>
+    <ns>0</ns>
+    <id>2611</id>
+    <revision>
+      <id>13489</id>
+      <parentid>9031</parentid>
+      <timestamp>2026-01-01T18:21:00Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>13489</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="666" sha1="49hjdddsfy0o7i7zzxpv7o9bsq004ch" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+|Has code name=A2133, A2124, A2125, A2126}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipadmini5-768x768.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Mini 5 Wifi PCB.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>49hjdddsfy0o7i7zzxpv7o9bsq004ch</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Mini 7</title>
+    <ns>0</ns>
+    <id>3423</id>
+    <revision>
+      <id>13471</id>
+      <parentid>6200</parentid>
+      <timestamp>2026-01-01T17:38:00Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>13471</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="684" sha1="cswj62jihaywzw0lik44uxj1nb7qi81" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Tablet
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ipad mini 7.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPad Mini 7 - Mechanic Reader .png|iPad Mini 7 WiFi/Cellular Model - Known Good Mechanic Reader Values
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>cswj62jihaywzw0lik44uxj1nb7qi81</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPad Air 6</title>
+    <ns>0</ns>
+    <id>9163</id>
+    <revision>
+      <id>13310</id>
+      <parentid>13308</parentid>
+      <timestamp>2025-12-16T21:17:59Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>13310</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="670" sha1="qj01yxhe1rpmhty08dllojy4o8qk1d7" xml:space="preserve">{{stub}}
+{{Device page
+|Manufacturer=Apple|Device type=Tablet|Device release date=15/05/2024|Has code name=A2902, A2903, A2904}}
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:A2904.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+CD3217 Know good ROM dump: https://www.sendspace.com/filegroup/o50KR%2FmFSzssNPV4%2FfMXR%2FabYypKCONhcqYX3llc5ZpMEjLjsYg%2FIrgZTsYR3WPismwz23kyDF0O7ZcGCVfnDg</text>
+      <sha1>qj01yxhe1rpmhty08dllojy4o8qk1d7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Device page</title>
+    <ns>10</ns>
+    <id>21</id>
+    <revision>
+      <id>14261</id>
+      <parentid>12184</parentid>
+      <timestamp>2026-09-22T22:53:51Z</timestamp>
+      <contributor>
+        <username>ContentBot</username>
+        <id>7210</id>
+      </contributor>
+      <comment>Published from content/templates/pages/DevicePage.wiki</comment>
+      <origin>14261</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1220" sha1="qw937tvarezadpkw9nat0fpyglckqe5" xml:space="preserve">&lt;noinclude&gt;
+{{#template_params:Has code name (property=Has code name)|Manufacturer (property=Manufacturer)|Device release date (property=Inception)|Device type (property=Device type)}}
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class="infobox"
+! class="infobox-heading" colspan="2" |&lt;span&gt;[[Device::{{PAGENAME}}]]&lt;/span&gt;
+|-
+! Manufacturer
+| [[:Category:{{{Manufacturer|}}} {{{Device type|}}}s|{{{Manufacturer|}}}]]
+|-
+! Code name
+| {{{Has code name|}}}
+|-
+! Release date
+| {{{Device release date|}}}
+|-
+! Device type
+| [[Device type::{{{Device type|}}}]]
+|-
+|}
+[[Category:Device]]
+{{#if:{{{Manufacturer|}}}
+|[[Category:{{{Manufacturer|}}}]]
+{{#set:Manufacturer={{{Manufacturer|}}}}}
+{{#if:{{{Device type|}}}
+|[[Category:{{{Manufacturer|}}} {{{Device type|}}}s]]
+}}
+}}
+
+{{#if:{{{Device type|}}}
+|[[Category:{{{Device type|}}}s]]
+}}
+
+
+&lt;!-- SEO description --&gt;
+{{#seo:description=Repair guides, known faults and replacement parts for the {{#if:{{{Manufacturer|}}}|{{{Manufacturer}}}&amp;#32;}}{{PAGENAME}}{{#if:{{{Device type|}}}|&amp;#32;{{{Device type}}}}}.}}
+&lt;/includeonly&gt;
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"Manufacturer": {},
+		"Device release date": {},
+		"Device type": {},
+		"Has code name": {}
+	}
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>qw937tvarezadpkw9nat0fpyglckqe5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Stub</title>
+    <ns>10</ns>
+    <id>50</id>
+    <revision>
+      <id>14259</id>
+      <parentid>1558</parentid>
+      <timestamp>2026-09-22T22:53:44Z</timestamp>
+      <contributor>
+        <username>ContentBot</username>
+        <id>7210</id>
+      </contributor>
+      <comment>Published from content/templates/Stub.wiki</comment>
+      <origin>14259</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="248" sha1="37n559ti43kdmbfrb7xbst2aj4hcg8s" xml:space="preserve">&lt;div class="stub-notice"&gt;This article is a [[:Category:Stubs|stub]]. You can help {{SITENAME}} grow by {{editlink|{{PAGENAME}}|expanding it}}&lt;/div&gt;&lt;includeonly&gt;[[Category:Stubs]]&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting_templates]]&lt;/noinclude&gt;</text>
+      <sha1>37n559ti43kdmbfrb7xbst2aj4hcg8s</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Editlink</title>
+    <ns>10</ns>
+    <id>53</id>
+    <revision>
+      <id>93</id>
+      <timestamp>2023-09-17T18:56:31Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with "&lt;includeonly&gt;&lt;span class="plainlinks"&gt;[{{fullurl:{{FULLPAGENAME:{{{1|}}} }}|action=edit}} {{#if:{{{2|}}}|{{{2}}}|{{{1}}} }}]&lt;/span&gt;&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting templates]]&lt;/noinclude&gt;"</comment>
+      <origin>93</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="201" sha1="a2ad4llljvcynrwh32savtyd1jk0nwj" xml:space="preserve">&lt;includeonly&gt;&lt;span class="plainlinks"&gt;[{{fullurl:{{FULLPAGENAME:{{{1|}}} }}|action=edit}} {{#if:{{{2|}}}|{{{2}}}|{{{1}}} }}]&lt;/span&gt;&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting templates]]&lt;/noinclude&gt;</text>
+      <sha1>a2ad4llljvcynrwh32savtyd1jk0nwj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:List Guides</title>
+    <ns>10</ns>
+    <id>830</id>
+    <revision>
+      <id>5880</id>
+      <parentid>5879</parentid>
+      <timestamp>2025-03-12T20:26:45Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <minor/>
+      <comment>Protected "[[Template:List Guides]]": Site template  ([Edit=Allow only administrators] (indefinite) [Move=Allow only administrators] (indefinite))</comment>
+      <origin>5879</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="583" sha1="8jn7o796j6473w4j1jhhnpu4kle0m2i" xml:space="preserve">===Explanatory Guides===
+{{#ask:
+  [[Category:Explanatory guide]]
+  [[Device::{{PAGENAME}}]]
+  |?Explanatory Guide Type=Type
+  |?Repair Guide difficulty=Difficulty
+  |format=table
+}}
+===Repair Guides===
+{{#ask:
+  [[Category:Repair guide]]
+  [[Device::{{PAGENAME}}]]
+  |?Affects part
+  |?Repair Guide type=Type
+  |?Repair Guide difficulty=Difficulty
+  |format=table
+}}
+===Create a Guide===
+{{#tag:inputbox |
+type=create
+width=30
+break=no
+buttonlabel=Create Guide
+inline=true
+editintro=RepairWiki:RepairGuideHelp
+useve=true
+default={{PAGENAME}}
+preload=Template:Repair Guide/Example
+}}</text>
+      <sha1>8jn7o796j6473w4j1jhhnpu4kle0m2i</sha1>
+    </revision>
+  </page>
+</mediawiki>

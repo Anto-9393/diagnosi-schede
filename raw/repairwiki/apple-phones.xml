@@ -1,0 +1,2959 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Repair Wiki</sitename>
+    <dbname>wiki</dbname>
+    <base>https://repair.wiki/w/Main_Page</base>
+    <generator>MediaWiki 1.43.11</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">RepairWiki</namespace>
+      <namespace key="5" case="first-letter">RepairWiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+      <namespace key="112" case="first-letter">smw/schema</namespace>
+      <namespace key="113" case="first-letter">smw/schema talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>How to Troubleshoot And Fix iPhone Random Restarts Using Panic Logs</title>
+    <ns>0</ns>
+    <id>238</id>
+    <revision>
+      <id>14304</id>
+      <parentid>13741</parentid>
+      <timestamp>2026-11-07T21:10:35Z</timestamp>
+      <contributor>
+        <username>Auto64</username>
+        <id>2038</id>
+      </contributor>
+      <minor/>
+      <comment>Tool database created and added</comment>
+      <origin>14304</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="4702" sha1="ej80xiz5zp1ozivl7ubb76xiebfmpw1" xml:space="preserve">{{Explanatory Guide
+|Device=Apple Phones
+|Type=Troubleshooting/Diagnostics
+|Difficulty=2. Medium
+}}
+==How to Solve Random Restarts==
+Compiled info into a tool at https://panic.dankmeme.trade
+Select iphone model up top first. Keep in mind Hex starts with "0x....." and DEC is decimal, 
+
+===Summary===
+iPhones and iPads will restart randomly or every few minutes depending on various scenarios.
+
+Also, each model tends to have it's unique sensors that must be detected by the Operating System, otherwise, it'll restart.
+
+The first step to troubleshooting this issue is to start by testing the problematic board with all known good parts. Meaning, these are parts that have been previously tested &amp; confirmed not to cause restart issues.
+
+Next, would be to check the panic log to see which sensor is not detected. To find the panic log on the device, go to Settings-&gt; Privacy-&gt; Analytics &amp; Improvements-&gt; Analytics Data-&gt; Scroll down to the files starting with "panic-full..." &amp; click on the most recent dated file.
+
+Then refer to the specific page below for the solution:
+
+===Panic Log Solution List===
+How To Fix an iPhone X That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_X_That_Randomly_Restarts 
+
+How To Fix an iPhone XS and XS Max That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_XS_That_Randomly_Restarts 
+
+How To Fix an iPhone 11 That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_11_That_Randomly_Restarts 
+
+How To Fix an iPhone 11 Pro and 11 Pro Max That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_11_Pro_That_Randomly_Restarts 
+
+How To Fix an iPhone 12 Series That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_12_That_Randomly_Restarts 
+
+How To Fix an iPhone 13 Series That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_13_That_Randomly_Restarts 
+
+How To Fix an iPhone 14 and 14 Plus That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_14_That_Randomly_Restarts 
+
+How To Fix an iPhone 14 Pro and 14 Pro Max That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_14_Pro_That_Randomly_Restarts 
+
+How To Fix an iPhone 15 and 15 Plus That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_15_That_Randomly_Restarts  
+
+How To Fix an IPhone 15 Pro and 15 Pro Max That Randomly Restarts [[How To Fix an iPhone 15 Pro That Randomly Restarts]]  
+
+How To Fix an iPhone SE 2020 That Randomly Restarts https://repair.wiki/w/How_To_Fix_an_iPhone_SE_2020_That_Randomly_Restarts 
+
+How To Fix an iPhone SE 2020 with No Touch and/or 3 Min Restart (Mic1 Problem) https://repair.wiki/w/How_To_Fix_an_iPhone_SE_2020_with_No_Touch_and/or_3_Min_Restart_(Mic1_Problem)
+
+===Common Panic Log Messages===
+Also, here are some common panic log faults, that may help you narrow down the issue:  
+
+'''&lt;u&gt;iPhone 12 series and older:&lt;/u&gt;'''  
+
+mic1 - charging port flex (SE 2020 could be a board issue)| 
+
+mic2 - power button flex 
+
+prs0 - charging port flex 
+
+tg0b - battery, battery connector or battery data line 
+
+ans2 - NAND related  
+
+'''&lt;u&gt;iPhone 13 series:&lt;/u&gt;''' 
+
+0x800 - charging port flex 
+
+0x1000 - proximity flex 
+
+0x1800 - charging port flex &amp; proximity flex cable 
+
+0x400 - sandwich separation  
+
+'''&lt;u&gt;iPhone 14 &amp; iPhone 14 Plus:&lt;/u&gt;''' 
+
+0x400000 - Wireless Charging Flex (Back Glass) 
+
+0x100000 - Charging Port Flex 
+
+0x500000 - Check the taptic engine as well as the charging port flex or a communication problem with the battery 
+
+0x200000 - Proximity Flex Cable
+
+'''&lt;u&gt;iPhone 14 Pro &amp; iPhone 14 Pro Max:&lt;/u&gt;''' 
+
+0x80000 - proximity flex 
+
+0x40000 - charging port flex 
+
+0x10000 - power button flex 
+
+0x20000 - sandwich separation
+
+'''&lt;u&gt;iPhone 15 &amp; iPhone 15 Plus:&lt;/u&gt;'''
+
+0x200000 - Wireless Charging Flex (Back Glass)
+
+0x80000 - Charging Port Flex
+
+0x100000 - Proximity Flex Cable
+
+
+
+'''&lt;u&gt;iPhone 15 Pro &amp; iPhone 15 Pro Max:&lt;/u&gt;'''
+
+0xa1 - battery
+
+0x300000 - Charging Port Flex
+
+0x400000 - Wireless Charging Flex
+
+0x700000 - Charging Port + Wireless Charging Flex
+
+
+'''&lt;u&gt;Universal Codes iPhone 13 up Hex + Decimal:&lt;/u&gt;'''
+
+0x20 (32) — Charging circuit 
+
+0x40 (64) — Gas gauge 
+
+0x41 (65) — Battery data 
+
+0xa1 (161) — Battery sensor 
+
+0xa9 (169) — Battery data variant 
+
+0x400 (1024) — Gyro 
+
+0x800 (2048) — Charge port 
+
+0x1000 (4096) — Proximity 
+
+0x4000 (16384) — Battery sensor 
+
+0x20000 (131072) — Gyro (14 Pro+) 
+
+0x40000 (262144) — Charge port (14 Pro+) 
+
+0x80000 (524288) — Proximity (14–17) 
+
+0x100000 (1048576) — Power button 
+
+0x200000 (2097152) — Front sensor / Wireless coil 
+
+0x300000 (3145728) — USB‑C (Pro models) 
+
+0x400000 (4194304) — Wireless coil 
+
+0x500000 (5242880) — Battery
+
+
+
+[[Category:Apple Phones]]</text>
+      <sha1>ej80xiz5zp1ozivl7ubb76xiebfmpw1</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 11</title>
+    <ns>0</ns>
+    <id>1530</id>
+    <revision>
+      <id>12666</id>
+      <parentid>11406</parentid>
+      <timestamp>2025-11-12T15:19:27Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12666</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="984" sha1="ot2belt9ymstg3afdkjtdqo3ntol10n" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2019-09-20
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone-11-black.jpg|iPhone 11
+File:IFixit iPhone 11 Teardown.jpg|iPhone 11 iFixit teardown.
+File:Ip-11-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:A13 soc dieshot.jpg|Dieshot of A13 SOC on Base Board PCB
+File:I11 schematic.png|Schematic of an iPhone 11
+File:Iphone 11 component location.jpeg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 11 - Known Good Mechanic Lightning Readings.jpg|iPhone 11 - Known Good Mechanic Lightning Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+Schematics for iPhone 11: https://www.sendspace.com/file/9jgrv0</text>
+      <sha1>ot2belt9ymstg3afdkjtdqo3ntol10n</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 11 Pro</title>
+    <ns>0</ns>
+    <id>258</id>
+    <revision>
+      <id>12667</id>
+      <parentid>11407</parentid>
+      <timestamp>2025-11-12T15:19:56Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12667</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="823" sha1="oxjpjmolmjglnauqwownoahk7rix3bz" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+|Device release date=September 20, 2019}}
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone11pro-1-768x768.webp|alt=
+File:Ip-11p-pmax-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 11 Pro - Known Good Mechanic Lightning Readings.jpg|iPhone 11 Pro - Known Good Mechanic Lightning Readings
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+Schematics for iPhone 11 Pro: https://www.sendspace.com/file/nqi4cz</text>
+      <sha1>oxjpjmolmjglnauqwownoahk7rix3bz</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 11 Pro Max</title>
+    <ns>0</ns>
+    <id>1531</id>
+    <revision>
+      <id>12668</id>
+      <parentid>11408</parentid>
+      <timestamp>2025-11-12T15:20:20Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12668</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="739" sha1="hmsp6gz9yn3ecqp30xs2k9vgoqg7ta1" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2019-09-20
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone11pro-768x768.webp|alt=
+File:Ip-11p-pmax-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+
+Schematics for iPhone 11 Pro Max: https://www.sendspace.com/file/nqi4cz</text>
+      <sha1>hmsp6gz9yn3ecqp30xs2k9vgoqg7ta1</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 12</title>
+    <ns>0</ns>
+    <id>1404</id>
+    <revision>
+      <id>12669</id>
+      <parentid>11409</parentid>
+      <timestamp>2025-11-12T15:21:29Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12669</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="974" sha1="fm5xqxzdfalogeintejshpp71wd09wa" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2172, A2402, A2403, A2404
+|Device release date=2020-10-23
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone12-768x768.webp|alt=
+File:Ip-12p-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 12 - Known Good Mechanic Lightning Readings.jpg|iPhone 12 - Known Good Mechanic Lightning Readings
+File:IPhone 12 Charging Port Diode Readings.jpg|iPhone 12 YCS Good Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 12 Self Repair Store
+
+'''Repair Manual ID: RBQEVH'''
+
+Schematics for iPhone 12: https://www.sendspace.com/file/zaxilx</text>
+      <sha1>fm5xqxzdfalogeintejshpp71wd09wa</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 12 Mini</title>
+    <ns>0</ns>
+    <id>1534</id>
+    <revision>
+      <id>12670</id>
+      <parentid>8174</parentid>
+      <timestamp>2025-11-12T15:22:19Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12670</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="730" sha1="jq2kagk92lv3nqugz929marnr0reds7" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2020-10-23
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone12mini-768x768.webp|alt=
+File:Ip-12mini-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 12 Mini Self Repair Store
+
+'''Repair Manual ID: VXUZTC'''</text>
+      <sha1>jq2kagk92lv3nqugz929marnr0reds7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 12 Pro</title>
+    <ns>0</ns>
+    <id>1532</id>
+    <revision>
+      <id>12671</id>
+      <parentid>11410</parentid>
+      <timestamp>2025-11-12T15:22:42Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12671</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="794" sha1="1qmhogkp8xrvq33x4hdx1gb9ejxkvjc" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2020-10-23
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone12pro-800x800.webp|alt=
+File:Ip-12p-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 12 Pro Self Repair Store
+
+'''Repair Manual ID: FWRUJK'''
+
+Schematics for iPhone 12 Pro: https://www.sendspace.com/file/zaxilx</text>
+      <sha1>1qmhogkp8xrvq33x4hdx1gb9ejxkvjc</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 12 Pro Max</title>
+    <ns>0</ns>
+    <id>1533</id>
+    <revision>
+      <id>12672</id>
+      <parentid>11411</parentid>
+      <timestamp>2025-11-12T15:23:56Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12672</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="892" sha1="s23zyc2poh0cuxl12puh8y3u3orvgix" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2020-10-23
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone12pro-800x800.webp|alt=
+File:Ip-12pm-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 12 Pro Max - Known Good Mechanic Lightning Readings.jpg|iPhone 12 Pro Max - Known Good Mechanic Lightning Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 12 Pro Max Self Repair Store
+
+'''Repair Manual ID: TAGYWX'''
+
+Schematics for iPhone 12 Pro Max: https://www.sendspace.com/file/2dj4lk</text>
+      <sha1>s23zyc2poh0cuxl12puh8y3u3orvgix</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 13</title>
+    <ns>0</ns>
+    <id>1614</id>
+    <revision>
+      <id>12673</id>
+      <parentid>10368</parentid>
+      <timestamp>2025-11-12T15:25:37Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12673</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="842" sha1="lphtlqqmjwtpt8fdkknx1rz877j32f7" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone13-800x800.webp|alt=
+File:Ip-13series-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 13 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 13 - Known Good Mechanic Lightning Readings.jpg|iPhone 13 - Known Good Mechanic Lightning Readings
+File:IPhone 13 Diode Readings.jpg|iPhone 13 - Known Good YCS Lightning Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 13 Self Repair Store
+
+'''Repair Manual ID: WLBXAK'''</text>
+      <sha1>lphtlqqmjwtpt8fdkknx1rz877j32f7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 13 Mini</title>
+    <ns>0</ns>
+    <id>1613</id>
+    <revision>
+      <id>12674</id>
+      <parentid>10369</parentid>
+      <timestamp>2025-11-12T15:26:20Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12674</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="701" sha1="7a6nybc3bijuhdjo9k35w14ku2wzuq6" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonemini-800x800.webp|alt=
+File:Ip-13series-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 13 Mini PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 13 Mini Self Repair Store
+
+'''Repair Manual ID: PMCEGT'''</text>
+      <sha1>7a6nybc3bijuhdjo9k35w14ku2wzuq6</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 13 Pro</title>
+    <ns>0</ns>
+    <id>1615</id>
+    <revision>
+      <id>12675</id>
+      <parentid>10367</parentid>
+      <timestamp>2025-11-12T15:26:59Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12675</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="697" sha1="c7ibige6gh6tllkcd3tfessrvk084qx" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone13-768x768.webp|alt=
+File:Ip-13series-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 13 Pro PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 13 Pro Self Repair Store
+
+'''Repair Manual ID: RENLTC'''</text>
+      <sha1>c7ibige6gh6tllkcd3tfessrvk084qx</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 13 Pro Max</title>
+    <ns>0</ns>
+    <id>1616</id>
+    <revision>
+      <id>12676</id>
+      <parentid>10370</parentid>
+      <timestamp>2025-11-12T15:27:28Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12676</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="953" sha1="kf5cie8ix3j5tpjhd6kli3un9xbwk3q" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone13promax-1-768x768.webp|alt=
+File:Ip-13series-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 13 Pro Max PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:13 pro max charging port diode Final.jpg|iPhone 13 Pro Max Charging port Diode measurements using T824 USB-C / LIGHTNING PORT TAIL INSERTION TESTER. Image provided by A1 Phone Repairs
+File:5G Antenna Diode Readings.jpg|Diode readings for iPhone 13 Pro Max 5G antenna flex.
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 13 Pro Max Self Repair Store
+
+'''Repair Manual ID: EGKCZN'''</text>
+      <sha1>kf5cie8ix3j5tpjhd6kli3un9xbwk3q</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 14</title>
+    <ns>0</ns>
+    <id>704</id>
+    <revision>
+      <id>12677</id>
+      <parentid>8161</parentid>
+      <timestamp>2025-11-12T15:28:37Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12677</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="792" sha1="cq6bic8sug7cezasn3xd6p7938ktzps" xml:space="preserve">{{stub}}
+{{Device page
+|Manufacturer=Apple|Device type=Phone|Device release date=September 7, 2022,}}
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone14-768x768.webp|alt=
+File:Ip-14plus-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 14 Self Repair Store
+
+'''Repair Manual ID: LBWDCA'''
+
+&lt;nowiki&gt;https://support.apple.com/en-us/100308&lt;/nowiki&gt;</text>
+      <sha1>cq6bic8sug7cezasn3xd6p7938ktzps</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 14 Plus</title>
+    <ns>0</ns>
+    <id>1483</id>
+    <revision>
+      <id>14102</id>
+      <parentid>12678</parentid>
+      <timestamp>2026-02-24T08:51:32Z</timestamp>
+      <contributor>
+        <username>VCCBoardRepairs</username>
+        <id>7</id>
+      </contributor>
+      <comment>Added iPhone 14 board id</comment>
+      <origin>14102</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="704" sha1="hru1fhz91nd1943x46qnoo7fpfs7n33" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone14plus-800x800.webp|alt=
+File:Ip-14plus-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 14 and iPhone 14 Plus Board ID Resistor.png|Board ID: iPhone 14 - 1M Ohm, iPhone 14 Plus - 1K Ohm
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>hru1fhz91nd1943x46qnoo7fpfs7n33</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 14 Pro</title>
+    <ns>0</ns>
+    <id>642</id>
+    <revision>
+      <id>12679</id>
+      <parentid>8159</parentid>
+      <timestamp>2025-11-12T15:29:37Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12679</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1805" sha1="7d8r0sfljlg8ryfy8wq98t5ikajwd8q" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2022-09-22
+|Device type=Phone
+}}
+{{stub}}
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone14pro-800x800.webp|alt=
+File:Ip-14pm-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:2025 05 13 18 44 IMG 0758.JPG|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 14 Pro and Pro Max Board ID Resistor.png|iPhone 14 Pro and Pro Max share the same top board, with only 1 resistor being different. This image shows where the Board ID resistor is located &amp; what value it must be so it can be use for both iPhone 14 Pro and iPhone 14 Pro Max. iPhone 14 Pro: 1M Ohm. 14 Pro Max: 1K Ohm
+File:Iphone 14 pro .jpg|alt=|Batery fpc 
+File:2025 05 12 11 48 IMG 0726.jpg|alt=|Charging fpc 
+File:2025 05 14 14 04 IMG 0766.JPG|alt=|Display fpc 
+File:2025 05 14 09 29 IMG 0763.JPG|alt=|Big camera fpc 
+File:2025 05 13 18 39 IMG 0755.JPG|alt=|Compass fpc 
+File:2025 05 13 23 31 IMG 0760.JPG|alt=|Wireless charger and power button fpc 
+File:2025 05 13 18 39 IMG 0754.JPG|alt=|Antenna fpc 
+File:2025 05 13 18 35 IMG 0751.JPG|alt=|Selfie fpc 
+File:2025 05 13 18 33 IMG 0749.JPG|alt=|Flash fpc 
+File:2025 05 13 18 33 IMG 0747.JPG|alt=|Upper antenna fpc 
+File:2025 05 13 18 31 IMG 0746.JPG|alt=|Dot matrix fpc 
+File:2025 05 13 18 30 IMG 0745.JPG|alt=|Radar fpc 
+File:2025 05 13 18 30 IMG 0744.JPG|alt=|Camera fpc 
+File:2025 05 13 18 27 IMG 0742.JPG|alt=|Lower antenna fpc 
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 14 Pro Self Repair Store
+
+'''Repair Manual ID:  CBLXRW'''</text>
+      <sha1>7d8r0sfljlg8ryfy8wq98t5ikajwd8q</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 14 Pro Max</title>
+    <ns>0</ns>
+    <id>1606</id>
+    <revision>
+      <id>12680</id>
+      <parentid>8158</parentid>
+      <timestamp>2025-11-12T15:29:55Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12680</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1099" sha1="lc7slgnvcq0e56lxcfehcv410708yyd" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2894, A2651, A2893, A2895
+|Device release date=2022-09-16
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone14promax-768x768.webp|alt=
+File:Ip-14pm-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 14 Pro and Pro Max Board ID Resistor.png|iPhone 14 Pro and Pro Max share the same top board, with only 1 resistor being different. This image shows where the Board ID resistor is located &amp; what value it must be so it can be use for both iPhone 14 Pro and iPhone 14 Pro Max.
+File:IPhone 14 Pro Max Diode Readings.jpg|iPhone 14 Pro Max Charging Port USB C Readings
+&lt;/gallery&gt;
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+Apple Self Repair Store
+
+'''Repair Manual ID: XGTPKL'''</text>
+      <sha1>lc7slgnvcq0e56lxcfehcv410708yyd</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 15</title>
+    <ns>0</ns>
+    <id>1607</id>
+    <revision>
+      <id>13447</id>
+      <parentid>12681</parentid>
+      <timestamp>2025-12-31T01:35:37Z</timestamp>
+      <contributor>
+        <username>VCCBoardRepairs</username>
+        <id>7</id>
+      </contributor>
+      <comment>added iPhone 15 Repair Manual ID</comment>
+      <origin>13447</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="712" sha1="gajtk03gxfc126s0ksq3gpcodufw204" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A3090, A2846, A3089, A3092
+|Device release date=2023-09-22
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone15-768x768.webp|alt=
+File:Ip-15plus-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 15 PCB 2.jpg|alt=
+File:Iphone 15 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 15 Board ID.png|iPhone 15 Board ID is 1M Ohm for R0812
+File:Ip15.jpg|iPhone 15 Mechanic USB-C readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+iPhone 15 Self Service Repair Manual ID: '''QNCHKL'''</text>
+      <sha1>gajtk03gxfc126s0ksq3gpcodufw204</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 15 Plus</title>
+    <ns>0</ns>
+    <id>1608</id>
+    <revision>
+      <id>12682</id>
+      <parentid>8156</parentid>
+      <timestamp>2025-11-12T15:32:07Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12682</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="816" sha1="9jqix1beyf4sg52tsjfsym37cs09w84" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A3094, A2847, A3093, A3096
+|Device release date=2023-09-22
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone15-768x768.webp|alt=
+File:Ip-15plus-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 15 Board ID.png|iPhone 15 Plus Board ID is 1K Ohm for R0812
+&lt;/gallery&gt;[[File:IPhone15Plus.jpg|thumb|iPhone 15 Plus Known Good Mechanic USB C Readings]]
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>9jqix1beyf4sg52tsjfsym37cs09w84</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 15 Pro</title>
+    <ns>0</ns>
+    <id>623</id>
+    <revision>
+      <id>12683</id>
+      <parentid>8155</parentid>
+      <timestamp>2025-11-12T15:32:33Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12683</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="981" sha1="s9j1yotncm39sn0d68rmvqbv25htzk4" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=D83	Vantage
+|Device type=Phone
+|Device release date=Friday, September 22}}
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone15pro-800x800.webp|alt=
+File:Ip-15p-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:15 Pro Board ID.png|iPhone 15 Pro &amp; 15 Pro Max - Board ID Resistor is R0812. iPhone 15 Pro: 1M Ohm Resistor.  iPhone 15 Pro Max: 1K Ohm Resistor
+File:IPhone 15 Pro - USB Port Readings.png|iPhone 15 Pro - USB Port Readings through Mechanic T-824 Reader
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+
+Apple Self Service iPhone 15 Pro
+
+Repair Manual ID: '''VRGJFQ'''</text>
+      <sha1>s9j1yotncm39sn0d68rmvqbv25htzk4</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 15 Pro Max</title>
+    <ns>0</ns>
+    <id>1609</id>
+    <revision>
+      <id>12684</id>
+      <parentid>10347</parentid>
+      <timestamp>2025-11-12T15:33:01Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12684</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1137" sha1="to73k1nqd3u7mhd0zkvtvjh7x4hagqa" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2849, A3105, A3106, A3108
+|Device release date=2023-09-22
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone15promax-768x768.webp|alt=
+File:Ip-15p-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 15 Pro Max PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone 15pm charging port diode.jpg|Iphone 15 pro max charging port diode measurements using MECHANIC - T824 USB-C / LIGHTNING PORT TAIL INSERTION TESTER. Provided by A1 Phone Repairs
+File:15 Pro Board ID.png|iPhone 15 Pro &amp; 15 Pro Max - Board ID Resistor is R0812. iPhone 15 Pro: 1M Ohm Resistor. iPhone 15 Pro Max: 1K Ohm Resistor
+File:0001.jpg|iPhone 15 Pro Max OLED FPC Diode Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+Apple Self Service iPhone 15 Pro Max
+
+Repair Manual ID: '''AKBXYR'''</text>
+      <sha1>to73k1nqd3u7mhd0zkvtvjh7x4hagqa</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 16</title>
+    <ns>0</ns>
+    <id>2420</id>
+    <revision>
+      <id>12685</id>
+      <parentid>8559</parentid>
+      <timestamp>2025-11-12T15:34:09Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12685</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="700" sha1="5um6atsb41irr9coytdr4aafi9m8fh7" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone-16.webp|alt=
+File:Ip-16plus-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;Apple Self Service iPhone 16
+
+Repair Manual ID: '''GKPFXT'''</text>
+      <sha1>5um6atsb41irr9coytdr4aafi9m8fh7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 16 Plus</title>
+    <ns>0</ns>
+    <id>2421</id>
+    <revision>
+      <id>12686</id>
+      <parentid>8560</parentid>
+      <timestamp>2025-11-12T15:34:41Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12686</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="710" sha1="o9z47k6xirfhf4yqae3pbpsa64al7l0" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone-16-plus.webp|alt=
+File:Ip-16plus-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;Apple Self Service iPhone 16 Plus
+
+Repair Manual ID: '''HVRCBL'''</text>
+      <sha1>o9z47k6xirfhf4yqae3pbpsa64al7l0</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 16 Pro</title>
+    <ns>0</ns>
+    <id>2422</id>
+    <revision>
+      <id>8561</id>
+      <parentid>5695</parentid>
+      <timestamp>2025-07-06T21:47:22Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>8561</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1212" sha1="fcst9iik6ewnoaj09o9fvaoyzu7vxwc" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone-16-pro.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IP16PRO FPC 11.jpg|alt=
+File:IP16PRO FPC 4.jpg|alt=
+File:IP16PRO ChargingPort FPC.jpg|alt=
+File:IP16PRO FPC 3.jpg|alt=
+File:IP16PRO Battery FPC.jpg|alt=
+File:IP16PRO FPC 9.jpg|alt=
+File:IP16PRO FPC 7.jpg|alt=
+File:IP16PRO BackCover WirelessCharging FPC.jpg|alt=
+File:IP16PRO Antenna FPC.jpg|alt=
+File:IP16PRO FPC 9.png|alt=
+File:IP16PRO FPC 10.png|alt=
+File:IP16PRO FPC 7.png|alt=
+File:IP16PRO FPC 8.png|alt=
+File:IP16PRO FPC 5.png|alt=
+File:IP16PRO FPC 2.png|alt=
+File:IP16PRO FPC 1.png|alt=
+File:IP16PROProx ALS FPC.png|alt=
+File:IP16PRO Antenna FPC.png|alt=
+File:IP16PRO Display FPC.png|alt=
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;Apple Self Service iPhone 16 Pro
+
+Repair Manual ID: '''CPWJQA'''</text>
+      <sha1>fcst9iik6ewnoaj09o9fvaoyzu7vxwc</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 16 Pro Max</title>
+    <ns>0</ns>
+    <id>2423</id>
+    <revision>
+      <id>8562</id>
+      <parentid>6625</parentid>
+      <timestamp>2025-07-06T21:47:54Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>8562</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="704" sha1="99q9oqhpymhtl8eprka5o406gttmr3h" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone-16-pro-max.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:16pm.jpg|iPhone 16 Pro Max Mechanic USB-C readings
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;Apple Self Service iPhone 16 Pro Max
+
+Repair Manual ID: '''DRXTNU'''</text>
+      <sha1>99q9oqhpymhtl8eprka5o406gttmr3h</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 16e</title>
+    <ns>0</ns>
+    <id>3372</id>
+    <revision>
+      <id>14289</id>
+      <parentid>12687</parentid>
+      <timestamp>2026-10-13T08:00:56Z</timestamp>
+      <contributor>
+        <username>Shoppingbusiness40</username>
+        <id>7267</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>14289</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="828" sha1="2dgmy7evgn34rcp73zcknjzexjecvsk" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone-16e.webp|alt=
+File:Ip-16e-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Motherboard component notes .png|motherboard with different component names 
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+
+Apple Self Service iPhone 16e
+
+Repair Manual ID: CJBKQD
+
+Schematics: https://www.sendspace.com/filegroup/C8AtwJ9f3dCFgj7eTSQq4d7omXXiAGeY&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>2dgmy7evgn34rcp73zcknjzexjecvsk</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 17</title>
+    <ns>0</ns>
+    <id>7789</id>
+    <revision>
+      <id>12688</id>
+      <parentid>11957</parentid>
+      <timestamp>2025-11-12T15:36:36Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12688</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="598" sha1="6jw2tp4kuyt0l9luv3cmouiplr07ta7" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2025-09-19
+|Device type=Phone
+|Has code name=A3520, A3258, A3519}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17.webp|alt=
+File:Ip-17-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone 17 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+Apple Self Service iPhone 17 
+
+Repair Manual ID: KFSVGE</text>
+      <sha1>6jw2tp4kuyt0l9luv3cmouiplr07ta7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 17 Air</title>
+    <ns>0</ns>
+    <id>7790</id>
+    <revision>
+      <id>12689</id>
+      <parentid>11958</parentid>
+      <timestamp>2025-11-12T15:37:05Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12689</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1061" sha1="a65n2h9k25rdj274eg65rsolukag7z2" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2025-09-19
+|Device type=Phone
+|Has code name=A3517, A3260, A3518}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17 Air.png|alt=
+File:Iphone-air-front-device.png|alt=
+File:Iphone-air-rear-device.png|alt=
+File:Iphone-air-rear-opened-device.png|alt=
+File:Ip-air-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Ip-air-front-board.png|alt=
+File:Ip-air-rear-board.png|alt=
+File:Ip-air-front-cam.png|alt=
+File:Ip-air-rear-cam.png|alt=
+File:IPhone Air PCB.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:Charge-port.png|alt=
+File:Battery-fpc.png|alt=
+File:Display-fpc.png|alt=
+File:Dotprojector-ircamera-fpc.png|alt=
+File:Front-camera.png|alt=
+File:Power-button.png|alt=
+File:Prox-fpc.png|alt=
+File:Rear-camera.png|alt=
+File:Wirelss-flex.png|alt=
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+Apple Self Service iPhone 17 Air
+
+Repair Manual ID: JWAQML</text>
+      <sha1>a65n2h9k25rdj274eg65rsolukag7z2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 17 Pro</title>
+    <ns>0</ns>
+    <id>7791</id>
+    <revision>
+      <id>13380</id>
+      <parentid>13207</parentid>
+      <timestamp>2025-12-22T23:27:15Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>13380</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1241" sha1="skcw0cbkm36sgrc8hewukzm2bl9b8dz" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2025-09-19
+|Device type=Phone
+|Has code name=A3523, A3256, A3524}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17 Pro.png|alt=
+File:Ip-17pmax-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone 17 pro pcb.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17 Pro Mechanic Diode-Reading.jpg|alt=
+File:17-pm-CHARGEPORT-fpc-diode.png|alt=
+File:17-pm-DISPLAY-fpc-diode.png|alt=
+File:17-pm-IR-camera-fpc-diode.png|alt=
+File:17-pm-WIRELESSCHARGE-fpc-diode.png|alt=
+File:17-pm-front-prox-fpc-diode.png|alt=
+File:17-pm-batt-fpc-diode.png|alt=
+File:17-pm-FRONT-camera-fpc-diode.png|alt=
+File:17-pm-ultra-wide-camera-fpc-diode.png|alt=
+File:17-pm-telephoto-camera-fpc-diode.png|alt=
+File:17-pm-wide-camera-fpc-diode.png|alt=
+File:17-pm-POWERBTN-fpc-diode.png|alt=
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+Apple Self Service iPhone 17 Pro
+
+Repair Manual ID: SQVBDR&lt;!--
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+--&gt;</text>
+      <sha1>skcw0cbkm36sgrc8hewukzm2bl9b8dz</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 17 Pro Max</title>
+    <ns>0</ns>
+    <id>7792</id>
+    <revision>
+      <id>13208</id>
+      <parentid>12691</parentid>
+      <timestamp>2025-12-12T03:02:17Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>13208</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1247" sha1="tjrnzoyfxqtxry6by241vl7fvvhx1ne" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2025-09-19
+|Device type=Phone
+|Has code name=A3526, A3257, A3525, A3527}}
+{{stub}}
+
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17 Pro Max.png|alt=
+File:Ip-17pmax-fcam.png|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17 Pro Max.jpg|alt=
+File:17 Pro Max PCB 4.jpg|alt=
+File:17 Pro Max PCB 1.jpg|alt=
+File:17 Pro Max PCB 3.jpg|alt=
+File:17 Pro Max PCB 2.jpg|alt=
+File:A19 cpu.jpg|alt=
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 17 Pro Max USBC Diode Reaadings.jpg|alt=
+File:17-pm-CHARGEPORT-fpc-diode.png|alt=
+File:17-pm-DISPLAY-fpc-diode.png|alt=
+File:17-pm-IR-camera-fpc-diode.png|alt=
+File:17-pm-WIRELESSCHARGE-fpc-diode.png|alt=
+File:17-pm-front-prox-fpc-diode.png|alt=
+File:17-pm-batt-fpc-diode.png|alt=
+File:17-pm-FRONT-camera-fpc-diode.png|alt=
+File:17-pm-ultra-wide-camera-fpc-diode.png|alt=
+File:17-pm-telephoto-camera-fpc-diode.png|alt=
+File:17-pm-wide-camera-fpc-diode.png|alt=
+File:17-pm-POWERBTN-fpc-diode.png|alt=
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+Apple Self Service iPhone 17 Pro Max
+
+Repair Manual ID: MBTZJK</text>
+      <sha1>tjrnzoyfxqtxry6by241vl7fvvhx1ne</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 4S</title>
+    <ns>0</ns>
+    <id>1611</id>
+    <revision>
+      <id>11922</id>
+      <parentid>11416</parentid>
+      <timestamp>2025-09-20T21:35:41Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>11922</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="719" sha1="bkb50z7ucyq3xqkrsn9uaeqxc8phw1c" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1431, A1387
+|Device release date=2011-10-14
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone 4s-black.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 4s Schematics: https://www.sendspace.com/file/q19clh</text>
+      <sha1>bkb50z7ucyq3xqkrsn9uaeqxc8phw1c</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 5</title>
+    <ns>0</ns>
+    <id>1630</id>
+    <revision>
+      <id>11417</id>
+      <parentid>8207</parentid>
+      <timestamp>2025-09-07T16:08:46Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* More Information/External Sources */</comment>
+      <origin>11417</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="959" sha1="qtw2011rvneg864k3h2ttj8pove7c8y" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1428, A1429, A1442
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone5-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+'''Notice for all iPhone 5 models:''' Be careful when disconnecting the battery, if you dig in between the connector and shield behind it you can knock off a VERY VERY small resistor, there's many of them and depending on which ones you knock off you can get strange issues like battery percentage misreporting or the phone only working when plugged in.
+{| class="wikitable"
+|Models
+|-
+|A1428
+|-
+|A1429
+|-
+|A1442
+|}
+iPhone 5 Schematics: https://www.sendspace.com/file/oqk540</text>
+      <sha1>qtw2011rvneg864k3h2ttj8pove7c8y</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 6</title>
+    <ns>0</ns>
+    <id>1600</id>
+    <revision>
+      <id>13513</id>
+      <parentid>11418</parentid>
+      <timestamp>2026-01-01T20:52:35Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13513</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="2184" sha1="efb2sbhb0sl6bpltfxinspmycieq138" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1549, A1586, A1589
+|Device release date=2014-09-19
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:111940 SP705-iphone 6-mul.png
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone6-Pcb-front-view-sized.jpg|front side PCB [https://www.eeworldonline.com/teardown-an-oldie-but-still-useful-the-iphone-6/ source]
+File:Iphone6-Pcb-backside-sized.jpg|back side PCB [https://www.eeworldonline.com/teardown-an-oldie-but-still-useful-the-iphone-6/ source]
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:6 LCM J2019 DiodeMode.png|Diode mode for iPhone 6 Display connector. Top Right goes to top edge of the board, under the rear camera.
+File:6 Touch J2401 DiodeMode.png|iPhone 6 Touch connector. Top right goes to top edge of the board.
+File:6 Batt conn diodeMode.jpg|iPhone 6 battery connector. Bottom left goes to the edge of the board, next to the bottom of the battery.
+File:6 DockFlex J1817 DiodeMode.png|iPhone 6 charge port / dockflex connector diode mode readings. Bottom right goes to bottom of the phone, where the loudspeaker is.
+File:HomeButton TouchID J2118.jpg|iPhone 6 home button / TouchID connector. Top right goes to the top of the board, under the rear camera.
+File:6 RearCam J2321 DiodeMode.png|iPhone 6 rear camera connector. Top right goes to the top of the board, under the rear camera.
+File:6 FrontFlex J1111 DiodeMode.png|iPhone 6 front flex connector. Contains front camera, proximity sensor, ambient light sensor, earspeaker. Top right goes to top of the board, under the rear camera.
+File:6 HoldVolFlex J0801 J0802 DiodeMode.png|iPhone 6 Volume, power buttons, ringer switch and flaslight connector. Top left goes to top edge of the board, next to the mute/ringer switch.
+File:IPhone 6.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 6 Schematics: https://www.sendspace.com/file/5k4rim</text>
+      <sha1>efb2sbhb0sl6bpltfxinspmycieq138</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 6 Plus</title>
+    <ns>0</ns>
+    <id>1601</id>
+    <revision>
+      <id>13514</id>
+      <parentid>12039</parentid>
+      <timestamp>2026-01-01T20:52:56Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13514</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1892" sha1="6q4e8n8kaxwtbu3fkt0ohzwvlq4qvr2" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1522, A1524, A1593
+|Device release date=2014-09-19
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone 6 plus-mul.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone 6 plus backside.png|alt=
+File:Iphone 6 plus top side.png|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:6Plus Display connector (J2019).jpg|iPhone 6 Plus display connector. Top right goes to top of the board, under the rear camera.
+File:6 Plus Touch Connector (J2401).jpg|iPhone 6 Plus touch connector. Top right goes to top of the board, under the camera.
+File:Charge port - dockflex Connector (J1817).jpg|iPhone 6 Plus charge port / dock flex connector. Bottom left goes to edge of the board, next to bottom of the battery.
+File:Home button, TouchID Connector (J2118).jpg|iPhone 6 Plus home button connector. Top left corner goes to top right of the board, under the rear camera.
+File:Rear camera Connector (J2321).jpg|iPhone 6 Plus rear camera connector. Top right goes to top of the board, under the rear camera
+File:Front camera, proximity sensor, earspeaker, ambient light sensor connector (J1111).jpg|iPhone 6 Plus front camera, proximity sensor, ambient light sensor, earspeaker connector. Top right goes to top edge of the board, under the rear camera.
+File:Cumulus Diode Values.PNG|Cumulus Diode Values
+File:Meson Diode Values.PNG|Meson Diode Values
+File:Tristar Diode Values.PNG|Tristar Diode Values
+File:IPhone 6.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 6 Plus Schematics: https://www.sendspace.com/file/9mqiqf</text>
+      <sha1>6q4e8n8kaxwtbu3fkt0ohzwvlq4qvr2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 6S</title>
+    <ns>0</ns>
+    <id>1602</id>
+    <revision>
+      <id>13515</id>
+      <parentid>13376</parentid>
+      <timestamp>2026-01-01T20:53:19Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13515</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1376" sha1="iqu8uhgd2c9pw2594i7uffq7zotzzcs" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1633, A1688, A1700
+|Device release date=2015-09-25
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone6s-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 6S Touch and LCD FPC Diode Values - J4200.png|Touch and LCD FPC Diode Values - J4200
+File:IPhone 6S Rear Camera FPC Diode Values -J3200.png|Rear Camera FPC Diode Values -J3200
+File:IPhone 6S Power Button FPC Diode Values -J4700.png|Power Button FPC Diode Values -J4700
+File:IPhone 6S Home Button FPC Diode Values -J4100.PNG|Home Button FPC Diode Values -J4100
+File:IPhone 6S Front Camera FPC Diode Values -J3100.png|Front Camera FPC Diode Values -J3100
+File:IPhone 6S Charging Port FPC Diode Values -J4600.png|Charging Port FPC Diode Values -J4600
+File:IPhone 6S Battery FPC Diode Values -J2400.png|Battery FPC Diode Values -J2400
+File:IPhone 6S.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 6S Schematics: https://www.sendspace.com/file/b82f6a</text>
+      <sha1>iqu8uhgd2c9pw2594i7uffq7zotzzcs</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 6S Plus</title>
+    <ns>0</ns>
+    <id>1603</id>
+    <revision>
+      <id>13516</id>
+      <parentid>11421</parentid>
+      <timestamp>2026-01-01T20:53:40Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13516</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="742" sha1="ikk8kzy63xxbbh4k4lxnoxjdnlhjv5a" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1634, A1687, A1699
+|Device release date=2015-09-25
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone6splus-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 6S.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 6S Plus Schematics: https://www.sendspace.com/file/ewx29f</text>
+      <sha1>ikk8kzy63xxbbh4k4lxnoxjdnlhjv5a</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 7</title>
+    <ns>0</ns>
+    <id>782</id>
+    <revision>
+      <id>13511</id>
+      <parentid>12035</parentid>
+      <timestamp>2026-01-01T20:51:47Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13511</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1688" sha1="daf2l3fi9m5rv9zzjcpj6crlyewk6bf" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+|Device release date=September 16, 2016}}
+{{stub}}
+
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone7-800x800.webp|alt=
+&lt;/gallery&gt;
+ 
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+File:Home Button Voltages.jpg|iPhone 7 Home Button Traces
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 7 - Known Good Mechanic USB C Readings.jpg|iPhone 7 - Known Good Mechanic Lightning Readings
+File:Homer IC Diode Values Intel.PNG|Homer IC Diode Values Intel
+File:Audio IC Diode Values Intel.PNG|Audio IC Diode Values Intel
+File:PMU diode value Qualcomm.PNG|PMU diode value Qualcomm
+File:IPhone 7 BaseBand Diode Values Qualcomm.png|BaseBand Diode Values Qualcomm
+File:IPhone 7 Touch And LCD FPC Diode Values - J4502.png|Touch And LCD FPC Diode Values - J4502
+File:IPhone 7 Rear Camera FPC Diode Values - J4501.png|Rear Camera FPC Diode Values
+File:IPhone 7 Power Button FPC Diode Values - J4504.png|Power Button FPC Diode Values - J4504
+File:IPhone 7 Front Camera FPC Diode Values - J4503.png|Front Camera FPC Diode Values - J4503
+File:IPhone 7 Home Button FPC Diode Values - J3801.png|Home Button FPC Diode Values - J3801
+File:IPhone 7 Battery FPC Diode Values - J2201.png|Battery FPC Diode Values - J2201
+File:IPhone 7.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 7 Schematics: https://www.sendspace.com/file/iadz0j</text>
+      <sha1>daf2l3fi9m5rv9zzjcpj6crlyewk6bf</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 7 Plus</title>
+    <ns>0</ns>
+    <id>783</id>
+    <revision>
+      <id>13512</id>
+      <parentid>11423</parentid>
+      <timestamp>2026-01-01T20:52:10Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13512</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="719" sha1="aak4cp73e1izgf4z10or68z1t0mxdeu" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+|Device release date=September 16, 2016}}
+{{stub}}
+== Guides ==
+{{List Guides}}
+
+== Device pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone7plus-800x800.webp|alt=
+&lt;/gallery&gt;
+
+== PCB pictures ==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+== Reference measurements (also schematics if available) ==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 7.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+== More Information/External Sources ==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 7 Plus Schematics: https://www.sendspace.com/file/veet8p</text>
+      <sha1>aak4cp73e1izgf4z10or68z1t0mxdeu</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 8</title>
+    <ns>0</ns>
+    <id>1475</id>
+    <revision>
+      <id>13509</id>
+      <parentid>8199</parentid>
+      <timestamp>2026-01-01T20:51:01Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13509</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="712" sha1="1i4a8xiqzzgrs8j2mx6pwmnqog0j4zk" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone8-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 8 - Known Good Mechanic Lightning Readings.jpg|iPhone 8 - Known Good Mechanic Lightning Readings
+File:Iphone 8.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>1i4a8xiqzzgrs8j2mx6pwmnqog0j4zk</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone 8 Plus</title>
+    <ns>0</ns>
+    <id>1476</id>
+    <revision>
+      <id>13510</id>
+      <parentid>11424</parentid>
+      <timestamp>2026-01-01T20:51:27Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13510</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="787" sha1="9gx15dykwne8nwbn0csoyk9f087bjmt" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphone8-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 8 Plus - Known Good Mechanic Lightning Readings.jpg|iPhone 8 Plus - Known Good Mechanic Lightning Readings
+File:Iphone 8.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone 8 Plus Schematics: https://www.sendspace.com/file/9nhtdp</text>
+      <sha1>9gx15dykwne8nwbn0csoyk9f087bjmt</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone SE (2016)</title>
+    <ns>0</ns>
+    <id>1604</id>
+    <revision>
+      <id>13508</id>
+      <parentid>11425</parentid>
+      <timestamp>2026-01-01T20:50:34Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* Reference measurements (also schematics if available) */ Home Button Diode Values</comment>
+      <origin>13508</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="733" sha1="0j2ti6aoj7esnxo3rr3ys9xx8tbvflx" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1662, A1723, A1724
+|Device release date=2016-03-31
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonese-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Example pcb pictures.jpg
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone 5s.jpg|Home Button Diode Values
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone SE Schematics: https://www.sendspace.com/file/akdosd</text>
+      <sha1>0j2ti6aoj7esnxo3rr3ys9xx8tbvflx</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone SE (2022)</title>
+    <ns>0</ns>
+    <id>1610</id>
+    <revision>
+      <id>11443</id>
+      <parentid>10352</parentid>
+      <timestamp>2025-09-08T12:37:26Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>added iPhone SE 2022 lighting port readings</comment>
+      <origin>11443</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="801" sha1="ft72iqnlejzbn8zjqs01jrul9y2pc7s" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2783, A2595, A2785, A2782, A2784
+|Device release date=2022-03-18
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonese2022-800x800.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone SE 2022 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone SE 2022 lighting port readings.jpeg|iPhone SE 2022 lighting port readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone SE 2022 Self Repair Store
+
+'''Repair Manual ID: GPCNKY'''</text>
+      <sha1>ft72iqnlejzbn8zjqs01jrul9y2pc7s</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone SE 2020</title>
+    <ns>0</ns>
+    <id>1403</id>
+    <revision>
+      <id>10354</id>
+      <parentid>8203</parentid>
+      <timestamp>2025-08-17T17:26:45Z</timestamp>
+      <contributor>
+        <username>Tiago199988</username>
+        <id>73</id>
+      </contributor>
+      <comment>/* PCB pictures */</comment>
+      <origin>10354</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="673" sha1="fxwzoar5ny6ppnd1hlt197xaj3cn1j2" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A2275, A2296, A2298
+|Device release date=2020-04-24
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonese2020-768x768.webp|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone SE 2020 PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!</text>
+      <sha1>fxwzoar5ny6ppnd1hlt197xaj3cn1j2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone X</title>
+    <ns>0</ns>
+    <id>1527</id>
+    <revision>
+      <id>12663</id>
+      <parentid>12019</parentid>
+      <timestamp>2025-11-12T15:17:28Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12663</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="847" sha1="jrp00sycfyvbvp9catz4vvsqeal0cnq" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2017-11-03
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPHONE-X.png|alt=
+File:X-xsm-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone X Intel PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone X Intel Top Board Only Bypass DFU.png|iPhone X - Intel - How to bypass DFU Mode when it's Top Board Only
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+'''iPhone X Identification information Board Numbers'''
+
+820-00863 X Qualcomm upper layer
+
+820-00864 X Qualcomm lower layer
+
+820-00863 X Intel upper layer
+
+820-00869 X Intel lower layer
+
+iPhone X Schematics: https://www.sendspace.com/filegroup/ZTATtwGMmA7fDQEguz75yw</text>
+      <sha1>jrp00sycfyvbvp9catz4vvsqeal0cnq</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone XR</title>
+    <ns>0</ns>
+    <id>1605</id>
+    <revision>
+      <id>12664</id>
+      <parentid>11415</parentid>
+      <timestamp>2025-11-12T15:18:14Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12664</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="760" sha1="7hm4j9czqn94qxfc6mv5610pql7ni2u" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Has code name=A1984, A2105, A2106, A2107, A2108
+|Device release date=2018-10-26
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonexr-800x800.webp|alt=
+File:Xr-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone XR PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone XR Power Button.jpg|alt=
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone XR Schematics: https://www.sendspace.com/file/u89oen</text>
+      <sha1>7hm4j9czqn94qxfc6mv5610pql7ni2u</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone XS</title>
+    <ns>0</ns>
+    <id>1528</id>
+    <revision>
+      <id>12654</id>
+      <parentid>11426</parentid>
+      <timestamp>2025-11-10T14:41:12Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12654</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="821" sha1="3aa2byt1iop4kk510lllijlgnv7l9be" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2018-09-21
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonexs-800x800.webp|alt=
+File:X-xsm-fcam.png|iPhone XS - TrueDepth Camera Assembly
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone XS PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone XS - Known Good Mechanic Lightning Readings.jpg|iPhone XS - Known Good Mechanic Lightning Readings
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone XS Schematics: https://www.sendspace.com/file/ynjkpn</text>
+      <sha1>3aa2byt1iop4kk510lllijlgnv7l9be</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>IPhone XS Max</title>
+    <ns>0</ns>
+    <id>1529</id>
+    <revision>
+      <id>12665</id>
+      <parentid>11427</parentid>
+      <timestamp>2025-11-12T15:18:41Z</timestamp>
+      <contributor>
+        <username>IamMyron07</username>
+        <id>220</id>
+      </contributor>
+      <comment>/* Device pictures */</comment>
+      <origin>12665</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="726" sha1="29kn37boedxvdfcz7ggktwrvn5cksj3" xml:space="preserve">{{Device page
+|Manufacturer=Apple
+|Device release date=2018-09-21
+|Device type=Phone
+}}
+{{stub}}
+
+
+==Guides==
+{{List Guides}}
+
+==Device pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:Iphonexsmax-800x800.webp|alt=
+File:X-xsm-fcam.png|alt=
+&lt;/gallery&gt;
+
+==PCB pictures==
+&lt;gallery showthumbnails="1"&gt;
+File:IPhone XS Max PCB.jpg|alt=
+&lt;/gallery&gt;
+
+==Reference measurements (also schematics if available)==
+&lt;gallery showthumbnails="1"&gt;
+File:Example measurement pictures.jpg
+&lt;/gallery&gt;
+
+==More Information/External Sources==
+You can manually link to external sources for additional information that might not fit here but are useful such as BIOS image dumps, firmware, etc!
+
+iPhone XS Max Schematics: https://www.sendspace.com/file/casqah</text>
+      <sha1>29kn37boedxvdfcz7ggktwrvn5cksj3</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Ru Как диагнозировать и чинить случайные перезапуски Iphone используя Panic Logs</title>
+    <ns>0</ns>
+    <id>5622</id>
+    <revision>
+      <id>10402</id>
+      <parentid>8899</parentid>
+      <timestamp>2025-08-20T00:50:08Z</timestamp>
+      <contributor>
+        <username>Dolbaeb</username>
+        <id>2932</id>
+      </contributor>
+      <minor/>
+      <comment>Name change sine its actually ready</comment>
+      <origin>10402</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="7312" sha1="6j4hv3qdx07tpxkej1jbhwi097q64d2" xml:space="preserve">{{DISPLAYTITLE: /RU Как диагнозировать и чинить случайные перезапуски Iphone используя Panic Logs / ENG How to Troubleshoot And Fix iPhone Random Restarts Using Panic Logs}}
+
+{{Explanatory Guide
+|Device=Устройства Apple
+|Type=Починка/Диагностика
+|Difficulty=2. Средняя
+}}
+==Как устранить случайные перезапуски==
+
+===Итог===
+Айфноы и Айпады будут случайно перезапускаться или перезапускаться каждые несколько минут изза самых разных причин.
+
+Также, каждая модель имеет свои уникальыне сенсоры которые должны быть замеченной операциоонной системой, иначе оно будет перезапускаться. 
+
+Первый шаг по устранению данной проблемы это замена тех или иных деталей на заранее проверенные и заведомо рабочие (детали которые были проверены и 100% работают, не заставляют систему перезагружаться).
+
+Далее, надо проверить panic логи и проверить какой сенсор операционная система не видит. Panic логи находятся в Настройки &gt; Конфиденциальность и безопасность &gt; Аналитика и улучшения &gt; Данные аналитики, прокрутите вниз, пока не найдете файлы которые начинаются на "panic-full...", после кликните\нажмите на самый новый по времени файл.
+После использйте следущие страницы внизу для решения именнно для вашего устройства: 
+
+===Лист с решениями Panic логов===
+Как починить iPhone X который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_X_That_Randomly_Restarts 
+
+Как починить iPhone XS и iPhone XS Max который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_XS_That_Randomly_Restarts 
+
+Как починить iPhone 11 который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_11_That_Randomly_Restarts 
+
+Как починить iPhone 11 и iPhone 11 Pro Max который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_11_Pro_That_Randomly_Restarts 
+
+Как починить iPhone 12 который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_12_That_Randomly_Restarts 
+
+Как починить iPhone 13 который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_13_That_Randomly_Restarts 
+
+Как починить iPhone 14 и iPhone 14 Plus который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_14_That_Randomly_Restarts 
+
+Как починить iPhone 14 Pro и iPhone 14 Pro Max который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_14_Pro_That_Randomly_Restarts 
+
+Как починить iPhone 14 и iPhone 14 Plus который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_15_That_Randomly_Restarts  
+
+Как починить iPhone 15 Pro и iPhone 15 Pro Max который случайно перезагружается [[Нету страницы, пока]]  
+
+Как починить iPhone SE 2020 который случайно перезагружается: https://repair.wiki/w/How_To_Fix_an_iPhone_SE_2020_That_Randomly_Restarts 
+
+Как починить iPhone SE 2020 с неотвечающим экраном (при нажатии на экран ничего не происходит, или когда экран работает, но перестает после неопределенного периоды времени) и\или перезапуске каждые 3 минуты (проблема с Mic1): https://repair.wiki/w/How_To_Fix_an_iPhone_SE_2020_with_No_Touch_and/or_3_Min_Restart_(Mic1_Problem)
+
+===Распространенные сообщения Panic Log===
+Также, вот некоторые распространенные сообщения panic log, которые могут помочь в диагностике: 
+'''&lt;u&gt;Серия смартфонов iPhone 12 и старше:&lt;/u&gt;'''  
+
+mic1 - флекс кабель порта зарядки (SE 2020 может быть проблемой платы?)| 
+
+mic2 - флекс кабель кнопки включения 
+
+prs0 - флекс кабель порта зарядки 
+
+tg0b - Батарея, коннектор батареи или поврежденная линия передачи данных о батарее
+
+ans2 - связанно с NAND
+
+'''&lt;u&gt;Серия iPhone 13:&lt;/u&gt;''' 
+
+0x800 - флекс кабель порта зарядки 
+
+0x1000 - флекс кабель ответственный за датчик приближения 
+
+0x1800 - флекс кабель порта зарядки и флекс кабель ответственный за датчик приближения
+
+0x400 - разъединение плат в сэндвиче 
+
+'''&lt;u&gt;iPhone 14 и iPhone 14 Plus:&lt;/u&gt;''' 
+
+0x400000 - Флекс кабель беспроводной зарядки (Заднее Стекло) 
+
+0x100000 - флекс кабель порта зарядки 
+
+0x500000 - Проверьте taptic engine (часть платы отвечающая за вибрацию) а также флекс кабель порта зарядки. Это также может означать проблему передачи данных батареи.
+
+0x200000 - флекс кабель ответственный за датчик приближения
+
+
+
+'''&lt;u&gt;iPhone 14 Pro и iPhone 14 Pro Max:&lt;/u&gt;''' 
+
+0x80000 - флекс кабель ответственный за датчик приближения
+
+0x40000 - флекс кабель порта зарядки 
+
+0x10000 - флекс кабель кнопки включения 
+
+0x20000 - разъединение плат в сэндвиче
+
+'''&lt;u&gt;iPhone 15 и iPhone 15 Plus:&lt;/u&gt;'''
+
+0x200000 - Флекс кабель беспроводной зарядки (Заднее Стекло)
+
+0x80000 -  флекс кабель порта зарядки
+
+0x100000 - флекс кабель ответственный за датчик приближения
+
+
+
+'''&lt;u&gt;iPhone 15 Pro &amp; iPhone 15 Pro Max:&lt;/u&gt;'''
+
+0xa1 - батарея
+
+0x300000 - флекс кабель порта зарядки
+
+0x400000 - Флекс кабель беспроводной зарядки
+
+0x700000 - Порт зарядки + флекс кабель порта зарядки
+
+
+
+[[Category:Apple Phones]]</text>
+      <sha1>6j4hv3qdx07tpxkej1jbhwi097q64d2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Explanatory Guide</title>
+    <ns>10</ns>
+    <id>129</id>
+    <revision>
+      <id>1804</id>
+      <parentid>1296</parentid>
+      <timestamp>2024-01-09T18:11:59Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Add handling for missing device pages</comment>
+      <origin>1804</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="779" sha1="t6t12jac525al0ob6hxwbj4scjxbsij" xml:space="preserve">&lt;noinclude&gt;
+{{#template_params:Type (label=What are you trying to explain?;property=Explanatory Guide Type)|Device (label=Device(s);list;property=Device)|Difficulty (property=Repair Guide difficulty)}}
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class="infobox"
+! class="infobox-heading" colspan="2" |&lt;span style="font-size: larger;"&gt;{{PAGENAME}}&lt;/span&gt;
+|-
+! Type
+| [[Explanatory Guide Type::{{{Type|}}}]]
+|-
+! Device(s)
+| {{#arraymap:{{{Device|}}}|,|x|[[Device::x]]}}
+|-
+! Difficulty
+| {{Repair Guide Difficulty|{{{Difficulty}}}}}
+|-
+|}
+
+[[Repair Guide difficulty::{{{Difficulty|}}}|]]
+
+[[Category:Explanatory guide]]
+
+{{#if: {{{Device|}}} | {{#arraymap: {{{Device}}} |, |@@@@ |[[Category:Explanatory guides for @@@@]] {{#ifexist: @@@@||[[Category:Missing device page]]}} | }} }}
+&lt;/includeonly&gt;</text>
+      <sha1>t6t12jac525al0ob6hxwbj4scjxbsij</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Repair Guide Difficulty</title>
+    <ns>10</ns>
+    <id>513</id>
+    <revision>
+      <id>1129</id>
+      <parentid>1126</parentid>
+      <timestamp>2023-11-12T18:33:25Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <origin>1129</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="192" sha1="ebor4xptaxgw809iru17xssi40ixkle" xml:space="preserve">{{#ifeq:{{{1}}}|1. Easy|◉◌◌◌ Easy|}}{{#ifeq:{{{1}}}|2. Medium|◉◉◌◌ Medium|}}{{#ifeq:{{{1}}}|3. Hard|◉◉◉◌ Hard|}}{{#ifeq:{{{1}}}|4. Specialist|◉◉◉◉ Specialist|}}</text>
+      <sha1>ebor4xptaxgw809iru17xssi40ixkle</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Device page</title>
+    <ns>10</ns>
+    <id>21</id>
+    <revision>
+      <id>14261</id>
+      <parentid>12184</parentid>
+      <timestamp>2026-09-22T22:53:51Z</timestamp>
+      <contributor>
+        <username>ContentBot</username>
+        <id>7210</id>
+      </contributor>
+      <comment>Published from content/templates/pages/DevicePage.wiki</comment>
+      <origin>14261</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1220" sha1="qw937tvarezadpkw9nat0fpyglckqe5" xml:space="preserve">&lt;noinclude&gt;
+{{#template_params:Has code name (property=Has code name)|Manufacturer (property=Manufacturer)|Device release date (property=Inception)|Device type (property=Device type)}}
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class="infobox"
+! class="infobox-heading" colspan="2" |&lt;span&gt;[[Device::{{PAGENAME}}]]&lt;/span&gt;
+|-
+! Manufacturer
+| [[:Category:{{{Manufacturer|}}} {{{Device type|}}}s|{{{Manufacturer|}}}]]
+|-
+! Code name
+| {{{Has code name|}}}
+|-
+! Release date
+| {{{Device release date|}}}
+|-
+! Device type
+| [[Device type::{{{Device type|}}}]]
+|-
+|}
+[[Category:Device]]
+{{#if:{{{Manufacturer|}}}
+|[[Category:{{{Manufacturer|}}}]]
+{{#set:Manufacturer={{{Manufacturer|}}}}}
+{{#if:{{{Device type|}}}
+|[[Category:{{{Manufacturer|}}} {{{Device type|}}}s]]
+}}
+}}
+
+{{#if:{{{Device type|}}}
+|[[Category:{{{Device type|}}}s]]
+}}
+
+
+&lt;!-- SEO description --&gt;
+{{#seo:description=Repair guides, known faults and replacement parts for the {{#if:{{{Manufacturer|}}}|{{{Manufacturer}}}&amp;#32;}}{{PAGENAME}}{{#if:{{{Device type|}}}|&amp;#32;{{{Device type}}}}}.}}
+&lt;/includeonly&gt;
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"Manufacturer": {},
+		"Device release date": {},
+		"Device type": {},
+		"Has code name": {}
+	}
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>qw937tvarezadpkw9nat0fpyglckqe5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Stub</title>
+    <ns>10</ns>
+    <id>50</id>
+    <revision>
+      <id>14259</id>
+      <parentid>1558</parentid>
+      <timestamp>2026-09-22T22:53:44Z</timestamp>
+      <contributor>
+        <username>ContentBot</username>
+        <id>7210</id>
+      </contributor>
+      <comment>Published from content/templates/Stub.wiki</comment>
+      <origin>14259</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="248" sha1="37n559ti43kdmbfrb7xbst2aj4hcg8s" xml:space="preserve">&lt;div class="stub-notice"&gt;This article is a [[:Category:Stubs|stub]]. You can help {{SITENAME}} grow by {{editlink|{{PAGENAME}}|expanding it}}&lt;/div&gt;&lt;includeonly&gt;[[Category:Stubs]]&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting_templates]]&lt;/noinclude&gt;</text>
+      <sha1>37n559ti43kdmbfrb7xbst2aj4hcg8s</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Editlink</title>
+    <ns>10</ns>
+    <id>53</id>
+    <revision>
+      <id>93</id>
+      <timestamp>2023-09-17T18:56:31Z</timestamp>
+      <contributor>
+        <username>Admin</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with "&lt;includeonly&gt;&lt;span class="plainlinks"&gt;[{{fullurl:{{FULLPAGENAME:{{{1|}}} }}|action=edit}} {{#if:{{{2|}}}|{{{2}}}|{{{1}}} }}]&lt;/span&gt;&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting templates]]&lt;/noinclude&gt;"</comment>
+      <origin>93</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="201" sha1="a2ad4llljvcynrwh32savtyd1jk0nwj" xml:space="preserve">&lt;includeonly&gt;&lt;span class="plainlinks"&gt;[{{fullurl:{{FULLPAGENAME:{{{1|}}} }}|action=edit}} {{#if:{{{2|}}}|{{{2}}}|{{{1}}} }}]&lt;/span&gt;&lt;/includeonly&gt;&lt;noinclude&gt;[[Category:Formatting templates]]&lt;/noinclude&gt;</text>
+      <sha1>a2ad4llljvcynrwh32savtyd1jk0nwj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:List Guides</title>
+    <ns>10</ns>
+    <id>830</id>
+    <revision>
+      <id>5880</id>
+      <parentid>5879</parentid>
+      <timestamp>2025-03-12T20:26:45Z</timestamp>
+      <contributor>
+        <username>ASRepairs</username>
+        <id>6</id>
+      </contributor>
+      <minor/>
+      <comment>Protected "[[Template:List Guides]]": Site template  ([Edit=Allow only administrators] (indefinite) [Move=Allow only administrators] (indefinite))</comment>
+      <origin>5879</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="583" sha1="8jn7o796j6473w4j1jhhnpu4kle0m2i" xml:space="preserve">===Explanatory Guides===
+{{#ask:
+  [[Category:Explanatory guide]]
+  [[Device::{{PAGENAME}}]]
+  |?Explanatory Guide Type=Type
+  |?Repair Guide difficulty=Difficulty
+  |format=table
+}}
+===Repair Guides===
+{{#ask:
+  [[Category:Repair guide]]
+  [[Device::{{PAGENAME}}]]
+  |?Affects part
+  |?Repair Guide type=Type
+  |?Repair Guide difficulty=Difficulty
+  |format=table
+}}
+===Create a Guide===
+{{#tag:inputbox |
+type=create
+width=30
+break=no
+buttonlabel=Create Guide
+inline=true
+editintro=RepairWiki:RepairGuideHelp
+useve=true
+default={{PAGENAME}}
+preload=Template:Repair Guide/Example
+}}</text>
+      <sha1>8jn7o796j6473w4j1jhhnpu4kle0m2i</sha1>
+    </revision>
+  </page>
+</mediawiki>
