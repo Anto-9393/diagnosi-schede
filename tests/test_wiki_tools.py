@@ -31,3 +31,12 @@ def test_cerca_ordina_per_pertinenza(tmp_path):
     risultato = cerca("cd3217 dead battery", wiki_dir=_wiki(tmp_path))
     assert risultato.splitlines()[0].startswith("- wiki/componenti/cd3217.md")
     assert "tristar" not in risultato
+
+
+def test_indice_compatto_toglie_dispositivi_e_fonti(tmp_path):
+    (tmp_path / "index.md").write_text(
+        "# Indice\n\n## Componenti\n\n- [CD3217](componenti/cd3217.md)\n\n## Dispositivi\n\n- [iPad Air 4](d.md)\n\n"
+        "## Fonti\n\n- [Guida](f.md)\n\n## Sintomi\n\n- [Non carica](s.md)\n", encoding="utf-8")
+    c = indice(tmp_path, compatto=True)
+    assert "CD3217" in c and "Non carica" in c
+    assert "iPad Air 4" not in c and "Guida" not in c and "dispositivi/<nome>.md" in c

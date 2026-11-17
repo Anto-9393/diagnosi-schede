@@ -16,7 +16,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-from diagnosi.schemas import PassoDiagnosi
+from diagnosi.schemas import PassoBreve, PassoDiagnosi
 
 MAX_TENSIONE_USB_V = 20.0
 MAX_TENSIONE_CELLA_V = 4.4
@@ -42,11 +42,11 @@ class Esito:
 
 def _testo(passo: PassoDiagnosi) -> str:
     m = passo.prossima_misura
-    return " ".join([passo.riepilogo, m.dove, m.condizioni, m.valore_atteso, m.se_diverso,
-                     *[f"{i.componente} {i.motivo}" for i in passo.ipotesi]])
+    return " ".join([getattr(passo, "riepilogo", ""), m.dove, m.condizioni, m.valore_atteso, m.se_diverso,
+                     *[f"{i.componente} {i.motivo}" for i in getattr(passo, "ipotesi", [])]])
 
 
-def controlla(passo: PassoDiagnosi, pagine_lette: dict[str, str]) -> tuple[PassoDiagnosi, Esito]:
+def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -> tuple[PassoDiagnosi | PassoBreve, Esito]:
     """`pagine_lette`: percorso -> testo delle pagine che l'agente ha letto in questa sessione."""
     esito = Esito()
     testo = _testo(passo)
@@ -54,8 +54,8 @@ def controlla(passo: PassoDiagnosi, pagine_lette: dict[str, str]) -> tuple[Passo
 
     # 1. sicurezza elettrica — campo per campo: un "non" in un altro campo (es. "non carica") non è una negazione
     m = passo.prossima_misura
-    campi = [m.dove, m.condizioni, m.valore_atteso, m.se_diverso, passo.riepilogo,
-             *[i.motivo for i in passo.ipotesi]]
+    campi = [m.dove, m.condizioni, m.valore_atteso, m.se_diverso, getattr(passo, "riepilogo", ""),
+             *[i.motivo for i in getattr(passo, "ipotesi", [])]]
     for patt, msg in _PERICOLOSI:
         for campo in campi:
             for trovato in re.finditer(patt, campo, re.I):

@@ -1,64 +1,112 @@
 ---
 titolo: fonti/componenti.md
 tipo: fonte
-riassunto: 'Caso iPhone 15 Pro Max: assorbimento DCPS 0.105–0.130 A pre-boot e heating
-  del charging IC; da mappare su componenti di ricarica e sintomo correlato (sigla
-  IC e net: da verificare).'
+riassunto: 'Caso demo interno iPad Air 4 A2316: corrosione porta USB-C; X3=343S00264
+  scalda col cavo ma non carica/PC non rileva; sospetto CD3217B12 (X5) e/o ROM CD3217
+  (8N040).'
 modelli:
-- iPhone 15 Pro Max
+- iPad Air 4 A2316
 fonti:
 - raw/repairwiki/pagine/iphone-15-pro-max-dead-and-not-charging.md
+- raw/casi_demo/ipad-air-4-a2316-non-carica.md
 aggiornato: '2026-11-17'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
 ---
 
-# Fonte → componenti/sintomi (iPhone 15 Pro Max)
+# Fonte → componenti/sintomi (iPad Air 4 Wi‑Fi A2316)
+
+> Nota progetto: questa è una **fonte demo interna** (non repair.wiki esterna). **Non** crea pagine in `fonti/`; serve solo per aggiornare pagine esistenti di **componenti**, **sintomi** e **casi**.
 
 ## Contesto del caso (da fonte)
-- Dispositivo: **iPhone 15 Pro Max**.
-- Sintomo principale: **dead** (nessuna risposta a power button/charger) e **non carica** quando è alimentato “da batteria”.
-- Comportamento con alimentatore da banco (DC Power Supply, DCPS):
-  - **0.105–0.130 A** di assorbimento **prima** del prompt di boot.
-  - Dopo il prompt di boot, il telefono **boota normalmente**.
-- Evidenza diagnostica:
-  - **Thermal imaging**: il **charging IC** (IC di ricarica) **si scalda in modo anomalo**.
+- Dispositivo: **iPad Air 4 Wi‑Fi (A2316)**.
+- Evento: **caffè versato** → spento e **non caricava**.
+- Dopo pulizia con IPA della porta: ha caricato per ore (fino a ~**58–67%**), **senza scaldare**.
+- Poi: smette di caricare, **nessun fulmine**, **il PC non lo rileva**.
+- Da spento: inserendo il cavo si accende, ma **non carica**.
+- Con batteria all’1%: inserire il cavo lo faceva **riavviare**.
 
-## Cosa manca per collegare con precisione (da verificare)
-La fonte non riporta:
-- **sigla esatta** del charging IC;
-- **net** coinvolti (es. linee di alimentazione/ricarica) e punti di misura.
+## Misure chiave (da fonte)
+### Porta USB‑C (Mechanic T‑824, diode mode)
+- **VBUS** (pin 4/9/16/21): letture **0.00 → lato A 0.69/0.38 → di nuovo tutti 0.00** (instabile; indicazione di problema/instabilità lato A).
+- **CC1/CC2**: **0.53 / 0.63** (stabili).
+- **D+/D− lato A** (6/7): **0.71 → 1.00 → 0.70** (instabile).
+- **RX1+ (23)**: **OL → 0.00 → OL → 0.00** (ponte verso GND pin 24 che va e viene).
 
-Quindi, per ora, l’associazione a componenti specifici della wiki è **parziale** e va completata con misure/lettura schema o con un dump/annotazione aggiuntiva.
+**Conclusione fonte:** corrosione attiva nel connettore USB‑C vecchio.
 
-## Mappatura utile per la wiki
+### Alimentazione / comportamento con batteria
+- Senza batteria, USB da AiXun: **5.2 V, 0.11–0.20 A**, resta a 5 V (**nessuna negoziazione PD**).
+- Con batteria e iPad acceso, cavo inserito: **0.002 A** → non prende corrente dall’USB.
+- Batteria: **3.66 V** → scesa a ~**2.9–3.1 V**, poi ricaricata dal banco (4.2 V, ~2–3 A) fino a **3.8 V / 45%**.
 
-### Sintomo da creare/aggiornare
-- **“Dead / non carica” con heating del charging IC**.
-  - La fonte supporta direttamente: *dead + non carica* e *charging IC che scalda*.
-  - Linkare/collegare a una pagina sintomo esistente solo se la descrizione combacia (qui: da verificare).
+### IC di ricarica / power path (JC Drawing)
+- **NET205**: VBUS dal connettore flat → **X5 = CD3217B12** (controller USB‑C/PD TI).
+- **X1548 / X1549 / X1550**: uscita CD3217 → ingresso **X3**.
+  - Con batteria + cavo: **0.026–0.186 V** (il CD3217 non chiude il passaggio verso X3).
+- **X3 = 343S00264‑A0** (IC di ricarica; *non* 343S00394):
+  - **scalda subito** con cavo inserito (goccia di IPA evapora in fretta);
+  - senza cavo si asciuga lentamente.
+- Bobine **X2020 / X2021** collegate a X3 (non misurabili a puntale).
+- **ROM del CD3217**: marcatura **8N040**.
+  - Su JC Drawing è il chip piccolo accanto a X5, siglato **X7**.
+  - Fonte: la ROM va in coppia col CD3217; se si sostituisce il CD3217 da donor va trasferita la ROM dello **stesso donor** oppure riprogrammata (Wylie).
 
-Pagine sintomo già presenti che potrebbero essere correlate (da verificare compatibilità):
-- [non-carica-0-01-0-15a](../sintomi/non-carica-0-01-0-15a.md) (range corrente pre-boot potrebbe rientrare, ma la fonte parla di 0.105–0.130 A e di heating charging IC: da verificare).
-- [temperatura-warning-e-non-carica](../sintomi/temperatura-warning-e-non-carica.md) (la fonte parla di heating via termocamera, non di “warning” a schermo: da verificare).
+### Termocamera
+- CPU ~**60 °C** da accesa e aperta = normale.
+- **Nessun punto caldo sul CD3217** (nota fonte).
 
-### Componenti da creare/aggiornare
-Dato che la fonte parla esplicitamente di **charging IC**, servono pagine componente per:
-- **Charging IC (sigla da verificare)**: funzione, sintomi, misure attese.
+## Diagnosi (da fonte)
+1. **X5 CD3217B12** — sospetto n.1:
+   - con batteria non fa passare VBUS verso X3;
+   - spiega **nessun fulmine** e **PC non rileva** (carica + dati).
+2. Alimentazioni/passivi intorno al CD3217 corrosi dal caffè — **da verificare prima di toccare il chip**.
+3. **ROM 8N040 (X7 su JC)** — meno probabile (ha caricato dopo pulizia), ma da considerare:
+   - sostituire insieme al CD3217 da scheda donatrice **A2316** oppure riprogrammare.
 
-Al momento non posso indicare una sigla tra quelle già presenti (es. [Tristar](../componenti/tristar.md], [CD3217](../componenti/cd3217.md], [CD3215C00](../componenti/cd3215c00.md], [Kraken](../componenti/kraken-ic-usb.md], ecc.) perché la fonte non la nomina.
+## Interventi fatti (da fonte)
+- 25 ott: pulizia porta con IPA → carica per ore, poi smette.
+- ~15 nov: **X3 sostituito** con **343S00264** nuovo → non carica.
+- 15 nov: **flat/connettore USB‑C sostituito** → non carica.
 
-## Azioni consigliate per completare l’ingest (da verificare)
-1. Identificare la **sigla del charging IC** sul board dell’iPhone 15 Pro Max del caso (foto/annotazione o lettura BOM).
-2. Identificare almeno 1–2 **net** di ricarica/ingresso (es. rail DCPS → charging IC) per collegare misure e sintomi a pagine esistenti.
-3. Verificare se il caso rientra in una pagina sintomo già presente (range corrente e descrizione “dead/non carica”).
+## Aggiornamenti da applicare alle pagine esistenti
 
-## Collegamenti da fare nella wiki (con link solo dove possibile)
-- Sintomo: creare/aggiornare una pagina sintomo dedicata a **dead/non carica con heating del charging IC** (link a componenti di ricarica quando la sigla sarà nota).
-- Componenti: creare pagina per **charging IC — sigla da verificare**.
+### 1) Pagina caso
+- Aggiornare: [casi/ipad-air-4-a2316-non-carica.md](../casi/ipad-air-4-a2316-non-carica.md)
+  - Inserire i dati: **X3=343S00264‑A0 scalda col cavo**, ma con batteria + cavo **X1548/X1549/X1550 = 0.026–0.186 V** e **corrente USB ~0.002 A**.
+  - Inserire sospetto principale: **CD3217B12 (X5) + ROM 8N040 (X7)**.
+  - Inserire evidenza porta: **RX1+ (23) che va/torna da 0.00** (ponte verso GND pin 24) e instabilità D+/D− lato A.
 
-## Dati tecnici estratti (solo quelli presenti in fonte)
-- DCPS: **0.105–0.130 A** di assorbimento **pre-prompt di boot**.
-- Diagnosi: **thermal imaging** → **charging IC heating anomalo**.
-- Riparazione (alto livello): sostituzione charging IC con hot air + reball, pulizia pad, test di boot/charging.
+### 2) Pagina componente — CD3217
+- Aggiornare: [componenti/cd3217.md](../componenti/cd3217.md)
+  - Aggiungere sezione/caso: su **iPad Air 4 A2316** (X5 = **CD3217B12**) con batteria + cavo:
+    - VBUS non passa verso X3 (misure **0.026–0.186 V** su X1548/1549/1550).
+    - Sintomi correlati: **nessun fulmine**, **PC non rileva**, **0.002 A**.
+  - Nota: fonte dice “nessun punto caldo sul CD3217” (quindi heating non è sempre indicativo).
 
-> Nota: valori e procedura sono riportati dalla fonte, ma senza sigla IC e senza net: per misure “attese” su rail specifici serve integrazione (da verificare).
+### 3) Pagina componente — IC di ricarica 343S00264
+- Aggiornare: [componenti/343s00235.md](../componenti/343s00235.md)
+  - **Contraddizione/da verificare:** la fonte identifica **X3 = 343S00264‑A0**, ma la pagina componente esistente è per **343S00235**.
+  - Azione: o si crea/si collega correttamente la pagina del componente **343S00264** (se esiste/da creare) oppure si segnala in [casi/ipad-air-4-a2316-non-carica.md](../casi/ipad-air-4-a2316-non-carica.md) che il caso riguarda 343S00264 e non 343S00235.
+
+### 4) Pagina sintomo
+- Valutare aggiornamento/creazione (da verificare compatibilità):
+  - [sintomi/non-carica-o-non-rilevato-da-pc.md](../sintomi/non-carica-o-non-rilevato-da-pc.md)
+  - La fonte mostra **PC non rileva** + **non carica** + **0.002 A** con batteria e cavo.
+  - Se la pagina sintomo esistente copre già “non rilevato da PC”, aggiungere i dettagli specifici del caso (CD3217B12 non chiude passaggio verso X3).
+
+## Dati utili per future misure (da fonte)
+- Misurare sempre in condizioni ripetibili:
+  - **con/senza batteria**
+  - **iPad acceso/spento**
+  - **cavo inserito**
+- Nel caso:
+  - senza batteria: USB resta a **5.2 V** e assorbe **0.11–0.20 A** (nessuna negoziazione PD).
+  - con batteria: assorbimento USB quasi nullo (**0.002 A**) e passaggio verso X3 non avviene.
+
+## Strumenti usati (da fonte)
+- Mechanic T‑824 SE (diode mode)
+- Alimentatore da banco AiXun
+- Multimetro
+- Termocamera MEGA‑IDEA
+- Microscopio
+- JC Drawing

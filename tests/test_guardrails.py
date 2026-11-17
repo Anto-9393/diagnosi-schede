@@ -60,3 +60,11 @@ def test_iniezione_con_batteria_collegata():
     assert any("SCOLLEGA la batteria" in a for a in esito.avvisi)
     _, esito = controlla(_passo(condizioni="batteria scollegata; iniezione 1 V con limite di corrente"), LETTE)
     assert not any("SCOLLEGA" in a for a in esito.avvisi)
+
+
+def test_guardrail_funzionano_con_risposta_breve():
+    from diagnosi.schemas import PassoBreve
+    breve = PassoBreve(dispositivo="iPad Air 4", prossima_misura=_passo(condizioni="cortocircuita la batteria").prossima_misura,
+                       avvertenze_sicurezza=[], fonti=["wiki/componenti/cd3217.md"], domande_al_tecnico=[])
+    passo, esito = controlla(breve, LETTE)
+    assert esito.bloccato and passo.fonti == ["wiki/componenti/cd3217.md"]

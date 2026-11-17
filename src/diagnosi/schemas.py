@@ -40,3 +40,12 @@ class PassoDiagnosi(BaseModel):
         default_factory=list,
         description="Informazioni mancanti da chiedere prima di procedere",
     )
+
+
+class PassoBreve(BaseModel):
+    """Risposta ridotta ("solo la prossima misura"): scelta dal riparatore per risparmiare token in uscita."""
+    dispositivo: str = Field(description="nome commerciale più codice modello, oppure 'sconosciuto'")
+    prossima_misura: Misura
+    avvertenze_sicurezza: list[str] = Field(default_factory=list, description="Rischi per il tecnico o la scheda")
+    fonti: list[str] = Field(default_factory=list, description="Pagine della wiki usate")
+    domande_al_tecnico: list[str] = Field(default_factory=list, description="Informazioni mancanti, al massimo 2")

@@ -70,6 +70,13 @@ streamlit run app/streamlit_app.py
 Chat con l'agente; a sinistra la scheda del dispositivo riconosciuto (da `wiki/dispositivi/`: icona, codici modello,
 componenti, casi) e le pagine della wiki consultate. Sotto ogni risposta: durata, token e numero di tool usati.
 
+Foto dei dispositivi (facoltative) in `app/immagini/<nome-pagina>.jpg`, con i crediti in `app/immagini/CREDITI.md`.
+Per scaricarle da Wikipedia/Wikimedia Commons **solo con licenza libera** (CC BY, CC BY-SA, CC0, pubblico dominio):
+```powershell
+python scripts/scarica_immagini.py --prova          # mostra cosa troverebbe
+python scripts/scarica_immagini.py                  # scarica e scrive i crediti
+```
+
 ## Server MCP (anche per Claude Desktop)
 ```powershell
 python -m diagnosi.mcp_server                 # stdio

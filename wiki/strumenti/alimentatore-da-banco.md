@@ -18,15 +18,16 @@ fonti:
 - raw/repairwiki/pagine/how-to-repair-ipad-6-no-power.md
 - raw/repairwiki/pagine/how-to-repair-ipad-pro-10-5-not-charging-or-not-detected-by-pc.md
 - raw/repairwiki/pagine/ipad-7-not-charging.md
+- raw/casi_demo/ipad-air-4-a2316-non-carica.md
 aggiornato: '2026-11-17'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
 ---
 
 ## Scopo
 - **Diagnosi “non power / non boot”** tramite lettura della **corrente assorbita** durante la sequenza di avvio (“**prompt to boot**”).
-- **Localizzazione di un corto**: se la fonte indica un corto su una rail/linea sospetta, si può **iniettare tensione** (partire da **1 V**) e usare **termocamera** o **freeze spray** per individuare il componente che scalda più velocemente.
+- **Localizzazione di un corto** (se la fonte lo indica): iniettare tensione a bassa tensione sulla rail/linea sospetta e usare **termocamera** o **freeze spray** per individuare il componente che scalda prima.
 
-> Nota cautela (da fonte “Short Circuits - Repair Basics”): **non superare i rating V/I della rail** e **partire da 1 V**.
+> Cautela (da fonte “Short Circuits - Repair Basics”): **non superare i rating V/I della rail** e **partire da 1 V**.
 
 ## Dove si usa in diagnosi (workflow)
 1. Collegare il dispositivo all’**alimentatore da banco** (DCPS).
@@ -58,7 +59,15 @@ La fonte indica che dopo la sostituzione la **prima lettura** dopo il prompt to 
 - **“I-Range Show”**: cambia **solo la scala della lancetta**, **non il limite di corrente**.
 - I **numeri rossi in alto** sono le **misure reali**.
 
-> Valori “tensione/corrente max” dell’unità: **da verificare** (presenti come placeholder nella pagina già esistente).
+> Valori “tensione/corrente max” dell’unità: **da verificare** (placeholder presenti nella pagina già esistente).
+
+## Integrazione: misure AiXun (da caso reale iPad Air 4 A2316)
+Dal caso reale (iPad Air 4 Wi‑Fi **A2316**) la fonte riporta come comportamento tipico dell’alimentazione da banco:
+- **Senza batteria**, alimentando via USB dall’AiXun: **5,2 V, 0,11–0,20 A** (nessuna negoziazione PD; resta a 5 V).
+- **Con batteria e iPad acceso**, con cavo inserito: **0,002 A** (non prende corrente dall’USB).
+- **Ricarica batteria** dal banco: **4,2 V, ~2–3 A** fino a **3,8 V / 45%**.
+
+Questi valori sono utili come **criteri di lettura** per capire se il problema è “manca passaggio VBUS/charging” o se c’è un comportamento compatibile con corto (da verificare sul singolo caso).
 
 ## Iniezione tensione per localizzare il corto (da fonte + precauzioni)
 ### Quando usarla
@@ -101,7 +110,7 @@ Motivo (da fonte):
 - [Tecnica: test DCPS e diagnosi Kraken IC](../tecniche/test-dcps-e-diagnosi-kraken-ic.md)
 
 ## Limiti / note operative (da verificare)
-- **Tensione/corrente max** dell’**AiXun P2408S**: **da verificare** (placeholder presente nella pagina già esistente).
+- **Tensione/corrente max** dell’**AiXun P2408S**: **da verificare**.
 - La fonte non fornisce settaggi numerici del DCPS (limiti/corrente impostata): **da verificare**.
 
 ## Rischi pratici

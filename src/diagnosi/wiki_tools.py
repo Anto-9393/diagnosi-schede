@@ -35,14 +35,26 @@ def _parole(testo: str) -> list[str]:
 
 
 # ----------------------------------------------------------------------------- funzioni pure
-def indice(wiki_dir: Path = WIKI_DIR) -> str:
+def indice(wiki_dir: Path = WIKI_DIR, compatto: bool = False) -> str:
+    """L'indice della wiki. `compatto=True` (per l'agente) toglie le sezioni Dispositivi e Fonti:
+    insieme sono circa metà dell'indice e l'agente le ripaga a OGNI passo (misurato il 17 nov: ~6k token su ~11k)."""
     f = wiki_dir / "index.md"
     if not f.exists():
         return "La wiki non ha ancora un index.md: va prima eseguito il wiki builder."
-    return f.read_text(encoding="utf-8")
+    testo = f.read_text(encoding="utf-8")
+    if not compatto:
+        return testo
+    for sezione in ("## Dispositivi", "## Fonti"):
+        if sezione in testo:
+            prima, dopo = testo.split(sezione, 1)
+            resto = dopo.split("\n## ", 1)
+            testo = prima + ("## " + resto[1] if len(resto) > 1 else "")
+    return testo.rstrip() + ("\n\n## Dispositivi e fonti\n- Pagina di un dispositivo: dispositivi/<nome>.md "
+                             "(es. dispositivi/ipad-air-4.md, dispositivi/iphone-x.md).\n"
+                             "- Riassunti delle guide originali: usa cerca_wiki.\n")
 
 
-def pagina(percorso: str, wiki_dir: Path = WIKI_DIR) -> str:
+def pagina(percorso: str, wiki_dir: Path = WIKI_DIR, max_caratteri: int = MAX_CARATTERI_PAGINA) -> str:
     try:
         f = _percorso_sicuro(percorso, wiki_dir)
     except ValueError as e:
@@ -50,8 +62,8 @@ def pagina(percorso: str, wiki_dir: Path = WIKI_DIR) -> str:
     if not f.exists():
         return f"Pagina non trovata: {percorso}. Controlla i percorsi in index.md."
     testo = f.read_text(encoding="utf-8")
-    if len(testo) > MAX_CARATTERI_PAGINA:
-        testo = testo[:MAX_CARATTERI_PAGINA] + "\n\n[... pagina troncata ...]"
+    if len(testo) > max_caratteri:
+        testo = testo[:max_caratteri] + "\n\n[... pagina troncata ...]"
     rel = f.relative_to(wiki_dir.resolve()).as_posix()
     return f"FONTE: wiki/{rel}\n\n{testo}"
 

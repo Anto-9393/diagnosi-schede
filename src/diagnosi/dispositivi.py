@@ -30,3 +30,13 @@ def trova_dispositivo(testo: str, wiki_dir: Path = WIKI_DIR) -> dict | None:
         if re.search(r"(?<!\w)" + re.escape(s.get("titolo", "§")) + r"(?!\w)", testo, re.I):
             return s
     return None
+
+
+def casi_del_dispositivo(titolo: str, wiki_dir: Path = WIKI_DIR) -> list[str]:
+    """Pagine di wiki/casi/ che nominano il dispositivo tra i `modelli` (calcolate ogni volta: sempre aggiornate)."""
+    out = []
+    for f in sorted((wiki_dir / "casi").glob("*.md")):
+        fm, _ = leggi_front_matter(f.read_text(encoding="utf-8"))
+        if any(str(m).split("(")[0].strip().lower() == titolo.lower() for m in fm.get("modelli") or []):  # "iPad Air" ≠ "iPad Air 4"
+            out.append(f"casi/{f.name}")
+    return out
