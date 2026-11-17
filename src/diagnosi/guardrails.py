@@ -64,6 +64,12 @@ def controlla(passo: PassoDiagnosi, pagine_lette: dict[str, str]) -> tuple[Passo
                     esito.avvisi.append(f"BLOCCATO: {msg}")
                     esito.bloccato = True
     testo_misura = " ".join([m.dove, m.condizioni, m.valore_atteso])
+    # Iniezione di tensione con la batteria collegata (trovato in una risposta reale, 17 nov): si fa a batteria SCOLLEGATA.
+    if re.search(r"iniezion\w*|inject\w*", testo_misura, re.I) and \
+            re.search(r"(con\s+(la\s+)?)?batteria\s+(collegata|connessa|inserita)|with\s+(the\s+)?battery\s+connected", m.condizioni, re.I) and \
+            not re.search(r"(scollegat|disconness|senza\s+batteria|without\s+battery)", m.condizioni, re.I):
+        esito.avvisi.append("Iniezione di tensione con la batteria collegata: SCOLLEGA la batteria prima di iniettare "
+                            "(rischio per la cella e per il circuito batteria).")
     if re.search(_ALIMENTAZIONE, testo_misura, re.I) and not re.search(_LIMITE, tutto, re.I):
         esito.avvisi.append("Usa l'alimentatore con LIMITE DI CORRENTE (parti basso, es. 0,5–1 A) e osserva l'assorbimento.")
     # Il limite Li-ion vale se il PUNTO di misura è la batteria (non se "con batteria" è solo una condizione).

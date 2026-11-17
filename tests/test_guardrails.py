@@ -53,3 +53,10 @@ def test_fonti_non_lette_rimosse_e_nessuna_fonte_segnalata():
     passo, esito = controlla(_passo(fonti=("wiki/componenti/inventata.md",)), LETTE)
     assert passo.fonti == []
     assert any("Nessuna fonte" in a for a in esito.avvisi)
+
+
+def test_iniezione_con_batteria_collegata():
+    passo, esito = controlla(_passo(condizioni="iPad con batteria collegata; iniezione 1 V / 1 A con limite di corrente"), LETTE)
+    assert any("SCOLLEGA la batteria" in a for a in esito.avvisi)
+    _, esito = controlla(_passo(condizioni="batteria scollegata; iniezione 1 V con limite di corrente"), LETTE)
+    assert not any("SCOLLEGA" in a for a in esito.avvisi)
