@@ -52,6 +52,12 @@ def test_instradamento_diagnosi_o_procedura():
         assert tipo_richiesta(m) == "procedura", m
     for m in ["non carica, 0,002 A con batteria", "come mai non carica?", "come misuro X1548", "A2316"]:
         assert tipo_richiesta(m) == "diagnosi", m
+    # dopo una procedura: la risposta alla domanda dell'agente resta procedura, una misura torna alla diagnosi
+    assert tipo_richiesta("sto usando a2316 come modello", "procedura") == "procedura"
+    assert tipo_richiesta("ho il JC V1S Pro", "procedura") == "procedura"
+    assert tipo_richiesta("fatto, ora con batteria prende 0,002 A", "procedura") == "diagnosi"
+    assert tipo_richiesta("non carica ancora", "procedura") == "diagnosi"
+    assert tipo_richiesta("sto usando a2316 come modello", "diagnosi") == "diagnosi"
 
 
 def test_due_agenti_stessi_tool_e_memoria_della_procedura(monkeypatch):

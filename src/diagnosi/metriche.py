@@ -30,8 +30,17 @@ BUCKET_TOKEN = (5_000, 10_000, 20_000, 30_000, 40_000, 50_000, 75_000, 100_000)
 PREZZO_IN = float(os.getenv("PREZZO_INPUT_USD_1M", "0.15"))
 PREZZO_CACHE = float(os.getenv("PREZZO_CACHE_USD_1M", str(PREZZO_IN)))
 PREZZO_OUT = float(os.getenv("PREZZO_OUTPUT_USD_1M", "0.60"))
+# I listini sono in dollari, la dashboard in euro: cambio da aggiornare nel .env (CAMBIO_USD_EUR = euro per 1 dollaro).
+CAMBIO = float(os.getenv("CAMBIO_USD_EUR", "0.86"))
 
-_TIPI_AVVISO = [("BLOCCATO", "bloccante"), ("LIMITE DI CORRENTE", "limite_corrente"), ("SCOLLEGA", "iniezione_con_batteria"),
+
+def costo_eur(token_in: int, token_cache: int, token_out: int) -> float:
+    usd = ((token_in - token_cache) * PREZZO_IN + token_cache * PREZZO_CACHE + token_out * PREZZO_OUT) / 1_000_000
+    return usd * CAMBIO
+
+# In ordine: ogni avviso conta UNA volta, per la prima chiave che contiene ("Prima di aria calda… SCOLLEGA" ≠ iniezione).
+_TIPI_AVVISO = [("BLOCCATO", "bloccante"), ("LIMITE DI CORRENTE", "limite_corrente"),
+                ("Prima di aria calda", "calore_senza_batteria"), ("SCOLLEGA", "iniezione_con_batteria"),
                 ("cella Li-ion", "tensione_batteria"), ("fuori dal plausibile", "valore_impossibile"),
                 ("Sigle non presenti", "sigle_non_verificate"), ("Nessuna fonte", "senza_fonti"),
                 ("Fonti dichiarate", "fonti_non_lette")]
@@ -77,8 +86,8 @@ class CollectorDiagnosi:
             token.add_metric([tipo], v)
         yield token
 
-        costo = CounterMetricFamily("diagnosi_costo_stimato_usd", "Costo stimato (prezzi da .env o listino del corso)")
-        costo.add_metric([], ((tin - tcache) * PREZZO_IN + tcache * PREZZO_CACHE + tout * PREZZO_OUT) / 1_000_000)
+        costo = CounterMetricFamily("diagnosi_costo_stimato_eur", "Costo stimato in euro (prezzi e cambio da .env)")
+        costo.add_metric([], costo_eur(tin, tcache, tout))
         yield costo
 
         tool = CounterMetricFamily("diagnosi_tool_chiamate", "Chiamate per tool", labels=["tool"])
@@ -87,7 +96,8 @@ class CollectorDiagnosi:
         yield tool
 
         avvisi = CounterMetricFamily("diagnosi_guardrail_avvisi", "Avvisi dei guardrail", labels=["tipo"])
-        conta = Conta(tipo for r in righe for a in r.get("avvisi", []) for chiave, tipo in _TIPI_AVVISO if chiave in a)
+        conta = Conta(next((tipo for chiave, tipo in _TIPI_AVVISO if chiave in a), "altro")
+                      for r in righe for a in r.get("avvisi", []))
         for _, tipo in _TIPI_AVVISO:
             avvisi.add_metric([tipo], conta.get(tipo, 0))
         yield avvisi
@@ -95,6 +105,18 @@ class CollectorDiagnosi:
         yield _istogramma("diagnosi_latenza_secondi", "Tempo per risposta", [r.get("durata_s", 0) for r in righe], BUCKET_LATENZA)
         yield _istogramma("diagnosi_token_input_per_risposta", "Token in ingresso per risposta",
                           [r.get("token_in", 0) for r in righe], BUCKET_TOKEN)
+
+        # L'ULTIMA risposta: nei grafici nel tempo ogni nuova risposta è un gradino (token, secondi, euro di quella risposta).
+        u = righe[-1] if righe else {}
+        for nome, aiuto, valore in (
+                ("diagnosi_ultima_token_input", "Token in ingresso dell'ultima risposta", u.get("token_in", 0)),
+                ("diagnosi_ultima_token_output", "Token in uscita dell'ultima risposta", u.get("token_out", 0)),
+                ("diagnosi_ultima_durata_secondi", "Durata dell'ultima risposta", u.get("durata_s", 0)),
+                ("diagnosi_ultima_costo_eur", "Costo stimato dell'ultima risposta",
+                 costo_eur(u.get("token_in", 0), u.get("token_cache", 0), u.get("token_out", 0)))):
+            g = GaugeMetricFamily(nome, aiuto)
+            g.add_metric([], valore)
+            yield g
 
         ultima = GaugeMetricFamily("diagnosi_ultima_risposta_timestamp", "Ora dell'ultima risposta (unix)")
         ultima.add_metric([], self.file.stat().st_mtime if self.file.exists() else 0)

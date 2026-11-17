@@ -20,7 +20,7 @@ from datapizza.agents import Agent
 from datapizza.tools import tool
 from datapizza.tracing import ContextTracing
 
-from diagnosi import guardrails, wiki_tools
+from diagnosi import guardrails, sigle, wiki_tools
 from diagnosi.config import MODEL_DEV, PROVIDER, ROOT, leggi_prompt
 from diagnosi.llm import crea_client
 from diagnosi.schemas import PassoBreve, PassoDiagnosi, Procedura
@@ -35,9 +35,23 @@ _PROCEDURA = re.compile(
     re.I)
 
 
-def tipo_richiesta(messaggio: str) -> str:
-    """'procedura' se il tecnico chiede come si fa un intervento, altrimenti 'diagnosi'."""
-    return "procedura" if _PROCEDURA.search(messaggio) else "diagnosi"
+# Segni di diagnosi: misure con unità, sintomi, parole da banco di misura.
+_DIAGNOSI = re.compile(
+    r"\d+(?:[.,]\d+)?\s*(?:v|mv|a|ma|ohm|Ω)\b|\bnon\s+(?:carica|si\s+accende|rileva|parte)|\bmisur|\bdiode|\bcorto|"
+    r"\bassorb|\bsintom|\bguast|\bpanic", re.I)
+
+
+def tipo_richiesta(messaggio: str, precedente: str | None = None) -> str:
+    """'procedura' se il tecnico chiede come si fa un intervento, altrimenti 'diagnosi'.
+
+    `precedente` = tipo del turno prima. Dopo una procedura si RESTA in procedura se il messaggio è una risposta
+    (es. "sto usando A2316" alla domanda "che modello è?"), a meno che non porti misure o sintomi
+    (risposta reale del 17 nov: "sto usando a2316 come modello" finiva al diagnosta e perdeva la procedura)."""
+    if _PROCEDURA.search(messaggio):
+        return "procedura"
+    if precedente == "procedura" and not _DIAGNOSI.search(messaggio):
+        return "procedura"
+    return "diagnosi"
 
 
 class SessioneDiagnosi:
@@ -58,6 +72,7 @@ class SessioneDiagnosi:
         self.pagine_lette: dict[str, str] = {}      # percorso -> testo: serve ai guardrail (sigle e fonti)
         self.chiamate_tool: list[str] = []
         self.storia: list[str] = []                 # memoria compatta dei turni (vedi _input_con_storia)
+        self.ultimo_tipo: str | None = None         # "diagnosi" o "procedura": serve a tipo_richiesta
         self.id = datetime.now().strftime("%Y%m%d-%H%M%S")
         client = client or crea_client(model)
         strumenti = self._crea_tool()               # gli stessi tool per i due agenti: registrano nella stessa sessione
@@ -135,7 +150,7 @@ class SessioneDiagnosi:
 
     def chiedi(self, messaggio: str) -> tuple[PassoDiagnosi | PassoBreve | Procedura, guardrails.Esito, dict]:
         n_tool_prima = len(self.chiamate_tool)
-        tipo = tipo_richiesta(messaggio)
+        tipo = tipo_richiesta(messaggio, self.ultimo_tipo)
         agente = self.agente_procedura if tipo == "procedura" else self.agente
         t0 = time.perf_counter()
         with ContextTracing().trace(f"{tipo}-{self.id}"):
@@ -145,7 +160,9 @@ class SessioneDiagnosi:
             raise RuntimeError(f"L'agente non ha prodotto una risposta ({tipo}): aumenta max_steps o riprova.")
         controllo = guardrails.controlla_procedura if tipo == "procedura" else guardrails.controlla
         passo, esito = controllo(risultato.structured_data[-1], self.pagine_lette)
+        passo = sigle.nomi_precisi(passo, self.pagine_lette.values())      # "X3" -> "343S00264-A0 (X3 su JC Drawing)"
         self._ricorda(messaggio, passo)
+        self.ultimo_tipo = tipo
         info = {
             "sessione": self.id, "ora": datetime.now().isoformat(timespec="seconds"),
             "provider": PROVIDER, "modello": self.model, "tipo": tipo,

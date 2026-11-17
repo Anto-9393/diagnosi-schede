@@ -21,4 +21,5 @@ def test_metriche_dal_log(tmp_path):
     assert valori("diagnosi_guardrail_avvisi")[("iniezione_con_batteria",)] == 1
     lat = {s.labels.get("le"): s.value for s in m["diagnosi_latenza_secondi"].samples if s.name.endswith("_bucket")}
     assert lat["12"] == 0 and lat["15"] == 1 and lat["+Inf"] == 2
-    assert m["diagnosi_costo_stimato_usd"].samples[0].value > 0
+    assert m["diagnosi_costo_stimato_eur"].samples[0].value > 0
+    assert m["diagnosi_ultima_token_input"].samples[0].value == 27661 and m["diagnosi_ultima_durata_secondi"].samples[0].value == 13.0

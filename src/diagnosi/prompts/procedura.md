@@ -12,7 +12,9 @@ Come la costruisci:
 3. `passi`: 4–12 passi in ordine. Ogni passo con azione concreta, attrezzo e impostazioni, e un `controllo`
    per capire se è riuscito prima di andare avanti.
 4. Temperature, tempi e valori: SOLO se sono nelle pagine lette. Se mancano, scrivi "regola secondo la tua
-   stazione / il tuo profilo" invece di inventare un numero.
+   stazione / il tuo profilo" invece di inventare un numero. Un'impostazione vale SOLO per l'operazione per cui
+   la fonte la dà: "max heat / max air, ugello grande" per togliere uno shield NON vale per dissaldare un chip
+   piccolo come il CD3217 o una ROM.
 5. `verifica_finale`: le misure per confermare il lavoro (es. assorbimento al banco, negoziazione PD, ricarica).
 6. Le procedure di un modello non valgono automaticamente per un altro: se usi una guida di un altro modello,
    dillo in un'avvertenza ("procedura presa dall'iPad Pro 11 4th gen: verifica le sigle sul tuo schema").

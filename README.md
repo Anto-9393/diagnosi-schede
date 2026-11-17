@@ -96,7 +96,7 @@ cd observability ; docker compose up -d          # 2) Prometheus (:9090) + Grafa
 Grafana: http://localhost:3000 → dashboard **"Diagnosi schede — agente e guardrail"** (senza login).
 Mostra diagnosi, costo stimato totale e medio, token medi e in cache, latenza p50/p95, tool scelti dall'agente,
 avvisi dei guardrail per tipo, modalità di lettura. Prezzi veri del modello nel `.env`:
-`PREZZO_INPUT_USD_1M`, `PREZZO_CACHE_USD_1M`, `PREZZO_OUTPUT_USD_1M` (default: listino gpt-4o-mini del corso).
+`PREZZO_INPUT_USD_1M`, `PREZZO_CACHE_USD_1M`, `PREZZO_OUTPUT_USD_1M` (default: listino gpt-4o-mini del corso) e il cambio `CAMBIO_USD_EUR` (euro per 1 dollaro): la dashboard mostra i costi in euro.
 Per fermare: `docker compose down`.
 
 ### Salute della wiki

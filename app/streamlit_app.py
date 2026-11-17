@@ -97,7 +97,7 @@ with st.sidebar:
     if d:
         foto, credito = immagine_e_credito(d["percorso"])
         if foto:
-            st.image(str(foto), width="stretch")
+            st.image(str(foto), width=150)          # larghezza fissa: gli iPhone sono alti e stretti
             st.caption(credito or "Foto: credito mancante in app/immagini/CREDITI.md")
         else:
             st.markdown(ICONE.get(d.get("categoria"), ICONE["phone"]), unsafe_allow_html=True)

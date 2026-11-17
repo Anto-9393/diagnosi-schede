@@ -6,40 +6,46 @@
     "aitho"
   ],
   "timezone": "browser",
-  "refresh": "5s",
+  "refresh": "10s",
   "time": {
-    "from": "now-6h",
+    "from": "now-3h",
     "to": "now"
   },
   "schemaVersion": 39,
-  "version": 1,
+  "version": 2,
+  "graphTooltip": 1,
   "panels": [
     {
       "type": "text",
       "title": "",
       "gridPos": {
-        "h": 3,
-        "w": 24,
         "x": 0,
-        "y": 0
+        "y": 0,
+        "w": 24,
+        "h": 3
       },
       "options": {
         "mode": "markdown",
-        "content": "### Diagnosi schede — osservabilità\nDati da `docs/log/sessioni.jsonl` (tutte le diagnosi: terminale, Streamlit, MCP). Costo = **stima** con i prezzi del `.env` (default: listino gpt-4o-mini del corso)."
+        "content": "### Diagnosi schede — osservabilità\nOgni risposta dell'agente (Streamlit, terminale, MCP) da `docs/log/sessioni.jsonl`. Costo = **stima in euro** con prezzi e cambio del `.env`. I grafici nel tempo si riempiono mentre usi l'app."
       }
     },
     {
       "type": "stat",
-      "title": "Diagnosi totali",
+      "title": "Risposte totali",
+      "description": "",
       "gridPos": {
-        "h": 5,
-        "w": 6,
         "x": 0,
-        "y": 3
+        "y": 3,
+        "w": 4,
+        "h": 4
       },
       "fieldConfig": {
         "defaults": {
-          "unit": "none"
+          "unit": "none",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#1E5B45"
+          }
         },
         "overrides": []
       },
@@ -47,32 +53,84 @@
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
-          ]
+          ],
+          "values": false
         },
         "colorMode": "value",
-        "graphMode": "none"
+        "graphMode": "area",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "targets": [
         {
           "refId": "A",
           "expr": "sum(diagnosi_richieste_total)",
-          "instant": true,
-          "legendFormat": ""
+          "legendFormat": "",
+          "instant": false,
+          "range": true
         }
       ]
     },
     {
       "type": "stat",
-      "title": "Costo stimato totale",
+      "title": "Costo totale",
+      "description": "",
       "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 3
+        "x": 4,
+        "y": 3,
+        "w": 4,
+        "h": 4
       },
       "fieldConfig": {
         "defaults": {
-          "unit": "currencyUSD",
+          "unit": "currencyEUR",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#B5652B"
+          },
+          "decimals": 3
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "values": false
+        },
+        "colorMode": "value",
+        "graphMode": "area",
+        "textMode": "value",
+        "justifyMode": "center"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(diagnosi_costo_stimato_eur_total)",
+          "legendFormat": "",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Costo medio per risposta",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 3,
+        "w": 4,
+        "h": 4
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyEUR",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#B5652B"
+          },
           "decimals": 4
         },
         "overrides": []
@@ -81,66 +139,41 @@
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
-          ]
+          ],
+          "values": false
         },
         "colorMode": "value",
-        "graphMode": "none"
+        "graphMode": "area",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "sum(diagnosi_costo_stimato_usd_total)",
-          "instant": true,
-          "legendFormat": ""
+          "expr": "sum(diagnosi_costo_stimato_eur_total) / clamp_min(sum(diagnosi_richieste_total), 1)",
+          "legendFormat": "",
+          "instant": false,
+          "range": true
         }
       ]
     },
     {
       "type": "stat",
-      "title": "Costo medio per diagnosi",
+      "title": "Token in ingresso medi",
+      "description": "",
       "gridPos": {
-        "h": 5,
-        "w": 6,
         "x": 12,
-        "y": 3
+        "y": 3,
+        "w": 4,
+        "h": 4
       },
       "fieldConfig": {
         "defaults": {
-          "unit": "currencyUSD",
-          "decimals": 4
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "colorMode": "value",
-        "graphMode": "none"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "sum(diagnosi_costo_stimato_usd_total) / clamp_min(sum(diagnosi_richieste_total), 1)",
-          "instant": true,
-          "legendFormat": ""
-        }
-      ]
-    },
-    {
-      "type": "stat",
-      "title": "Token in ingresso medi per diagnosi",
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 3
-      },
-      "fieldConfig": {
-        "defaults": {
-          "unit": "none",
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#1E5B45"
+          },
           "decimals": 0
         },
         "overrides": []
@@ -149,32 +182,41 @@
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
-          ]
+          ],
+          "values": false
         },
         "colorMode": "value",
-        "graphMode": "none"
+        "graphMode": "area",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "targets": [
         {
           "refId": "A",
           "expr": "sum(diagnosi_token_total{tipo=\"input\"}) / clamp_min(sum(diagnosi_richieste_total), 1)",
-          "instant": true,
-          "legendFormat": ""
+          "legendFormat": "",
+          "instant": false,
+          "range": true
         }
       ]
     },
     {
       "type": "stat",
-      "title": "Latenza p50 / p95",
+      "title": "Tempo mediano",
+      "description": "",
       "gridPos": {
-        "h": 5,
-        "w": 8,
-        "x": 0,
-        "y": 8
+        "x": 16,
+        "y": 3,
+        "w": 4,
+        "h": 4
       },
       "fieldConfig": {
         "defaults": {
           "unit": "s",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#1E5B45"
+          },
           "decimals": 1
         },
         "overrides": []
@@ -183,38 +225,41 @@
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
-          ]
+          ],
+          "values": false
         },
         "colorMode": "value",
-        "graphMode": "none"
+        "graphMode": "area",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "targets": [
         {
           "refId": "A",
           "expr": "histogram_quantile(0.50, sum(diagnosi_latenza_secondi_bucket) by (le))",
-          "instant": true,
-          "legendFormat": "p50"
-        },
-        {
-          "refId": "B",
-          "expr": "histogram_quantile(0.95, sum(diagnosi_latenza_secondi_bucket) by (le))",
-          "instant": true,
-          "legendFormat": "p95"
+          "legendFormat": "",
+          "instant": false,
+          "range": true
         }
       ]
     },
     {
       "type": "stat",
-      "title": "Token in cache (sconto)",
+      "title": "Bloccate dai guardrail",
+      "description": "",
       "gridPos": {
-        "h": 5,
-        "w": 8,
-        "x": 8,
-        "y": 8
+        "x": 20,
+        "y": 3,
+        "w": 4,
+        "h": 4
       },
       "fieldConfig": {
         "defaults": {
-          "unit": "percentunit",
+          "unit": "none",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#B42318"
+          },
           "decimals": 0
         },
         "overrides": []
@@ -223,212 +268,818 @@
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
-          ]
+          ],
+          "values": false
         },
         "colorMode": "value",
-        "graphMode": "none"
+        "graphMode": "area",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "sum(diagnosi_token_total{tipo=\"input_in_cache\"}) / clamp_min(sum(diagnosi_token_total{tipo=\"input\"}), 1)",
-          "instant": true,
-          "legendFormat": ""
+          "expr": "sum(diagnosi_richieste_total{esito=\"bloccata\"}) or vector(0)",
+          "legendFormat": "",
+          "instant": false,
+          "range": true
         }
       ]
     },
     {
-      "type": "stat",
-      "title": "Risposte bloccate dai guardrail",
+      "type": "timeseries",
+      "title": "Ogni risposta: token",
+      "description": "Un gradino per ogni nuova risposta: si vede subito quanto costa una domanda.",
       "gridPos": {
-        "h": 5,
-        "w": 8,
-        "x": 16,
-        "y": 8
-      },
-      "fieldConfig": {
-        "defaults": {
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "colorMode": "value",
-        "graphMode": "none"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "sum(diagnosi_richieste_total{esito=\"bloccata\"})",
-          "instant": true,
-          "legendFormat": ""
-        }
-      ]
-    },
-    {
-      "type": "bargauge",
-      "title": "Chiamate per tool — cosa sceglie l'agente?",
-      "gridPos": {
-        "h": 8,
-        "w": 8,
         "x": 0,
-        "y": 13
+        "y": 7,
+        "w": 12,
+        "h": 8
       },
       "fieldConfig": {
         "defaults": {
-          "unit": "none"
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "mode": "none"
+            },
+            "barAlignment": 0
+          }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "in ingresso"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "in uscita"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          }
+        ]
       },
       "options": {
-        "orientation": "horizontal",
-        "displayMode": "basic",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "diagnosi_ultima_token_input",
+          "legendFormat": "in ingresso",
+          "instant": false,
+          "range": true
+        },
+        {
+          "refId": "B",
+          "expr": "diagnosi_ultima_token_output",
+          "legendFormat": "in uscita",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Ogni risposta: tempo e costo",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 7,
+        "w": 6,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#1E5B45"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "mode": "none"
+            },
+            "barAlignment": 0
+          },
+          "decimals": 1
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "secondi"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "diagnosi_ultima_durata_secondi",
+          "legendFormat": "secondi",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Ogni risposta: euro",
+      "description": "",
+      "gridPos": {
+        "x": 18,
+        "y": 7,
+        "w": 6,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyEUR",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#B5652B"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "mode": "none"
+            },
+            "barAlignment": 0
+          },
+          "decimals": 4
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "euro"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "diagnosi_ultima_costo_eur",
+          "legendFormat": "euro",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Spesa cumulata",
+      "description": "",
+      "gridPos": {
+        "x": 0,
+        "y": 15,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyEUR",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#B5652B"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "mode": "none"
+            },
+            "barAlignment": 0
+          },
+          "decimals": 3
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "euro"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(diagnosi_costo_stimato_eur_total)",
+          "legendFormat": "euro",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Token cumulati",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 15,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "mode": "normal"
+            },
+            "barAlignment": 0
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ingresso (pieno prezzo)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ingresso in cache (sconto)"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#7FA894"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "uscita"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(diagnosi_token_total{tipo=\"input\"}) - sum(diagnosi_token_total{tipo=\"input_in_cache\"})",
+          "legendFormat": "ingresso (pieno prezzo)",
+          "instant": false,
+          "range": true
+        },
+        {
+          "refId": "B",
+          "expr": "sum(diagnosi_token_total{tipo=\"input_in_cache\"})",
+          "legendFormat": "ingresso in cache (sconto)",
+          "instant": false,
+          "range": true
+        },
+        {
+          "refId": "C",
+          "expr": "sum(diagnosi_token_total{tipo=\"output\"})",
+          "legendFormat": "uscita",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "piechart",
+      "title": "Chi ha risposto",
+      "description": "completa/breve = agente diagnosta; procedura = agente istruttore",
+      "gridPos": {
+        "x": 0,
+        "y": 23,
+        "w": 8,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "unit": "none"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "completa"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "breve"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#7FA894"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "procedura"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
+          ],
+          "values": false
+        },
+        "pieType": "donut",
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value",
+            "percent"
           ]
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (dettaglio) (diagnosi_richieste_total)",
+          "legendFormat": "{{dettaglio}}",
+          "instant": true,
+          "range": false
+        }
+      ]
+    },
+    {
+      "type": "piechart",
+      "title": "Cosa legge l'agente",
+      "description": "",
+      "gridPos": {
+        "x": 8,
+        "y": 23,
+        "w": 8,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "unit": "none"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "leggi_pagina"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "cerca_wiki"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "leggi_indice"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#8A5A00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "values": false
+        },
+        "pieType": "donut",
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value",
+            "percent"
+          ]
+        },
+        "tooltip": {
+          "mode": "single"
         }
       },
       "targets": [
         {
           "refId": "A",
           "expr": "sum by (tool) (diagnosi_tool_chiamate_total)",
+          "legendFormat": "{{tool}}",
           "instant": true,
-          "legendFormat": "{{tool}}"
+          "range": false
         }
       ]
     },
     {
-      "type": "bargauge",
-      "title": "Avvisi dei guardrail per tipo",
+      "type": "piechart",
+      "title": "Lettura della wiki",
+      "description": "",
       "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 13
-      },
-      "fieldConfig": {
-        "defaults": {
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "options": {
-        "orientation": "horizontal",
-        "displayMode": "basic",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        }
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "sum by (tipo) (diagnosi_guardrail_avvisi_total)",
-          "instant": true,
-          "legendFormat": "{{tipo}}"
-        }
-      ]
-    },
-    {
-      "type": "bargauge",
-      "title": "Diagnosi per modalità di lettura",
-      "gridPos": {
-        "h": 8,
-        "w": 8,
         "x": 16,
-        "y": 13
+        "y": 23,
+        "w": 8,
+        "h": 8
       },
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
           "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "approfondita"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "rapida"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#B5652B"
+                }
+              }
+            ]
+          }
+        ]
       },
       "options": {
-        "orientation": "horizontal",
-        "displayMode": "basic",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
+          ],
+          "values": false
+        },
+        "pieType": "donut",
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value",
+            "percent"
           ]
+        },
+        "tooltip": {
+          "mode": "single"
         }
       },
       "targets": [
         {
           "refId": "A",
           "expr": "sum by (lettura) (diagnosi_richieste_total)",
+          "legendFormat": "{{lettura}}",
           "instant": true,
-          "legendFormat": "{{lettura}}"
-        }
-      ]
-    },
-    {
-      "type": "stat",
-      "title": "Token in ingresso per risposta: p50 / p95",
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 0,
-        "y": 21
-      },
-      "fieldConfig": {
-        "defaults": {
-          "unit": "none",
-          "decimals": 0
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ]
-        },
-        "colorMode": "value",
-        "graphMode": "none"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "histogram_quantile(0.50, sum(diagnosi_token_input_per_risposta_bucket) by (le))",
-          "instant": true,
-          "legendFormat": "p50"
-        },
-        {
-          "refId": "B",
-          "expr": "histogram_quantile(0.95, sum(diagnosi_token_input_per_risposta_bucket) by (le))",
-          "instant": true,
-          "legendFormat": "p95"
+          "range": false
         }
       ]
     },
     {
       "type": "timeseries",
-      "title": "Diagnosi nel tempo (cumulate)",
+      "title": "Risposte nel tempo",
+      "description": "",
       "gridPos": {
-        "h": 6,
+        "x": 0,
+        "y": 31,
         "w": 12,
-        "x": 12,
-        "y": 21
+        "h": 8
       },
       "fieldConfig": {
         "defaults": {
-          "unit": "none"
+          "unit": "none",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#1E5B45"
+          },
+          "custom": {
+            "drawStyle": "bars",
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "mode": "none"
+            },
+            "barAlignment": 0
+          },
+          "decimals": 0
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "risposte ogni 5 min"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#1E5B45"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "sum(diagnosi_richieste_total)",
-          "legendFormat": "diagnosi"
+          "expr": "increase(sum(diagnosi_richieste_total)[5m])",
+          "legendFormat": "risposte ogni 5 min",
+          "instant": false,
+          "range": true
+        }
+      ]
+    },
+    {
+      "type": "bargauge",
+      "title": "Avvisi dei guardrail per tipo",
+      "description": "",
+      "gridPos": {
+        "x": 12,
+        "y": 31,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "min": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#B42318"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "orientation": "horizontal",
+        "displayMode": "basic",
+        "showUnfilled": true,
+        "valueMode": "color",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "values": false
+        },
+        "namePlacement": "left",
+        "sizing": "auto"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (tipo) (diagnosi_guardrail_avvisi_total)",
+          "legendFormat": "{{tipo}}",
+          "instant": true,
+          "range": false
         }
       ]
     }
