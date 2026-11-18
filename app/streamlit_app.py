@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 from aspetto import CSS, dati_html, loader_html, procedura_html, risposta_html
 from diagnosi.agent import SessioneDiagnosi
@@ -181,6 +182,20 @@ def mostra_guide(guide: dict, n: int):
         st.info("Nessuna guida specifica per questo modello: descrivi il guasto e l'agente userà le pagine generali.")
 
 
+def scorri(dove: str = "start"):
+    """Porta la pagina sull'ultimo messaggio: "end" mentre si aspetta (si vede il loader), "start" quando arriva la
+    risposta (si legge dall'alto). Streamlit non lo fa da solo: un piccolo script nella pagina madre."""
+    st.session_state.n_scorri = st.session_state.get("n_scorri", 0) + 1
+    components.html(f"""<script>
+      const vai = () => {{
+        const m = window.parent.document.querySelectorAll('[data-testid="stChatMessage"]');
+        if (m.length) m[m.length - 1].scrollIntoView({{behavior: "smooth", block: "{dove}"}});
+      }};
+      setTimeout(vai, 150);
+      setTimeout(vai, 700);     // di nuovo dopo che Streamlit ha finito di disegnare (e di scorrere da solo)
+    </script><!-- {st.session_state.n_scorri} -->""", height=0)
+
+
 for n, (ruolo, contenuto, extra, *altro) in enumerate(st.session_state.messaggi):
     with st.chat_message(ruolo):
         if ruolo == "assistant":
@@ -191,6 +206,10 @@ for n, (ruolo, contenuto, extra, *altro) in enumerate(st.session_state.messaggi)
             mostra_guide(altro[0], n)
         if extra:
             st.markdown(extra, unsafe_allow_html=True)
+
+if st.session_state.get("scorri"):            # è appena arrivata una risposta: mostrala dall'inizio
+    st.session_state.scorri = False
+    scorri("start")
 
 if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: come sostituisco il CD3217?"):
     # Solo il modello (es. "iPad Air 4", "A2316"): elenco delle guide, senza chiamare l'LLM (zero token).
@@ -209,6 +228,7 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
             attesa = st.empty()
             attesa.markdown(loader_html(f"Cerco le guide di <b>{escape(nominato.get('titolo', ''))}</b>…"),
                             unsafe_allow_html=True)
+            scorri("end")
             guide = guide_per(nominato["percorso"])
             attesa.empty()
         titolo = escape(nominato.get("titolo", "?"))
@@ -216,6 +236,7 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
                  "Oppure scrivi il sintomo e le misure già fatte per iniziare la diagnosi.</p>")
         extra = '<span class="dati">Risposta immediata dalla wiki: 0 token, nessuna chiamata al modello.</span>'
         st.session_state.messaggi.append(("assistant", testo, extra, guide))
+        st.session_state.scorri = True
         st.rerun()
     if not st.session_state.dispositivo:
         st.session_state.dispositivo = trova_dispositivo(msg)
@@ -231,15 +252,19 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
             da_inviare = f"Dispositivo al banco: {d['titolo']}{codici}. Pagina wiki: {d['percorso']}.\n\n{msg}"
             st.session_state.dispositivo_comunicato = True
         # Timer dal vivo: l'agente lavora in un thread, l'interfaccia aggiorna il contatore ogni 0,2 s.
-        timer = st.empty()
+        # La scena si disegna UNA volta (ridisegnarla 5 volte al secondo faceva ripartire l'animazione);
+        # si aggiorna solo il numero dei secondi.
+        scena, timer = st.empty(), st.empty()
+        scena.markdown(loader_html("Consulto la wiki…"), unsafe_allow_html=True)
+        scorri("end")
         t0 = time.perf_counter()
         with ThreadPoolExecutor(max_workers=1) as pool:
             lavoro = pool.submit(st.session_state.sessione.chiedi, da_inviare)
             while not lavoro.done():
-                timer.markdown(loader_html(f"Consulto la wiki… <b>{time.perf_counter() - t0:.1f} s</b>"),
-                               unsafe_allow_html=True)
+                timer.caption(f"{time.perf_counter() - t0:.1f} s")
                 time.sleep(0.2)
             passo, esito, info = lavoro.result()
+        scena.empty()
         timer.empty()
         if not esito.bloccato and not st.session_state.dispositivo:
             st.session_state.dispositivo = trova_dispositivo(passo.dispositivo)
@@ -248,4 +273,5 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
         extra = dati_html(info)
         st.markdown(extra, unsafe_allow_html=True)
     st.session_state.messaggi.append(("assistant", testo, extra))
+    st.session_state.scorri = True
     st.rerun()

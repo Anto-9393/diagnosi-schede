@@ -71,6 +71,8 @@ ol.ipotesi .comp { font-weight: 600; }
 .procedura .attrezzo { color: #B5652B; font-weight: 600; margin: .25rem 0 0; }
 .procedura .controllo { color: #5B6A63; margin: .2rem 0 0; }
 .procedura .controllo b, .procedura .attrezzo b { font-weight: 600; color: inherit; }
+/* Lo scorrimento automatico si ferma un po' sotto la barra in alto di Streamlit */
+[data-testid="stChatMessage"] { scroll-margin-top: 4.5rem; scroll-margin-bottom: 7rem; }
 /* Loader "al banco": una scheda sotto i ferri. Cacciavite che avvita, pinza che posa un condensatore,
    corrente che scorre nelle piste, fumo di flussante dal chip. Un'unica scena, in loop. */
 .banco { display: flex; align-items: center; gap: 18px; padding: .4rem 0; }
