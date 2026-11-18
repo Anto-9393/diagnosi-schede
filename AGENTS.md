@@ -19,7 +19,7 @@ Assistente diagnostico per riparatori di schede iPhone/iPad. Framework **datapiz
   - `wiki/tecniche/` una pagina per tecnica di misura o riparazione (diode mode, ricerca corti...), valida per tutti i modelli
   - `wiki/strumenti/` una pagina per strumento (alimentatore, aria calda, programmatori...), con quelli disponibili sul banco
   - `wiki/dispositivi/` una pagina per dispositivo (es. `ipad-air-4.md`): usata anche dal riquadro laterale della UI
-- `src/diagnosi/` codice · `scripts/` punti di avvio · `tests/` pytest · `docs/diario.md` diario
+- `src/diagnosi/` codice · `scripts/` punti di avvio · `tests/` pytest · `docs/` confronti e log
 
 ## Schema delle pagine della wiki
 Ogni pagina inizia con un front-matter YAML:

@@ -155,7 +155,6 @@ Generato dal wiki builder: non modificare a mano.
 ## Strumenti
 
 - [Alimentatore da banco (DC power supply) — sul banco: AiXun P2408S](strumenti/alimentatore-da-banco.md) (AiXun P2408S) — DCPS AiXun P2408S: lettura corrente in “prompt to boot” e, se serve, localizzazione corto con iniezione a bassa tensione + termica/freeze spray.
-- [DOPPIONE DA CANCELLARE](strumenti/dc-power-supply-dcps.md) — 
 - [Mechanic T-824 SE — lettore diode mode connettori (VBUS)](strumenti/diode-mode-connector-tester-mechanic-t-824-se.md) — Usato in diode mode per triage VBUS: può indicare “VBUS bassa” anche su scheda sana; prima controlla probe point e saldature per evitare falsi positivi/negativi.
 - [JC V1S Pro — ROM Read/Write Module (programmazione ROM per CD3217)](strumenti/jc-v1s-pro.md) (iPad Pro 11 2nd Gen) — JC V1S Pro con ROM Read/Write Module: serve a leggere/scrivere la ACE SPI Flash (ROM) del CD3217 quando la sostituzione del solo CD3217 non risolve.
 - [Multimetro — test transistor in diode mode (SUNSHINE DT-17N)](strumenti/multimetro.md) (SUNSHINE DT-17N) — Note operative per usare il multimetro SUNSHINE DT-17N in diode mode su transistor: autoscale/OL e interpretazione drop (BJT/FET/IGBT).
