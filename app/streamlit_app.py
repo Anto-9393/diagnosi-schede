@@ -6,16 +6,18 @@ e le pagine della wiki consultate. Al centro: la chat con l'agente diagnostico.
 Avvio:  streamlit run app/streamlit_app.py
 """
 import re
+from html import escape
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import streamlit as st
 
-from aspetto import CSS, dati_html, guide_html, procedura_html, risposta_html
+from aspetto import CSS, dati_html, procedura_html, risposta_html
 from diagnosi.agent import SessioneDiagnosi
 from diagnosi.config import MODEL_DEMO, MODEL_DEV
-from diagnosi.dispositivi import casi_del_dispositivo, guide_del_dispositivo, schede, solo_dispositivo, trova_dispositivo
+from diagnosi.dispositivi import (casi_del_dispositivo, guide_del_dispositivo, leggi_guida, schede, solo_dispositivo,
+                                  trova_dispositivo)
 
 st.set_page_config(page_title="Diagnosi al banco", page_icon="🔧", layout="wide")
 st.markdown(CSS, unsafe_allow_html=True)
@@ -62,7 +64,7 @@ def elenco_dispositivi() -> dict[str, dict]:
 # ── stato della sessione (S04: senza session_state Streamlit dimentica tutto a ogni interazione)
 if "sessione" not in st.session_state:
     st.session_state.sessione = None
-    st.session_state.messaggi = []          # (ruolo, contenuto, extra)
+    st.session_state.messaggi = []          # (ruolo, contenuto, extra[, guide])
     st.session_state.dispositivo = None
     st.session_state.scelta = AUTO
     st.session_state.dispositivo_comunicato = False
@@ -90,7 +92,11 @@ with st.sidebar:
     if (st.button("Nuova diagnosi") or s_ is None or s_.model != modello or scelta != st.session_state.scelta
             or s_.dettaglio != dettaglio or s_.lettura != lettura):
         st.session_state.scelta = scelta
-        nuova_sessione(modello, dettaglio, lettura)
+        try:
+            nuova_sessione(modello, dettaglio, lettura)
+        except RuntimeError as e:              # chiave mancante o PROVIDER sbagliato: messaggio chiaro, non un traceback
+            st.error(f"{e}\n\nPoi ferma Streamlit (Ctrl+C) e rilancialo: il .env si legge solo all'avvio.")
+            st.stop()
     st.divider()
 
     d = st.session_state.dispositivo
@@ -126,12 +132,36 @@ st.title("Diagnosi al banco")
 st.markdown("Scrivi sintomi e misure già fatte: ricevi una misura alla volta, con il valore atteso e le pagine della wiki "
             "da cui viene. Chiedi \"come sostituisco…\" o \"come programmo…\" per avere la procedura passo per passo.")
 
-for ruolo, contenuto, extra in st.session_state.messaggi:
+TIPI_GUIDA = {"caso": "Caso reale", "sintomo": "Sintomo", "tecnica": "Tecnica", "componente": "Componente",
+              "strumento": "Strumento"}
+
+
+def mostra_guide(guide: dict):
+    """Elenco delle guide del modello: ogni titolo si apre QUI, dalla wiki interna (nessun link a repair.wiki)."""
+    if guide["wiki"]:
+        st.markdown(f"**Nella nostra wiki ({len(guide['wiki'])})**")
+        for p in guide["wiki"]:
+            with st.expander(f"{TIPI_GUIDA.get(p['tipo'], p['tipo'])}: {p['titolo']}"):
+                st.markdown(leggi_guida(p["percorso"]))
+                st.caption(f"wiki/{p['percorso']}")
+    if guide["repairwiki"]:
+        st.markdown(f"**Guide di repair.wiki, copia locale ({len(guide['repairwiki'])})**")
+        for g in guide["repairwiki"]:
+            with st.expander(g["titolo"]):
+                st.markdown(leggi_guida(g["percorso"]))
+                st.caption(f"{g['percorso']} (testo CC BY-SA 3.0)")
+    if not guide["wiki"] and not guide["repairwiki"]:
+        st.info("Nessuna guida specifica per questo modello: descrivi il guasto e l'agente userà le pagine generali.")
+
+
+for ruolo, contenuto, extra, *altro in st.session_state.messaggi:
     with st.chat_message(ruolo):
         if ruolo == "assistant":
             st.markdown(contenuto, unsafe_allow_html=True)     # HTML costruito da aspetto.py, testo già escapato
         else:
             st.markdown(contenuto)
+        if altro:
+            mostra_guide(altro[0])
         if extra:
             st.markdown(extra, unsafe_allow_html=True)
 
@@ -146,9 +176,11 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
     if nominato and solo_dispositivo(msg, nominato) and (inizio or chiede_guide):
         if st.session_state.scelta == AUTO:
             st.session_state.dispositivo = nominato
-        testo = guide_html(nominato, guide_del_dispositivo(nominato))
+        titolo = escape(nominato.get("titolo", "?"))
+        testo = (f"<p>Ecco cosa c'è per <b>{titolo}</b>: apri una guida per leggerla qui. "
+                 "Oppure scrivi il sintomo e le misure già fatte per iniziare la diagnosi.</p>")
         extra = '<span class="dati">Risposta immediata dalla wiki: 0 token, nessuna chiamata al modello.</span>'
-        st.session_state.messaggi.append(("assistant", testo, extra))
+        st.session_state.messaggi.append(("assistant", testo, extra, guide_del_dispositivo(nominato)))
         st.rerun()
     if not st.session_state.dispositivo:
         st.session_state.dispositivo = trova_dispositivo(msg)

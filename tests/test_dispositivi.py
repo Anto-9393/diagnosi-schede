@@ -62,3 +62,16 @@ def test_guide_del_dispositivo(tmp_path):
     g = guide_del_dispositivo(trova_dispositivo("iPad Air", w), w, raw)
     assert [x["titolo"] for x in g["repairwiki"]] == ["IPad Air No Touch"]
     assert [x["percorso"] for x in g["wiki"]] == ["componenti/tristar.md"]
+
+
+def test_leggi_guida_dentro_l_app(tmp_path):
+    from diagnosi.dispositivi import leggi_guida
+    wiki = tmp_path / "wiki"; (wiki / "casi").mkdir(parents=True)
+    pagine = tmp_path / "raw" / "repairwiki" / "pagine"; pagine.mkdir(parents=True)
+    (wiki / "casi" / "a.md").write_text("---\ntitolo: x\n---\n# Caso\nVedi [CD3217](../componenti/cd3217.md).", encoding="utf-8")
+    (pagine / "g.md").write_text("---\nurl: https://repair.wiki/w/G\n---\n> Fonte: [G — repair.wiki](https://repair.wiki/w/G), CC BY-SA 3.0.\n",
+                                 encoding="utf-8")
+    (tmp_path / "segreto.md").write_text("no", encoding="utf-8")
+    assert leggi_guida("casi/a.md", wiki, tmp_path) == "# Caso\nVedi CD3217."        # niente front-matter, link interni = testo
+    assert "https://repair.wiki/w/G" in leggi_guida("raw/repairwiki/pagine/g.md", wiki, tmp_path)  # l'attribuzione resta
+    assert leggi_guida("../segreto.md", wiki, tmp_path) == "Guida non trovata."    # niente fuori da wiki/ e raw/repairwiki/

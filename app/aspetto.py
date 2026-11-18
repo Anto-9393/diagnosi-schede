@@ -96,6 +96,12 @@ def risposta_html(passo, esito) -> str:
             parti.append(f'<div class="avviso controllo"><span class="fonte-avviso">Controllo automatico:</span>{escape(a)}</div>')
         else:
             parti.append(f'<div class="avviso">{escape(a)}</div>')
+    # Ordine del ragionamento: cosa sappiamo -> ipotesi -> quindi cosa misuro (richiesta del tecnico, 18 nov).
+    if hasattr(passo, "ipotesi"):
+        parti.append(f'<p class="riepilogo">{escape(passo.riepilogo)}</p>')
+        voci = "".join(f'<li><span class="comp">{escape(i.componente)}</span>{_barra(i.probabilita)}<br>{escape(i.motivo)}</li>'
+                       for i in passo.ipotesi)
+        parti.append(f'<ol class="ipotesi">{voci}</ol>')
     parti.append(
         '<div class="misura">'
         '<p class="cosa">Prossima misura</p>'
@@ -106,11 +112,6 @@ def risposta_html(passo, esito) -> str:
         '<p class="etichetta" style="margin-top:.55rem">Se il valore è diverso</p>'
         f'<p class="se" style="margin-top:0">{escape(m.se_diverso)}</p>'
         '</div>')
-    if hasattr(passo, "ipotesi"):
-        parti.append(f'<p class="riepilogo">{escape(passo.riepilogo)}</p>')
-        voci = "".join(f'<li><span class="comp">{escape(i.componente)}</span>{_barra(i.probabilita)}<br>{escape(i.motivo)}</li>'
-                       for i in passo.ipotesi)
-        parti.append(f'<ol class="ipotesi">{voci}</ol>')
     if passo.domande_al_tecnico:
         parti.append("<p><b>Mi serve sapere</b></p><ul class=\"domande\">"
                      + "".join(f"<li>{escape(q)}</li>" for q in passo.domande_al_tecnico) + "</ul>")

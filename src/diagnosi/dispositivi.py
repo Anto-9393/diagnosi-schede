@@ -8,7 +8,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from diagnosi.config import RAW_DIR, WIKI_DIR
+from diagnosi.config import RAW_DIR, ROOT, WIKI_DIR
 from diagnosi.wiki_builder import leggi_front_matter
 
 
@@ -96,3 +96,17 @@ def guide_del_dispositivo(d: dict, wiki_dir: Path = WIKI_DIR, raw_dir: Path = RA
     ordine = {"caso": 0, "sintomo": 1, "tecnica": 2, "componente": 3, "strumento": 4}
     wiki.sort(key=lambda p: (ordine.get(p["tipo"], 9), p["titolo"].lower()))
     return {"wiki": wiki, "repairwiki": repairwiki}
+
+
+def leggi_guida(percorso: str, wiki_dir: Path = WIKI_DIR, root: Path = ROOT) -> str:
+    """Testo di una guida da mostrare DENTRO l'app (niente link al sito): una pagina della wiki ("casi/x.md")
+    o la copia locale di repair.wiki ("raw/repairwiki/pagine/x.md"). Senza front-matter; i link interni tra pagine
+    diventano testo (nell'app non portano da nessuna parte). La riga "> Fonte: ... CC BY-SA" resta: è l'attribuzione
+    che la licenza chiede. Si legge solo dentro wiki/ e raw/repairwiki/ (privilegio minimo, come i tool)."""
+    base = root if percorso.startswith("raw/") else wiki_dir
+    consentite = [(wiki_dir).resolve(), (root / "raw" / "repairwiki").resolve()]
+    f = (base / percorso).resolve()
+    if not any(f.is_relative_to(c) for c in consentite) or f.suffix != ".md" or not f.exists():
+        return "Guida non trovata."
+    _, corpo = leggi_front_matter(f.read_text(encoding="utf-8"))
+    return re.sub(r"\[([^\]]+)\]\((?!https?://)[^)]+\)", r"\1", corpo)
