@@ -32,3 +32,5 @@ Regole:
   i punti simili, togli le ripetizioni; i dettagli di un singolo modello vanno nella pagina del dispositivo o del
   componente, qui basta un link.
 - Non scrivere il front-matter YAML: lo aggiunge il programma. Scrivi solo il corpo della pagina.
+- Nei casi: scrivi che un componente è stato SOSTITUITO solo se la fonte lo dice di QUEL componente (attenzione a non scambiare
+  sigle: nel caso A2316 X3 è l'IC di carica 343S00264-A0, X5 è il CD3217). Interventi fatti e sospetti vanno tenuti separati.

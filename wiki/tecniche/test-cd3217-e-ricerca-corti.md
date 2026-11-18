@@ -10,7 +10,8 @@ fonti:
 - raw/repairwiki/pagine/how-to-reprogram-the-cd32-rom-with-wylie-spi-programmer.md
 - raw/repairwiki/pagine/ipad-pro-11in-1st-gen-not-recognized-by-pc-in-recovery-mode-or-charging-issues.md
 - raw/casi_demo/ipad-air-4-a2316-non-carica.md
-aggiornato: '2026-11-17'
+- revisione del tecnico (18 nov 2026)
+aggiornato: '2026-11-18'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
 ---
 
@@ -69,9 +70,16 @@ Questa parte serve a distinguere **corto su condensatore** vs **corto sull’IC*
    - se scalda prima l’**IC** → probabile guasto dell’IC
 
 #### Priorità diagnostica (nota da caso A2316)
-Nel caso iPad Air 4 A2316 (caffè), il CD3217 sostituito **non** ha risolto: il comportamento (nessuna carica, PC non rileva) era coerente con un problema “comune” a carica+dati e/o con alimentazioni/condizioni dead battery. La fonte caso riporta anche che:
+*Corretto dal tecnico (18 nov 2026): l'ingest aveva scritto che il CD3217 era già stato sostituito. Non è così.*
+
+Nel caso iPad Air 4 A2316 (caffè) sono stati sostituiti l’**IC di carica 343S00264-A0 (X3 su JC Drawing)** e il
+**flat/connettore USB-C**, senza risolvere. Il **CD3217B12 (X5 su JC Drawing) NON è ancora stato sostituito** ed è il
+sospettato n. 1. La fonte caso riporta anche che:
 - con batteria + cavo la corrente misurata era **~0,002 A** (quindi non “corto duro” che manda subito in protezione)
-- il CD3217 (X3 = **343S00264-A0**) risultava **scaldare subito con cavo inserito**
+- l’IC di carica **343S00264-A0 (X3)** scaldava subito con cavo inserito, ma cambiarlo non ha risolto: il calore era
+  un effetto, non la causa
+- con batteria + cavo le linee X1548–X1550 (uscita del CD3217 verso X3) restavano a ~0,026–0,186 V: il CD3217 non
+  chiude il passaggio di VBUS verso l’IC di carica
 
 Quindi, quando applichi questa tecnica su CD3217, non fermarti al “corto duro”: verifica sempre **condizioni con/senza batteria** e controlla anche alimentazioni/passivi attorno al controller.
 
