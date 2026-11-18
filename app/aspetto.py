@@ -71,6 +71,39 @@ ol.ipotesi .comp { font-weight: 600; }
 .procedura .attrezzo { color: #B5652B; font-weight: 600; margin: .25rem 0 0; }
 .procedura .controllo { color: #5B6A63; margin: .2rem 0 0; }
 .procedura .controllo b, .procedura .attrezzo b { font-weight: 600; color: inherit; }
+/* Loader "al banco": una scheda sotto i ferri. Cacciavite che avvita, pinza che posa un condensatore,
+   corrente che scorre nelle piste, fumo di flussante dal chip. Un'unica scena, in loop. */
+.banco { display: flex; align-items: center; gap: 18px; padding: .4rem 0; }
+.banco svg { flex: none; overflow: visible; }
+.banco .testo-loader { color: #5B6A63; font-size: 1rem; line-height: 1.4; }
+.banco .testo-loader b { color: #1A2420; }
+.banco .cacciavite { animation: scendi 1.6s ease-in-out infinite; }
+.banco .impugnatura { animation: gira-manico .4s linear infinite; }
+.banco .taglio { transform-origin: 34px 63px; animation: avvita 1.6s ease-in-out infinite; }
+.banco .pinza { animation: posa 2.4s ease-in-out infinite; }
+.banco .ganascia-a { transform-origin: 158px 30px; animation: apri-a 2.4s ease-in-out infinite; }
+.banco .ganascia-b { transform-origin: 158px 30px; animation: apri-b 2.4s ease-in-out infinite; }
+.banco .condensatore { animation: lascia 2.4s ease-in-out infinite; }
+.banco .posato { animation: posato 2.4s ease-in-out infinite; }
+.banco .pista { stroke-dasharray: 5 7; animation: corrente 1.1s linear infinite; }
+.banco .pista.lenta { animation-duration: 1.7s; }
+.banco .fumo { animation: fumo 2.2s ease-out infinite; }
+.banco .fumo.due { animation-delay: .7s; }
+.banco .fumo.tre { animation-delay: 1.4s; }
+.banco .led { animation: led 1.6s ease-in-out infinite; }
+@keyframes scendi { 0%, 20%, 100% { transform: translateY(-16px); } 40%, 75% { transform: translateY(0); } }
+@keyframes gira-manico { from { transform: translateX(0); } to { transform: translateX(-4px); } }
+@keyframes avvita { 0%, 40% { transform: rotate(0deg); } 75%, 100% { transform: rotate(270deg); } }
+@keyframes posa { 0%, 100% { transform: translateY(-12px); } 40%, 62% { transform: translateY(6px); } }
+@keyframes apri-a { 0%, 45% { transform: rotate(0deg); } 55%, 80% { transform: rotate(7deg); } 100% { transform: rotate(0deg); } }
+@keyframes apri-b { 0%, 45% { transform: rotate(0deg); } 55%, 80% { transform: rotate(-7deg); } 100% { transform: rotate(0deg); } }
+@keyframes lascia { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+@keyframes posato { 0%, 50% { opacity: 0; } 51%, 96% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes corrente { to { stroke-dashoffset: -24; } }
+@keyframes fumo { 0% { opacity: 0; transform: translate(0, 0) scale(.6); } 25% { opacity: .55; }
+  100% { opacity: 0; transform: translate(6px, -26px) scale(1.6); } }
+@keyframes led { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .banco * { animation: none !important; } }
 </style>
 """
 
@@ -184,3 +217,46 @@ def procedura_html(proc, esito) -> str:
     fonti = ", ".join(f"<code>{escape(f)}</code>" for f in proc.fonti) or "nessuna pagina della wiki: da verificare"
     parti.append(f'<p class="fonti">Fonti: {fonti}</p>')
     return "".join(parti)
+
+
+_SCENA = """<svg width="220" height="96" viewBox="0 0 220 96" aria-hidden="true">
+  <rect x="6" y="56" width="208" height="34" rx="5" fill="#1E5B45"/>
+  <rect x="6" y="56" width="208" height="34" rx="5" fill="none" stroke="#174A38" stroke-width="2"/>
+  <path class="pista" d="M46 76 H86 V68 H100" stroke="#D08A4E" stroke-width="2.2" fill="none"/>
+  <path class="pista lenta" d="M128 68 H142 V80 H196" stroke="#D08A4E" stroke-width="2.2" fill="none"/>
+  <path class="pista lenta" d="M18 84 H70 V82" stroke="#D08A4E" stroke-width="2" fill="none"/>
+  <rect x="100" y="62" width="28" height="18" rx="2" fill="#1A2420"/>
+  <g fill="#C9D2CD"><rect x="103" y="59" width="2" height="3"/><rect x="109" y="59" width="2" height="3"/>
+    <rect x="115" y="59" width="2" height="3"/><rect x="121" y="59" width="2" height="3"/>
+    <rect x="103" y="80" width="2" height="3"/><rect x="109" y="80" width="2" height="3"/>
+    <rect x="115" y="80" width="2" height="3"/><rect x="121" y="80" width="2" height="3"/></g>
+  <circle class="led" cx="196" cy="66" r="3" fill="#F2B84B"/>
+  <rect x="151" y="62" width="14" height="6" rx="1" fill="#2E6B54"/>
+  <rect class="posato" x="152" y="62" width="12" height="6" rx="1.5" fill="#D9A066"/>
+  <circle class="fumo" cx="114" cy="58" r="3.5" fill="#C9D2CD"/>
+  <circle class="fumo due" cx="118" cy="58" r="3" fill="#C9D2CD"/>
+  <circle class="fumo tre" cx="110" cy="58" r="2.6" fill="#C9D2CD"/>
+  <circle cx="34" cy="63" r="6.5" fill="#B9C4BE" stroke="#7C8C85" stroke-width="1.5"/>
+  <g class="taglio"><rect x="29.5" y="62" width="9" height="2" rx="1" fill="#5B6A63"/></g>
+  <g class="cacciavite">
+    <rect x="32.5" y="30" width="3" height="27" fill="#8A9A92"/>
+    <path d="M32.5 57 L35.5 57 L34 61 Z" fill="#8A9A92"/>
+    <svg x="27" y="4" width="14" height="27" viewBox="0 0 14 27"><rect width="14" height="27" rx="4" fill="#B5652B"/>
+      <g class="impugnatura" fill="#8E4E20"><rect x="2" y="3" width="2" height="21" rx="1"/><rect x="6" y="3" width="2" height="21" rx="1"/>
+      <rect x="10" y="3" width="2" height="21" rx="1"/><rect x="14" y="3" width="2" height="21" rx="1"/></g></svg>
+    <rect x="27" y="27" width="14" height="4" rx="1" fill="#8E4E20"/>
+  </g>
+  <g class="pinza">
+    <g class="ganascia-a"><path d="M158 30 L154 56" stroke="#8A9A92" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M158 30 L148 4" stroke="#1E5B45" stroke-width="6" stroke-linecap="round"/></g>
+    <g class="ganascia-b"><path d="M158 30 L162 56" stroke="#8A9A92" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M158 30 L168 4" stroke="#1E5B45" stroke-width="6" stroke-linecap="round"/></g>
+    <circle cx="158" cy="30" r="3" fill="#1A2420"/>
+    <rect class="condensatore" x="152" y="56" width="12" height="6" rx="1.5" fill="#D9A066"/>
+  </g>
+</svg>"""
+
+
+def loader_html(testo: str) -> str:
+    """Attesa "al banco": una scena animata (cacciavite, pinza, piste, fumo) + testo, es. il timer."""
+    return f'<div class="banco" role="status">{_SCENA}<span class="testo-loader">{testo}</span></div>'

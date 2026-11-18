@@ -13,5 +13,5 @@ def crea_client(model: str = MODEL_DEV, temperature: float | None = 0.2):
     if PROVIDER == "openai":
         from datapizza.clients.openai import OpenAIClient
         return OpenAIClient(api_key=api_key(), model=model, temperature=temperature)
-    from datapizza.clients.openai import OpenAIClient
-    return OpenAIClient(api_key=api_key(), model=model, temperature=temperature)
+    from datapizza.clients.anthropic import AnthropicClient       # PROVIDER=anthropic (prima creava OpenAI: bug)
+    return AnthropicClient(api_key=api_key(), model=model, temperature=temperature)

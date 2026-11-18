@@ -13,9 +13,10 @@ from pathlib import Path
 
 import streamlit as st
 
-from aspetto import CSS, dati_html, procedura_html, risposta_html
+from aspetto import CSS, dati_html, loader_html, procedura_html, risposta_html
 from diagnosi.agent import SessioneDiagnosi
 from diagnosi.config import MODEL_DEMO, MODEL_DEV
+from diagnosi.traduzioni import traduci, tradotta
 from diagnosi.dispositivi import (casi_del_dispositivo, guide_del_dispositivo, leggi_guida, schede, solo_dispositivo,
                                   trova_dispositivo)
 
@@ -132,36 +133,62 @@ st.title("Diagnosi al banco")
 st.markdown("Scrivi sintomi e misure già fatte: ricevi una misura alla volta, con il valore atteso e le pagine della wiki "
             "da cui viene. Chiedi \"come sostituisco…\" o \"come programmo…\" per avere la procedura passo per passo.")
 
+@st.cache_data(show_spinner=False)
+def guide_per(percorso: str) -> dict:
+    """Guide di un dispositivo, in cache: la prima volta legge ~450 file, poi è immediato (la wiki non cambia in sessione)."""
+    return guide_del_dispositivo(next(s for s in schede() if s["percorso"] == percorso))
+
+
+@st.cache_data(show_spinner=False)
+def testo_guida(percorso: str) -> str:
+    return leggi_guida(percorso)
+
+
 TIPI_GUIDA = {"caso": "Caso reale", "sintomo": "Sintomo", "tecnica": "Tecnica", "componente": "Componente",
               "strumento": "Strumento"}
 
 
-def mostra_guide(guide: dict):
+def mostra_guide(guide: dict, n: int):
     """Elenco delle guide del modello: ogni titolo si apre QUI, dalla wiki interna (nessun link a repair.wiki)."""
     if guide["wiki"]:
         st.markdown(f"**Nella nostra wiki ({len(guide['wiki'])})**")
         for p in guide["wiki"]:
             with st.expander(f"{TIPI_GUIDA.get(p['tipo'], p['tipo'])}: {p['titolo']}"):
-                st.markdown(leggi_guida(p["percorso"]))
+                st.markdown(testo_guida(p["percorso"]))
                 st.caption(f"wiki/{p['percorso']}")
     if guide["repairwiki"]:
         st.markdown(f"**Guide di repair.wiki, copia locale ({len(guide['repairwiki'])})**")
         for g in guide["repairwiki"]:
-            with st.expander(g["titolo"]):
-                st.markdown(leggi_guida(g["percorso"]))
+            it = tradotta(g["percorso"])                     # già tradotta una volta? allora dal file, 0 token
+            with st.expander(g["titolo"] + ("" if it else " (in inglese)")):
+                if it:
+                    st.markdown(it)
+                    st.caption(f"Traduzione salvata in raw/repairwiki/tradotte/, originale {g['percorso']}")
+                    continue
+                if st.button("Traduci in italiano", key=f"traduci-{n}-{g['percorso']}"):
+                    attesa = st.empty()
+                    attesa.markdown(loader_html("Traduco la guida, solo questa volta…"), unsafe_allow_html=True)
+                    try:
+                        _, tin, tout = traduci(g["percorso"])
+                        attesa.empty()
+                        st.rerun()
+                    except Exception as e:                   # noqa: BLE001 — rete o chiave: lo dico, non crasho
+                        attesa.empty()
+                        st.error(f"Traduzione non riuscita: {e}")
+                st.markdown(testo_guida(g["percorso"]))
                 st.caption(f"{g['percorso']} (testo CC BY-SA 3.0)")
     if not guide["wiki"] and not guide["repairwiki"]:
         st.info("Nessuna guida specifica per questo modello: descrivi il guasto e l'agente userà le pagine generali.")
 
 
-for ruolo, contenuto, extra, *altro in st.session_state.messaggi:
+for n, (ruolo, contenuto, extra, *altro) in enumerate(st.session_state.messaggi):
     with st.chat_message(ruolo):
         if ruolo == "assistant":
             st.markdown(contenuto, unsafe_allow_html=True)     # HTML costruito da aspetto.py, testo già escapato
         else:
             st.markdown(contenuto)
         if altro:
-            mostra_guide(altro[0])
+            mostra_guide(altro[0], n)
         if extra:
             st.markdown(extra, unsafe_allow_html=True)
 
@@ -176,11 +203,19 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
     if nominato and solo_dispositivo(msg, nominato) and (inizio or chiede_guide):
         if st.session_state.scelta == AUTO:
             st.session_state.dispositivo = nominato
+        with st.chat_message("user"):
+            st.markdown(msg)
+        with st.chat_message("assistant"):
+            attesa = st.empty()
+            attesa.markdown(loader_html(f"Cerco le guide di <b>{escape(nominato.get('titolo', ''))}</b>…"),
+                            unsafe_allow_html=True)
+            guide = guide_per(nominato["percorso"])
+            attesa.empty()
         titolo = escape(nominato.get("titolo", "?"))
         testo = (f"<p>Ecco cosa c'è per <b>{titolo}</b>: apri una guida per leggerla qui. "
                  "Oppure scrivi il sintomo e le misure già fatte per iniziare la diagnosi.</p>")
         extra = '<span class="dati">Risposta immediata dalla wiki: 0 token, nessuna chiamata al modello.</span>'
-        st.session_state.messaggi.append(("assistant", testo, extra, guide_del_dispositivo(nominato)))
+        st.session_state.messaggi.append(("assistant", testo, extra, guide))
         st.rerun()
     if not st.session_state.dispositivo:
         st.session_state.dispositivo = trova_dispositivo(msg)
@@ -201,7 +236,8 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
         with ThreadPoolExecutor(max_workers=1) as pool:
             lavoro = pool.submit(st.session_state.sessione.chiedi, da_inviare)
             while not lavoro.done():
-                timer.markdown(f"Consulto la wiki… **{time.perf_counter() - t0:.1f} s**")
+                timer.markdown(loader_html(f"Consulto la wiki… <b>{time.perf_counter() - t0:.1f} s</b>"),
+                               unsafe_allow_html=True)
                 time.sleep(0.2)
             passo, esito, info = lavoro.result()
         timer.empty()
