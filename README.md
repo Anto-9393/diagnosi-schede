@@ -77,7 +77,7 @@ flowchart LR
 Serve Python 3.11+ e una chiave OpenAI (oppure Anthropic).
 
 ```powershell
-git clone https://github.com/<utente>/diagnosi-schede.git
+git clone https://github.com/Anto-9393/diagnosi-schede.git
 cd diagnosi-schede
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1          # macOS/Linux: source .venv/bin/activate
