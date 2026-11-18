@@ -132,41 +132,12 @@ def wikitext_a_markdown(t: str) -> tuple[str, list[str]]:
     return t.strip(), [c.strip() for c in categorie]
 
 
-# ----------------------------------------------------------------------------- figure
-_OPZIONI = re.compile(r"^(thumb|thumbnail|frame|frameless|border|center|centre|left|right|none|upright.*|\d*x?\d+px|"
-                      r"alt=.*|link=.*|page=.*|class=.*)$", re.I)
-
-
-def figure_da_wikitext(t: str) -> list[dict]:
-    """Le immagini della guida, in ordine: [{"file": "Nome.png", "didascalia": "Figure 2. ..."}].
-    Non le copiamo (molte non hanno licenza libera: screenshot di boardview, foto Apple): l'app le CARICA da
-    repair.wiki quando apri la guida, con il link alla pagina del file (autore e licenza)."""
-    trovate = []
-    for m in re.finditer(r"\[\[\s*(?:File|Image)\s*:([^\]]+)\]\]", t, re.I):     # [[File:Nome|thumb|...|didascalia]]
-        parti = [x.strip() for x in m.group(1).split("|")]
-        testo = [x for x in parti[1:] if x and not _OPZIONI.match(x)]
-        trovate.append((parti[0], testo[-1] if testo else ""))
-    for g in re.findall(r"<gallery.*?>(.*?)</gallery>", t, re.S | re.I):          # gallerie: "File:Nome|didascalia"
-        for riga in g.splitlines():
-            m = re.match(r"\s*(?:File|Image)\s*:([^|]+)(?:\|(.*))?", riga, re.I)
-            if m:
-                testo = [x for x in (m.group(2) or "").split("|") if x.strip() and not _OPZIONI.match(x.strip())]
-                trovate.append((m.group(1).strip(), testo[-1].strip() if testo else ""))
-    visti, out = set(), []
-    for nome, didascalia in trovate:
-        if nome in visti or nome.lower().startswith("example") or not re.search(r"\.(png|jpe?g|gif|webp|svg)$", nome, re.I):
-            continue
-        visti.add(nome)
-        out.append({"file": nome, "didascalia": re.sub(r"\s+", " ", didascalia)[:200]})
-    return out
-
-
 # ----------------------------------------------------------------------------- scrittura
 def slug(titolo: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", titolo.lower()).strip("-")
 
 
-def front_matter(p: dict, categorie: list[str], dispositivo: dict | None = None, figure: list | None = None) -> str:
+def front_matter(p: dict, categorie: list[str], dispositivo: dict | None = None) -> str:
     """Intestazione YAML scritta da yaml.safe_dump: gestisce da sola virgolette e caratteri speciali
     (bug trovato su un titolo con 12.9" — mai costruire YAML a mano con le f-string)."""
     url = BASE_URL + quote(p["titolo"].replace(" ", "_"))
@@ -178,7 +149,6 @@ def front_matter(p: dict, categorie: list[str], dispositivo: dict | None = None,
         "revisione": p["revisione"],
         "categorie": categorie,
         **(dispositivo or {}),
-        **({"figure": figure} if figure else {}),
         "licenza": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)",
     }
     return (
@@ -202,34 +172,12 @@ def importa(xml_path: Path, out_dir: Path = OUT_DIR) -> list[Path]:
             print(f"  saltata (troppo corta, {len(md)} caratteri): {p['titolo']}")
             continue
         f = out_dir / f"{slug(p['titolo'])}.md"
-        f.write_text(front_matter(p, categorie, dispositivo, figure_da_wikitext(p["wikitext"])) + md + "\n",
-                     encoding="utf-8")
+        f.write_text(front_matter(p, categorie, dispositivo) + md + "\n", encoding="utf-8")
         scritti.append(f)
     return scritti
 
 
-def aggiungi_figure(xml_path: Path, out_dir: Path = OUT_DIR) -> int:
-    """Aggiunge SOLO l'elenco delle figure al front-matter delle pagine già importate (il testo non si tocca)."""
-    n = 0
-    for p in leggi_export(xml_path):
-        f = out_dir / f"{slug(p['titolo'])}.md"
-        figure = figure_da_wikitext(p["wikitext"])
-        if not f.exists() or not figure:
-            continue
-        _, fm, corpo = f.read_text(encoding="utf-8").split("---", 2)
-        meta = yaml.safe_load(fm) or {}
-        meta["figure"] = figure
-        f.write_text("---\n" + yaml.safe_dump(meta, allow_unicode=True, sort_keys=False) + "---" + corpo, encoding="utf-8")
-        n += 1
-    return n
-
-
 if __name__ == "__main__":
-    if "--solo-figure" in sys.argv:      # pagine già importate: aggiunge le figure senza riscrivere il testo
-        xml_files = [f for a in sys.argv[1:] if a != "--solo-figure"
-                     for f in (sorted(Path().glob(a)) if "*" in a else [Path(a)])]
-        print(f"Figure aggiunte a {sum(aggiungi_figure(x) for x in xml_files)} pagine")
-        sys.exit()
     if len(sys.argv) < 2:
         sys.exit("Uso: python -m diagnosi.import_repairwiki raw/repairwiki/*.xml  (uno o più file)")
     xml_files = [f for a in sys.argv[1:] for f in (sorted(Path().glob(a)) if "*" in a else [Path(a)])]

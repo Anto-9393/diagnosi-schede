@@ -6,25 +6,6 @@ cronologia: https://repair.wiki/w/How_to_reprogram_the_CD32_ROM_with_Wylie_SPI_P
 revisione: '2026-01-01T22:20:41Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Wylie.png
-  didascalia: ''
-- file: Program to run.png
-  didascalia: ''
-- file: Pin 1.png
-  didascalia: ''
-- file: Detect.png
-  didascalia: ''
-- file: Chip detected.png
-  didascalia: ''
-- file: Chip info.png
-  didascalia: ''
-- file: Rom Loaded.png
-  didascalia: ''
-- file: Write.png
-  didascalia: ''
-- file: Write ok.png
-  didascalia: ''
 ---
 
 # How to reprogram the CD32 ROM with Wylie SPI Programmer

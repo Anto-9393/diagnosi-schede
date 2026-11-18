@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_XS_No_Image_on_Screen?action=history
 revisione: '2025-06-14T00:05:26Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Screenshot From 2025-06-13 16-42-18.png
-  didascalia: iPhone Xs Boardview of display FPC with FL5783 circled in red and display
-    chokes circled in green
 ---
 
 # IPhone XS No Image on Screen

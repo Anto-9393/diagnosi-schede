@@ -8,13 +8,6 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: September 20, 2019
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone11pro-1-768x768.webp
-  didascalia: ''
-- file: Ip-11p-pmax-fcam.png
-  didascalia: ''
-- file: IPhone 11 Pro - Known Good Mechanic Lightning Readings.jpg
-  didascalia: iPhone 11 Pro - Known Good Mechanic Lightning Readings
 ---
 
 # IPhone 11 Pro

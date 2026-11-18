@@ -6,16 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_14_Pro_Max_%E2%80%93_No_Modem_Firmware_
 revisione: '2025-07-31T13:00:16Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: No-Modem-Firmware.png
-  didascalia: Modem firmware blank (Figure 1)
-- file: Different-Board-Revisions.png
-  didascalia: 2 different board revisions (Figure 3)
-- file: Modem-Firmware-Restored.png
-  didascalia: Restored modem firmware after replacing board,sku and platform ID resistors
-    (Figure 2)
-- file: Resistor-locations.png
-  didascalia: Location for Board, SKU and Platform ID resistors. (Figure 4)
 ---
 
 # IPhone 14 Pro Max – No Modem Firmware After RF Layer Swap

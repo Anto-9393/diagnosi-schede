@@ -6,23 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_13_Pro_and_13_Pro_Max_No_Image_Black_Sc
 revisione: '2025-06-16T06:12:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Screenshot From 2025-06-15 15-06-17.png
-  didascalia: ''
-- file: Screenshot From 2025-06-15 16-36-13.png
-  didascalia: Figure 1. Capacitors C9145 and C9146 next to display IC U9100
-- file: Screenshot From 2025-06-15 18-22-07.png
-  didascalia: Figure 2. Components highlighted in red are all on the PNVAR_DISPLAY_VSSEL
-    power line
-- file: Screenshot From 2025-06-15 18-38-56.png
-  didascalia: Figure 3. Display IC coils that will sometimes become disconnected and
-    cause no image
-- file: 13prou9100damage.jpg
-  didascalia: Figure 4. U9100 got badly damaged and shorted PP_VDD_MAIN through L9130
-    and ended up burning several pads underneath the IC in the process
-- file: Iphone13prou9100jumpers.jpg
-  didascalia: Figure 5. Jumper wires had to be run to repair the pads that were damaged
-    under U9100
 ---
 
 # IPhone 13 Pro and 13 Pro Max No Image Black Screen

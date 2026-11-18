@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Pro_11in_1st_Gen_Not_Recognized_by_PC_in_
 revisione: '2025-07-25T19:03:21Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Recovery-mode-ipad-pro-face-id.png
-  didascalia: ''
-- file: Screenshot From 2025-07-25 11-38-40.png
-  didascalia: Location of CD3215 IC on iPad Pro 11" 1st Gen
-- file: Screenshot From 2025-07-25 11-38-12.png
-  didascalia: Location of Tristar 610A3C on iPad Pro 11" 1st Gen
 ---
 
 # IPad Pro 11in 1st Gen Not Recognized by PC in Recovery Mode or Charging Issues

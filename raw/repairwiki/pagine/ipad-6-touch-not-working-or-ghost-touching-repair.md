@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPad_6_Touch_Not_Working_or_Ghost_Touching_Rep
 revisione: '2024-01-20T02:00:25Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # IPad 6 Touch Not Working or Ghost Touching Repair

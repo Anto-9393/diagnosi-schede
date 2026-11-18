@@ -7,13 +7,6 @@ revisione: '2026-10-13T08:00:56Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone-16e.webp
-  didascalia: ''
-- file: Ip-16e-fcam.png
-  didascalia: ''
-- file: Motherboard component notes .png
-  didascalia: motherboard with different component names
 ---
 
 # IPhone 16e

@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_XR_Rear_camera_is_not_working?action=hi
 revisione: '2025-05-14T19:10:38Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: XR Rear Cam LDO U1601.png
-  didascalia: Take notice of the orientation dot
 ---
 
 # IPhone XR Rear camera is not working

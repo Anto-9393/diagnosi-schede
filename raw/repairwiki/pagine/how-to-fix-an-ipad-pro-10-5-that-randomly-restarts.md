@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_to_Fix_an_iPad_Pro_10.5_That_Randomly_Rest
 revisione: '2024-01-17T16:09:37Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How to Fix an iPad Pro 10.5 That Randomly Restarts

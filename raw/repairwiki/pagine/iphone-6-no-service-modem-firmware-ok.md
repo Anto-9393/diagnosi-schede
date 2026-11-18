@@ -6,21 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_6_No_Service_Modem_Firmware_OK?action=h
 revisione: '2025-07-07T22:25:49Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: No service.jpg
-  didascalia: iPhone 6 With No Service
-- file: IPhone 6 Baseband EMI Shield.png
-  didascalia: iPhone 6 Baseband EMI Shield
-- file: IPhone 6 Baseband CPU.png
-  didascalia: iPhone 6 Baseband CPU
-- file: IPhone 6 Baseband CPU Diode.png
-  didascalia: iPhone 6 Baseband CPU Diode
-- file: Points to scrape.png
-  didascalia: Points to scrape
-- file: IPhone 6 V1 and U1 jump.png
-  didascalia: iPhone 6 V1 and U1 jump
-- file: Points covered in solder mask.png
-  didascalia: Points covered in solder mask
 ---
 
 # IPhone 6 No Service Modem Firmware OK

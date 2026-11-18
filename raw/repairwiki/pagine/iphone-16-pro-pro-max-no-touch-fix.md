@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_16_Pro_/_Pro_Max_%E2%80%93_No_Touch_Fix
 revisione: '2025-08-14T06:45:09Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Jumper-point-display-connector-boardview.png
-  didascalia: Jumper location on the display connector - BoardView
-- file: Jumper-point-prox-connector-boardview.png
-  didascalia: Jumper point on the prox flex connector - Boardview
 ---
 
 # IPhone 16 Pro / Pro Max – No Touch Fix

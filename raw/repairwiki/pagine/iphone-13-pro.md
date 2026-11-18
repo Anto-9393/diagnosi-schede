@@ -7,13 +7,6 @@ revisione: '2025-11-12T15:26:59Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone13-768x768.webp
-  didascalia: ''
-- file: Ip-13series-fcam.png
-  didascalia: ''
-- file: IPhone 13 Pro PCB.jpg
-  didascalia: ''
 ---
 
 # IPhone 13 Pro

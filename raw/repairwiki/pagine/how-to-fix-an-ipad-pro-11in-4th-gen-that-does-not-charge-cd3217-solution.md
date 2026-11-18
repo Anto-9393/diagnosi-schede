@@ -6,15 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPad_Pro_11in_4th_Gen_That_Does_
 revisione: '2024-02-04T13:59:31Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPad Pro 11in 4th Gen - Not Charging.png
-  didascalia: iPad Pro 11in 4th Gen - Not Charging properly. It is only showing 5V
-    charging, instead of 15V
-- file: IPad Pro 11in 4th Gen - CD3217.png
-  didascalia: iPad Pro 11in 4th Gen - CD3217 & it's paired ROM location & where to
-    check for shorts.
-- file: IPad Pro 11in 4th Gen - Charging Properly.png
-  didascalia: iPad Pro 11in 4th Gen - Charging properly after CD3217 and ROM Replacement
 ---
 
 # How To Fix an iPad Pro 11in 4th Gen That Does Not Charge, CD3217 Solution

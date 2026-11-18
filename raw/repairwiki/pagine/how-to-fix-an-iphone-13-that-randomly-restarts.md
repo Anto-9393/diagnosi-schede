@@ -6,18 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_13_That_Randomly_Restarts
 revisione: '2025-04-03T05:19:16Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Panic Log List.png
-  didascalia: An example of panic log files you'll find in the iPhone when it has
-    been randomly restarting.
-- file: IPhone 13 Pro Max - SMC PANIC - ASSERTION FAILED 0x1000.png
-  didascalia: Example of what you'll see in a panic-full file, where when there's
-    a bad prox flex causing the 3 min restart. If you see this same error, then it's
-    likely the proximity flex.
-- file: IPhone 13 Pro Max - SMC PANIC - ASSERTION FAILED 0x800.png
-  didascalia: Example of what you'll see in a panic-full file, where when there's
-    a bad charging port flex causing the 3 min restart. If you see this same error,
-    then it's likely the charging port flex.
 ---
 
 # How To Fix an iPhone 13 That Randomly Restarts

@@ -6,15 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_15_Pro_Max_Dead_and_Not_Charging?action
 revisione: '2025-09-08T21:13:32Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: 15pro-dcps.png
-  didascalia: Figure 1 - iPhone 15 Pro Max DCPS reading before prompt to boot example
-- file: Charging-ic-thermal.png
-  didascalia: Figure 2 - Example of charging IC heating up under thermal camera
-- file: Ip-15p-charging-ic.png
-  didascalia: Figure 3 - iPhone 15 Pro / Pro Max Charging IC (International Variant)
-- file: Ip-15p-charging-ic-usa.png
-  didascalia: Figure 4 - iPhone 15 Pro/Max Charging IC (USA Variant)
 ---
 
 # IPhone 15 Pro Max Dead and Not Charging

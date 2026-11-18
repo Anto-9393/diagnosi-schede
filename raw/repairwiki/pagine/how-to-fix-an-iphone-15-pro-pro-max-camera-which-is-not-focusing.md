@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/How_to_fix_an_iPhone_15_Pro_Pro_Max_camera_whi
 revisione: '2025-08-20T08:27:55Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Gyroscope-ic-location.png
-  didascalia: Gyroscope IC location (fig. 1)
-- file: Gyroscope-ic-location-schematic.png
-  didascalia: Gyroscope IC location on schematic (fig. 2)
 ---
 
 # How to fix an iPhone 15 Pro Pro Max camera which is not focusing

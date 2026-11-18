@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPad_5_not_turning_on_repair?action=history
 revisione: '2024-01-17T22:50:33Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # IPad 5 not turning on repair

@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_X_With_No_WiFi._Grayed_Out_B
 revisione: '2024-02-12T07:57:31Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How To Fix iPhone X With No WiFi. Grayed Out Button

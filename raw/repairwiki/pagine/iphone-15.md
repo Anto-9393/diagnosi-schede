@@ -13,19 +13,6 @@ codici_modello:
 - A3092
 data_uscita: '2023-09-22'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone15-768x768.webp
-  didascalia: ''
-- file: Ip-15plus-fcam.png
-  didascalia: ''
-- file: IPhone 15 PCB 2.jpg
-  didascalia: ''
-- file: Iphone 15 PCB.jpg
-  didascalia: ''
-- file: IPhone 15 Board ID.png
-  didascalia: iPhone 15 Board ID is 1M Ohm for R0812
-- file: Ip15.jpg
-  didascalia: iPhone 15 Mechanic USB-C readings
 ---
 
 # IPhone 15

@@ -8,17 +8,6 @@ categorie: []
 categoria_dispositivo: tablet
 data_uscita: 10-26-2022
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad109-2022-768x768.webp
-  didascalia: ''
-- file: Apple Ipad 10th InternalView.jpg
-  didascalia: Ipad 10 Internal View
-- file: IPad 10 PCB.jpg
-  didascalia: ''
-- file: IPad 10 Mechanic Reader.png
-  didascalia: iPad 10 Mechanic Reader - Known good readings
-- file: IPad 10th Gen Charging IC and ROM Location.png
-  didascalia: iPad 10th Gen Charging IC and ROM Location
 ---
 
 # IPad 10

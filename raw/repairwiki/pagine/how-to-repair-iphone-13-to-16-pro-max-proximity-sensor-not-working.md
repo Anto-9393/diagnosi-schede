@@ -6,25 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_iPhone_13_to_16_pro_max_Proximit
 revisione: '2025-09-02T05:34:24Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Photosensitive-sensor.png
-  didascalia: JCID Photosensitive Sensor Flex
-- file: Read phone.png
-  didascalia: Read phone in JCID Repair Assistant
-- file: Jcid brushing option.png
-  didascalia: JCID Brushing Unbind
-- file: Tick.png
-  didascalia: Tick these 2 options and select flashing and unbind
-- file: Select-ipsw.png
-  didascalia: Select downloaded ipsw
-- file: Brushing-complete.png
-  didascalia: Brushing unbind complete
-- file: Start-testing-fpc.png
-  didascalia: Start Testing FPC
-- file: Activate-fpc.png
-  didascalia: Activate FPC
-- file: Matching ecid.png
-  didascalia: ECID Matching
 ---
 
 # How To Repair iPhone 13 to 16 pro max Proximity sensor not working

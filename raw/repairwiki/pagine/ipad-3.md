@@ -11,9 +11,6 @@ codici_modello:
 - A1416
 - A1430
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad3-768x768.webp
-  didascalia: ''
 ---
 
 # IPad 3

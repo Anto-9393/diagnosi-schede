@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_an_iPhone_14_Bootlooping_due_to_
 revisione: '2025-10-21T04:21:50Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone 14 frontcam conn.png
-  didascalia: iPhone 14 TrueDepth Camera Assembly
-- file: Ip14 front camera flex boardview.png
-  didascalia: iPhone 14 Front Camera Flex - Boardview
-- file: Ip14 front camera flex.png
-  didascalia: iPhone 14 Front Camera Flex Connector
 ---
 
 # How To Repair an iPhone 14 Bootlooping due to IR Camera

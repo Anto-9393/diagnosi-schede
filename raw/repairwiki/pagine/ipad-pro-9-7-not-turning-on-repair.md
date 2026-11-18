@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Pro_9.7_Not_Turning_On_Repair?action=hist
 revisione: '2024-01-17T22:09:34Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # IPad Pro 9.7 Not Turning On Repair

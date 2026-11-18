@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_IPad_6_No_Power?action=history
 revisione: '2025-11-30T18:32:05Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad-6-wifi-ic.png
-  didascalia: Example of iPad 6 WiFi IC (Figure 1)
-- file: Ipad-6-wifi-ic-under-thermal.png
-  didascalia: Example of shorted WiFi IC on iPad 6 under thermal camera view
-- file: Ipad-6-wifi-ic-schematic.png
-  didascalia: iPad 6 WiFi IC on BoardView Software (Figure 2)
 ---
 
 # How To Repair IPad 6 No Power

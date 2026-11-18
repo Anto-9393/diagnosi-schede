@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_8_Plus_with_Grayed_Out_WiFi?
 revisione: '2024-02-04T10:24:35Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: 8P-WiFi-Jumpers.png
-  didascalia: Figure 1. Example of 4 jumpers needed for WiFi repair on iPhone 8 Plus
 ---
 
 # How To Fix iPhone 8 Plus with Grayed Out WiFi

@@ -12,11 +12,6 @@ codici_modello:
 - A2126
 - A2133
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadmini5-768x768.webp
-  didascalia: ''
-- file: IPad Mini 5 Wifi PCB.jpg
-  didascalia: ''
 ---
 
 # IPad Mini 5

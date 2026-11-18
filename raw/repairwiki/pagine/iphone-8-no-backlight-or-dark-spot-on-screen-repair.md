@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_8_No_Backlight_or_Dark_Spot_On_Screen_R
 revisione: '2024-01-25T00:09:53Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IP7_No_Backlight.png
-  didascalia: iPhone with no backlight
 ---
 
 # IPhone 8 No Backlight or Dark Spot On Screen Repair

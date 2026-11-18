@@ -8,11 +8,6 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: '2019-09-20'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone11pro-768x768.webp
-  didascalia: ''
-- file: Ip-11p-pmax-fcam.png
-  didascalia: ''
 ---
 
 # IPhone 11 Pro Max

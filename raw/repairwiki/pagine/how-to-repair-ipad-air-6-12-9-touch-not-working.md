@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_iPad_Air_6_12.9%22_Touch_Not_Wor
 revisione: '2026-02-18T02:48:52Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad-air-13"-no-touch.png
-  didascalia: iPad Air 6 12.9" Shorted Touch Capacitor on Board
-- file: Ipad-air-13"-no-touch-boardview.png
-  didascalia: iPad Air 6 12.9" Shorted Touch Capacitor on Boardview
 ---
 
 # How To Repair iPad Air 6 12.9" Touch Not Working

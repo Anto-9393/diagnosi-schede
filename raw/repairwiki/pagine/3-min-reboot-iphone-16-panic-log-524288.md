@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/3_min_reboot_iPhone_16_panic_log_-_524288?acti
 revisione: '2025-06-05T01:14:02Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Panic log screenshot .jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # 3 min reboot iPhone 16 panic log - 524288

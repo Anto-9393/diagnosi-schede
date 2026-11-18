@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/Diagnosing_iPhone_%E2%80%9CNo_IMEI_/_No_Servic
 revisione: '2025-08-16T01:08:37Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: ESP32 JUMPERS.png
-  didascalia: ESP32 Pinouts
-- file: 12 Pro RFFE Test points.png
-  didascalia: iPhone 12/12 Pro RFFE test points
 ---
 
 # Diagnosing iPhone “No IMEI / No Service” via RFFE Bus Analysis with ESP32

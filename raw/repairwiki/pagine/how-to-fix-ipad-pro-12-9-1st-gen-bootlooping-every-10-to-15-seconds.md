@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPad_Pro_12.9_1st_gen_Bootlooping_E
 revisione: '2025-12-01T03:22:32Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: LOOPING PANIC.png
-  didascalia: iPad Pro 12.9" 1st Gen - Panic Log
-- file: IPAD FINDER RESTORE.png
-  didascalia: Select Restore Option in Finder
-- file: IPAD CLEAN FLASH 3Unew.png
-  didascalia: Select Clean Flash in 3UTools
 ---
 
 # How To Fix iPad Pro 12.9 1st gen Bootlooping Every 10 to 15 Seconds

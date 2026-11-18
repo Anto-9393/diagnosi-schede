@@ -6,28 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_14_That_Randomly_Restarts
 revisione: '2026-01-27T00:13:46Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone 14 panic log 0x400000.png
-  didascalia: iPhone 14 With Back Glass unplugged. This causes 3 min restart. Panic
-    Log Code 0x400000
-- file: IPhone 14 panic log 0x100000 Charging Port.png
-  didascalia: iPhone 14 With Charging Port unplugged. This causes 3 min restart. Panic
-    Log Code 0x100000
-- file: Panic Log List.png
-  didascalia: An example of panic log files you'll find in the iPhone when it has
-    been randomly restarting.
-- file: IPhone 14 panic log Example 0x400000.png
-  didascalia: iPhone 14 With Back Glass unplugged. This causes 3 min restart. Panic
-    Log Code 0x400000
-- file: IPhone 14 panic log 0x100000.png
-  didascalia: iPhone 14 Panic Log Example. Charging Port Flex unplugged. This causes
-    3 min restart. Panic Log Code 0x100000
-- file: IPhone 14 panic log 0x200000.png
-  didascalia: iPhone 14 Panic Log Example. Prox Flex unplugged. This causes 3 min
-    restart. Panic Log Code 0x200000
-- file: IPhone 14 panic log 0x200000 Prox Flex.png
-  didascalia: iPhone 14 With Proximity Flex unplugged. This causes 3 min restart.
-    Panic Log Code 0x200000
 ---
 
 # How To Fix an iPhone 14 That Randomly Restarts

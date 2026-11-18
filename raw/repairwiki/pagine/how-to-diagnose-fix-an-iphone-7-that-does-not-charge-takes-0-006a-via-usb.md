@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Diagnose_%26_Fix_an_iPhone_7_That_Does_
 revisione: '2024-01-20T21:20:57Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How To Diagnose & Fix an iPhone 7 That Does Not Charge, Takes 0.006A via USB

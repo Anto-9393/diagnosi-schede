@@ -7,17 +7,6 @@ revisione: '2025-11-12T15:25:37Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone13-800x800.webp
-  didascalia: ''
-- file: Ip-13series-fcam.png
-  didascalia: ''
-- file: IPhone 13 PCB.jpg
-  didascalia: ''
-- file: IPhone 13 - Known Good Mechanic Lightning Readings.jpg
-  didascalia: iPhone 13 - Known Good Mechanic Lightning Readings
-- file: IPhone 13 Diode Readings.jpg
-  didascalia: iPhone 13 - Known Good YCS Lightning Readings
 ---
 
 # IPhone 13

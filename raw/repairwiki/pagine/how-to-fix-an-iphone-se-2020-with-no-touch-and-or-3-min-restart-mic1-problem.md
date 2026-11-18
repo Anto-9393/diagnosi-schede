@@ -6,20 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_SE_2020_with_No_Touch_and
 revisione: '2023-11-05T22:14:06Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone SE 2020 No Touch.png
-  didascalia: iPhone SE 2020 - Location of iPhone SE 2020 No Touch and where it needs
-    to be dug out from
-- file: IPhone SE 2020 - No Touch Long Jumper path.png
-  didascalia: iPhone SE 2020 - No Touch Long Jumper path
-- file: IPhone SE 2020 - R6610 I2C1 AP SCL Jumper Path.png
-  didascalia: iPhone SE 2020 - Where to run the jumper from R6620 for I2C1_AP_SCL
-- file: IPhone SE 2020 C6456 Jumper Location.png
-  didascalia: iPhone SE 2020 C6456 Jumper Location
-- file: IPhone SE 2020 R6611 Jumper Location.png
-  didascalia: iPhone SE 2020 R6611 Jumper Location & path
-- file: IPhone SE 2020 C6466 Jumper Location & path.png
-  didascalia: iPhone SE 2020 C6466 Jumper Location & path
 ---
 
 # How To Fix an iPhone SE 2020 with No Touch and/or 3 Min Restart, Mic1 Problem

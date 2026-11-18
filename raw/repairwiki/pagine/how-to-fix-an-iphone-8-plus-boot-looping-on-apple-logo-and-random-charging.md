@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_to_Fix_an_iPhone_8_Plus_boot_looping_on_ap
 revisione: '2025-09-08T22:27:19Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone 8 series usb ic.png
-  didascalia: Figure 1 - iPhone 8 / 8 Plus USB (Hydra) IC
-- file: Iphone 8 series front camera.png
-  didascalia: Figure 2 - iPhone 8 / 8 Plus Front Camera
-- file: 8PlusChargePort.png
-  didascalia: Figure 3 - iPhone 8 / 8 Plus Charge Port
 ---
 
 # How to Fix an iPhone 8 Plus boot looping on apple logo and random charging

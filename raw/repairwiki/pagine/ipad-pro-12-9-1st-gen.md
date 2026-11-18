@@ -11,9 +11,6 @@ codici_modello:
 - A1652
 data_uscita: '2015-11-25'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Copia-de-ipadpro97-2016-800x800.webp
-  didascalia: ''
 ---
 
 # IPad Pro 12.9 1st Gen

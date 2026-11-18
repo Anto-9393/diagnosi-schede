@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/IPad_7_No_Touch?action=history
 revisione: '2025-05-25T21:47:24Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPad 7 Touch Components.png
-  didascalia: IPad 7 Touch Components
-- file: SPI GRAPE SCLK.png
-  didascalia: SPI_GRAPE_SCLK Diode Value
 ---
 
 # IPad 7 No Touch

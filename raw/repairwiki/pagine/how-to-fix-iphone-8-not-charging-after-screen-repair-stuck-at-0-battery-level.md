@@ -7,9 +7,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_8_Not_Charging_After_Screen_
 revisione: '2024-02-04T10:25:10Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone 8 Mosfet.jpg
-  didascalia: Figure 1. iPhone 8 Mosfet Lines from battery connector to pads
 ---
 
 # How To Fix iPhone 8 Not Charging After Screen Repair. Stuck at 0% Battery Level

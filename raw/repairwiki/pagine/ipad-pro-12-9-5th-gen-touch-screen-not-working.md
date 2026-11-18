@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9_5th_Gen_Touch_Screen_Not_Working
 revisione: '2025-10-31T19:19:41Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPad Pro 12.9 Gen 5 PP15V0 TOUCH FILT.png
-  didascalia: Fig 1. Check PP15V0_TOUCH_FILT for shorts for No Touch issue
-- file: IPad Pro 12.9 Gen 5 PP15V0 TOUCH LDO.png
-  didascalia: Fig 2. Check PP15V0_TOUCH_LDO for shorts
-- file: IPad Pro 12.9 Gen 5 PP15V0 TOUCH.png
-  didascalia: Fig 3. Check PP15V0_TOUCH for shorts
 ---
 
 # IPad Pro 12.9 5th Gen Touch Screen Not Working

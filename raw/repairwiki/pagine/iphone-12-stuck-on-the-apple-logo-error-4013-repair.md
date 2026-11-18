@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_12_Stuck_on_the_Apple_Logo_Error_4013_R
 revisione: '2024-01-19T22:23:02Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # IPhone 12 Stuck on the Apple Logo Error 4013 Repair

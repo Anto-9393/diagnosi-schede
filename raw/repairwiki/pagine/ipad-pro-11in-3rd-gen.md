@@ -7,9 +7,6 @@ revisione: '2025-12-16T21:12:37Z'
 categorie: []
 categoria_dispositivo: tablet
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadpro11-2021-768x768.webp
-  didascalia: ''
 ---
 
 # IPad Pro 11in 3rd Gen

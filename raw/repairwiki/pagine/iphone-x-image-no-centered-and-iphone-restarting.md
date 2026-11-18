@@ -6,15 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_X_image_no_centered_and_iphone_restarti
 revisione: '2025-07-21T23:11:19Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Logo on right side.jpg
-  didascalia: Logo on the right side
-- file: L2780 Location.png
-  didascalia: L2780 Location
-- file: Logo on the bottom part of the screen.png
-  didascalia: Logo on the bottom part of the screen
-- file: FL5780 Location.png
-  didascalia: FL5780 Location
 ---
 
 # IPhone X image no centered and iphone restarting

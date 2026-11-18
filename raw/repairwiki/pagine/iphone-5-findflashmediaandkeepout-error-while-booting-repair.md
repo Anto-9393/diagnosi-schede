@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_5_%22FindFlashMediaAndKeepout%22_error_
 revisione: '2024-03-02T12:16:06Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: FindFlashMediaAndKeepout.jpg
-  didascalia: An iPhone 5 with water damage displays the <code>FindFlashMediaAndKeepout</code>
-    error message.
 ---
 
 # IPhone 5 "FindFlashMediaAndKeepout" error while booting repair

@@ -13,13 +13,6 @@ codici_modello:
 - A2014
 data_uscita: '2018-11-07'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadpro129-gen3-800x800.webp
-  didascalia: ''
-- file: IPad Pro 129 3rd charging port connector diode readings.jpg
-  didascalia: iPad Pro 12.9 3rd Gen charging port connector diode mode measurements
-- file: IPad Pro 12.9 Gen 3 - Mechanic Reader.png
-  didascalia: iPad Pro 12.9 Gen 3 - Mechanic Reader - Known good readings
 ---
 
 # IPad Pro 12.9 3rd Gen

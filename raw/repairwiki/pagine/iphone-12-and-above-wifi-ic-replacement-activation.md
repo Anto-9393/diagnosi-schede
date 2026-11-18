@@ -6,21 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_12_and_Above_WiFi_IC_Replacement_%26_Ac
 revisione: '2025-08-20T19:09:03Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Wifi-not-working.png
-  didascalia: iPhone WiFi not working - 14 Pro Max (fig. 1)
-- file: WiFi-IC-NAND-LOCATION.png
-  didascalia: WiFi IC and NAND - iPhone 14 Pro Max (fig. 2)
-- file: Nand-in-programmer.png
-  didascalia: NAND installed in JC V1SPRO Programmer (fig. 3)
-- file: Querycode-unbind-nand.png
-  didascalia: Query code/unbind on JC Programmer (fig. 4)
-- file: Jcid-wifi-ic-in-programmer.png
-  didascalia: Activate WiFi IC (fig. 6)
-- file: Iphone-wifi-ic-installed.png
-  didascalia: JCID WiFi IC installed - iPhone 14 Pro Max (fig. 7)
-- file: Iphone-wifi-working.png
-  didascalia: iPhone WiFi functional after WiFi IC replacement (fig. 8)
 ---
 
 # IPhone 12 and Above WiFi IC Replacement & Activation

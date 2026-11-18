@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_12_Stuck_In_Recovery_Mode_After_Water_D
 revisione: '2023-11-05T22:21:16Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone 12 Pro Max Power Button Connector with Water Damage.png
-  didascalia: iPhone 12 Pro Max Power Button Connector with Water Damage
-- file: IPhone12PM Jumper Solution for Stuck In Recovery Mode.png
-  didascalia: iPhone12PM Jumper Solution for Stuck In Recovery Mode. PP1V8_S2 is feeding
-    the 1.8V into the lines stuck on LOW. So the phone will stop being stuck in recovery
-    mode.
 ---
 
 # IPhone 12 Stuck In Recovery Mode After Water Damage Solution

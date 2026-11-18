@@ -8,9 +8,6 @@ categorie: []
 categoria_dispositivo: tablet
 data_uscita: '2022'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadpro11-2022-768x768.webp
-  didascalia: ''
 ---
 
 # IPad Pro 11in 4th Gen

@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_to_fix_iPhone_X_with_No_Display_or_No_Imag
 revisione: '2024-05-22T06:41:49Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How to fix iPhone X with No Display or No Image

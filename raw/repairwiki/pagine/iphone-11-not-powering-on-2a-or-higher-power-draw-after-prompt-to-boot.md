@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_11_Not_Powering_on%2C_2A_or_Higher_Powe
 revisione: '2025-06-14T00:20:43Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # IPhone 11 Not Powering on, 2A or Higher Power Draw After Prompt to Boot

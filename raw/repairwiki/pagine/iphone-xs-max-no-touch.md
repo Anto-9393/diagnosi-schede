@@ -6,15 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_XS_Max_No_Touch?action=history
 revisione: '2025-08-18T22:05:09Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone XS Max Touch FPC Diode Values.png
-  didascalia: iPhone XS Max Touch FPC Diode Values
-- file: IPhone XS Max Touch Circuit Voltages.png
-  didascalia: ''
-- file: Ripped Motherboard Pads.jpg
-  didascalia: Example of ripped motherboard pads
-- file: ISocket tool.png
-  didascalia: ''
 ---
 
 # IPhone XS Max No Touch

@@ -7,10 +7,6 @@ cronologia: https://repair.wiki/w/How_to_fix_an_iPad_that_will_charge_when_power
 revisione: '2024-01-17T21:33:59Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How to fix an iPad that will charge when powered off but not when powered on

@@ -10,11 +10,6 @@ codici_modello:
 - A1538
 - A1550
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadmini4-768x768.webp
-  didascalia: ''
-- file: IPad Mini 4 Wifi PCB.jpg
-  didascalia: ''
 ---
 
 # IPad Mini 4

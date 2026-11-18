@@ -12,25 +12,6 @@ codici_modello:
 - A1700
 data_uscita: '2015-09-25'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone6s-768x768.webp
-  didascalia: ''
-- file: IPhone 6S Touch and LCD FPC Diode Values - J4200.png
-  didascalia: Touch and LCD FPC Diode Values - J4200
-- file: IPhone 6S Rear Camera FPC Diode Values -J3200.png
-  didascalia: Rear Camera FPC Diode Values -J3200
-- file: IPhone 6S Power Button FPC Diode Values -J4700.png
-  didascalia: Power Button FPC Diode Values -J4700
-- file: IPhone 6S Home Button FPC Diode Values -J4100.PNG
-  didascalia: Home Button FPC Diode Values -J4100
-- file: IPhone 6S Front Camera FPC Diode Values -J3100.png
-  didascalia: Front Camera FPC Diode Values -J3100
-- file: IPhone 6S Charging Port FPC Diode Values -J4600.png
-  didascalia: Charging Port FPC Diode Values -J4600
-- file: IPhone 6S Battery FPC Diode Values -J2400.png
-  didascalia: Battery FPC Diode Values -J2400
-- file: IPhone 6S.jpg
-  didascalia: Home Button Diode Values
 ---
 
 # IPhone 6S

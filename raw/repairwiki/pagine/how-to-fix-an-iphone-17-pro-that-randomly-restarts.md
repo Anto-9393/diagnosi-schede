@@ -6,16 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_17_Pro_That_Randomly_Rest
 revisione: '2025-09-28T15:21:39Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Panic Log List.png
-  didascalia: An example of panic log files you'll find in the iPhone when it has
-    been randomly restarting.
-- file: IP-17PM-Charging-Flex-Code.png
-  didascalia: iPhone 17 Pro/Pro Max Charge Port - Panic [Fig. 4
-- file: 17-p-pm-wireless-flex.png
-  didascalia: iPhone 17 Pro/Pro Max - Wireless Charging Flex
-- file: 17-p-pm-charging-flex.png
-  didascalia: iPhone 17 Pro/Pro Max - Charging Flex
 ---
 
 # How To Fix an iPhone 17 Pro That Randomly Restarts

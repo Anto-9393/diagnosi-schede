@@ -6,22 +6,6 @@ cronologia: https://repair.wiki/w/IPad_10_Backlight_not_working?action=history
 revisione: '2025-05-28T18:22:14Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Att.Rm8fnEulJU0iOXYOEDvTdeL62oOhpspT5r9asNHHbKU.JPEG
-  didascalia: Figure 1. iPad 10 motherboard with main LCD FPC and surrounding components
-    circled in blue, and the general area where the backlight filter, caps, and diodes
-    circled in red
-- file: Ipad10LCDFPC.png
-  didascalia: Figure 2. iPad 10 LCD FPC connector with 4 pins going to the backlight
-    circuit highlighted as well as diode mode readings for the rest of the FPC
-- file: Ipad10backlightfigure2.jpg
-  didascalia: Figure 3. iPad 10 backlight filter circled in blue, backlight circuit
-    diodes circled in green, power management IC that powers the backlight circuit
-    circled in pink, and smoothing capacitors for the b
-- file: Screenshot From 2025-05-25 18-40-15.png
-  didascalia: Figure 4. This is the trace that runs from the opposite side of the
-    backlight filter to the LCD FPC. if the pad on this line is damaged you'll either
-    need to dig through the board to attach a jumper t
 ---
 
 # IPad 10 Backlight not working

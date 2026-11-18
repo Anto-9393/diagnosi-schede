@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_to_fix_iPhone_11_stuck_in_recovery_mode_wi
 revisione: '2025-09-24T13:17:06Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: 11-rose-flashing-error.png
-  didascalia: iPhone 11-11 Pro Max Flashing Error (ROSE IC)
-- file: 11-rose-location.png
-  didascalia: iPhone 11 Rose IC location
-- file: 11p-rose-location.png
-  didascalia: iPhone 11 Pro & Pro Max Rose IC location
 ---
 
 # How to fix iPhone 11 stuck in recovery mode with failed at Rose Error -1

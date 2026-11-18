@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_13_Rear_Camera_Not_Focusi
 revisione: '2025-10-08T12:29:11Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: 13 camera layer 1.png
-  didascalia: iPhone 13 - i2c2 lines
 ---
 
 # How To Fix an iPhone 13 Rear Camera Not Focusing After A Drop

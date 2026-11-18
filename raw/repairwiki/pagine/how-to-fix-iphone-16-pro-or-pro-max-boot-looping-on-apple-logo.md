@@ -6,15 +6,6 @@ cronologia: https://repair.wiki/w/How_to_fix_iPhone_16_pro_or_pro_max_boot_loopi
 revisione: '2025-08-26T07:26:32Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Stuck on logo.png
-  didascalia: apple logo bootloop
-- file: Batt fpc OL.png
-  didascalia: battery fpc OL
-- file: U4200 ic board.png
-  didascalia: u4200 ic
-- file: Phone on.png
-  didascalia: phone successfully booted up to homescreen
 ---
 
 # How to fix iPhone 16 pro or pro max boot looping on Apple logo

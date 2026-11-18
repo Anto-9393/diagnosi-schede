@@ -7,22 +7,6 @@ revisione: '2024-07-17T14:27:34Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Capacitor symbols.jpg
-  didascalia: Capacitor symbols commonly found in schematics (Figure 1)
-- file: Flash capacitor.jpg
-  didascalia: Camera flash Capacitor (Figure 2)
-- file: Smoothing capacitors.png
-  didascalia: Smoothing capacitors on the input/output of a DC-DC converter circuit
-    (Figure 3)
-- file: Capacitor filters.jpg
-  didascalia: Low-pass and High-pass filters (Figure 4)
-- file: Astable-555-circuit.webp
-  didascalia: Astable 555 timer circuit (Figure 5)
-- file: Capacitor types packagess.jpg
-  didascalia: Some capacitor packages and types (Figure 6)
-- file: Capacitor types.jpg
-  didascalia: Capacitor types (Figure 7)
 ---
 
 # Capacitors - Repair Basics

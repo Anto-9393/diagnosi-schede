@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Mini_2_No_Touch?action=history
 revisione: '2025-07-27T21:21:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPad Mini 2 Touch Components.png
-  didascalia: iPad Mini 2 Touch Components
-- file: IPad Mini 2 Damaged Touch FPC.png
-  didascalia: iPad Mini 2 Damaged Touch FPC
-- file: IPad Mini 2 Touch FPC Diode Readings.png
-  didascalia: iPad Mini 2 Touch FPC Diode Readings
 ---
 
 # IPad Mini 2 No Touch

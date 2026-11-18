@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Not_Charging_Battery_Always_Reporting_1_P
 revisione: '2025-08-03T20:35:15Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Damaged iPad FPC.png
-  didascalia: Damaged iPad Battery FPC
 ---
 
 # IPad Not Charging Battery Always Reporting 1 Percent Charge

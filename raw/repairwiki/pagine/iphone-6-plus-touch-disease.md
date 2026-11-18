@@ -6,17 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_6_Plus_Touch_Disease?action=history
 revisione: '2025-06-19T13:27:46Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone 6 Plus Touch Disease.jpg
-  didascalia: iPhone 6 Plus Touch Disease!
-- file: Where to remove the underfill.png
-  didascalia: Where to remove the underfill
-- file: 007 Blade.png
-  didascalia: 007 Blade
-- file: U2402 Location.png
-  didascalia: U2402 Location
-- file: M1 Jumper.png
-  didascalia: M1 Jumper
 ---
 
 # IPhone 6 Plus Touch Disease

@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_15_Pro_Max_Not_Charging_and_no_Touch?ac
 revisione: '2025-05-27T17:42:14Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone 15 pro max not charging.jpg
-  didascalia: iPhone 15 Pro Max Not Charging.(Image by Cell Phone Repair Academy)
-- file: 5V U9500 input.png
-  didascalia: U9500 5V Input
-- file: IPhone 15 Pro Max.png
-  didascalia: IPhone 15 Pro Max Charging ICs
 ---
 
 # IPhone 15 Pro Max Not Charging and no Touch

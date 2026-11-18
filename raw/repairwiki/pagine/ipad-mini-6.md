@@ -12,13 +12,6 @@ codici_modello:
 - A2569
 data_uscita: '2021-09-24'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadmini6-1-600x600.webp
-  didascalia: ''
-- file: IPad Mini 6 Wifi PCB.jpg
-  didascalia: ''
-- file: IPad Mini 6 - USB C Readings.png
-  didascalia: iPad Mini 6 - USB C Readings with Mechanic Reader
 ---
 
 # IPad Mini 6

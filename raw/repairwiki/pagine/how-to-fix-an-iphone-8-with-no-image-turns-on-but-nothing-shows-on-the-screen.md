@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_8_With_No_Image._Turns_on
 revisione: '2024-01-30T06:43:55Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How To Fix an iPhone 8 With No Image. Turns on but nothing shows on the screen

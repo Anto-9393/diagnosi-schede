@@ -6,16 +6,6 @@ cronologia: https://repair.wiki/w/IPad_10_not_Reading_Touch?action=history
 revisione: '2025-08-22T04:09:25Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Screenshot From 2025-08-21 19-49-23.png
-  didascalia: Figure 1. iPad 10 motherboard with digitizer FPC's circled in red and
-    touch IC's/touch circuitry circled in blue
-- file: Screenshot From 2025-08-21 19-50-44.png
-  didascalia: Figure 2. Boardview of the most likely component to be shorted on an
-    iPad 10 with no touch with components connected to one side highlighted
-- file: Screenshot From 2025-08-21 19-50-35.png
-  didascalia: Figure 3. Boardview of the most likely component to be shorted on an
-    iPad 10 with no touch with components connected to one side highlighted
 ---
 
 # IPad 10 not Reading Touch

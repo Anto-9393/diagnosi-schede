@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Pro_9.7_not_displaying_any_image_on_the_s
 revisione: '2026-02-03T06:21:19Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad pro 9.7 BL n.png
-  didascalia: iPad Pro 9.7" Backlight Filter Location
 ---
 
 # IPad Pro 9.7 not displaying any image on the screen repair

@@ -6,48 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Replace_iPhone_Front_Camera_Without_Loo
 revisione: '2025-11-13T05:25:39Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Cutting-shield.png
-  didascalia: Example image (Figure 1) -- Cutting Metal Shield Around Front Camera
-- file: Front-cam-only.png
-  didascalia: Example (Figure 2) -- iPhone 11 Pro Camera After Removing From TrueDepth
-    Camera Assembly
-- file: X-xsm-fcam.png
-  didascalia: ''
-- file: Xr-fcam.png
-  didascalia: ''
-- file: Ip-11-fcam.png
-  didascalia: ''
-- file: Ip-11p-pmax-fcam.png
-  didascalia: ''
-- file: Ip-12p-fcam.png
-  didascalia: ''
-- file: Ip-12mini-fcam.png
-  didascalia: ''
-- file: Ip-12pm-fcam.png
-  didascalia: ''
-- file: Ip-13series-fcam.png
-  didascalia: ''
-- file: Ip-14plus-fcam.png
-  didascalia: ''
-- file: Ip-14pm-fcam.png
-  didascalia: ''
-- file: Ip-15plus-fcam.png
-  didascalia: ''
-- file: Ip-15p-fcam.png
-  didascalia: ''
-- file: Ip-16plus-fcam.png
-  didascalia: ''
-- file: Ip-16e-fcam.png
-  didascalia: ''
-- file: Ip-16p-fcam.png
-  didascalia: ''
-- file: Ip-17-fcam.png
-  didascalia: ''
-- file: Ip-17pmax-fcam.png
-  didascalia: ''
-- file: Ip-air-fcam.png
-  didascalia: ''
 ---
 
 # How To Replace iPhone Front Camera Without Loosing FACE ID

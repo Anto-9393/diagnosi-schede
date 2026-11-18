@@ -6,12 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_iPad_Pro_11in_No_Touch?action=hi
 revisione: '2025-11-12T15:13:53Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad pro 2020 notouch boardview.png
-  didascalia: iPad Pro 11in 2nd gen 2020 - PP1V50_TOUCH_LDO Capacitors on BoardView
-    Software
-- file: Ipad pro 2020 notouch.png
-  didascalia: iPad Pro 11in 2nd Gen 2020 - PP1V50_TOUCH_LDO Capacitors
 ---
 
 # How To Repair iPad Pro 11in No Touch

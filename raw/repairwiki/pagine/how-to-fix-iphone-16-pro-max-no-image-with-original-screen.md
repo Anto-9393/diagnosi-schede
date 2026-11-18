@@ -6,15 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_16_Pro_Max_No_Image_With_Ori
 revisione: '2025-11-23T01:36:45Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: PNVAR BOARDVIEW.png
-  didascalia: ''
-- file: PNVAR DISP.png
-  didascalia: ''
-- file: DPMIC LOCATION.png
-  didascalia: '[[File:DPMIC BOARDVIEW.png'
-- file: PNVAR SHORT CAP.png
-  didascalia: ''
 ---
 
 # How To Fix iPhone 16 Pro Max No Image With Original Screen

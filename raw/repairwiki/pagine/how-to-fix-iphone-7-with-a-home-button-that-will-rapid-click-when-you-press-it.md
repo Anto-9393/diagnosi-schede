@@ -7,9 +7,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_7_With_A_Home_Button_That_Wi
 revisione: '2024-02-09T12:44:38Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IP7 Screen Home Button Flex.png
-  didascalia: Figure 1. iPhone 7/7 Plus Home Button Flex on the Screen
 ---
 
 # How To Fix iPhone 7 With A Home Button That Will Rapid Click When You Press It

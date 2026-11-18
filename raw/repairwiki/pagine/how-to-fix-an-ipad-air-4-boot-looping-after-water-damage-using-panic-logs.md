@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPad_Air_4_boot_looping_after_wa
 revisione: '2025-09-21T10:31:34Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad-air-4-als-connector.png
-  didascalia: iPad Air 4 - ALS Connector
-- file: Ipad-air-4-als.png
-  didascalia: iPad Air 4 - Ambient Light Sensor (ALS)
-- file: Ipadair4 panic-log.png
-  didascalia: iPad Air 4 - Panic Log
 ---
 
 # How To Fix an iPad Air 4 boot looping after water damage using Panic Logs

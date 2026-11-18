@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_iPhone_16_Pro_Max_Fake_Temp_Warn
 revisione: '2025-12-27T19:16:24Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Fake-temp-warning-16p.webp
-  didascalia: iPhone 16 Pro/Max Temp. Warning
-- file: Fake-temp-boardview-16p.png
-  didascalia: ''
-- file: Fake-temp-board-16p.png
-  didascalia: ''
 ---
 
 # How To Repair iPhone 16 Pro Max Fake Temp Warning

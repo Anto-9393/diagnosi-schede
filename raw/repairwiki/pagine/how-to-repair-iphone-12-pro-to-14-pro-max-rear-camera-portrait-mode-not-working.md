@@ -6,12 +6,6 @@ cronologia: https://repair.wiki/w/How_to_repair_iPhone_12_pro_to_14_pro_max_rear
 revisione: '2025-08-30T18:05:40Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Portrait-mode-issue.gif
-  didascalia: Rear cam portrait mode not working due to replacement with different
-    non-programmed sensor.
-- file: Jcid brushing option.png
-  didascalia: Brushing unbind in JCID Repair Assistant software.
 ---
 
 # How to repair iPhone 12 pro to 14 pro max rear camera portrait mode not working

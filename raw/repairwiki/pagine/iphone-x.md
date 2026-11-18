@@ -8,15 +8,6 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: '2017-11-03'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPHONE-X.png
-  didascalia: ''
-- file: X-xsm-fcam.png
-  didascalia: ''
-- file: IPhone X Intel PCB.jpg
-  didascalia: ''
-- file: IPhone X Intel Top Board Only Bypass DFU.png
-  didascalia: iPhone X - Intel - How to bypass DFU Mode when it's Top Board Only
 ---
 
 # IPhone X

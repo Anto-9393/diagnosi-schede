@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_XR_not_charging?action=history
 revisione: '2025-05-14T18:36:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # IPhone XR not charging

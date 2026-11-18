@@ -13,13 +13,6 @@ codici_modello:
 - A2325
 data_uscita: '2020-10-23'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadair4-768x768.webp
-  didascalia: ''
-- file: IPad Air 4 - Charging Port Diode Mode Readings.jpg
-  didascalia: iPad Air 4 - Charging Port Diode Mode Readings
-- file: IPad Air 4 A2316 - Mechanic Reader Values.png
-  didascalia: iPad Air 4 A2316 - Mechanic Reader Values
 ---
 
 # IPad Air 4

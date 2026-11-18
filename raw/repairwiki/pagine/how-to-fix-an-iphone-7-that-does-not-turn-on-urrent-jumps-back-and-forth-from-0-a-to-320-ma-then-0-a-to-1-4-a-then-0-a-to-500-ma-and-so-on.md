@@ -7,9 +7,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_7_That_Does_Not_Turn_On%2
 revisione: '2024-01-20T20:57:53Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone 7 Plus RAM Short.jpg
-  didascalia: iPhone 7 Plus with SDRAM short
 ---
 
 # How To Fix an iPhone 7 That Does Not Turn On, urrent jumps back and forth from 0 A to 320 mA, then 0 A to 1.4 A, then 0 A to 500 mA, and so on

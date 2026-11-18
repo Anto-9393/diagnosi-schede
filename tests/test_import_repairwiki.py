@@ -81,21 +81,3 @@ def test_titolo_con_virgolette_resta_yaml_valido(tmp_path):
     xml.write_text(XML.replace("<title>iPhone X</title>", "<title>iPad Air 6 12.9\" Touch Not Working</title>"), encoding="utf-8")
     fm, _ = leggi_front_matter(importa(xml, tmp_path / "out")[0].read_text(encoding="utf-8"))
     assert fm["titolo"] == 'iPad Air 6 12.9" Touch Not Working'
-
-
-def test_figure_della_guida():
-    from diagnosi.import_repairwiki import figure_da_wikitext
-    t = ("[[File:Screenshot A.png|center|thumb|876x876px|Figure 2.  LCD FPC readings]] testo "
-         "<gallery>\nFile:Example pcb pictures.jpg\nFile:Diode Readings.jpg|Diode Mode Readings\n</gallery>")
-    assert figure_da_wikitext(t) == [{"file": "Screenshot A.png", "didascalia": "Figure 2. LCD FPC readings"},
-                                     {"file": "Diode Readings.jpg", "didascalia": "Diode Mode Readings"}]   # "Example" no
-
-
-def test_indirizzo_figura_come_mediawiki(tmp_path):
-    from diagnosi.dispositivi import figure_guida
-    pagine = tmp_path / "raw" / "repairwiki" / "pagine"; pagine.mkdir(parents=True)
-    (pagine / "g.md").write_text("---\nfigure:\n- file: example.jpg\n  didascalia: Figura\n---\n# G\n", encoding="utf-8")
-    f = figure_guida("raw/repairwiki/pagine/g.md", tmp_path)[0]
-    assert f["url"] == "https://repair.wiki/images/a/a9/Example.jpg"        # esempio della documentazione MediaWiki
-    assert f["pagina"] == "https://repair.wiki/w/File:Example.jpg"
-    assert figure_guida("casi/a.md", tmp_path) == []                          # le pagine della nostra wiki no

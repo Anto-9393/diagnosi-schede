@@ -7,11 +7,6 @@ revisione: '2025-12-16T21:14:06Z'
 categorie: []
 categoria_dispositivo: tablet
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadpro129-2022-768x768.webp
-  didascalia: ''
-- file: IPad Pro 12.9 Gen 6 - Mechanic Readings.png
-  didascalia: iPad Pro 12.9 Gen 6 - Mechanic Tester Known Good Readings
 ---
 
 # IPad Pro 12.9 6th Gen

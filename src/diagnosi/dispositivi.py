@@ -110,27 +110,3 @@ def leggi_guida(percorso: str, wiki_dir: Path = WIKI_DIR, root: Path = ROOT) -> 
         return "Guida non trovata."
     _, corpo = leggi_front_matter(f.read_text(encoding="utf-8"))
     return re.sub(r"\[([^\]]+)\]\((?!https?://)[^)]+\)", r"\1", corpo)
-
-
-def figure_guida(percorso: str, root: Path = ROOT) -> list[dict]:
-    """Figure della guida originale di repair.wiki: [{"url", "pagina", "didascalia"}].
-    NON sono nel progetto: l'app le carica da repair.wiki quando apri la guida (come un browser), con il link alla
-    pagina del file, dove ci sono autore e licenza. URL diretto come lo costruisce MediaWiki: /images/a/ab/Nome."""
-    import hashlib
-    from urllib.parse import quote
-
-    if not percorso.startswith("raw/repairwiki/"):
-        return []
-    f = root / "raw" / "repairwiki" / "pagine" / Path(percorso).name
-    if not f.exists():
-        return []
-    fm, _ = leggi_front_matter(f.read_text(encoding="utf-8"))
-    out = []
-    for fig in fm.get("figure") or []:
-        nome = fig["file"].strip().replace(" ", "_")
-        nome = nome[:1].upper() + nome[1:]                     # MediaWiki: prima lettera maiuscola
-        h = hashlib.md5(nome.encode("utf-8")).hexdigest()
-        out.append({"url": f"https://repair.wiki/images/{h[0]}/{h[:2]}/{quote(nome)}",
-                    "pagina": f"https://repair.wiki/w/File:{quote(nome)}",
-                    "didascalia": fig.get("didascalia", "")})
-    return out

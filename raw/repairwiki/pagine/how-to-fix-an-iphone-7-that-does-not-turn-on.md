@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_7_That_Does_Not_Turn_On?a
 revisione: '2026-11-02T12:33:47Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How To Fix an iPhone 7 That Does Not Turn On

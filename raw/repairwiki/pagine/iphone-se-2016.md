@@ -12,11 +12,6 @@ codici_modello:
 - A1724
 data_uscita: '2016-03-31'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphonese-768x768.webp
-  didascalia: ''
-- file: IPhone 5s.jpg
-  didascalia: Home Button Diode Values
 ---
 
 # IPhone SE (2016)

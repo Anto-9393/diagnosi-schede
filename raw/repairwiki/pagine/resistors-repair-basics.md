@@ -7,17 +7,6 @@ revisione: '2026-02-27T03:58:49Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Resistor symbols.jpg
-  didascalia: Resistor symbols commonly found in schematics (Figure 1)
-- file: Resistor divider.png
-  didascalia: Voltage divider circuit (Figure 2)
-- file: Resistor types.png
-  didascalia: Different types of resistors (Figure 3)
-- file: Resistor measurement mm.png
-  didascalia: Measuring a Resistor (Figure 4)
-- file: Wirewound resistor.png
-  didascalia: Wirewound Resistor (Figure 5)
 ---
 
 # Resistors - Repair Basics

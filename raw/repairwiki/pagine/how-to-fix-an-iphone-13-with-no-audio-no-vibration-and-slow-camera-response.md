@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_An_iPhone_13_with_No_Audio_No_Vibra
 revisione: '2025-11-18T21:18:45Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphone 13 nosound board.png
-  didascalia: iPhone 13 - U8400 IC Location On Board
-- file: Iphone 13 nosound boardview.png
-  didascalia: iPhone 13 - U8400 IC Location on BoardView Software
 ---
 
 # How To Fix An iPhone 13 with No Audio No Vibration and Slow Camera Response

@@ -11,11 +11,6 @@ codici_modello:
 - A1823
 data_uscita: '2017-03-24'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipad97-gen5-768x768.webp
-  didascalia: ''
-- file: IPad 5 PCB.jpg
-  didascalia: ''
 ---
 
 # IPad 5

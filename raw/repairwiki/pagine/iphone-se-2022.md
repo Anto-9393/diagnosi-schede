@@ -14,13 +14,6 @@ codici_modello:
 - A2785
 data_uscita: '2022-03-18'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphonese2022-800x800.webp
-  didascalia: ''
-- file: IPhone SE 2022 PCB.jpg
-  didascalia: ''
-- file: IPhone SE 2022 lighting port readings.jpeg
-  didascalia: iPhone SE 2022 lighting port readings
 ---
 
 # IPhone SE (2022)

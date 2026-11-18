@@ -6,10 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_8_With_Error_9._Bootlooping_
 revisione: '2024-02-04T13:49:55Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Placeholder image.jpg
-  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
-    it!
 ---
 
 # How To Fix iPhone 8 With Error 9. Bootlooping At Apple Logo

@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/IPad_Wifi_IC_Compatibility_and_Replacement_Gui
 revisione: '2025-11-19T20:54:05Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadwificellular.png
-  didascalia: iPad 7,8 & 9 - (WiFi + Cellular Model) WiFi IC
-- file: Ipadwifionly.png
-  didascalia: iPad 7,8 & 9 - (WiFi Only Model) WiFi IC
 ---
 
 # IPad Wifi IC Compatibility and Replacement Guide

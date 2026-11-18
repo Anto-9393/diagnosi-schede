@@ -11,9 +11,6 @@ codici_modello:
 - A1671
 data_uscita: '2017-06-27'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadpro129-gen2-800x800.webp
-  didascalia: ''
 ---
 
 # IPad Pro 12.9 2nd Gen

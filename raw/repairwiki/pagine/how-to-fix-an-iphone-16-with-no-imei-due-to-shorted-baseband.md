@@ -6,11 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_16_with_NO_IMEI_due_to_sh
 revisione: '2025-11-03T12:00:24Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: 16 masked pad.png
-  didascalia: iPhone 16 PP_3V1_LDO10 pad masked on logic board.
-- file: 16 masked pad on boardview.png
-  didascalia: PP_3V1_LD010 pad on board view.
 ---
 
 # How To Fix an iPhone 16 with NO IMEI due to shorted baseband

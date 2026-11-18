@@ -6,21 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_15_Pro_That_Randomly_Rest
 revisione: '2026-03-28T18:07:45Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: IPhone 15 Pro Max - Wireless flex diagram.png
-  didascalia: iPhone 15 Pro Max - Wireless flex diagram. If it's unplugged, it will
-    restart giving panic log error 0x400000
-- file: IPhone 15pm Prox Flex 0x200000.png
-  didascalia: iPhone 15pm Prox Flex 0x200000 Panic Log
-- file: Charging Port flex diagram.png
-  didascalia: iPhone 15 Pro Max will restart if the charging port flex is unplugged,
-    causing 0x300000 panic log error
-- file: Panic Log Example of 0x400000.png
-  didascalia: Panic Log Example of 0x400000, which is due to the wireless charging
-    flex being unplugged
-- file: IPhone 15 Pro Max - Battery issue.png
-  didascalia: iPhone 15 Pro Max - Device will restart every 3 minutes if the battery
-    is bad, giving error 0xa1
 ---
 
 # How To Fix an iPhone 15 Pro That Randomly Restarts

@@ -11,9 +11,6 @@ codici_modello:
 - A1454
 - A1455
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Ipadmini1-768x768.webp
-  didascalia: ''
 ---
 
 # IPad Mini 1

@@ -6,9 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_XR_is_bootlooping_and_fails_itunes_upda
 revisione: '2025-05-14T18:48:26Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Image-1758.png
-  didascalia: iPhone FaceID sensors and locations
 ---
 
 # IPhone XR is bootlooping and fails itunes update with error 4013

@@ -6,19 +6,6 @@ cronologia: https://repair.wiki/w/IPhone_X_-_12_Pro_Max_Fix_A_problem_was_detect
 revisione: '2025-06-01T21:19:58Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: TrueDepth camera issue.png
-  didascalia: Example of the message that shows up
-- file: JC Face ID tag on flex.png
-  didascalia: JC Face ID tag on flex
-- file: Iphone face id.jpg
-  didascalia: iPhone Face ID Components Location
-- file: Dot fail.png
-  didascalia: Dot Projector Test Fail
-- file: JC face ID boards.jpg
-  didascalia: JC face ID boards
-- file: Activation Complete.png
-  didascalia: Activation Complete
 ---
 
 # IPhone X - 12 Pro Max Fix A problem was detected with the TrueDepth camera

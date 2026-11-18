@@ -6,13 +6,6 @@ cronologia: https://repair.wiki/w/How_To_Repair_an_iPhone_15_Pro_Max_Error_9_Cau
 revisione: '2025-10-20T11:42:09Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: 15-promax-error9.png
-  didascalia: iPhone 15 Pro Error 9 in 3uTools -- (Figure 1)
-- file: 15-pro-max-wireless-flexconn.png
-  didascalia: iPhone 15 Pro/Max Wireless Charging Flex Connector -- (Figure 2)
-- file: 15-pro-max-wireless-flex.png
-  didascalia: iPhone 15 Pro/Max Wireless Charging Coil -- (Figure 3)
 ---
 
 # How To Repair an iPhone 15 Pro Max Error 9 Caused Due To Aftermarket BackGlass

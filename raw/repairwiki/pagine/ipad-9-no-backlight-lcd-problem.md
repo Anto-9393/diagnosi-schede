@@ -6,23 +6,6 @@ cronologia: https://repair.wiki/w/IPad_9_No_Backlight_%28LCD_Problem%29?action=h
 revisione: '2025-07-20T20:47:30Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Sticker to remove.png
-  didascalia: ''
-- file: Piece of metal to remove.png
-  didascalia: ''
-- file: Hole.png
-  didascalia: ''
-- file: Ripped cable.png
-  didascalia: ''
-- file: X-acto.png
-  didascalia: ''
-- file: Cable.png
-  didascalia: ''
-- file: Jumpers.png
-  didascalia: ''
-- file: Repaired iPad.png
-  didascalia: ''
 ---
 
 # IPad 9 No Backlight (LCD Problem)

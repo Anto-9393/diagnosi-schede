@@ -14,15 +14,6 @@ codici_modello:
 - A2108
 data_uscita: '2018-10-26'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphonexr-800x800.webp
-  didascalia: ''
-- file: Xr-fcam.png
-  didascalia: ''
-- file: IPhone XR PCB.jpg
-  didascalia: ''
-- file: IPhone XR Power Button.jpg
-  didascalia: ''
 ---
 
 # IPhone XR

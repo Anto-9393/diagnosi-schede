@@ -8,13 +8,6 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: '2018-09-21'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
-figure:
-- file: Iphonexsmax-800x800.webp
-  didascalia: ''
-- file: X-xsm-fcam.png
-  didascalia: ''
-- file: IPhone XS Max PCB.jpg
-  didascalia: ''
 ---
 
 # IPhone XS Max
