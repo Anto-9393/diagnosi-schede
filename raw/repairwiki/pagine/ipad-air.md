@@ -11,6 +11,9 @@ codici_modello:
 - A1475
 data_uscita: '2013-11-01'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadair1-768x768.webp
+  didascalia: ''
 ---
 
 # IPad Air

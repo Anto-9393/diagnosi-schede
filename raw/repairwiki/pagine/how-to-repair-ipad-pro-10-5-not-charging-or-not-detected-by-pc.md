@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_to_Repair_iPad_Pro_10.5_not_charging_or_no
 revisione: '2026-02-12T08:17:46Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad-shield-covering.png
+  didascalia: iPad Pro 10.5" Protective Shield covering USB IC (U3500)
+- file: Ipad-10.5-usb-ic-location.png
+  didascalia: iPad Pro 10.5" USB IC (U3500) location on board
+- file: Ipad-10.5-usb-ic-location-boardview.png
+  didascalia: iPad Pro 10.5" USB IC (U3500) location on board view
 ---
 
 # How to Repair iPad Pro 10.5 not charging or not detected by pc

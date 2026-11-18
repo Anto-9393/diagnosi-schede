@@ -13,6 +13,11 @@ codici_modello:
 - A2233
 data_uscita: '2020-03-25'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadpro129-gen4-768x768.webp
+  didascalia: ''
+- file: Ipad pro 12.9 4th gen.jpeg
+  didascalia: ipad pro 12.9 4th gen USB C readings
 ---
 
 # IPad Pro 12.9 4th Gen

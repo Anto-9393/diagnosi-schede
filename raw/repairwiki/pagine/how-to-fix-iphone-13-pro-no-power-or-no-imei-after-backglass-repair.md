@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_13_Pro_No_Power_or_No_IMEI_A
 revisione: '2025-12-03T06:39:26Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 13PM BB board.png
+  didascalia: iPhone 13 Pro/Max BB_PMU Location
+- file: 13PM BB.png
+  didascalia: iPhone 13 Pro/Max BB_PMU Location on BoardView
+- file: Blank-modem-firmware.png
+  didascalia: Example of blank modem firmware in Settings -> About
+- file: No-imei-after-restore.png
+  didascalia: Example of NO IMEI after restoring the iPhone
 ---
 
 # How To Fix iPhone 13 Pro No Power or No IMEI After Backglass Repair

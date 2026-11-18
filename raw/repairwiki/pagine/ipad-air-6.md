@@ -12,6 +12,9 @@ codici_modello:
 - A2904
 data_uscita: 15/05/2024
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: A2904.webp
+  didascalia: ''
 ---
 
 # IPad Air 6

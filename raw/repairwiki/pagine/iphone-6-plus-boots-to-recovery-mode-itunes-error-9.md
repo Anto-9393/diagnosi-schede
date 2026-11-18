@@ -6,6 +6,25 @@ cronologia: https://repair.wiki/w/IPhone_6_Plus_Boots_to_recovery_mode_iTunes_Er
 revisione: '2025-06-05T20:06:07Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Itunes erro 9.jpg
+  didascalia: iTunes error 9
+- file: IPhone 6 Plus EEPROM location.png
+  didascalia: iPhone 6 Plus EEPROM location
+- file: IPhone 6 plus EEPROM resistors.png
+  didascalia: iPhone 6 plus EEPROM Resistors
+- file: IPhone 6 Area that we can cut from the CPU.png
+  didascalia: iPhone 6 Area that we can cut from the CPU
+- file: IPhone 6 Plus RAM Pads.png
+  didascalia: iPhone 6 Plus RAM Pads
+- file: IPhone 6 Plus CPU Lines.png
+  didascalia: iPhone 6 Plus CPU Lines
+- file: IPhone 6 Plus uv mask.png
+  didascalia: iPhone 6 Plus uv mask
+- file: IPhone 6 Plus Jumper wires error 9.png
+  didascalia: ''
+- file: 1v8 Ram iPhone 6 Plus.png
+  didascalia: ''
 ---
 
 # IPhone 6 Plus Boots to recovery mode iTunes Error 9

@@ -6,6 +6,9 @@ cronologia: https://repair.wiki/w/IPad_Pro_11%22_Fast_battery_drain_%282%25_per_
 revisione: '2024-02-04T13:58:25Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Power IC U8500 (Figure 1)
 ---
 
 # IPad Pro 11" Fast battery drain (2% per minute) repair

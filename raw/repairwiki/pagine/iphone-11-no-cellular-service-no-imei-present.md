@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPhone_11_No_Cellular_Service%2C_No_IMEI_Prese
 revisione: '2025-06-14T00:41:23Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPhone 11 No Cellular Service, No IMEI Present

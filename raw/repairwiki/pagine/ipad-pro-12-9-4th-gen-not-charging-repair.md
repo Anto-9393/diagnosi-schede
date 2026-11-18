@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9_4th_Gen_Not_Charging_Repair?acti
 revisione: '2024-01-20T02:16:38Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPad Pro 12.9 4th Gen Not Charging Repair

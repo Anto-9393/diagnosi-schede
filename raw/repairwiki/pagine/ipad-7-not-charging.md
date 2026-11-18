@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/IPad_7_Not_Charging?action=history
 revisione: '2025-08-25T21:41:16Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad 7 5V input.png
+  didascalia: ''
+- file: Q8550 iPad 7.png
+  didascalia: ''
+- file: Q8550 output.png
+  didascalia: ''
+- file: R1715.png
+  didascalia: ''
 ---
 
 # IPad 7 Not Charging

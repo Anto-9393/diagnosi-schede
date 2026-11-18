@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_12_That_Randomly_Restarts
 revisione: '2024-08-26T18:33:58Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Panic Log List.png
+  didascalia: An example of panic log files you'll find in the iPhone when it has
+    been randomly restarting.
+- file: Panic Log Prs0.png
+  didascalia: 'An example panic log, showing "Missing sensors: Prs0", which means
+    it has a bad charging port flex.'
 ---
 
 # How To Fix an iPhone 12 That Randomly Restarts

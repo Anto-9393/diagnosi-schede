@@ -12,6 +12,11 @@ codici_modello:
 - A2153
 - A2154
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadair3-800x800.webp
+  didascalia: ''
+- file: IPad Air 3 PCB.jpg
+  didascalia: ''
 ---
 
 # IPad Air 3

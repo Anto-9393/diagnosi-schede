@@ -6,6 +6,22 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_14_Pro_That_Randomly_Rest
 revisione: '2026-02-17T05:26:55Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Panic Log List.png
+  didascalia: An example of panic log files you'll find in the iPhone when it has
+    been randomly restarting.
+- file: 14PM-Gyro2.png
+  didascalia: iPhone 14 Pro Max will restart when the Gyro is not detected on the
+    top board, giving 0x20000 panic log
+- file: 0x41 Panic Log.png
+  didascalia: iPhone 14 Pro Max - This panic log says 0x41, which is related to battery
+    data is missing.
+- file: 0xc0000-paniclog.png
+  didascalia: Example of what you'll see in a panic-full file, where when there's
+    a bad prox flex and bad charging port flex causing the 3 min restart.
+- file: 0x180000.png
+  didascalia: Example of what you'll see in a panic-full file, where when there's
+    a bad prox flex and bad power button flex causing the 3 min restart.
 ---
 
 # How To Fix an iPhone 14 Pro That Randomly Restarts

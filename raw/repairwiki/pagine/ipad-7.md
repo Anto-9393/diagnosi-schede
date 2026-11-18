@@ -13,6 +13,11 @@ codici_modello:
 - A2200
 data_uscita: '2019-09-25'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad10.2-gen7-768x768.webp
+  didascalia: ''
+- file: IPad 7 PCB.jpg
+  didascalia: ''
 ---
 
 # IPad 7

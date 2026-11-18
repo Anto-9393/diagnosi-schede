@@ -6,6 +6,18 @@ cronologia: https://repair.wiki/w/IPad_Air_No_Touch?action=history
 revisione: '2025-07-27T21:57:39Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
+- file: J6620 Diode Readings.png
+  didascalia: J6620 Diode Readings
+- file: J6640 Diode Readings.png
+  didascalia: J6640 Diode Readings
+- file: IPad Air 1 Touch Voltages.png
+  didascalia: iPad Air 1 Touch Voltages
+- file: U6500 iPad Air 1.png
+  didascalia: iPad Air 1 U6500
 ---
 
 # IPad Air No Touch

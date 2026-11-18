@@ -6,6 +6,9 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_8_With_No_Touch?action=histo
 revisione: '2024-01-30T14:27:52Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IP7 No Touch Fix.jpg
+  didascalia: (Figure 1) -- How to fix no touch on iPhone 8. Bend out the pins
 ---
 
 # How To Fix iPhone 8 With No Touch

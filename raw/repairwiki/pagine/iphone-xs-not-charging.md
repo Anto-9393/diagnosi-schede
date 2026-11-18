@@ -6,6 +6,9 @@ cronologia: https://repair.wiki/w/IPhone_XS_Not_Charging?action=history
 revisione: '2025-06-13T23:30:28Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Screenshot From 2025-06-13 16-27-28.png
+  didascalia: iPhone Xs Yangtze location on bottom side of top board
 ---
 
 # IPhone XS Not Charging

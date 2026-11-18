@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Repair_an_iPhone_11_that_is_bootlooping
 revisione: '2025-09-30T07:06:28Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 11-bootlooping-audio-ic-board.png
+  didascalia: iPhone 11 - Audio IC (U4700) location on board
+- file: 11-audio-ic-schematic.png
+  didascalia: iPhone 11 - Audio IC (U4700) location on schematic
+- file: 11-bootlooping front prox.png
+  didascalia: iPhone 11 Front prox pins to measure
 ---
 
 # How To Repair an iPhone 11 that is bootlooping

@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_16_Pro_Face_ID_and_All_Camer
 revisione: '2025-11-21T17:51:16Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 16p fcam rcam fpc conn.png
+  didascalia: ''
+- file: 16p fcam fpc conn.png
+  didascalia: ''
+- file: 16p rcam fpc conn.png
+  didascalia: ''
+- file: 16p-fcam.png
+  didascalia: ''
 ---
 
 # How To Fix iPhone 16 Pro Face ID and All Cameras Not Working

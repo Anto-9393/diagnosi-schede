@@ -6,6 +6,11 @@ cronologia: https://repair.wiki/w/How_To_Repair_iPhone_12_Pro_Max_fake_temperatu
 revisione: '2026-02-04T11:58:28Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone-12pm-charge-port.png
+  didascalia: iPhone 12 PM - Charge Port Flex
+- file: Iphone-12pm-resistors.png
+  didascalia: iPhone 12 PM - Resistors to temporary bypass Temperature Warning
 ---
 
 # How To Repair iPhone 12 Pro Max fake temperature warning

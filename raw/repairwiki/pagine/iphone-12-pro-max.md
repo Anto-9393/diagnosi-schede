@@ -8,6 +8,13 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: '2020-10-23'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone12pro-800x800.webp
+  didascalia: ''
+- file: Ip-12pm-fcam.png
+  didascalia: ''
+- file: IPhone 12 Pro Max - Known Good Mechanic Lightning Readings.jpg
+  didascalia: iPhone 12 Pro Max - Known Good Mechanic Lightning Readings
 ---
 
 # IPhone 12 Pro Max

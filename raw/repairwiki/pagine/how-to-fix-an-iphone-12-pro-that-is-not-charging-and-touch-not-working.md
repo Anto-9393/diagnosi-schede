@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_12_Pro_that_is_not_chargi
 revisione: '2025-09-08T21:09:08Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone 12-pro usb ic.png
+  didascalia: iPhone 12 / 12 Pro USB (Kraken) IC
+- file: Iphone 12 mini usb ic.png
+  didascalia: iPhone 12 Mini USB (Kraken) IC
+- file: Iphone 12 pro max usb ic.png
+  didascalia: iPhone 12 Pro Max USB (Kraken) IC
 ---
 
 # How To Fix an iPhone 12 Pro that is not charging and touch not working

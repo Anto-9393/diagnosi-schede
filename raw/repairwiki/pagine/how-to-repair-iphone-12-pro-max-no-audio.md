@@ -6,6 +6,11 @@ cronologia: https://repair.wiki/w/How_To_Repair_iPhone_12_Pro_Max_No_Audio?actio
 revisione: '2025-11-06T18:29:36Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Sakonnet 12pm location board.png
+  didascalia: iPhone 12 Pro Max - Sakonnet IC Location
+- file: Sakonnet 12pm location boardview.png
+  didascalia: iPhone 12 Pro Max - Sakonnet IC Location on Boardview
 ---
 
 # How To Repair iPhone 12 Pro Max No Audio

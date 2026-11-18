@@ -12,6 +12,11 @@ codici_modello:
 - A1699
 data_uscita: '2015-09-25'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone6splus-768x768.webp
+  didascalia: ''
+- file: IPhone 6S.jpg
+  didascalia: Home Button Diode Values
 ---
 
 # IPhone 6S Plus

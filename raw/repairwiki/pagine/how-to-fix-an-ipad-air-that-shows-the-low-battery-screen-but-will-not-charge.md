@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_to_fix_an_iPad_Air_that_shows_the_low_batt
 revisione: '2024-01-17T22:01:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How to fix an iPad Air that shows the low battery screen but will not charge

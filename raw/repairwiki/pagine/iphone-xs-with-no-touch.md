@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/IPhone_XS_with_no_touch?action=history
 revisione: '2025-06-07T17:15:48Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone xs touch fpc.jpg
+  didascalia: iPhone XS Touch FPC
+- file: IPhone Xs touch Diode readings.png
+  didascalia: iPhone XS Touch FPC Diode Values
+- file: Ripped motherboard pad.jpg
+  didascalia: Ripped Pads
+- file: ISocket tool.png
+  didascalia: iSocket tool
 ---
 
 # IPhone XS with no touch

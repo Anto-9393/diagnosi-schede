@@ -6,6 +6,11 @@ cronologia: https://repair.wiki/w/IPad_Pro_11in_3rd_Gen_No_Touch?action=history
 revisione: '2025-09-24T00:15:59Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad Pro 3rd Touch Circuit.jpg
+  didascalia: iPad Pro 3rd Touch Circuit
+- file: Ipad pro 3rd touch FPC DIODE VALUES.png
+  didascalia: iPad Pro 11" 2018 Diode Values to Compare (THX GeekMatics)
 ---
 
 # IPad Pro 11in 3rd Gen No Touch

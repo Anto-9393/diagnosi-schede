@@ -11,6 +11,9 @@ codici_modello:
 - A1490
 - A1491
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadmini2-768x768.webp
+  didascalia: ''
 ---
 
 # IPad Mini 2

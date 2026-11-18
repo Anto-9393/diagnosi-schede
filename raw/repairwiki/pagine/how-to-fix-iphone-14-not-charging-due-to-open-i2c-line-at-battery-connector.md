@@ -6,6 +6,14 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_14_Not_Charging_due_to_open_
 revisione: '2026-02-22T02:49:33Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ip14 I2c2 location.png
+  didascalia: iPhone 14/Plus I2C2_SMC_CHARGER_BI_GG_SDA_1V8 Pin Location on Battery
+    Connector
+- file: Ip14 i2c2 jumper1.png
+  didascalia: iPhone 14/ Plus Jumper Location on Other Side
+- file: Ip14 i2c2 jumper2.png
+  didascalia: iPhone 14/ Plus Jumper Location on Battery Connector
 ---
 
 # How To Fix iPhone 14 Not Charging due to open i2c line at battery connector

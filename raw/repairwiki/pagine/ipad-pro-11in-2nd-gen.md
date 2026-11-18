@@ -12,6 +12,11 @@ codici_modello:
 - A2230
 - A2231
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadpro11-gen2-768x768.webp
+  didascalia: ''
+- file: Ipadpro11 2ndgen.jpg
+  didascalia: iPad Pro 11" 2nd Gen USB-C Readings
 ---
 
 # IPad Pro 11in 2nd Gen

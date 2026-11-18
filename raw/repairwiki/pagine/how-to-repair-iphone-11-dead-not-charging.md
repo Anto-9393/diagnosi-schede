@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_to_repair_iPhone_11_Dead_Not_Charging?acti
 revisione: '2025-08-30T10:54:34Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone11 cpu issue.gif
+  didascalia: iPhone 11 behavior after prompt to boot on DCPS
+- file: Cpu lifted from board.png
+  didascalia: CPU successfully removed from board for reball
+- file: Success boot 11.png
+  didascalia: iPhone 11 booted successfully, after recalling CPU
 ---
 
 # How to repair iPhone 11 Dead Not Charging

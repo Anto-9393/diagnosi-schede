@@ -6,6 +6,21 @@ cronologia: https://repair.wiki/w/IPhone_14_Pro_Max_No_Touch?action=history
 revisione: '2026-02-03T07:36:59Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Bad cap iphone 14 pro max.png
+  didascalia: Bad Cap
+- file: The actual capacitor iphone 14 pro max.png
+  didascalia: The bad capacitor
+- file: Diode value iphone 14 pro max.png
+  didascalia: Diode value
+- file: Schematic Iphone 14 pro max touch boost.png
+  didascalia: Schematic
+- file: Inject voltage iphone 14 pro max.png
+  didascalia: Inject Voltage
+- file: Output iphone 14 pro max.png
+  didascalia: Touch Boost Output
+- file: Values under touch ic iphone 14 pro max.png
+  didascalia: Touch ic Diode
 ---
 
 # IPhone 14 Pro Max No Touch

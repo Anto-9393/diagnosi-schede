@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPhone_XS_Freezes_When_Last_Digit_of_Pin_Code_
 revisione: '2025-06-14T00:14:21Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPhone XS Freezes When Last Digit of Pin Code is Entered

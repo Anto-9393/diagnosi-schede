@@ -6,6 +6,17 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPad_Air_3_With_No_Backlight?act
 revisione: '2023-11-05T16:41:00Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadair3backlight.jpg
+  didascalia: (Figure 1) - iPad Air 3 Charging with No Backlight
+- file: Air3 diode.jpg
+  didascalia: (Figure 2) - iPad Air 3 Backlight Diode is cracked & likely part of
+    the cause of no backlight
+- file: Air 3 backlight filters.jpg
+  didascalia: (Figure 3) - iPad Air 3 Backlight filters that need to be replaced,
+    even if the readings are good across them.
+- file: Air3 working.jpg
+  didascalia: iPad Air 3 fixed, after replacing 2 diodes & 3 backlight filters
 ---
 
 # How To Fix an iPad Air 3 With No Backlight

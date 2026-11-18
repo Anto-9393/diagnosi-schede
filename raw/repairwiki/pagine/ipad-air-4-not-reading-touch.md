@@ -6,6 +6,23 @@ cronologia: https://repair.wiki/w/IPad_Air_4_Not_Reading_Touch?action=history
 revisione: '2025-05-26T18:37:24Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: CmDxb mQ.jpg
+  didascalia: Figure 1. J shaped cutout in the shield covering touch IC's and other
+    components
+- file: Air4notouch.jpg
+  didascalia: Figure 2. Boardview of the power rail for the touch circuit that is
+    shorted
+- file: Air4notouch1.jpg
+  didascalia: Figure 3. Boardview of the opposite side of filter on shorted power
+    rail for touch circuit showing a rank of caps under the shield next to touch IC's
+- file: Mn TIyF4.jpg
+  didascalia: Figure 4. Using a grinder and snips we can somewhat easily remove just
+    the part of the shield we need to see under without putting too much heat on the
+    board to remove it
+- file: Wuu0tQGy.jpg
+  didascalia: Figure 5. Using a DCPSU at 1v/1a and a thermal camera we can see that
+    the shorted cap is heating up while injecting voltage into the power rail
 ---
 
 # IPad Air 4 Not Reading Touch

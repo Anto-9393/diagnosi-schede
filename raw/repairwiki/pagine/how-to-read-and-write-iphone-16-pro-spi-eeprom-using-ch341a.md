@@ -6,6 +6,23 @@ cronologia: https://repair.wiki/w/How_To_Read_and_Write_iPhone_16_Pro_SPI_EEPROM
 revisione: '2025-12-15T13:49:11Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ch341a-programmer.jpg
+  didascalia: CH341A Programmer
+- file: Ch341a-jumpers.png
+  didascalia: ''
+- file: Detect-neo-programmer.png
+  didascalia: ''
+- file: Read-neo-programmer.png
+  didascalia: ''
+- file: Save-neo-programmer.png
+  didascalia: ''
+- file: Open-neo-programmer.png
+  didascalia: ''
+- file: Open-v2-neo-programmer.png
+  didascalia: ''
+- file: Programm-neo-programmer.png
+  didascalia: ''
 ---
 
 # How To Read and Write iPhone 16 Pro SPI EEPROM using CH341A

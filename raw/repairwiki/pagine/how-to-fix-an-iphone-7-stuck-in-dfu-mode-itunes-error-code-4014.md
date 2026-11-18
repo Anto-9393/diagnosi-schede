@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_7_Stuck_In_DFU_Mode._iTun
 revisione: '2024-01-25T06:45:35Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How To Fix an iPhone 7 Stuck In DFU Mode. iTunes Error Code 4014

@@ -13,6 +13,15 @@ codici_modello:
 - A2404
 data_uscita: '2020-10-23'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone12-768x768.webp
+  didascalia: ''
+- file: Ip-12p-fcam.png
+  didascalia: ''
+- file: IPhone 12 - Known Good Mechanic Lightning Readings.jpg
+  didascalia: iPhone 12 - Known Good Mechanic Lightning Readings
+- file: IPhone 12 Charging Port Diode Readings.jpg
+  didascalia: iPhone 12 YCS Good Readings
 ---
 
 # IPhone 12

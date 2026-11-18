@@ -6,6 +6,16 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_15_That_Randomly_Restarts
 revisione: '2026-02-11T00:17:33Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone 15 - FPCs to Inspect for 3 Min Restart.png
+  didascalia: iPhone 15 - FPCs to Inspect for 3 Min Restart
+- file: Panic Log List.png
+  didascalia: An example of panic log files you'll find in the iPhone when it has
+    been randomly restarting.
+- file: IPhone 15 - Charging Port Flex.png
+  didascalia: iPhone 15 - Charging Port Flex
+- file: IPhone 15 Air Pressure Sensor.png
+  didascalia: iPhone 15 Air Pressure Sensor
 ---
 
 # How To Fix an iPhone 15 That Randomly Restarts

@@ -6,6 +6,18 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_17_Air_That_Randomly_Rest
 revisione: '2025-09-20T06:22:22Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Charge-port-restart.png
+  didascalia: iPhone Air - Charging Port Flex
+- file: Panic Log List.png
+  didascalia: An example of panic log files you'll find in the iPhone when it has
+    been randomly restarting.
+- file: Charge-port-iphone-air-panic.png
+  didascalia: iPhone Air Charge Port - Panic [Fig. 4
+- file: Wireless-charging-iphone-air.png
+  didascalia: iPhone Air - Wireless Charging Flex
+- file: Wireless-charging-flex-iphoneair-panic.png
+  didascalia: iPhone Air Wireless Charging Flex - Panic [Fig. 5
 ---
 
 # How To Fix an iPhone 17 Air That Randomly Restarts

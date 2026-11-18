@@ -11,6 +11,9 @@ codici_modello:
 - A1429
 - A1442
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone5-768x768.webp
+  didascalia: ''
 ---
 
 # IPhone 5

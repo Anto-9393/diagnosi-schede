@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_SE_2020_That_Does_Not_Tur
 revisione: '2024-01-21T06:22:45Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How To Fix an iPhone SE 2020 That Does Not Turn On, Stuck at 0.043 Amps

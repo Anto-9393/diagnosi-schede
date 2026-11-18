@@ -6,6 +6,11 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9_5th_Gen_not_powering_on_due_to_l
 revisione: '2025-05-17T07:20:35Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 494358349 884077777209057 908469190106231820 n.png
+  didascalia: Location of standoff near PP3v3_BSB
+- file: IPad Pro 12.9" 5th Gen PP3v3 BSB via location.jpg
+  didascalia: PP3V3_BSB via and power line location above screw standoff.
 ---
 
 # IPad Pro 12.9 5th Gen not powering on due to long screw damage

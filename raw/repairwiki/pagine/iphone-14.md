@@ -8,6 +8,11 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: September 7, 2022,
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone14-768x768.webp
+  didascalia: ''
+- file: Ip-14plus-fcam.png
+  didascalia: ''
 ---
 
 # IPhone 14

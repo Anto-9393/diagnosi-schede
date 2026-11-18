@@ -7,6 +7,13 @@ revisione: '2025-11-12T15:26:20Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphonemini-800x800.webp
+  didascalia: ''
+- file: Ip-13series-fcam.png
+  didascalia: ''
+- file: IPhone 13 Mini PCB.jpg
+  didascalia: ''
 ---
 
 # IPhone 13 Mini

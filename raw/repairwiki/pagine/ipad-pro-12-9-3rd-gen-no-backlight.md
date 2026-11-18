@@ -6,6 +6,14 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9_3rd_Gen_No_Backlight?action=hist
 revisione: '2025-07-20T22:01:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
+- file: IPad Pro 12.9 2018 FPC diode readings.png
+  didascalia: ''
+- file: IPad Pro 12.9 2018 Backlight Circuit.png
+  didascalia: ''
 ---
 
 # IPad Pro 12.9 3rd Gen No Backlight

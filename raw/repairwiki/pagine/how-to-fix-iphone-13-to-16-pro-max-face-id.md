@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/How_to_fix_iPhone_13_to_16_pro_max_Face_ID?act
 revisione: '2025-08-25T21:22:49Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Unable-to-setup-faceid.png
+  didascalia: Unable to setup Face ID
+- file: Abnormal-faced.png
+  didascalia: Face ID showing Fused
+- file: Normal-faceid.png
+  didascalia: Face ID Normal
+- file: Face-id-success.png
+  didascalia: Face ID successfully setup
 ---
 
 # How to fix iPhone 13 to 16 pro max Face ID

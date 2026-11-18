@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/IPhone_16_Pro_Max_Restarting_When_Opening_Came
 revisione: '2025-12-27T19:38:28Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ip-16p-camera-restart-panic.jpg
+  didascalia: ''
+- file: Missing-crystal-cap-16p.png
+  didascalia: ''
+- file: Crystal-cap-reinstalled-16p.png
+  didascalia: ''
 ---
 
 # IPhone 16 Pro Max Restarting When Opening Camera App

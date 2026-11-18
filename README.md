@@ -22,7 +22,7 @@ con [datapizza-ai](https://github.com/datapizza-labs/datapizza-ai) 0.1.0.
 - **Procedure passo per passo.** "Come sostituisco il CD3217 e programmo la ROM?" → passi in ordine, con attrezzo
   e controllo per ognuno. Risponde un secondo agente, scelto dal codice, non dall'LLM.
 - **Scrivi solo il modello** ("A2316", "iPad Air 4") → scheda del dispositivo con foto e tutte le sue guide,
-  apribili nell'app (e traducibili in italiano). **0 token.**
+  apribili nell'app, traducibili in italiano e con le **figure** della guida originale. **0 token.**
 - **Guardrail di sicurezza**, deterministici: blocca istruzioni pericolose (corto sulla batteria, calore vicino alla
   batteria), ricorda il limite di corrente, segnala valori impossibili e sigle mai viste nelle fonti, toglie le fonti
   non lette.
@@ -186,7 +186,7 @@ allo script).
 | `scripts/` | punti di avvio (chat da terminale, traduzioni, immagini, prova MCP) |
 | `observability/` | Prometheus + Grafana con la dashboard già pronta |
 | `docs/` | confronti con e senza wiki, log delle sessioni |
-| `tests/` | pytest: 57 test, nessuno usa la chiave |
+| `tests/` | pytest: 59 test, nessuno usa la chiave |
 
 Regole della wiki e del codice: [AGENTS.md](AGENTS.md).
 
@@ -195,6 +195,8 @@ Regole della wiki e del codice: [AGENTS.md](AGENTS.md).
 - **Codice:** licenza MIT, vedi [LICENSE](LICENSE).
 - **Guide di [repair.wiki](https://repair.wiki):** CC BY-SA 3.0. Ogni file importato o tradotto riporta fonte e
   autori; le traduzioni sono indicate come opere modificate con la stessa licenza.
+- **Figure delle guide:** non sono nel progetto. L'app le carica da repair.wiki quando apri una guida, con il link
+  alla pagina di ogni file (autore e licenza); molte sono screenshot di boardview e restano dei loro autori.
 - **Immagini dei dispositivi:** Wikimedia Commons, solo licenze libere; autore e licenza di ciascuna in
   `app/immagini/CREDITI.md`.
 - Costruito con [datapizza-ai](https://github.com/datapizza-labs/datapizza-ai), Streamlit, il protocollo MCP,

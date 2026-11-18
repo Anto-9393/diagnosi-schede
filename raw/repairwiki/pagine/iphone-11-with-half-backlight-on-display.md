@@ -6,6 +6,19 @@ cronologia: https://repair.wiki/w/IPhone_11_with_half_backlight_on_display?actio
 revisione: '2025-05-31T14:29:37Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone 11 half backlight.jpg
+  didascalia: Example of issue iPhone 11 with a dark spot on the left corner
+- file: Iphone 11 display fpc.jpg
+  didascalia: Image FPC Diode readings
+- file: Iphone 11 backlight circuit.jpg
+  didascalia: iPhone 11 Backlight Circuits
+- file: Image.jpg
+  didascalia: iPhone 11 Backlight Circuit Output Resistors Location
+- file: Blow circuit.jpg
+  didascalia: iPhone 11 Blown Backlight Circuit
+- file: IPhone 11 Backlight Circuit Schematic.png
+  didascalia: iPhone 11 Backlight Circuit Schematic
 ---
 
 # IPhone 11 with half backlight on display

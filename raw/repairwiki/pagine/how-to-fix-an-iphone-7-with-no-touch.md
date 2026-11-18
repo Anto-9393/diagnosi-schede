@@ -6,6 +6,9 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_7_With_No_Touch?action=hi
 revisione: '2024-01-22T08:59:25Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IP7 No Touch Fix.jpg
+  didascalia: How To Fix No Touch on iPhone 7
 ---
 
 # How To Fix an iPhone 7 With No Touch

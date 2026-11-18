@@ -11,6 +11,9 @@ codici_modello:
 - A1431
 data_uscita: '2011-10-14'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone 4s-black.webp
+  didascalia: ''
 ---
 
 # IPhone 4S

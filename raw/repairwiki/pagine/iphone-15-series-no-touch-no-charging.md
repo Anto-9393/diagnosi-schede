@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/IPhone_15_Series_-_No_Touch/No_Charging?action
 revisione: '2025-08-07T19:35:50Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPHONE 15-15 PLUS USB IC & ROM LOCATION.png
+  didascalia: IPHONE 15/15 PLUS USB IC & ROM LOCATION
+- file: IPHONE 15 (INT. VARIANT) PRO-PRO MAX USB IC & ROM LOCATION.png
+  didascalia: IPHONE 15 (INTERNATIONAL VARIANT) PRO/PRO MAX USB IC & ROM LOCATION
+- file: IPHONE 15 (US VARIANT) PRO-PRO MAX USB IC & ROM LOCATION.png
+  didascalia: IPHONE 15 (US VARIANT) PRO-PRO MAX USB IC & ROM LOCATION
 ---
 
 # IPhone 15 Series - No Touch/No Charging

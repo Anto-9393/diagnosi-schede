@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPhone_XS_Not_Powering_On%2C_Pulls_2A_or_More_
 revisione: '2025-06-13T23:21:30Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPhone XS Not Powering On, Pulls 2A or More Before Promt to Boot

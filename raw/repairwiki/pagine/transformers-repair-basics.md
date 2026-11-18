@@ -7,6 +7,11 @@ revisione: '2025-02-06T13:45:57Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Transformer_schematic_diagram.png
+  didascalia: Schematic diagram of transformers (Figure 1)
+- file: Transformer_types.jpg
+  didascalia: Various transformer types and packages (Figure 2)
 ---
 
 # Transformers - Repair Basics

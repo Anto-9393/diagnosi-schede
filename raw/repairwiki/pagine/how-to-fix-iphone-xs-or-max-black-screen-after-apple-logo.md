@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_XS_or_Max_Black_Screen_After
 revisione: '2025-11-24T06:09:06Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: NAND XS.png
+  didascalia: iPhone XS/XS MAX NAND
+- file: BACKUP SYSCFG.png
+  didascalia: '[[File:SELECT GENSYSCFG.png'
+- file: WRITE OGSYSCF.png
+  didascalia: ''
+- file: WRITE SYSCFG.png
+  didascalia: ''
 ---
 
 # How To Fix iPhone XS or Max Black Screen After Apple Logo

@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9_No_backlight_after_screen_replac
 revisione: '2026-02-08T21:11:21Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: No backlight.jpg
+  didascalia: Example of an iPad with no Backlight
+- file: 69C658A9-8BBC-4D05-A634-0B34DB0E9736-1806-00000182DF41DB99.jpeg
+  didascalia: ''
+- file: Caps to check.png
+  didascalia: ''
+- file: Diode Dead.png
+  didascalia: ''
 ---
 
 # IPad Pro 12.9 No backlight after screen replacement repair

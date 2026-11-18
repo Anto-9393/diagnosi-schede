@@ -6,6 +6,11 @@ cronologia: https://repair.wiki/w/IPad_10_Makes_Loud_Screeching_Noise_From_Lower
 revisione: '2025-04-03T01:27:31Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad 10 Audio IC Chip.png
+  didascalia: iPad 10 Audio IC Chip - When this fails, it causes loud screeching sound
+- file: IPad 10 Audio IC Chip Location.png
+  didascalia: iPad 10 Audio IC Chip Location
 ---
 
 # IPad 10 Makes Loud Screeching Noise From Lower Speaker

@@ -7,6 +7,15 @@ revisione: '2026-02-26T15:06:23Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Diode schematic symbols.jpg
+  didascalia: Diode symbols commonly found in schematics (Figure 1)
+- file: Diode types packages.png
+  didascalia: Some diode packages and types (Figure 2)
+- file: Diode-bridge-rectifier.jpg
+  didascalia: Full bridge rectifier diode in multiple packages + diagram (Figure 3)
+- file: Diode measurement.jpg
+  didascalia: Measuring a Diode (Figure 4)
 ---
 
 # Diodes - Repair Basics

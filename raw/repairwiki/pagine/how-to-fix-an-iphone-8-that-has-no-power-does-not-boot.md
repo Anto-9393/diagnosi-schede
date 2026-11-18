@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_8_That_Has_No_Power._Does
 revisione: '2024-01-30T06:36:58Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How To Fix an iPhone 8 That Has No Power. Does Not Boot

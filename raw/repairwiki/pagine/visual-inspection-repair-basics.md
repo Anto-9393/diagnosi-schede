@@ -7,6 +7,38 @@ revisione: '2024-07-17T14:29:55Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Corrosionqfnpointedout.jpg
+  didascalia: Corrosion example (Figure 4)
+- file: Inspection2.jpg
+  didascalia: BGA inspection (Figure 5)
+- file: Corrosion15labeled.jpg
+  didascalia: ''
+- file: Corrosion11.jpg
+  didascalia: ''
+- file: Solderclump.jpg
+  didascalia: Example of bad soldering (Figure 13)
+- file: Solderingbad02edited.jpg
+  didascalia: Another example of bad soldering (Figure 14)
+- file: Cracked capacitor.png
+  didascalia: Bank of capacitors. Do you see a problem? (Figure 15)
+- file: Inspection1.jpg
+  didascalia: Probe point inspection (Figure 1)
+- file: Corrosion14 labeled.jpg
+  didascalia: Probe point example (Figure 2)
+- file: Screenshot 2 Fixing a very badly water damaged Macbook Air.png
+  didascalia: Example of corrosion on a MacBook (Figure 3)
+- file: Inspection3.jpg
+  didascalia: Working circuit that might not last (Figure 6)
+- file: Inspection41.jpg
+  didascalia: Board view of figure 6's circuit (Figure 7)
+- file: Inspection5.jpg
+  didascalia: Schematic view of figure 6's circuit (Figure 8)
+- file: Corrosion10.jpg
+  didascalia: Another example of a board being ultrasonically cleaned before resolving
+    corrosion. (Figure 9)
+- file: Corrosion13 spelled out.jpg
+  didascalia: after ultrasonic cleaning (Figure 10)
 ---
 
 # Visual Inspection - Repair Basics

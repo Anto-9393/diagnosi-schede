@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_XS_That_Randomly_Restarts
 revisione: '2023-11-05T17:00:03Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Panic Log List ipad 4.png
+  didascalia: An example of panic log files you'll find in the iPhone when it has
+    been randomly restarting.
+- file: Panic Log Prs0 iphone x.jpg
+  didascalia: 'An example panic log, showing "Missing sensors: Prs0", which means
+    it has a bad charging port flex.'
 ---
 
 # How To Fix an iPhone XS That Randomly Restarts

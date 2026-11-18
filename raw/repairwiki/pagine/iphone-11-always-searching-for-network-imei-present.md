@@ -6,6 +6,17 @@ cronologia: https://repair.wiki/w/IPhone_11_Always_Searching_for_Network_IMEI_Pr
 revisione: '2025-05-29T21:56:07Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone 11 With no service.jpg
+  didascalia: iPhone 11 With no Service
+- file: Ripped Motherboard Pads.jpg
+  didascalia: Ripped Motherboard Pads
+- file: Iphone 11 component location.jpeg
+  didascalia: iPhone 11 Component Location
+- file: Iphone 11 top board network diode readings.jpg
+  didascalia: ''
+- file: Short on component.png
+  didascalia: Short on component
 ---
 
 # IPhone 11 Always Searching for Network IMEI Present

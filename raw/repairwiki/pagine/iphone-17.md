@@ -12,6 +12,13 @@ codici_modello:
 - A3520
 data_uscita: '2025-09-19'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone 17.webp
+  didascalia: ''
+- file: Ip-17-fcam.png
+  didascalia: ''
+- file: Iphone 17 PCB.jpg
+  didascalia: ''
 ---
 
 # IPhone 17

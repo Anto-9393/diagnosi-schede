@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_to_fix_an_iPad_Air_that_will_not_charge_or
 revisione: '2024-01-17T21:45:33Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How to fix an iPad Air that will not charge or power on

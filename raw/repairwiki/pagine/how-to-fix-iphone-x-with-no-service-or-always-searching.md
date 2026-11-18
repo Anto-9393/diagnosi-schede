@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_X_With_No_Service_or_Always_
 revisione: '2024-02-12T08:00:20Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How To Fix iPhone X With No Service or Always Searching

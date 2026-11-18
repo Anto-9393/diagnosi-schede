@@ -7,6 +7,13 @@ cronologia: https://repair.wiki/w/How_to_Repair_iPhone_12_Pro_Max_that_does_not_
 revisione: '2025-09-26T02:35:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 12pm-u2470-batt-pins.png
+  didascalia: iPhone 12 Pro Max - Battery Pins
+- file: 12pm-u2470-schematics.png
+  didascalia: iPhone 12 Pro Max U2470 - Schematic
+- file: 12pm-u2470.png
+  didascalia: iPhone 12 Pro Max - U2470 Location
 ---
 
 # How to Repair iPhone 12 Pro Max that does not detect battery and does not charge

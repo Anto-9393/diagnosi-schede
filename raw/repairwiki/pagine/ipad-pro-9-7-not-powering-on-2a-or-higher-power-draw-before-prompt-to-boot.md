@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/IPad_Pro_9.7_Not_Powering_on%2C_2a_or_Higher_P
 revisione: '2025-07-20T19:50:12Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 2+Amps.gif
+  didascalia: ''
+- file: IPad Pro 9.7 Example.png
+  didascalia: iPad Pro 9.7 Example
+- file: Water by a chip.png
+  didascalia: Water by a chip
 ---
 
 # IPad Pro 9.7 Not Powering on, 2a or Higher Power Draw before Prompt to Boot

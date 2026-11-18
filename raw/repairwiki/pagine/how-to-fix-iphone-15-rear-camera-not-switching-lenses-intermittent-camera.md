@@ -6,6 +6,9 @@ cronologia: https://repair.wiki/w/How_to_Fix_iPhone_15_Rear_Camera_Not_Switching
 revisione: '2025-08-11T02:11:37Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Capacitors.png
+  didascalia: Capacitors located on the iPhone 15 camera power circuit
 ---
 
 # How to Fix iPhone 15 Rear Camera Not Switching Lenses Intermittent Camera

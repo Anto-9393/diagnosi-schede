@@ -6,6 +6,14 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_16_Pro_That_Randomly_Rest
 revisione: '2025-07-28T20:27:57Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone 16 Pro Max Air Pressure Sensor.png
+  didascalia: iPhone 16 Pro Max Air Pressure Sensor. If not connected or damaged,
+    it will cause panic log 3145728
+- file: IPhone 16 Pro Max - Charging Port Flex is Bad.png
+  didascalia: iPhone 16 Pro Max - Charging Port Flex is Bad. Sensor Array 3145728
+- file: 16 Pro battery data line panic log 169.png
+  didascalia: 16 Pro battery data line panic log 169
 ---
 
 # How To Fix an iPhone 16 Pro That Randomly Restarts

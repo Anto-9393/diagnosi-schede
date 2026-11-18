@@ -7,6 +7,11 @@ revisione: '2024-07-17T14:28:19Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Inductor types.png
+  didascalia: Inductor schematic symbol and common packages (Figure 1)
+- file: Inductor measurement.jpg
+  didascalia: Measuring an Inductor (Figure 2)
 ---
 
 # Inductors - Repair Basics

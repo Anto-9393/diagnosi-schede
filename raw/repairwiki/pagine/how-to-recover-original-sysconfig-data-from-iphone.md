@@ -6,6 +6,21 @@ cronologia: https://repair.wiki/w/How_To_Recover_Original_Sysconfig_Data_from_iP
 revisione: '2025-09-21T11:44:22Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone Unable to Activate.jpg
+  didascalia: iPhone Unable to Activate - Fig. 1
+- file: Select-programmer-and-connect.png
+  didascalia: Select programmer and click connect.
+- file: Querycode-sysconfig-fetch.png
+  didascalia: QueryCode/Unbind - JCID Repair Assistant
+- file: Note-down-syscfg.png
+  didascalia: Note down SN, WiFi-MAC & BT-MAC
+- file: Write-selected-info.png
+  didascalia: Paste and Write SN, WiFi-MAC & BT-MAC
+- file: IRepair P10 Programmer.jpg
+  didascalia: iRepair P10 Programmer
+- file: Query-raw-data.png
+  didascalia: Query Raw Data - iRepair P10
 ---
 
 # How To Recover Original Sysconfig Data from iPhone

@@ -7,6 +7,11 @@ revisione: '2026-01-01T17:38:00Z'
 categorie: []
 categoria_dispositivo: tablet
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad mini 7.webp
+  didascalia: ''
+- file: IPad Mini 7 - Mechanic Reader .png
+  didascalia: iPad Mini 7 WiFi/Cellular Model - Known Good Mechanic Reader Values
 ---
 
 # IPad Mini 7

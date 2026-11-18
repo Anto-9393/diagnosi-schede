@@ -6,6 +6,11 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_15_With_Touch_Not_Working
 revisione: '2025-11-19T00:44:56Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Shorted cap location.png
+  didascalia: iPhone 15 / Plus - Capacitor (C9202) Location
+- file: Iphone 15 no touch due to cap location.png
+  didascalia: iPhone 15 / Plus - PP5V1_TOUCH_VDDTX_S2 PIN Location
 ---
 
 # How To Fix an iPhone 15 With Touch Not Working

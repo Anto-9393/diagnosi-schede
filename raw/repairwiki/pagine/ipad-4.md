@@ -11,6 +11,9 @@ codici_modello:
 - A1459
 - A1460
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad4-768x768.webp
+  didascalia: ''
 ---
 
 # IPad 4

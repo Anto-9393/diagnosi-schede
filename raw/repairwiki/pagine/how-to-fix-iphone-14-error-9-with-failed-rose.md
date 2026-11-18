@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_to_fix_iPhone_14_Error_9_with_failed_Rose?
 revisione: '2026-02-12T04:26:16Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 14-rose-log.png
+  didascalia: iPhone 14 - Restore log pointing to ROSE IC issue
+- file: Rose-location-boardview.png
+  didascalia: iPhone 14 ROSE IC (U200_R) location on board view
+- file: Rose-location-board.png
+  didascalia: iPhone 14 ROSE IC (U200_R) location on board
 ---
 
 # How to fix iPhone 14 Error 9 with failed Rose

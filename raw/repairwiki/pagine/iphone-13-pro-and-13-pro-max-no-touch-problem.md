@@ -6,6 +6,21 @@ cronologia: https://repair.wiki/w/IPhone_13_Pro_and_13_Pro_Max_No_Touch_Problem?
 revisione: '2026-02-09T05:24:25Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 13P FAULTY CAP.png
+  didascalia: 13P FAULTY CAP
+- file: 13PM FAULTY CAPS.png
+  didascalia: 13PM FAULTY CAPS
+- file: Diode value of screen fpc.png
+  didascalia: Diode value
+- file: Schematic of iphone 13 pro display boost ic.png
+  didascalia: Schematic
+- file: INJECT 1.8V for boost ic testing.png
+  didascalia: INJECT 1.8V
+- file: OUTPUT of display boost ic.png
+  didascalia: Output of Display Boost IC
+- file: Values under touch ic iphone 14 pro max.png
+  didascalia: Diode Value Under ic
 ---
 
 # IPhone 13 Pro and 13 Pro Max No Touch Problem

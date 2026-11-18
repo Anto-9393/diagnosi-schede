@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_7_With_Grayed_Out_Speaker_Ic
 revisione: '2026-03-21T14:06:37Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IP7 Grayed Out Speaker Icon.png
+  didascalia: IP7 Grayed Out Speaker Icon
+- file: IP7 Voice Memo App.png
+  didascalia: iPhone 7 with Audio IC symptoms
+- file: IP7 C12 D12 Jumpers.jpg
+  didascalia: Example of C12 and D12 jumpers
+- file: IP7 C12 D12 UV Mask.png
+  didascalia: Audio IC C12 and D12 jumpers with UV Mask
 ---
 
 # How To Fix iPhone 7 With Grayed Out Speaker Icon, Audio IC Repair

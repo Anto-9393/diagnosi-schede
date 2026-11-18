@@ -6,6 +6,14 @@ cronologia: https://repair.wiki/w/IPad_Air_4_Stuck_on_recovery_mode?action=histo
 revisione: '2025-08-03T19:41:33Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad stuck on recovery mode.png
+  didascalia: iPad stuck on recovery mode (Figure 1)
+- file: Power-btn-connector.png
+  didascalia: iPad Air 4 Power button flex connector
+- file: IPad successfully booted.png
+  didascalia: iPad Successfully booted after disconnecting power button flex (Figure
+    2)
 ---
 
 # IPad Air 4 Stuck on recovery mode

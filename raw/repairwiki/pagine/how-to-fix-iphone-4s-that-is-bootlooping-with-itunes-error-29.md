@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_4S_That_Is_Bootlooping_With_
 revisione: '2023-11-07T06:35:52Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone 4s Missing R61.png
+  didascalia: Figure 1. iPhone 4S battery connector area. Shows how R61 is missing
+    due to liquid damage causing the filter to go missing.
+- file: IPhone 4S Jumper on R61.png
+  didascalia: Figure 2. Here is a temporary solution on iPhone 4S that had a missing
+    R61 filter. This is for data recovery only.
 ---
 
 # How To Fix iPhone 4S That Is Bootlooping With iTunes Error 29

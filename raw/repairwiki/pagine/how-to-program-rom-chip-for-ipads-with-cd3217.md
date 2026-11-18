@@ -6,6 +6,16 @@ cronologia: https://repair.wiki/w/How_To_Program_ROM_Chip_for_iPads_with_CD3217?
 revisione: '2026-01-01T22:19:23Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad-Not-Charging.png
+  didascalia: Symptom 1 (Fig. 1) -- iPad Not charging and stuck at 5.00V and 0.744A
+- file: CD32&ROMIC.png
+  didascalia: Fig. 2 -- The CD3217 IC and the Ace ROM IC
+- file: Align-rom-jc.png
+  didascalia: Fig. 3 -- Match the dot on the ROM chip to the triangle on the JCV1S
+    Pro ROM Read/Write Module.
+- file: IPad Succesfully Charging.png
+  didascalia: Fig.4 -- iPad Successfully charging after CD3217 and Ace ROM replacement
 ---
 
 # How To Program ROM Chip for iPads with CD3217

@@ -13,6 +13,23 @@ codici_modello:
 - A2462
 data_uscita: '2021-05-21'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadpro129-2021-768x768.webp
+  didascalia: ''
+- file: IPad Pro 12.9 Gen 5 - Known Good Mechanic USB C Readings.png
+  didascalia: iPad Pro 12.9 Gen 5 - Known Good Mechanic USB C Readings
+- file: IPad Pro 129 5th gen board overview.jpg
+  didascalia: IPad Pro 12.9 5th gen board overview
+- file: IPad Pro 129 5th Gen LCD diode mode readings 1.jpg
+  didascalia: IPad Pro 12.9 5th Gen LCD diode mode readings - 1
+- file: IPad Pro 129 5th Gen LCD diode mode readings 2.jpg
+  didascalia: IPad Pro 12.9 5th Gen LCD diode mode readings - 2
+- file: IPad Pro 129 5th Gen LCD diode mode readings 3.jpg
+  didascalia: IPad Pro 12.9 5th Gen LCD diode mode readings - 3
+- file: IPad Pro 129 5th Gen LCD diode mode readings 4.jpg
+  didascalia: IPad Pro 12.9 5th Gen LCD diode mode readings - 4
+- file: IPad Pro 129 5th Gen charging port diode readings.jpg
+  didascalia: IPad Pro 12.9 5th Gen charging port diode readings - 5
 ---
 
 # IPad Pro 12.9 5th Gen

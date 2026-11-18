@@ -6,6 +6,17 @@ cronologia: https://repair.wiki/w/IPhone_XR_with_half_backlight_on_display?actio
 revisione: '2025-05-31T22:16:57Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone XR Half Backlight.jpg
+  didascalia: Example of iPhone XR with Half Backlight
+- file: Iphone XR display fpc.jpg
+  didascalia: iPhone XR Display FPC Diode Readings
+- file: Iphone XR backlight test points.jpg
+  didascalia: iPhone XR backlight test points
+- file: IPhone XR backlight circuit.jpg
+  didascalia: IPhone XR Backlight Circuits
+- file: IPhone XR Backlight Circuit Schematic.png
+  didascalia: iPhone XR Backlight Circuit Schematic
 ---
 
 # IPhone XR with half backlight on display

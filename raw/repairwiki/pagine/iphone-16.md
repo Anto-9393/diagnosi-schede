@@ -7,6 +7,11 @@ revisione: '2025-11-12T15:34:09Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone-16.webp
+  didascalia: ''
+- file: Ip-16plus-fcam.png
+  didascalia: ''
 ---
 
 # IPhone 16

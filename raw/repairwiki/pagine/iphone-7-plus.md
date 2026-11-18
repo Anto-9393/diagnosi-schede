@@ -8,6 +8,11 @@ categorie: []
 categoria_dispositivo: phone
 data_uscita: September 16, 2016
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone7plus-800x800.webp
+  didascalia: ''
+- file: IPhone 7.jpg
+  didascalia: Home Button Diode Values
 ---
 
 # IPhone 7 Plus

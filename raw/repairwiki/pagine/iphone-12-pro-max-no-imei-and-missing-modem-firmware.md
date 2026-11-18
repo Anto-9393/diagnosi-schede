@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/IPhone_12_Pro_Max_No_IMEI_and_missing_Modem_Fi
 revisione: '2025-05-31T23:27:23Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: No Modem firmware.png
+  didascalia: Example of iPhone With Missing Modem Firmware
+- file: IPhone 12 Pro Max Baseband PMU Voltages.jpg
+  didascalia: IPhone 12 Pro Max Baseband PMU Voltages
+- file: Ripped motherboard pad.jpg
+  didascalia: Example of ripped motherboard pads
+- file: Iphone 12 pro max components.jpg
+  didascalia: iPhone 12 Pro Max Components
 ---
 
 # IPhone 12 Pro Max No IMEI and missing Modem Firmware

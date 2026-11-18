@@ -7,6 +7,9 @@ cronologia: https://repair.wiki/w/How_to_fix_iPhone_7_that_does_not_turn_on%2C_h
 revisione: '2024-01-09T18:08:02Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ip7Coils.jpg
+  didascalia: Example of an iPhone 7 with broken coils above CPU (Figure 1)
 ---
 
 # How to fix iPhone 7 that does not turn on, hangs at 0.020–0.030 A after you prompt to boot on DC Power Supply

@@ -6,6 +6,15 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_14_that_is_shows_temperat
 revisione: '2025-09-08T22:23:30Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 1A-before-boot.png
+  didascalia: Figure 1 - Example of 1A of consumption before prompt to boot
+- file: Shorted cap boardview.png
+  didascalia: Figure 3 - Shorted Capacitor on SPKRAMP_TOP_VBOOST line shown on Boardview
+- file: Shorted cap.png
+  didascalia: Figure 2 - Shorted capacitor on SPKRAMP_TOP_VBOOST line
+- file: Iphone temp warning.png
+  didascalia: Figure 1 - Example of Temperature warning on iPhone
 ---
 
 # How To Fix an iPhone 14 that is shows temperature warning and does not charge

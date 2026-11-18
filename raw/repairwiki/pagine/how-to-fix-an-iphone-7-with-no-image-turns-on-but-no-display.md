@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_7_With_No_Image%2C_Turns_
 revisione: '2024-01-22T08:50:15Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How To Fix an iPhone 7 With No Image, Turns On But No Display

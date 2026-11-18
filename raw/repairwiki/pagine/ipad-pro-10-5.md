@@ -11,6 +11,9 @@ codici_modello:
 - A1709
 data_uscita: '2017-06-13'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad Pro 10.5.webp
+  didascalia: ''
 ---
 
 # IPad Pro 10.5

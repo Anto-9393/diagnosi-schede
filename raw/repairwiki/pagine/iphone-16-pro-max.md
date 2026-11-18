@@ -7,6 +7,11 @@ revisione: '2025-07-06T21:47:54Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone-16-pro-max.png
+  didascalia: ''
+- file: 16pm.jpg
+  didascalia: iPhone 16 Pro Max Mechanic USB-C readings
 ---
 
 # IPhone 16 Pro Max

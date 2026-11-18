@@ -7,6 +7,10 @@ cronologia: https://repair.wiki/w/How_To_Fix_iPhone_7_That_Is_Stuck_Always_Searc
 revisione: '2024-01-22T08:22:19Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # How To Fix iPhone 7 That Is Stuck Always Searching or No Service After Audio IC Repair Attempt

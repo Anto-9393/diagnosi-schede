@@ -7,6 +7,13 @@ revisione: '2026-01-01T20:51:27Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone8-768x768.webp
+  didascalia: ''
+- file: IPhone 8 Plus - Known Good Mechanic Lightning Readings.jpg
+  didascalia: iPhone 8 Plus - Known Good Mechanic Lightning Readings
+- file: Iphone 8.jpg
+  didascalia: Home Button Diode Values
 ---
 
 # IPhone 8 Plus

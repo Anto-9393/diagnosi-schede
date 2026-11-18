@@ -7,6 +7,18 @@ revisione: '2025-11-12T15:27:28Z'
 categorie: []
 categoria_dispositivo: phone
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone13promax-1-768x768.webp
+  didascalia: ''
+- file: Ip-13series-fcam.png
+  didascalia: ''
+- file: IPhone 13 Pro Max PCB.jpg
+  didascalia: ''
+- file: 13 pro max charging port diode Final.jpg
+  didascalia: iPhone 13 Pro Max Charging port Diode measurements using T824 USB-C
+    / LIGHTNING PORT TAIL INSERTION TESTER. Image provided by A1 Phone Repairs
+- file: 5G Antenna Diode Readings.jpg
+  didascalia: Diode readings for iPhone 13 Pro Max 5G antenna flex.
 ---
 
 # IPhone 13 Pro Max

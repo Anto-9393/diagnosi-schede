@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPhone_XR_Stuck_in_DFU%2C_updates_successfully
 revisione: '2026-02-02T00:08:04Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone XR R0601 DFU Resistor.png
+  didascalia: iPhone XR R0601 DFU Resistor. If broken, it will cause the phone to
+    be stuck in DFU mode
 ---
 
 # IPhone XR Stuck in DFU, updates successfully but goes back to DFU

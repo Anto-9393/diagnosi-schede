@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPad_6_No_Display_Backlight_Repair?action=hist
 revisione: '2024-01-20T01:52:21Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPad 6 No Display Backlight Repair

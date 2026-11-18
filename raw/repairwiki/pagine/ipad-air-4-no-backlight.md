@@ -6,6 +6,18 @@ cronologia: https://repair.wiki/w/IPad_Air_4_No_Backlight?action=history
 revisione: '2025-10-07T05:11:30Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Screenshot From 2025-10-06 19-40-31.png
+  didascalia: Figure 1. boardview showing the LCD FPC connector in red, the main backlight
+    filter in green, and the backlight power caps in blue
+- file: Screenshot From 2025-10-06 19-40-08.png
+  didascalia: Figure 2. LCD FPC connector diode mode readings from boardview
+- file: Screenshot From 2025-10-06 20-41-12.png
+  didascalia: Figure 4. Boardview showing right side of backlight filter and what
+    it connects to
+- file: Screenshot From 2025-10-06 20-41-36.png
+  didascalia: Figure 3, boardview showing left side of backlight filter and where
+    this line connects to
 ---
 
 # IPad Air 4 No Backlight

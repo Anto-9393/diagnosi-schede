@@ -10,6 +10,9 @@ codici_modello:
 - A1566
 - A1567
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadair2-768x768.webp
+  didascalia: ''
 ---
 
 # IPad Air 2

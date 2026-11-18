@@ -18,7 +18,8 @@ from aspetto import CSS, dati_html, loader_html, procedura_html, risposta_html
 from diagnosi.agent import SessioneDiagnosi
 from diagnosi.config import MODEL_DEMO, MODEL_DEV
 from diagnosi.traduzioni import traduci, tradotta
-from diagnosi.dispositivi import (casi_del_dispositivo, guide_del_dispositivo, leggi_guida, schede, solo_dispositivo,
+from diagnosi.dispositivi import (casi_del_dispositivo, figure_guida, guide_del_dispositivo, leggi_guida, schede,
+                                  solo_dispositivo,
                                   trova_dispositivo)
 
 st.set_page_config(page_title="Diagnosi al banco", page_icon="🔧", layout="wide")
@@ -145,6 +146,19 @@ def testo_guida(percorso: str) -> str:
     return leggi_guida(percorso)
 
 
+def mostra_figure(percorso: str):
+    """Le figure della guida originale, caricate da repair.wiki (non sono copiate nel progetto)."""
+    figure = figure_guida(percorso)
+    if not figure:
+        return
+    st.markdown(f"**Figure della guida originale ({len(figure)})**")
+    colonne = st.columns(2)
+    for i, fig in enumerate(figure):
+        with colonne[i % 2]:
+            st.image(fig["url"], width="stretch")
+            st.caption(f"Figura {i + 1}. {fig['didascalia']} — [pagina del file, autore e licenza]({fig['pagina']})")
+
+
 TIPI_GUIDA = {"caso": "Caso reale", "sintomo": "Sintomo", "tecnica": "Tecnica", "componente": "Componente",
               "strumento": "Strumento"}
 
@@ -164,6 +178,7 @@ def mostra_guide(guide: dict, n: int):
             with st.expander(g["titolo"] + ("" if it else " (in inglese)")):
                 if it:
                     st.markdown(it)
+                    mostra_figure(g["percorso"])
                     st.caption(f"Traduzione salvata in raw/repairwiki/tradotte/, originale {g['percorso']}")
                     continue
                 if st.button("Traduci in italiano", key=f"traduci-{n}-{g['percorso']}"):
@@ -177,6 +192,7 @@ def mostra_guide(guide: dict, n: int):
                         attesa.empty()
                         st.error(f"Traduzione non riuscita: {e}")
                 st.markdown(testo_guida(g["percorso"]))
+                mostra_figure(g["percorso"])
                 st.caption(f"{g['percorso']} (testo CC BY-SA 3.0)")
     if not guide["wiki"] and not guide["repairwiki"]:
         st.info("Nessuna guida specifica per questo modello: descrivi il guasto e l'agente userà le pagine generali.")

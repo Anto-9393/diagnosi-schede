@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Turn_On_iPhone_14_to_16_Plus_lower_laye
 revisione: '2025-08-30T17:56:52Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone14 - plus board.png
+  didascalia: iPhone 14 / Plus
+- file: Iphone16-plus board.png
+  didascalia: iPhone 16 / Plus
+- file: Iphone15-plus board.png
+  didascalia: iPhone 15 / Plus
 ---
 
 # How To Turn On iPhone 14 to 16 Plus lower layer

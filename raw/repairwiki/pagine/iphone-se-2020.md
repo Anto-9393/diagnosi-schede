@@ -12,6 +12,11 @@ codici_modello:
 - A2298
 data_uscita: '2020-04-24'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphonese2020-768x768.webp
+  didascalia: ''
+- file: IPhone SE 2020 PCB.jpg
+  didascalia: ''
 ---
 
 # IPhone SE 2020

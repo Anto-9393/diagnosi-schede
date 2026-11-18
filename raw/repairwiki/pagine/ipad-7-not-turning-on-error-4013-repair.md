@@ -6,6 +6,9 @@ cronologia: https://repair.wiki/w/IPad_7_Not_Turning_On_Error_4013_Repair?action
 revisione: '2026-01-21T19:35:21Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad-7-cpu.png
+  didascalia: iPad 7 CPU Reballed
 ---
 
 # IPad 7 Not Turning On Error 4013 Repair

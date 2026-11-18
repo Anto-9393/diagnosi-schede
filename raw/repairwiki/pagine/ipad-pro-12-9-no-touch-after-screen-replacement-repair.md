@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9_No_touch_after_screen_replacemen
 revisione: '2024-01-18T01:25:45Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPad Pro 12.9 No touch after screen replacement repair

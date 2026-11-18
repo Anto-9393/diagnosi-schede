@@ -11,6 +11,9 @@ codici_modello:
 - A1674
 data_uscita: '2016-03-29'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad pro 9.7.webp
+  didascalia: ''
 ---
 
 # IPad Pro 9.7

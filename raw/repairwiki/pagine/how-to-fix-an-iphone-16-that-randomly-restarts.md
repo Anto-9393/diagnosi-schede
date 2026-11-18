@@ -6,6 +6,24 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPhone_16_That_Randomly_Restarts
 revisione: '2026-02-06T16:52:02Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPhone 16 1572864 panic log.png
+  didascalia: iPhone 16 1572864 Panic Log Example for Charging Port or Air Pressure
+    Sensor fault
+- file: IPhone 16 2097152 Panic Log Example.png
+  didascalia: iPhone 16 Panic Log Example for Back Glass fault
+- file: I16 air pressure sensor.png
+  didascalia: iPhone 16 Air Pressure Sensor. If not connected or damaged, it will
+    cause panic log 1572864
+- file: IPhone 16 panic log 169.png
+  didascalia: iPhone 16 panic log 169 is due to battery data is missing
+- file: IPhone 16-16 Plus ZXW line.jpg
+  didascalia: Reading should be .350, check for OL, if OL then you have sandwich issue
+    or CPU seperation
+- file: I16 back glass flex.png
+  didascalia: iPhone 16 Back Glass - If you don't have this flex plugged in, it will
+    cause 3 min restarts with panic log 2097152. The important part of the flex is
+    the small IC where the red arrow is
 ---
 
 # How To Fix an iPhone 16 That Randomly Restarts

@@ -7,6 +7,10 @@ cronologia: https://repair.wiki/w/IPhone_11_Not_Powering_on%2C_After_Prompt_to_B
 revisione: '2025-06-14T00:28:47Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPhone 11 Not Powering on, After Prompt to Boot Current Jumps Back and Forth From 0 A to 320 mA, Then 0 A to 1.4 A, Then 0 A to 500 mA, and so on

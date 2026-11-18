@@ -7,6 +7,11 @@ revisione: '2026-02-19T17:13:26Z'
 categorie:
 - Repair_Basics
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Transistor schematic symbols.jpg
+  didascalia: Transistor symbols commonly found in schematics (Figure 1)
+- file: Transistor types packages.png
+  didascalia: Some transistor packages and types (Figure 2)
 ---
 
 # Transistors - Repair Basics

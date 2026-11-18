@@ -12,6 +12,31 @@ codici_modello:
 - A2591
 data_uscita: '2022-03-18'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadair2022-768x768.webp
+  didascalia: ''
+- file: A2588ConnectorsOverview.png
+  didascalia: iPad Air 5 - Connector Overview
+- file: IPad Air 5 PCB.jpg
+  didascalia: ''
+- file: Air5LCDFPCDiode.jpg
+  didascalia: '#1 LCD connector'
+- file: A2588LowerDigitizerFPCDiode.jpg
+  didascalia: '#2 Lower digitizer connector (next to LCD connector)'
+- file: A2588UpperDigitizerFPCDiode.jpg
+  didascalia: '#3 Upper digitizer connector'
+- file: A2588VolumeConnectorDiode.png
+  didascalia: '#4 Volume button connector'
+- file: A2588RearCameraConnector.jpg
+  didascalia: '#5 Rear camera connector'
+- file: A2588PowerButtonFPCDiode.jpg
+  didascalia: '#6 Power button connector (next to rear camera)'
+- file: A2588FrontCameraFPCDiode.jpg
+  didascalia: '#7 Front camera connector'
+- file: A2588LeftAmbientLightSensorFPCDiode.jpg
+  didascalia: '#8 Left ambient light sensor connector (below front camera)'
+- file: A2588 iPad Air 5 top mic connector diode readings.jpg
+  didascalia: '#9 Top mic connector (by front camera)'
 ---
 
 # IPad Air 5

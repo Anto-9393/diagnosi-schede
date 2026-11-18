@@ -6,6 +6,13 @@ cronologia: https://repair.wiki/w/How_To_Fix_an_iPad_Pro_10.5_That_Is_Boot_Loopi
 revisione: '2026-01-19T22:07:32Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipad-pro-10-coil.png
+  didascalia: iPad Pro 10.5" Coils
+- file: Ipad-pro-10-headphone-cable.png
+  didascalia: iPad Pro 10.5" Headphone Extension Flex
+- file: Ipad-pro-10-headphone-conn.png
+  didascalia: iPad Pro 10.5" Headphone Extension Flex Connector
 ---
 
 # How To Fix an iPad Pro 10.5 That Is Boot Looping or Stuck on the Apple Logo

@@ -6,6 +6,23 @@ cronologia: https://repair.wiki/w/IPad_Pro_12.9in_and_11in_No_Face_ID_After_Remo
 revisione: '2023-11-05T22:18:56Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: IPad Pro No Face ID.png
+  didascalia: iPad Pro with No Face ID. Face ID is not available
+- file: Unable To Activate Face ID.png
+  didascalia: Unable To Activate Face ID error message
+- file: IPad Pro Top Flex Diagram.png
+  didascalia: iPad Pro Top Flex Diagram - Names all the sensors on the top flex &
+    their names.
+- file: Damaged ALS Sensor on iPad Pro.png
+  didascalia: iPad Pro with No Face ID - Example of where to cut off the damaged ALS
+    sensor to fix Face ID.
+- file: IPad Pro Top Flex Diagram 2.png
+  didascalia: iPad Pro Face ID Flex - Location of sticker over solder joints
+- file: ALS Sticker.png
+  didascalia: Here is where the Top Flex Solder Joints for an iPad Pro are located.
+- file: Top Flex Solder Joints.png
+  didascalia: iPad Pro now has Face ID working
 ---
 
 # IPad Pro 12.9in and 11in No Face ID After Removing The Screen Repair

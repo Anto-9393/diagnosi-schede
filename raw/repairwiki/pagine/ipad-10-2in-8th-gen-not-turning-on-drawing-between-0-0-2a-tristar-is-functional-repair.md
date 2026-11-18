@@ -7,6 +7,9 @@ cronologia: https://repair.wiki/w/IPad_10.2in_8th_Gen_Not_turning_on%2C_drawing_
 revisione: '2024-11-08T06:17:48Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: PMIC on the board (Figure 1)
 ---
 
 # IPad 10.2in 8th Gen Not turning on, drawing between 0-0.2A, tristar is functional repair

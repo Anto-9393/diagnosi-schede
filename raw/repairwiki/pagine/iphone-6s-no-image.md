@@ -6,6 +6,17 @@ cronologia: https://repair.wiki/w/IPhone_6S_No_Image?action=history
 revisione: '2025-12-10T22:08:33Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Iphone 6s lcd fpc.jpg
+  didascalia: iPhone 6S LCD FPC
+- file: IPhone 6S Display FPC DIODE.png
+  didascalia: ''
+- file: IPhone 6S Display Voltages.jpg
+  didascalia: ''
+- file: C4002 iPhone 6S.png
+  didascalia: ''
+- file: IPhone 6S Display Block Diagram.png
+  didascalia: ''
 ---
 
 # IPhone 6S No Image

@@ -12,6 +12,13 @@ codici_modello:
 - A2013
 data_uscita: '2018-11-07'
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Ipadpro11-gen1-800x800.webp
+  didascalia: ''
+- file: IPad Pro 11 1st GEN PCB.jpg
+  didascalia: ''
+- file: Ipadpro11 1st.jpg
+  didascalia: iPad Pro 1st Gen Mechanic USB-C Readings
 ---
 
 # IPad Pro 11in 1st Gen

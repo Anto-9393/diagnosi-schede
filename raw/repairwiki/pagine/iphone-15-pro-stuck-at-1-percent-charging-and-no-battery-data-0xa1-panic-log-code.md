@@ -7,6 +7,14 @@ cronologia: https://repair.wiki/w/IPhone_15_Pro_Stuck_at_1_Percent_Charging_and_
 revisione: '2025-06-04T21:18:23Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: 15 Pro 0xa1 Panic Log.png
+  didascalia: Figure 1 - iPhone 15 Pro 0xa1 Panic Log Example
+- file: IPhone 15 Pro FPC Connector Diode Mode Values.png
+  didascalia: iPhone 15 Pro FPC Connector Diode Mode Values
+- file: IPhone 15 Pro Board & Charging Port.png
+  didascalia: iPhone 15 Pro Board & Charging Port. How to measure the voltage at the
+    battery connector
 ---
 
 # IPhone 15 Pro Stuck at 1 Percent Charging and No Battery Data 0xa1 Panic Log Code

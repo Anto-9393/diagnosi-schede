@@ -6,6 +6,10 @@ cronologia: https://repair.wiki/w/IPhone_8_Stuck_in_Searching_or_No_Service_Repa
 revisione: '2024-01-24T18:42:48Z'
 categorie: []
 licenza: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
+figure:
+- file: Placeholder image.jpg
+  didascalia: Example image (Figure 1) -- No image yet. Help expand this page by uploading
+    it!
 ---
 
 # IPhone 8 Stuck in Searching or No Service Repair
