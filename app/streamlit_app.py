@@ -33,6 +33,10 @@ ICONE = {
 }
 
 CARTELLA_IMMAGINI = Path(__file__).parent / "immagini"
+# Avatar della chat, disegnati per il progetto: l'agente è un tecnico in camice con gli occhiali-lente,
+# il riparatore al banco è il suo multimetro (porta le misure).
+AVATAR = {"assistant": str(CARTELLA_IMMAGINI / "avatar_tecnico.png"),
+          "user": str(CARTELLA_IMMAGINI / "avatar_multimetro.png")}
 
 
 def immagine_e_credito(percorso_wiki: str) -> tuple[Path | None, str]:
@@ -130,6 +134,7 @@ with st.sidebar:
             st.caption(p)
 
 # ── chat
+st.markdown('<p class="serigrafia">DIAGNOSI-AL-BANCO REV 1.0</p>', unsafe_allow_html=True)
 st.title("Diagnosi al banco")
 st.markdown("Scrivi sintomi e misure già fatte: ricevi una misura alla volta, con il valore atteso e le pagine della wiki "
             "da cui viene. Chiedi \"come sostituisco…\" o \"come programmo…\" per avere la procedura passo per passo.")
@@ -197,7 +202,7 @@ def scorri(dove: str = "start"):
 
 
 for n, (ruolo, contenuto, extra, *altro) in enumerate(st.session_state.messaggi):
-    with st.chat_message(ruolo):
+    with st.chat_message(ruolo, avatar=AVATAR[ruolo]):
         if ruolo == "assistant":
             st.markdown(contenuto, unsafe_allow_html=True)     # HTML costruito da aspetto.py, testo già escapato
         else:
@@ -222,9 +227,9 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
     if nominato and solo_dispositivo(msg, nominato) and (inizio or chiede_guide):
         if st.session_state.scelta == AUTO:
             st.session_state.dispositivo = nominato
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar=AVATAR["user"]):
             st.markdown(msg)
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant", avatar=AVATAR["assistant"]):
             attesa = st.empty()
             attesa.markdown(loader_html(f"Cerco le guide di <b>{escape(nominato.get('titolo', ''))}</b>…"),
                             unsafe_allow_html=True)
@@ -240,9 +245,9 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
         st.rerun()
     if not st.session_state.dispositivo:
         st.session_state.dispositivo = trova_dispositivo(msg)
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar=AVATAR["user"]):
         st.markdown(msg)
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=AVATAR["assistant"]):
         # Il dispositivo scelto dal menu si comunica all'agente nel primo messaggio, con i codici modello.
         d = st.session_state.dispositivo
         da_inviare = msg

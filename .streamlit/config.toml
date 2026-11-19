@@ -1,7 +1,7 @@
-# Tema dell'interfaccia: colori presi dalla scheda (solder mask, rame) — vedi app/aspetto.py
+# Tema "scheda madre": solder mask verde, rame, serigrafia (stesso stile delle slide) — dettagli in app/aspetto.py
 [theme]
-base = "light"
-primaryColor = "#1E5B45"
-backgroundColor = "#F2F5F2"
-secondaryBackgroundColor = "#E3EAE5"
-textColor = "#1A2420"
+base = "dark"
+primaryColor = "#E0A06A"
+backgroundColor = "#12402F"
+secondaryBackgroundColor = "#0B2A1F"
+textColor = "#E6EFE9"

@@ -11,65 +11,81 @@ COLORI = {"fondo": "#F2F5F2", "inchiostro": "#1A2420", "maschera": "#1E5B45", "r
 
 CSS = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=Share+Tech+Mono&display=swap');
 /* Solo testo: NON le icone di Streamlit (sono un font a sé: cambiarlo mostra il nome dell'icona, es. "keyboard_double_…") */
 html, body, .stApp, .stMarkdown, .stMarkdown p, .stMarkdown li, label, input, textarea, button p, .stCaption {
   font-family: 'Barlow', system-ui, sans-serif; }
 h1, h2, h3 { font-family: 'Barlow Semi Condensed', 'Barlow', sans-serif; font-weight: 700; letter-spacing: .005em; }
-h1 { font-size: 2.1rem; color: #1E5B45; margin-bottom: .2rem; }
+h1 { font-size: 2.1rem; color: #EEF2E6; margin-bottom: .2rem; }
 .block-container { max-width: 920px; }
 
-/* La carta della misura: l'unico elemento "forte" della pagina */
-.misura { border-left: 6px solid #1E5B45; background: #FFFFFF; padding: 1rem 1.25rem 1.1rem; margin: .3rem 0 1rem;
-          border-radius: 0 10px 10px 0; box-shadow: 0 1px 0 #C9D4CD; }
-.misura .cosa { color: #5E6E66; font-size: .95rem; margin: 0 0 .15rem; }
-.misura .dove { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 1.5rem;
-                line-height: 1.15; color: #1A2420; margin: 0 0 .5rem; }
-.misura .modo { display: inline-block; border: 1px solid #1E5B45; color: #1E5B45; border-radius: 4px;
-                padding: 0 .45rem; font-size: .85rem; font-weight: 600; vertical-align: middle; margin-left: .4rem; }
-.misura .condizioni { margin: 0 0 .7rem; max-width: 68ch; }
-.misura .etichetta { color: #5E6E66; font-size: .9rem; margin: 0; }
-.misura .atteso { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 600; font-size: 1.2rem;
-                  color: #B5652B; margin: 0; line-height: 1.3; max-width: 64ch; }
-.misura .se { color: #33423B; margin: .55rem 0 0; max-width: 68ch; }
+/* Stile "scheda madre": piste di rame e via dorate lungo i bordi della pagina, fori di fissaggio */
+.stApp { background-color: #12402F;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='130' height='560'><g fill='none' stroke='%23B8743F' stroke-width='5' opacity='.5'><path d='M130 70 H96 L72 94 V300 L96 324 H130'/><path d='M130 420 H110 L94 436 V560'/></g><g fill='%2312402F' stroke='%23D9B25F' stroke-width='3'><circle cx='72' cy='94' r='8'/><circle cx='72' cy='300' r='8'/><circle cx='94' cy='436' r='8'/></g><circle cx='104' cy='372' r='14' fill='%230B241A' stroke='%23D9B25F' stroke-width='5'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='130' height='420'><g fill='none' stroke='%23B8743F' stroke-width='5' opacity='.5'><path d='M130 40 H100 L80 60 V240 L100 260 H130'/></g><g fill='%2312402F' stroke='%23D9B25F' stroke-width='3'><circle cx='80' cy='60' r='8'/><circle cx='80' cy='240' r='8'/></g><circle cx='104' cy='390' r='14' fill='%230B241A' stroke='%23D9B25F' stroke-width='5'/></svg>");
+  background-repeat: no-repeat, no-repeat; background-position: right top, right bottom; background-attachment: fixed, fixed; }
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stSidebar"] { background: #0B2A1F; border-right: 3px dashed #2E6B54; }
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2 { font-family: 'Share Tech Mono', monospace; font-weight: 400; color: #EEF2E6; }
+.serigrafia { font-family: 'Share Tech Mono', monospace; color: #E0A06A; font-size: .95rem; margin: 0 0 .2rem; }
+[data-testid="stChatInput"] { border: 2px solid #B8743F; border-radius: 10px; }
+[data-testid="stExpander"] details { background: #17211D; border: 0; border-top: 4px dashed #56645E; border-bottom: 4px dashed #56645E; border-radius: 4px; }
+/* Avatar della chat più grandi: il tecnico in camice e il multimetro devono riconoscersi */
+[data-testid="stChatMessage"] > div:first-child:has(img), [data-testid="stChatMessageAvatarCustom"] { width: 3.2rem !important; height: 3.2rem !important; }
+[data-testid="stChatMessage"] img { width: 3.2rem !important; height: 3.2rem !important; border-radius: 50%; }
 
-.riepilogo { color: #33423B; margin: 0 0 .8rem; max-width: 70ch; }
+/* La carta della misura: un chip, con il valore atteso sul display del multimetro */
+.misura { background: #17211D; padding: 1rem 1.25rem 1.1rem; margin: .5rem 0 1rem; border-radius: 6px;
+          border-top: 6px dashed #8FD9B0; border-bottom: 6px dashed #8FD9B0; }
+.misura .cosa { font-family: 'Share Tech Mono', monospace; color: #E0A06A; font-size: .95rem; margin: 0 0 .15rem; }
+.misura .dove { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 1.5rem;
+                line-height: 1.15; color: #EEF2E6; margin: 0 0 .5rem; }
+.misura .modo { display: inline-block; border: 1px solid #E0A06A; color: #E0A06A; border-radius: 4px;
+                padding: 0 .45rem; font-size: .85rem; font-weight: 600; vertical-align: middle; margin-left: .4rem; }
+.misura .condizioni { margin: 0 0 .7rem; max-width: 68ch; color: #CFE0D6; }
+.misura .etichetta { color: #9DB5A8; font-size: .9rem; margin: 0 0 .2rem; }
+.misura .atteso { font-family: 'Share Tech Mono', monospace; font-size: 1.05rem; color: #1D2A1A; background: #B9C8A0;
+                  border: 4px solid #2A3A2E; border-radius: 6px; padding: .45rem .7rem; margin: 0; line-height: 1.35; max-width: 64ch; }
+.misura .se { color: #CFE0D6; margin: .55rem 0 0; max-width: 68ch; }
+
+.riepilogo { color: #CFE0D6; margin: 0 0 .8rem; max-width: 70ch; }
 ol.ipotesi { padding-left: 1.3rem; margin: 0 0 1rem; }
 ol.ipotesi li { margin: 0 0 .55rem; max-width: 70ch; }
-ol.ipotesi .comp { font-weight: 600; }
+ol.ipotesi .comp { font-weight: 600; color: #EEF2E6; }
 .prob { display: inline-flex; gap: 2px; vertical-align: middle; margin-left: .45rem; }
-.prob i { width: 14px; height: 6px; background: #C9D4CD; border-radius: 1px; }
-.prob i.on { background: #1E5B45; }
+.prob i { width: 14px; height: 6px; background: #2E6B54; border-radius: 1px; }
+.prob i.on { background: #8FD9B0; }
 
-.avviso { border-left: 4px solid #8A5A00; background: #FBF6EA; padding: .45rem .8rem; margin: 0 0 .45rem;
-          color: #4A3600; max-width: 72ch; }
-.avviso.controllo { border-left-color: #B42318; background: #FDF1EF; color: #6E1209; }
+.avviso { border-left: 4px solid #D9B25F; background: #33301A; padding: .45rem .8rem; margin: 0 0 .45rem;
+          color: #F3E3B8; max-width: 72ch; border-radius: 0 6px 6px 0; }
+.avviso.controllo { border-left-color: #F07B66; background: #3D1E19; color: #F8CFC6; }
 .avviso .fonte-avviso { font-weight: 600; margin-right: .35rem; }
-.avviso.bloccante { border-left-color: #B42318; background: #FDEEEC; color: #6E1209; font-weight: 600; }
+.avviso.bloccante { border-left-color: #F07B66; background: #4A1D17; color: #FBD7CF; font-weight: 600; }
 .domande { margin: .2rem 0 .8rem; padding-left: 1.1rem; }
-.fonti { color: #5E6E66; font-size: .9rem; margin: .4rem 0 0; }
-.fonti code { background: #E3EAE5; color: #1A2420; }
-.dati { color: #5E6E66; font-size: .85rem; }
+.fonti { color: #9DB5A8; font-size: .9rem; margin: .4rem 0 0; }
+.fonti code { background: #0B2A1F; color: #CFE0D6; }
+.dati { font-family: 'Share Tech Mono', monospace; color: #9DB5A8; font-size: .85rem; }
 .scheda h3 { margin: .3rem 0 0; }
-.scheda .codici { color: #5E6E66; margin: .1rem 0 .6rem; }
-.guide h4 { font-family: 'Barlow Semi Condensed', sans-serif; font-size: 1.05rem; margin: .9rem 0 .3rem; color: #1E5B45; }
+.scheda .codici { color: #9DB5A8; margin: .1rem 0 .6rem; }
+.guide h4 { font-family: 'Barlow Semi Condensed', sans-serif; font-size: 1.05rem; margin: .9rem 0 .3rem; color: #8FD9B0; }
 .guide ul { margin: 0 0 .4rem 1.1rem; padding: 0; }
 .guide li { margin: .15rem 0; }
 .guide ul.pagine { list-style: none; margin-left: 0; }
 .guide ul.pagine li { display: grid; grid-template-columns: 7rem 1fr; gap: .5rem; margin: .35rem 0; }
-.guide .tipo { font-size: .8rem; color: #5B6A63; padding-top: .2rem; }
-.guide .percorso { font-size: .8rem; color: #5B6A63; }
-.guide .vuoto { color: #5B6A63; }
-.procedura .obiettivo { font-family: 'Barlow Semi Condensed', sans-serif; font-size: 1.35rem; font-weight: 600; margin: .2rem 0 .6rem; }
+.guide .tipo { font-size: .8rem; color: #9DB5A8; padding-top: .2rem; }
+.guide .percorso { font-size: .8rem; color: #9DB5A8; }
+.guide .vuoto { color: #9DB5A8; }
+.procedura .obiettivo { font-family: 'Barlow Semi Condensed', sans-serif; font-size: 1.35rem; font-weight: 600; margin: .2rem 0 .6rem; color: #EEF2E6; }
 .procedura ol.passi { list-style: none; counter-reset: passo; margin: 0; padding: 0; }
 .procedura ol.passi > li { counter-increment: passo; position: relative; padding: 0 0 .9rem 2.6rem; }
 .procedura ol.passi > li::before { content: counter(passo); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem;
-  border-radius: 50%; background: #1E5B45; color: #FFFFFF; font-weight: 600; text-align: center; line-height: 1.8rem; }
-.procedura ol.passi > li:not(:last-child)::after { content: ""; position: absolute; left: .87rem; top: 2rem; bottom: .2rem;
-  border-left: 2px solid #C9D6CE; }
-.procedura .titolo-passo { font-weight: 600; margin: .15rem 0 .2rem; }
-.procedura .attrezzo { color: #B5652B; font-weight: 600; margin: .25rem 0 0; }
-.procedura .controllo { color: #5B6A63; margin: .2rem 0 0; }
+  border-radius: 50%; background: #12402F; border: 3px solid #D9B25F; box-sizing: border-box; color: #EEF2E6; font-weight: 600;
+  text-align: center; line-height: 1.45rem; font-family: 'Share Tech Mono', monospace; }
+.procedura ol.passi > li:not(:last-child)::after { content: ""; position: absolute; left: .82rem; top: 1.8rem; bottom: .2rem;
+  border-left: 4px solid #B8743F; }
+.procedura .titolo-passo { font-weight: 600; margin: .15rem 0 .2rem; color: #EEF2E6; }
+.procedura .attrezzo { color: #E0A06A; font-weight: 600; margin: .25rem 0 0; }
+.procedura .controllo { color: #9DB5A8; margin: .2rem 0 0; }
 .procedura .controllo b, .procedura .attrezzo b { font-weight: 600; color: inherit; }
 /* Lo scorrimento automatico si ferma un po' sotto la barra in alto di Streamlit */
 [data-testid="stChatMessage"] { scroll-margin-top: 4.5rem; scroll-margin-bottom: 7rem; }
@@ -77,8 +93,8 @@ ol.ipotesi .comp { font-weight: 600; }
    corrente che scorre nelle piste, fumo di flussante dal chip. Un'unica scena, in loop. */
 .banco { display: flex; align-items: center; gap: 18px; padding: .4rem 0; }
 .banco svg { flex: none; overflow: visible; }
-.banco .testo-loader { color: #5B6A63; font-size: 1rem; line-height: 1.4; }
-.banco .testo-loader b { color: #1A2420; }
+.banco .testo-loader { color: #9DB5A8; font-size: 1rem; line-height: 1.4; }
+.banco .testo-loader b { color: #EEF2E6; }
 .banco .cacciavite { animation: scendi 1.6s ease-in-out infinite; }
 .banco .impugnatura { animation: gira-manico .4s linear infinite; }
 .banco .taglio { transform-origin: 34px 63px; animation: avvita 1.6s ease-in-out infinite; }
@@ -222,8 +238,8 @@ def procedura_html(proc, esito) -> str:
 
 
 _SCENA = """<svg width="220" height="96" viewBox="0 0 220 96" aria-hidden="true">
-  <rect x="6" y="56" width="208" height="34" rx="5" fill="#1E5B45"/>
-  <rect x="6" y="56" width="208" height="34" rx="5" fill="none" stroke="#174A38" stroke-width="2"/>
+  <rect x="6" y="56" width="208" height="34" rx="5" fill="#1F6B50"/>
+  <rect x="6" y="56" width="208" height="34" rx="5" fill="none" stroke="#3E8A6C" stroke-width="2"/>
   <path class="pista" d="M46 76 H86 V68 H100" stroke="#D08A4E" stroke-width="2.2" fill="none"/>
   <path class="pista lenta" d="M128 68 H142 V80 H196" stroke="#D08A4E" stroke-width="2.2" fill="none"/>
   <path class="pista lenta" d="M18 84 H70 V82" stroke="#D08A4E" stroke-width="2" fill="none"/>
