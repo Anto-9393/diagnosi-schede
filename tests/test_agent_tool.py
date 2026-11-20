@@ -58,6 +58,7 @@ def test_instradamento_diagnosi_o_procedura():
     assert tipo_richiesta("fatto, ora con batteria prende 0,002 A", "procedura") == "diagnosi"
     assert tipo_richiesta("non carica ancora", "procedura") == "diagnosi"
     assert tipo_richiesta("sto usando a2316 come modello", "diagnosi") == "diagnosi"
+    assert tipo_richiesta("ipad air 3 ha il tristar o il cd3217b12?", "procedura") == "diagnosi"
 
 
 def test_due_agenti_stessi_tool_e_memoria_della_procedura(monkeypatch):

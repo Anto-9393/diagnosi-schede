@@ -114,9 +114,19 @@ def test_valore_atteso_copiato_dal_caso_guasto():
     assert any("scheda guasta" in a for a in esito.avvisi)
     _, esito = controlla(_passo(dove="X1548", valore="livello VBUS, circa 5 V"), lette)     # valore sano: nessun avviso
     assert not any("scheda guasta" in a for a in esito.avvisi)
+    lette["wiki/casi/a2316.md"] += " Senza batteria ~4,7 V."                                # un solo numero citato
+    _, esito = controlla(_passo(dove="X1548", valore="Su scheda sana: livello di carica (nel caso senza batteria ~4,7 V)"), lette)
+    assert not any("scheda guasta" in a for a in esito.avvisi)
 
 
 def test_avvertenze_di_repertorio_tolte():
     passo, _ = controlla(_passo(avvertenze=("Usare ESD per proteggere i componenti sensibili.",
                                             "Batteria scollegata prima di iniettare.")), LETTE)
     assert passo.avvertenze_sicurezza == ["Batteria scollegata prima di iniettare."]
+
+
+def test_scalda_come_sintomo_non_blocca():
+    _, esito = controlla(_passo(condizioni="iniezione 1 V: con la termocamera guarda cosa scalda per primo, con batteria scollegata"), LETTE)
+    assert not esito.bloccato
+    _, esito = controlla(_passo(condizioni="usa aria calda a 350 gradi vicino alla batteria"), LETTE)
+    assert esito.bloccato

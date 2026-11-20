@@ -1,0 +1,7 @@
+{
+  "_spiegazione": "Dove mettere ogni immagine nella procedura: 'inizio' (sintomo), 'fine' (verifica) oppure 'parole' = regex sul titolo e il testo del passo; vince il primo passo che corrisponde.",
+  "01-sintomo-ipad-non-carica-fermo-a-5V-e-0,744A.png": {"dove": "inizio", "originale": "Fig. 1"},
+  "02-CD3217-e-ROM-sulla-scheda.png": {"parole": "rimuov|dissald|togli|smont|individu|localizz|ispezion", "originale": "Fig. 2"},
+  "03-allinea-il-punto-della-ROM-al-triangolo-del-modulo-JCV1S-Pro.png": {"parole": "programm|V1S|JC|scriv|dump", "originale": "Fig. 3"},
+  "04-ipad-carica-dopo-sostituzione-CD3217-e-ROM.png": {"dove": "fine", "originale": "Fig. 4"}
+}

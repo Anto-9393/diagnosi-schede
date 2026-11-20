@@ -70,7 +70,8 @@ def tipo_richiesta(messaggio: str, precedente: str | None = None) -> str:
     (risposta reale del 17 nov: "sto usando a2316 come modello" finiva al diagnosta e perdeva la procedura)."""
     if _PROCEDURA.search(messaggio):
         return "procedura"
-    if precedente == "procedura" and not _DIAGNOSI.search(messaggio):
+    # Resta in procedura solo una RISPOSTA all'agente; una domanda nuova ("l'Air 3 ha il Tristar o il CD3217?") no.
+    if precedente == "procedura" and not _DIAGNOSI.search(messaggio) and not messaggio.strip().endswith("?"):
         return "procedura"
     return "diagnosi"
 

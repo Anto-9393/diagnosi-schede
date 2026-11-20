@@ -24,7 +24,10 @@ MAX_TENSIONE_CELLA_V = 4.4
 _PERICOLOSI = [
     (r"cortocircuit\w*\s+(la\s+)?batteria|short\w*\s+the\s+battery", "Mai cortocircuitare la batteria."),
     (r"senza\s+limite\s+di\s+corrente|no\s+current\s+limit", "Mai alimentare senza limite di corrente."),
-    (r"(aria\s+calda|hot\s+air|scald\w+)[^.]{0,60}batteria", "Mai scaldare vicino alla batteria: va scollegata e allontanata."),
+    # Solo il CALORE APPLICATO dal tecnico. "scalda" da solo no: è anche un sintomo ("con la termocamera vedi cosa
+    # scalda per primo... con batteria"), falso blocco del 20 nov.
+    (r"(aria\s+calda|hot\s+air|stazione\s+ad\s+aria|pre-?riscald\w*|\b(?:ri)?scaldare)[^.]{0,60}batteria",
+     "Mai scaldare vicino alla batteria: va scollegata e allontanata."),
 ]
 _ALIMENTAZIONE = r"alimentator\w*|banco|dc\s+power|iniezion\w*|inject\w*|power\s+supply"
 _LIMITE = r"limit\w*\s+(di\s+)?corrente|corrente\s+limitat\w*|current\s+limit"
@@ -97,7 +100,9 @@ def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -
     # "valore atteso 0,026–0,186 V" su X1548, che nel caso A2316 è proprio la misura della scheda guasta.
     casi = " ".join(t for p, t in pagine_lette.items() if "/casi/" in p).replace(".", ",")
     decimali = re.findall(r"\d+[.,]\d+", m.valore_atteso)
-    if casi and decimali and all(d.replace(".", ",") in casi for d in decimali):
+    # Almeno 2 numeri (un intervallo come "0,026–0,186 V"): con uno solo scattava anche su risposte giuste che
+    # citano un valore del caso come esempio (falso positivo del 20 nov: "nel caso A2316 senza batteria ~4,7 V").
+    if casi and len(decimali) >= 2 and all(d.replace(".", ",") in casi for d in decimali):
         esito.avvisi.append("Il valore atteso coincide con un valore MISURATO nel caso della wiki, cioè sulla scheda "
                             "guasta: su una scheda sana il valore è un altro. Verifica prima di misurare.")
 

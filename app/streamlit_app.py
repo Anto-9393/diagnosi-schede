@@ -16,7 +16,7 @@ import streamlit.components.v1 as components
 
 from aspetto import CSS, dati_html, loader_html, procedura_html, risposta_html
 from diagnosi.agent import SessioneDiagnosi, fuori_tema
-from diagnosi.config import MODEL_DEMO, MODEL_DEV
+from diagnosi.config import MODEL_DEV
 from diagnosi.traduzioni import traduci, tradotta
 from diagnosi.dispositivi import (casi_del_dispositivo, guide_del_dispositivo, leggi_guida, schede, solo_dispositivo,
                                   trova_dispositivo)
@@ -58,55 +58,6 @@ def immagine_e_credito(percorso_wiki: str) -> tuple[Path | None, str]:
 
 
 
-CARTELLA_FOTO_CASI = Path(__file__).parents[1] / "wiki" / "casi" / "foto"
-CARTELLA_IMMAGINI_GUIDE = Path(__file__).parents[1] / "raw" / "repairwiki" / "immagini"
-
-
-_ESTENSIONI_FOTO = (".jpg", ".jpeg", ".png", ".webp")
-CREDITO_MIO = "Foto dell'autore, dal caso reale."
-CREDITO_REPAIRWIKI = "Immagini: repair.wiki, CC BY-SA 3.0"
-
-
-def _foto_in(cartella: Path, credito: str) -> list[tuple[Path, str, str]]:
-    if not cartella.is_dir():
-        return []
-    foto = sorted(f for f in cartella.iterdir() if f.suffix.lower() in _ESTENSIONI_FOTO)
-    # didascalia dal nome del file, senza il numero iniziale: "02-CD3217-e-ROM-sulla-scheda" -> "CD3217 e ROM sulla scheda"
-    return [(f, re.sub(r"^\d+[-_ ]*", "", f.stem).replace("-", " ").replace("_", " "), credito) for f in foto]
-
-
-def foto_del_caso(percorso: str) -> list[tuple[Path, str, str]]:
-    """Immagini per una pagina: (file, didascalia, credito).
-    - caso della wiki: le MIE foto in wiki/casi/foto/<nome-del-caso>/
-    - guida repair.wiki: le sue immagini salvate a mano in raw/repairwiki/immagini/<nome-della-guida>/
-    - qualsiasi pagina della wiki: le immagini delle guide repair.wiki da cui è stata scritta (campo `fonti`)."""
-    if percorso.startswith("raw/repairwiki/"):
-        return _foto_in(CARTELLA_IMMAGINI_GUIDE / Path(percorso).stem, CREDITO_REPAIRWIKI)
-    rel = percorso.removeprefix("wiki/")
-    foto = _foto_in(CARTELLA_FOTO_CASI / Path(rel).stem, CREDITO_MIO) if rel.startswith("casi/") else []
-    file = Path(__file__).parents[1] / "wiki" / rel
-    if file.is_file():
-        testa = file.read_text(encoding="utf-8").split("\n---", 1)[0]      # solo il front-matter
-        for fonte in re.findall(r"raw/repairwiki/pagine/[\w.,-]+\.md", testa):
-            foto += _foto_in(CARTELLA_IMMAGINI_GUIDE / Path(fonte).stem, CREDITO_REPAIRWIKI)
-    return foto
-
-
-def mostra_foto(percorsi: list[str], in_riquadro: bool = True):
-    """Le immagini delle pagine citate, in griglia da 3, senza doppioni.
-    `in_riquadro=False` dentro un expander (Streamlit non permette un expander dentro un altro)."""
-    foto = list({f: (f, d, c) for p in percorsi for f, d, c in foto_del_caso(p)}.values())
-    if not foto:
-        return
-    from contextlib import nullcontext
-    with st.expander(f"Immagini ({len(foto)})", expanded=True) if in_riquadro else nullcontext():
-        if not in_riquadro:
-            st.markdown(f"**Immagini ({len(foto)})**")
-        for i in range(0, len(foto), 3):
-            for col, (f, didascalia, _) in zip(st.columns(3), foto[i:i + 3]):
-                col.image(str(f), caption=didascalia, width="stretch")
-        st.caption(" · ".join(dict.fromkeys(c for _, _, c in foto)))
-
 
 AUTO = "Riconosci dal testo"
 
@@ -137,7 +88,7 @@ def nuova_sessione(modello: str, dettaglio: str, lettura: str):
 # ── riquadro laterale
 with st.sidebar:
     st.header("Diagnosi al banco")
-    modello = st.selectbox("Modello", [MODEL_DEV, MODEL_DEMO])
+    modello = MODEL_DEV          # il modello LLM si sceglie nel .env (MODEL_DEV), non dall'interfaccia
     scelta = st.selectbox("Dispositivo", [AUTO, *elenco_dispositivi()],
                           help="Scegli il dispositivo al banco, oppure lascia che venga riconosciuto dal testo (es. A2316).")
     dettaglio = st.radio("Risposta", ["completa", "breve"], horizontal=True,
@@ -213,7 +164,6 @@ def mostra_guide(guide: dict, n: int):
             with st.expander(f"{TIPI_GUIDA.get(p['tipo'], p['tipo'])}: {p['titolo']}"):
                 st.markdown(testo_guida(p["percorso"]))
                 st.caption(f"wiki/{p['percorso']}")
-                mostra_foto([p["percorso"]], in_riquadro=False)
     if guide["repairwiki"]:
         st.markdown(f"**Guide di repair.wiki, copia locale ({len(guide['repairwiki'])})**")
         for g in guide["repairwiki"]:
@@ -222,7 +172,6 @@ def mostra_guide(guide: dict, n: int):
                 if it:
                     st.markdown(it)
                     st.caption(f"Traduzione salvata in raw/repairwiki/tradotte/, originale {g['percorso']}")
-                    mostra_foto([g["percorso"]], in_riquadro=False)
                     continue
                 if st.button("Traduci in italiano", key=f"traduci-{n}-{g['percorso']}"):
                     attesa = st.empty()
@@ -236,7 +185,6 @@ def mostra_guide(guide: dict, n: int):
                         st.error(f"Traduzione non riuscita: {e}")
                 st.markdown(testo_guida(g["percorso"]))
                 st.caption(f"{g['percorso']} (testo CC BY-SA 3.0)")
-                mostra_foto([g["percorso"]], in_riquadro=False)
     if not guide["wiki"] and not guide["repairwiki"]:
         st.info("Nessuna guida specifica per questo modello: descrivi il guasto e l'agente userà le pagine generali.")
 
@@ -284,8 +232,6 @@ for n, (ruolo, contenuto, extra, *altro) in enumerate(st.session_state.messaggi)
             mostra_guide(altro[0], n)
         elif altro and altro[0].get("domande"):
             mostra_domande(altro[0]["domande"], n, ultima=(n == len(st.session_state.messaggi) - 1))
-        if altro and altro[0].get("fonti"):
-            mostra_foto(altro[0]["fonti"])
         if extra:
             st.markdown(extra, unsafe_allow_html=True)
 
@@ -367,7 +313,6 @@ if msg:
         extra = dati_html(info)
         st.markdown(extra, unsafe_allow_html=True)
     domande = [] if esito.bloccato else list(passo.domande_al_tecnico)
-    fonti = [] if esito.bloccato else list(passo.fonti)
-    st.session_state.messaggi.append(("assistant", testo, extra, {"domande": domande, "fonti": fonti}))
+    st.session_state.messaggi.append(("assistant", testo, extra, {"domande": domande}))
     st.session_state.scorri = True
     st.rerun()
