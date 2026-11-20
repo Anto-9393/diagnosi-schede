@@ -13,7 +13,10 @@ Avvio:  python -m diagnosi.mcp_server               # stdio (Claude Desktop, Ins
 """
 from __future__ import annotations
 
+import json
 import re
+import time
+from datetime import datetime
 
 from mcp.server import MCPServer
 
@@ -22,6 +25,22 @@ from diagnosi.config import WIKI_DIR
 from diagnosi.wiki_builder import leggi_front_matter
 
 mcp = MCPServer("Diagnosi schede iPhone/iPad")
+
+
+LOG_MCP = WIKI_DIR.parent / "docs" / "log" / "mcp.jsonl"
+
+
+def _registra(tool: str, argomenti: dict, t0: float):
+    """Una riga per ogni chiamata da un host MCP: la legge l'exporter Prometheus (Grafana: "Chiamate MCP")."""
+    try:
+        LOG_MCP.parent.mkdir(parents=True, exist_ok=True)
+        riga = {"ora": datetime.now().isoformat(timespec="seconds"), "tool": tool,
+                "argomenti": {k: str(v)[:200] for k, v in argomenti.items()},
+                "durata_s": round(time.perf_counter() - t0, 2)}
+        with LOG_MCP.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(riga, ensure_ascii=False) + "\n")
+    except OSError:
+        pass                                    # il log non deve mai far fallire la risposta
 
 
 def _pagine(tipo: str) -> list:
@@ -37,7 +56,9 @@ def cerca_caso(sintomo: str, modello: str = "") -> str:
         sintomo: descrizione breve, es. "non carica, PC non lo rileva".
         modello: opzionale, es. "iPad Air 4" o "A2316".
     """
+    t0 = time.perf_counter()
     risultati = wiki_tools.cerca(f"{sintomo} {modello}".strip())
+    _registra("cerca_caso", {"sintomo": sintomo, "modello": modello}, t0)
     return risultati + "\n\nApri una pagina con la resource wiki://<cartella>/<nome> (es. wiki://sintomi/non-carica-o-alimentazione-instabile)."
 
 
@@ -45,6 +66,14 @@ def cerca_caso(sintomo: str, modello: str = "") -> str:
 @mcp.tool()
 def componente_info(sigla: str) -> str:
     """Restituisce la pagina della wiki di un componente, es. 'CD3217', 'Tristar', 'U4001'."""
+    t0 = time.perf_counter()
+    try:
+        return _componente_info(sigla)
+    finally:
+        _registra("componente_info", {"sigla": sigla}, t0)
+
+
+def _componente_info(sigla: str) -> str:
     s = sigla.lower().strip()
     # Prima il nome del file identico ("tristar.md"), poi il nome che lo contiene, poi le pagine che lo citano
     # nell'intestazione (es. C4005, condensatore "attorno a Tristar"): prima si prendeva la prima in ordine alfabetico.
@@ -67,9 +96,23 @@ def suggerisci_misura(contesto: str) -> str:
     prossima misura con valore atteso, avvertenze di sicurezza e fonti. Usa un LLM (chiave nel .env)."""
     from diagnosi.agent import SessioneDiagnosi            # import qui: gli altri tool non richiedono la chiave
 
-    passo, esito, info = SessioneDiagnosi().chiedi(contesto)
+    from diagnosi.guardrails import pericolo_nella_domanda
+    t0 = time.perf_counter()
+    if stop := pericolo_nella_domanda(contesto):          # stesso STOP dell'app, anche da Claude Desktop
+        _registra("suggerisci_misura", {"contesto": contesto, "esito": "stop"}, t0)
+        return stop
+    try:
+        passo, esito, info = SessioneDiagnosi(origine="mcp").chiedi(contesto)
+    finally:
+        _registra("suggerisci_misura", {"contesto": contesto}, t0)
     if esito.bloccato:
         return "Risposta bloccata dai guardrail di sicurezza:\n- " + "\n- ".join(esito.avvisi)
+    if hasattr(passo, "passi"):                     # domanda "come si fa": risponde l'agente della procedura
+        righe = [f"Dispositivo: {passo.dispositivo}", f"Obiettivo: {passo.obiettivo}", "Passi:"]
+        righe += [f"  {i}. {p.titolo}: {p.azione}" for i, p in enumerate(passo.passi, 1)]
+        righe += ["Avvertenze:"] + [f"  - {a}" for a in passo.avvertenze_sicurezza]
+        righe += ["Fonti:"] + [f"  - {f}" for f in (passo.fonti or ["nessuna"])]
+        return "\n".join(righe)
     m = passo.prossima_misura
     righe = [f"Dispositivo: {passo.dispositivo}", f"Riepilogo: {passo.riepilogo}", "Ipotesi:"]
     righe += [f"  {i}. [{ip.probabilita}] {ip.componente} — {ip.motivo}" for i, ip in enumerate(passo.ipotesi, 1)]

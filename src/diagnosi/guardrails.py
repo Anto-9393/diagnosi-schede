@@ -57,6 +57,30 @@ def _testo(passo: PassoDiagnosi) -> str:
                      *[f"{i.componente} {i.motivo}" for i in getattr(passo, "ipotesi", [])]])
 
 
+# ===== Controllo sulla DOMANDA del tecnico (prima del modello, 0 token) =====
+# "butto acqua con la presa attaccata": un'azione pericolosa descritta dal tecnico va fermata subito, in rosso,
+# senza aspettare l'LLM (che potrebbe anche assecondarla).
+_LIQUIDO = r"(acqua|liquid\w*|alcol\w*|\bipa\b|isopropil\w*|detergent\w*|sgrassant\w*|spray)"
+_AZIONE = r"(butt\w*|vers\w*|lav\w*|sciacqu\w*|risciacqu\w*|bagn\w*|spruzz\w*|pulisc\w*|pulir\w*|immerg\w*|metto|mettere)"
+_TENSIONE = (r"(presa|attaccat\w*|collegat\w*|inserit\w*|alimentat\w*|acces[oa]|in\s+carica|sotto\s+tensione|"
+             r"caricatore|corrente|cavo\s+(?:inserito|attaccato|collegato)|batteria\s+(?:collegata|attaccata|dentro|inserita))")
+_SICURO = r"(s?collegat\w*\s+(?:la\s+)?batteria|stacc\w*|scollegat\w*|spent[oa]|senza\s+(?:batteria|corrente|cavo|tensione))"
+
+
+def pericolo_nella_domanda(messaggio: str) -> str | None:
+    """Messaggio di STOP se il tecnico descrive un liquido su una scheda alimentata, altrimenti None.
+    "è caduto in acqua e non carica" passa (racconta il guasto, non un'azione); "butto acqua con la presa attaccata" no."""
+    m = messaggio.lower()
+    if not (re.search(_LIQUIDO, m) and re.search(_AZIONE, m) and re.search(_TENSIONE, m)):
+        return None
+    if re.search(_SICURO, m) and not re.search(r"\bnon\s+(?:la\s+)?(?:stacc|scolleg)", m):
+        return None
+    return ("NO, FERMATI: mai liquidi (acqua, alcol o detergenti) su una scheda alimentata. Stacca il cavo e "
+            "SCOLLEGA LA BATTERIA prima di qualsiasi pulizia: con la tensione il liquido crea corti e brucia "
+            "controller di carica, PMIC e condensatori. Per pulire: IPA 99% a scheda spenta e scollegata, poi "
+            "asciugatura completa prima di ridare tensione.")
+
+
 def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -> tuple[PassoDiagnosi | PassoBreve, Esito]:
     """`pagine_lette`: percorso -> testo delle pagine che l'agente ha letto in questa sessione."""
     esito = Esito()

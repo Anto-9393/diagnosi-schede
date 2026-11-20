@@ -61,3 +61,6 @@
 
 ## [2026-11-18] revisione | tecniche/test-cd3217-e-ricerca-corti.md
 - Correzione del tecnico: nel caso A2316 sono stati sostituiti X3 (343S00264-A0) e il flat, NON il CD3217 (l'ingest aveva scritto il contrario e chiamato X3 "CD3217").
+
+## [2026-11-20] ingest | raw/banco/pulizia-dopo-liquidi.md | pagine toccate: tecniche/pulizia-scheda-dopo-liquidi.md
+- Metodo del tecnico: pulizia con IPA 99%, mai acqua, mai liquidi con la scheda alimentata.

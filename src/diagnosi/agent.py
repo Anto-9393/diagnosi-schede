@@ -78,11 +78,12 @@ def tipo_richiesta(messaggio: str, precedente: str | None = None) -> str:
 
 class SessioneDiagnosi:
     def __init__(self, model: str = MODEL_DEV, client=None, max_steps: int = 10,
-                 dettaglio: str = "completa", lettura: str = "approfondita"):
+                 dettaglio: str = "completa", lettura: str = "approfondita", origine: str = "app"):
         """dettaglio: "completa" (ipotesi + misura) o "breve" (solo la prossima misura).
         lettura: "approfondita" (pagine intere, fino a 10 passi) o "rapida" (max 3 pagine, solo l'inizio).
         Le sceglie il riparatore: la lettura rapida è quella che risparmia più token (l'input è ~97% del totale)."""
         self.model, self.dettaglio, self.lettura = model, dettaglio, lettura
+        self.origine = origine          # "app" (Streamlit) o "mcp" (Claude Desktop o altro host): si vede in Grafana
         self.max_caratteri = 4_000 if lettura == "rapida" else wiki_tools.MAX_CARATTERI_PAGINA
         istruzioni = []
         if dettaglio == "breve":
@@ -205,7 +206,7 @@ class SessioneDiagnosi:
         self.ultimo_tipo = tipo
         info = {
             "sessione": self.id, "ora": datetime.now().isoformat(timespec="seconds"),
-            "provider": PROVIDER, "modello": self.model, "tipo": tipo,
+            "provider": PROVIDER, "modello": self.model, "tipo": tipo, "origine": self.origine,
             "dettaglio": "procedura" if tipo == "procedura" else self.dettaglio, "lettura": self.lettura,
             "durata_s": round(durata, 2),
             "token_in": risultato.usage.prompt_tokens, "token_out": risultato.usage.completion_tokens,

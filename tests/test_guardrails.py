@@ -130,3 +130,14 @@ def test_scalda_come_sintomo_non_blocca():
     assert not esito.bloccato
     _, esito = controlla(_passo(condizioni="usa aria calda a 350 gradi vicino alla batteria"), LETTE)
     assert esito.bloccato
+
+
+def test_pericolo_nella_domanda():
+    from diagnosi.guardrails import pericolo_nella_domanda
+    for m in ("butto acqua con la presa attaccata", "lo lavo con acqua mentre è in carica",
+              "posso spruzzare alcol con la batteria collegata?", "pulisco con IPA col caricatore attaccato"):
+        assert pericolo_nella_domanda(m), m
+    for m in ("è caduto in acqua e non carica", "non carica e non viene rilevato dopo caduta nel caffè",
+              "mi hanno detto di pulirlo con l'acqua pensi che sia una buona idea?",
+              "pulisco con IPA a batteria scollegata e cavo staccato", "0,002 A con batteria e cavo"):
+        assert not pericolo_nella_domanda(m), m

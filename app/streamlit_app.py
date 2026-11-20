@@ -16,6 +16,7 @@ import streamlit.components.v1 as components
 
 from aspetto import CSS, dati_html, loader_html, procedura_html, risposta_html
 from diagnosi.agent import SessioneDiagnosi, fuori_tema
+from diagnosi.guardrails import pericolo_nella_domanda
 from diagnosi.config import MODEL_DEV
 from diagnosi.traduzioni import traduci, tradotta
 from diagnosi.dispositivi import (casi_del_dispositivo, guide_del_dispositivo, leggi_guida, schede, solo_dispositivo,
@@ -266,6 +267,14 @@ if msg:
                  "Oppure scrivi il sintomo e le misure già fatte per iniziare la diagnosi.</p>")
         extra = '<span class="dati">Risposta immediata dalla wiki: 0 token, nessuna chiamata al modello.</span>'
         st.session_state.messaggi.append(("assistant", testo, extra, guide))
+        st.session_state.scorri = True
+        st.rerun()
+    # Azione pericolosa descritta dal tecnico (liquido su scheda alimentata): NO in rosso, subito, senza modello.
+    stop = pericolo_nella_domanda(msg)
+    if stop:
+        testo = f'<div class="avviso bloccante">{escape(stop)}</div>'
+        extra = '<span class="dati">Controllo di sicurezza sulla domanda: 0 token, nessuna chiamata al modello.</span>'
+        st.session_state.messaggi.append(("assistant", testo, extra))
         st.session_state.scorri = True
         st.rerun()
     # Fuori tema ("qual è la capitale della Francia?"): risposta fissa, niente modello, niente token.

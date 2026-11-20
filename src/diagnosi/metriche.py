@@ -71,12 +71,19 @@ class CollectorDiagnosi:
 
     def collect(self):
         righe = leggi_log(self.file)
-        richieste = CounterMetricFamily("diagnosi_richieste", "Risposte dell'agente", labels=["esito", "lettura", "dettaglio"])
-        for (esito, lettura, dettaglio), n in Conta(("bloccata" if r.get("bloccato") else "ok",
-                                                     r.get("lettura", "approfondita"), r.get("dettaglio", "completa"))
-                                                    for r in righe).items():
-            richieste.add_metric([esito, lettura, dettaglio], n)
+        richieste = CounterMetricFamily("diagnosi_richieste", "Risposte dell'agente",
+                                        labels=["esito", "lettura", "dettaglio", "origine"])
+        for chiave, n in Conta(("bloccata" if r.get("bloccato") else "ok", r.get("lettura", "approfondita"),
+                                r.get("dettaglio", "completa"), r.get("origine", "app")) for r in righe).items():
+            richieste.add_metric(list(chiave), n)
         yield richieste
+
+        # Chiamate dai client MCP (Claude Desktop…): anche i tool senza LLM, che non passano dall'agente.
+        mcp = CounterMetricFamily("diagnosi_mcp_chiamate", "Chiamate ai tool del server MCP", labels=["tool"])
+        conta_mcp = Conta(r.get("tool", "?") for r in leggi_log(self.file.parent / "mcp.jsonl"))
+        for nome in ("cerca_caso", "componente_info", "suggerisci_misura"):
+            mcp.add_metric([nome], conta_mcp.get(nome, 0))
+        yield mcp
 
         token = CounterMetricFamily("diagnosi_token", "Token consumati", labels=["tipo"])
         tin = sum(r.get("token_in", 0) for r in righe)
