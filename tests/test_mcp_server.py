@@ -17,3 +17,8 @@ def test_resource_rifiuta_uri_strani(monkeypatch):
     monkeypatch.setattr(wiki_tools, "pagina", lambda p: f"FONTE: wiki/{p}")
     assert mcp_server.pagina_wiki("componenti", "cd3217") == "FONTE: wiki/componenti/cd3217.md"
     assert mcp_server.pagina_wiki("..", "env") == "URI non valido."
+
+
+def test_componente_info_preferisce_il_nome_esatto():
+    from diagnosi.mcp_server import componente_info
+    assert componente_info("Tristar").startswith("FONTE: wiki/componenti/tristar.md")   # non c4005.md, che lo cita

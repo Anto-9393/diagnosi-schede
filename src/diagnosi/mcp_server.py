@@ -46,11 +46,18 @@ def cerca_caso(sintomo: str, modello: str = "") -> str:
 def componente_info(sigla: str) -> str:
     """Restituisce la pagina della wiki di un componente, es. 'CD3217', 'Tristar', 'U4001'."""
     s = sigla.lower().strip()
-    candidati = [f for f in _pagine("componenti")
-                 if s in f.stem or s in f.read_text(encoding="utf-8")[:600].lower()]
+    # Prima il nome del file identico ("tristar.md"), poi il nome che lo contiene, poi le pagine che lo citano
+    # nell'intestazione (es. C4005, condensatore "attorno a Tristar"): prima si prendeva la prima in ordine alfabetico.
+    def punteggio(f):
+        if f.stem == s:
+            return 0
+        if s in f.stem:
+            return 1
+        return 2 if s in f.read_text(encoding="utf-8")[:600].lower() else None
+    candidati = sorted((p, f.name) for f in _pagine("componenti") if (p := punteggio(f)) is not None)
     if not candidati:
         return f"Nessuna pagina componente per '{sigla}'. Prova cerca_caso con la sigla."
-    return wiki_tools.pagina(f"componenti/{candidati[0].name}")
+    return wiki_tools.pagina(f"componenti/{candidati[0][1]}")
 
 
 # ============================== TOOL 3: prossima misura (agente) ============
