@@ -106,3 +106,17 @@ def test_procedura_pericolosa_blocca_e_fonti_non_lette():
     assert esito.bloccato
     proc, esito = controlla_procedura(_proc(fonti=("wiki/tecniche/inventata.md",)), LETTE)
     assert proc.fonti == [] and any("Nessuna fonte" in a for a in esito.avvisi)
+
+
+def test_valore_atteso_copiato_dal_caso_guasto():
+    lette = {**LETTE, "wiki/casi/a2316.md": "Con batteria e cavo X1548 a 0,026–0,186 V: il CD3217 non chiude il passaggio."}
+    _, esito = controlla(_passo(dove="X1548", valore="0,026–0,186 V"), lette)
+    assert any("scheda guasta" in a for a in esito.avvisi)
+    _, esito = controlla(_passo(dove="X1548", valore="livello VBUS, circa 5 V"), lette)     # valore sano: nessun avviso
+    assert not any("scheda guasta" in a for a in esito.avvisi)
+
+
+def test_avvertenze_di_repertorio_tolte():
+    passo, _ = controlla(_passo(avvertenze=("Usare ESD per proteggere i componenti sensibili.",
+                                            "Batteria scollegata prima di iniettare.")), LETTE)
+    assert passo.avvertenze_sicurezza == ["Batteria scollegata prima di iniettare."]

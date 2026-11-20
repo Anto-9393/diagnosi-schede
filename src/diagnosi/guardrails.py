@@ -30,6 +30,14 @@ _ALIMENTAZIONE = r"alimentator\w*|banco|dc\s+power|iniezion\w*|inject\w*|power\s
 _LIMITE = r"limit\w*\s+(di\s+)?corrente|corrente\s+limitat\w*|current\s+limit"
 # Sigle tipiche: designatori (U4001, J2201, C4005, X1548, Q2001, L2020, PP_VCC_MAIN no) e codici di chip.
 _SIGLA = re.compile(r"\b(?:[UJCXQLRDF]\d{3,5}|343S\d{4,5}|338S\d{4,5}|CD\d{4}[A-Z]?\d*|610A3B|SN\d{4,5}[A-Z]*)\b")
+# Avvertenze di repertorio che il modello aggiunge a ogni risposta: rumore, il tecnico le sa già.
+_REPERTORIO = re.compile(r"\bESD\b|antistatic|componenti sensibili|attenzione alla batteria", re.I)
+
+
+def _utili(avvertenze: list[str]) -> list[str]:
+    return [a for a in avvertenze if not _REPERTORIO.search(a)]
+
+
 _VOLT = re.compile(r"(\d+(?:[.,]\d+)?)\s*V\b")
 
 
@@ -85,6 +93,14 @@ def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -
                                     f"(~{MAX_TENSIONE_CELLA_V} V). Verifica.")
                 break
 
+    # Valore "su scheda sana" copiato da un CASO (dove i valori sono quelli del GUASTO): risposta reale del 20 nov,
+    # "valore atteso 0,026–0,186 V" su X1548, che nel caso A2316 è proprio la misura della scheda guasta.
+    casi = " ".join(t for p, t in pagine_lette.items() if "/casi/" in p).replace(".", ",")
+    decimali = re.findall(r"\d+[.,]\d+", m.valore_atteso)
+    if casi and decimali and all(d.replace(".", ",") in casi for d in decimali):
+        esito.avvisi.append("Il valore atteso coincide con un valore MISURATO nel caso della wiki, cioè sulla scheda "
+                            "guasta: su una scheda sana il valore è un altro. Verifica prima di misurare.")
+
     # 2. valori impossibili
     for v in _VOLT.findall(testo):
         if float(v.replace(",", ".")) > MAX_TENSIONE_USB_V:
@@ -111,7 +127,7 @@ def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -
     esito.avvisi = list(dict.fromkeys(esito.avvisi))        # niente doppioni
     passo = passo.model_copy(update={
         "fonti": dichiarate,
-        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + passo.avvertenze_sicurezza,
+        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + _utili(passo.avvertenze_sicurezza),
     })
     return passo, esito
 
@@ -170,6 +186,6 @@ def controlla_procedura(proc: Procedura, pagine_lette: dict[str, str]) -> tuple[
     esito.avvisi = list(dict.fromkeys(esito.avvisi))
     proc = proc.model_copy(update={
         "fonti": dichiarate,
-        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + proc.avvertenze_sicurezza,
+        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + _utili(proc.avvertenze_sicurezza),
     })
     return proc, esito

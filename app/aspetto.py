@@ -34,6 +34,10 @@ h1 { font-size: 2.1rem; color: #EEF2E6; margin-bottom: .2rem; }
 [data-testid="stChatMessage"] > div:first-child:has(img), [data-testid="stChatMessageAvatarCustom"] { width: 3.2rem !important; height: 3.2rem !important; }
 [data-testid="stChatMessage"] img { width: 3.2rem !important; height: 3.2rem !important; border-radius: 50%; }
 
+/* "Mi serve sapere": riquadro a chip con un campo per domanda */
+[data-testid="stForm"] { background: #17211D; border: 0; border-top: 5px dashed #E0A06A; border-bottom: 5px dashed #E0A06A; border-radius: 6px; }
+[data-testid="InputInstructions"] { display: none; }    /* "Press Enter to submit form": in inglese e inutile qui */
+
 /* La carta della misura: un chip, con il valore atteso sul display del multimetro */
 .misura { background: #17211D; padding: 1rem 1.25rem 1.1rem; margin: .5rem 0 1rem; border-radius: 6px;
           border-top: 6px dashed #8FD9B0; border-bottom: 6px dashed #8FD9B0; }
@@ -134,7 +138,7 @@ def _barra(probabilita: str) -> str:
         f'<i class="{"on" if k < n else ""}"></i>' for k in range(3)) + "</span>"
 
 
-def risposta_html(passo, esito) -> str:
+def risposta_html(passo, esito, con_domande: bool = True) -> str:
     if esito.bloccato:
         return "".join(f'<div class="avviso bloccante">{escape(a)}</div>' for a in esito.avvisi) + \
                '<p class="riepilogo">La risposta è stata fermata dai controlli di sicurezza. Riformula la richiesta o ' \
@@ -163,7 +167,7 @@ def risposta_html(passo, esito) -> str:
         '<p class="etichetta" style="margin-top:.55rem">Se il valore è diverso</p>'
         f'<p class="se" style="margin-top:0">{escape(m.se_diverso)}</p>'
         '</div>')
-    if passo.domande_al_tecnico:
+    if con_domande and passo.domande_al_tecnico:      # nell'app le domande diventano campi da compilare
         parti.append("<p><b>Mi serve sapere</b></p><ul class=\"domande\">"
                      + "".join(f"<li>{escape(q)}</li>" for q in passo.domande_al_tecnico) + "</ul>")
     fonti = ", ".join(f"<code>{escape(f)}</code>" for f in passo.fonti) or "nessuna pagina della wiki: da verificare"
@@ -207,7 +211,7 @@ def guide_html(d: dict, guide: dict) -> str:
     return "".join(parti) + "</div>"
 
 
-def procedura_html(proc, esito) -> str:
+def procedura_html(proc, esito, con_domande: bool = True) -> str:
     """La risposta "come si fa": passi numerati in sequenza (qui i numeri hanno senso, è un ordine reale)."""
     if esito.bloccato:
         return risposta_html(proc, esito)
@@ -229,7 +233,7 @@ def procedura_html(proc, esito) -> str:
     if proc.verifica_finale:
         parti.append("<p><b>Verifica finale</b></p><ul>" + "".join(f"<li>{escape(x)}</li>" for x in proc.verifica_finale) + "</ul>")
     parti.append("</div>")
-    if proc.domande_al_tecnico:
+    if con_domande and proc.domande_al_tecnico:
         parti.append("<p><b>Mi serve sapere</b></p><ul class=\"domande\">"
                      + "".join(f"<li>{escape(q)}</li>" for q in proc.domande_al_tecnico) + "</ul>")
     fonti = ", ".join(f"<code>{escape(f)}</code>" for f in proc.fonti) or "nessuna pagina della wiki: da verificare"

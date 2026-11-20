@@ -15,7 +15,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 from aspetto import CSS, dati_html, loader_html, procedura_html, risposta_html
-from diagnosi.agent import SessioneDiagnosi
+from diagnosi.agent import SessioneDiagnosi, fuori_tema
 from diagnosi.config import MODEL_DEMO, MODEL_DEV
 from diagnosi.traduzioni import traduci, tradotta
 from diagnosi.dispositivi import (casi_del_dispositivo, guide_del_dispositivo, leggi_guida, schede, solo_dispositivo,
@@ -201,14 +201,35 @@ def scorri(dove: str = "start"):
     </script><!-- {st.session_state.n_scorri} -->""", height=0)
 
 
+def mostra_domande(domande: list[str], n: int, ultima: bool):
+    """"Mi serve sapere": nell'ultima risposta ogni domanda ha il suo campo. Il tecnico risponde a una, ad alcune o a
+    tutte, e l'app compone il messaggio per l'agente. Nelle risposte vecchie resta un semplice elenco."""
+    if not ultima:
+        st.markdown("**Mi serve sapere**\n" + "\n".join(f"- {q}" for q in domande))
+        return
+    with st.form(key=f"domande-{n}", border=True):
+        st.markdown("**Mi serve sapere** — rispondi a quelle che sai, lascia vuote le altre")
+        risposte = [st.text_input(q, key=f"risposta-{n}-{i}", placeholder="la tua risposta") for i, q in enumerate(domande)]
+        if st.form_submit_button("Invia risposte"):
+            date = [(q, r.strip()) for q, r in zip(domande, risposte) if r.strip()]
+            if not date:
+                st.warning("Scrivi almeno una risposta.")
+            else:
+                st.session_state.risposte_pronte = "Rispondo alle tue domande:\n" + "\n".join(
+                    f"- {q}\n  → {r}" for q, r in date)
+                st.rerun()
+
+
 for n, (ruolo, contenuto, extra, *altro) in enumerate(st.session_state.messaggi):
     with st.chat_message(ruolo, avatar=AVATAR[ruolo]):
         if ruolo == "assistant":
             st.markdown(contenuto, unsafe_allow_html=True)     # HTML costruito da aspetto.py, testo già escapato
         else:
             st.markdown(contenuto)
-        if altro:
+        if altro and "wiki" in altro[0]:
             mostra_guide(altro[0], n)
+        elif altro and altro[0].get("domande"):
+            mostra_domande(altro[0]["domande"], n, ultima=(n == len(st.session_state.messaggi) - 1))
         if extra:
             st.markdown(extra, unsafe_allow_html=True)
 
@@ -216,7 +237,9 @@ if st.session_state.get("scorri"):            # è appena arrivata una risposta:
     st.session_state.scorri = False
     scorri("start")
 
-if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: come sostituisco il CD3217?"):
+msg = st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: come sostituisco il CD3217?")
+msg = msg or st.session_state.pop("risposte_pronte", None)     # le risposte ai campi "Mi serve sapere"
+if msg:
     # Solo il modello (es. "iPad Air 4", "A2316"): elenco delle guide, senza chiamare l'LLM (zero token).
     # Ma solo all'INIZIO della diagnosi o se si chiedono le guide: a metà conversazione "A2316" è la risposta
     # a una domanda dell'agente ("che modello è?") e deve arrivare all'agente.
@@ -243,6 +266,14 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
         st.session_state.messaggi.append(("assistant", testo, extra, guide))
         st.session_state.scorri = True
         st.rerun()
+    # Fuori tema ("qual è la capitale della Francia?"): risposta fissa, niente modello, niente token.
+    if not nominato and fuori_tema(msg, in_corso=not inizio):
+        testo = ("<p>Rispondo solo su diagnosi e riparazione di schede iPhone e iPad. Scrivimi il modello, "
+                 "il sintomo e le misure che hai già fatto, oppure chiedimi come si fa un intervento.</p>")
+        extra = '<span class="dati">Domanda fuori tema: 0 token, nessuna chiamata al modello.</span>'
+        st.session_state.messaggi.append(("assistant", testo, extra))
+        st.session_state.scorri = True
+        st.rerun()
     if not st.session_state.dispositivo:
         st.session_state.dispositivo = trova_dispositivo(msg)
     with st.chat_message("user", avatar=AVATAR["user"]):
@@ -250,11 +281,13 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
     with st.chat_message("assistant", avatar=AVATAR["assistant"]):
         # Il dispositivo scelto dal menu si comunica all'agente nel primo messaggio, con i codici modello.
         d = st.session_state.dispositivo
-        da_inviare = msg
+        da_inviare, contesto = msg, ""
         # (Vale anche per il dispositivo riconosciuto dal testo, es. dopo l'elenco delle guide che l'agente non ha visto.)
         if d and not st.session_state.dispositivo_comunicato:
             codici = f" (codici {', '.join(d['codici_modello'])})" if d.get("codici_modello") else ""
             da_inviare = f"Dispositivo al banco: {d['titolo']}{codici}. Pagina wiki: {d['percorso']}.\n\n{msg}"
+            # La pagina del dispositivo e i suoi casi li leggerebbe comunque: glieli diamo già (2 giri in meno).
+            contesto = st.session_state.sessione.precarica([d["percorso"], *casi_del_dispositivo(d.get("titolo", ""))])
             st.session_state.dispositivo_comunicato = True
         # Timer dal vivo: l'agente lavora in un thread, l'interfaccia aggiorna il contatore ogni 0,2 s.
         # La scena si disegna UNA volta (ridisegnarla 5 volte al secondo faceva ripartire l'animazione);
@@ -264,7 +297,7 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
         scorri("end")
         t0 = time.perf_counter()
         with ThreadPoolExecutor(max_workers=1) as pool:
-            lavoro = pool.submit(st.session_state.sessione.chiedi, da_inviare)
+            lavoro = pool.submit(st.session_state.sessione.chiedi, da_inviare, contesto)
             while not lavoro.done():
                 timer.caption(f"{time.perf_counter() - t0:.1f} s")
                 time.sleep(0.2)
@@ -273,10 +306,11 @@ if msg := st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: c
         timer.empty()
         if not esito.bloccato and not st.session_state.dispositivo:
             st.session_state.dispositivo = trova_dispositivo(passo.dispositivo)
-        testo = (procedura_html if hasattr(passo, "passi") else risposta_html)(passo, esito)
+        testo = (procedura_html if hasattr(passo, "passi") else risposta_html)(passo, esito, con_domande=False)
         st.markdown(testo, unsafe_allow_html=True)
         extra = dati_html(info)
         st.markdown(extra, unsafe_allow_html=True)
-    st.session_state.messaggi.append(("assistant", testo, extra))
+    domande = [] if esito.bloccato else list(passo.domande_al_tecnico)
+    st.session_state.messaggi.append(("assistant", testo, extra, {"domande": domande}))
     st.session_state.scorri = True
     st.rerun()

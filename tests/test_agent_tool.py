@@ -71,3 +71,26 @@ def test_due_agenti_stessi_tool_e_memoria_della_procedura(monkeypatch):
     s._ricorda("come sostituisco il CD3217", Procedura(dispositivo="iPad Air 4", obiettivo="Sostituire il CD3217",
                passi=[PassoProcedura(titolo="Rimuovi", azione="a"), PassoProcedura(titolo="Salda", azione="b")]))
     assert "procedura 'Sostituire il CD3217' in 2 passi: Rimuovi; Salda" in s.storia[-1]
+
+
+def test_precarica_registra_le_pagine(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "x")
+    from diagnosi.agent import SessioneDiagnosi
+    monkeypatch.setattr(wiki_tools, "pagina", lambda p, max_caratteri=0:
+                        f"FONTE: wiki/{p}\n\ntesto di {p}" if p != "manca.md" else "Pagina non trovata: manca.md")
+    s = SessioneDiagnosi()
+    testo = s.precarica(["dispositivi/ipad-air-4.md", "casi/a2316.md", "manca.md"])
+    assert "GIÀ LETTE" in testo and "testo di casi/a2316.md" in testo and "manca" not in testo
+    assert list(s.pagine_lette) == ["wiki/dispositivi/ipad-air-4.md", "wiki/casi/a2316.md"]   # valgono come fonti
+    assert s.precarica(["manca.md"]) == ""
+
+
+def test_fuori_tema():
+    from diagnosi.agent import fuori_tema
+    assert fuori_tema("qual è la capitale della Francia?")
+    assert fuori_tema("scrivimi una poesia sul mare")
+    for m in ("non carica", "iPad Air 4 si spegne", "come sostituisco il CD3217?", "0,002 A con cavo",
+              "X1548 a 5 V", "dopo una caduta in acqua"):
+        assert not fuori_tema(m), m
+    assert not fuori_tema("sì", in_corso=True) and not fuori_tema("no, nessuna", in_corso=True)
+    assert fuori_tema("qual è la capitale della Francia?", in_corso=True)

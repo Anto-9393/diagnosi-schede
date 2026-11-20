@@ -41,6 +41,27 @@ _DIAGNOSI = re.compile(
     r"\bassorb|\bsintom|\bguast|\bpanic", re.I)
 
 
+# Parole del banco: se un messaggio non ne contiene nessuna, non è una domanda di riparazione.
+_TEMA = re.compile(
+    r"carica|accend|spent|batteri|scherm|display|touch|face\s*id|touch\s*id|wi-?fi|bluetooth|audio|microfon|"
+    r"altoparl|speaker|fotocamer|camera|tast|usb|lightning|connettor|scheda|logic|board|chip|\bic\b|pmic|tristar|"
+    r"tigris|nand|\brom\b|eeprom|cpu|sald|dissald|aria\s+calda|reball|riball|corto|misur|volt|amper|ohm|diod|"
+    r"condensator|resistenz|resistor|bobin|indutt|fusibil|pist|piazzol|\bpad\b|ossid|corros|acqua|liquid|cadut|"
+    r"riavvi|boot|logo|\bdfu\b|itunes|ripristin|restore|errore|panic|assorb|alimentator|iphone|ipad|apple|"
+    r"\ba\d{4}\b|\b[a-z]{1,3}\d{3,5}\b|\b(?:x|u|q|c|r|l|j|f)\d{1,4}\b|guast|ripar|sostitu|programm|"
+    r"funzion|segnale|\brete\b|\bsim\b|baseband|nfc|vibr|sensor|tension|corrent|caldo|scalda|surriscald|"
+    r"multimetr|oscillosc|boardview|schema|test\s*point|\btp\d|\bv\b|\bma\b|rispondo alle tue domande",
+    re.I)
+
+
+def fuori_tema(messaggio: str, in_corso: bool = False) -> bool:
+    """True se il messaggio non riguarda la riparazione (es. "qual è la capitale della Francia?"): l'app risponde
+    da sola, senza chiamare il modello. A diagnosi `in_corso`, le risposte brevi ("sì", "no", "nessuna") passano."""
+    if _TEMA.search(messaggio) or _DIAGNOSI.search(messaggio) or _PROCEDURA.search(messaggio):
+        return False
+    return not (in_corso and len(messaggio.split()) <= 4)
+
+
 def tipo_richiesta(messaggio: str, precedente: str | None = None) -> str:
     """'procedura' se il tecnico chiede come si fa un intervento, altrimenti 'diagnosi'.
 
@@ -148,13 +169,31 @@ class SessioneDiagnosi:
         self.storia.append(f"- Agente: {('ipotesi ' + ipotesi + '. ') if ipotesi else ''}"
                            f"Proposta: misura {m.dove} ({m.modalita}), condizioni: {m.condizioni}, atteso: {m.valore_atteso}.")
 
-    def chiedi(self, messaggio: str) -> tuple[PassoDiagnosi | PassoBreve | Procedura, guardrails.Esito, dict]:
+    def precarica(self, percorsi: list[str]) -> str:
+        """Pagine che l'agente leggerebbe comunque (es. dispositivo scelto dal menu e i suoi casi): gliele diamo già
+        nel primo messaggio, così risparmia un giro di tool per pagina (misurato il 20 nov: 6 letture in fila = 22 s).
+        Le registriamo come lette: il guardrail delle fonti le accetta come se le avesse aperte lui."""
+        blocchi = []
+        for p in percorsi:
+            testo = wiki_tools.pagina(p, max_caratteri=self.max_caratteri)
+            if testo.startswith("FONTE: "):
+                self.pagine_lette[testo.split("\n", 1)[0].removeprefix("FONTE: ")] = testo
+                blocchi.append(testo)
+        if not blocchi:
+            return ""
+        return ("PAGINE DELLA WIKI GIÀ LETTE PER TE (non rileggerle con leggi_pagina; citale nelle fonti se le usi):\n\n"
+                + "\n\n---\n\n".join(blocchi))
+
+    def chiedi(self, messaggio: str, contesto: str = "") -> tuple[PassoDiagnosi | PassoBreve | Procedura, guardrails.Esito, dict]:
+        """`contesto`: testo in più solo per QUESTO turno (pagine precaricate). Non va nella memoria dei turni dopo."""
         n_tool_prima = len(self.chiamate_tool)
         tipo = tipo_richiesta(messaggio, self.ultimo_tipo)
         agente = self.agente_procedura if tipo == "procedura" else self.agente
         t0 = time.perf_counter()
         with ContextTracing().trace(f"{tipo}-{self.id}"):
-            risultato = agente.run(self._input_con_storia(messaggio), tool_choice="required_first")
+            ingresso = self._input_con_storia(messaggio)
+            risultato = agente.run(contesto + "\n\n" + ingresso if contesto else ingresso,
+                                   tool_choice="auto" if contesto else "required_first")
         durata = time.perf_counter() - t0
         if not risultato or not risultato.structured_data:
             raise RuntimeError(f"L'agente non ha prodotto una risposta ({tipo}): aumenta max_steps o riprova.")
