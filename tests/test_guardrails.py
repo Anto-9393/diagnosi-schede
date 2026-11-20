@@ -122,7 +122,7 @@ def test_valore_atteso_copiato_dal_caso_guasto():
 def test_avvertenze_di_repertorio_tolte():
     passo, _ = controlla(_passo(avvertenze=("Usare ESD per proteggere i componenti sensibili.",
                                             "Batteria scollegata prima di iniettare.")), LETTE)
-    assert passo.avvertenze_sicurezza == ["Batteria scollegata prima di iniettare."]
+    assert passo.avvertenze_sicurezza == []        # diagnosi: solo gli avvisi dei controlli, non quelli del modello
 
 
 def test_scalda_come_sintomo_non_blocca():

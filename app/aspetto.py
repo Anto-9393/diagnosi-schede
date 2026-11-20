@@ -4,6 +4,7 @@ trasformano un PassoDiagnosi in HTML.
 Ogni testo che viene dal modello passa da html.escape: l'output dell'LLM è un dato NON fidato per chi lo
 mostra (S15, output handling). Senza escape, un "<script>" o un link in una risposta finirebbe nella pagina.
 """
+import re
 from html import escape
 
 COLORI = {"fondo": "#F2F5F2", "inchiostro": "#1A2420", "maschera": "#1E5B45", "rame": "#B5652B",
@@ -29,6 +30,20 @@ h1 { font-size: 2.1rem; color: #EEF2E6; margin-bottom: .2rem; }
 [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2 { font-family: 'Share Tech Mono', monospace; font-weight: 400; color: #EEF2E6; }
 .serigrafia { font-family: 'Share Tech Mono', monospace; color: #E0A06A; font-size: .95rem; margin: 0 0 .2rem; }
 [data-testid="stChatInput"] { border: 2px solid #B8743F; border-radius: 10px; }
+/* la casella del messaggio partiva alta mezza pagina: una riga, cresce mentre scrivi */
+[data-testid="stChatInput"] textarea { height: auto !important; }
+/* riquadri informativi: niente azzurro di default, chip scuro con bordo rame come il resto */
+[data-testid="stAlertContainer"], [data-testid="stAlert"] > div { background-color: #0B2A1F !important; border: 1px dashed #8E9893; color: #E6EFE9 !important; }
+[data-testid="stAlert"] p { color: #CFE0D6 !important; }
+/* domande di esempio nella pagina vuota */
+/* pagina iniziale: logo, titolo e casella al centro, come un banco pulito */
+.copertina { text-align: center; margin: 6vh 0 1.2rem; }
+.copertina img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #D9B25F; background: #0B2A1F; }
+.copertina h1 { font-size: 2.6rem; margin: .6rem 0 .2rem; padding: 0; }
+.copertina p { color: #9DB5A8; font-size: 1.05rem; margin: 0; }
+.copertina .sigla { font-family: 'Share Tech Mono', monospace; color: #E0A06A; font-size: .85rem; letter-spacing: .04em; }
+.st-key-esempi button { background: #0B2A1F; border: 1px solid #B8743F; color: #E6EFE9; border-radius: 999px; }
+.st-key-esempi button:hover { border-color: #E0A06A; color: #E0A06A; }
 [data-testid="stExpander"] details { background: #17211D; border: 0; border-top: 4px dashed #56645E; border-bottom: 4px dashed #56645E; border-radius: 4px; }
 /* Avatar della chat più grandi: il tecnico in camice e il multimetro devono riconoscersi */
 [data-testid="stChatMessage"] > div:first-child:has(img), [data-testid="stChatMessageAvatarCustom"] { width: 3.2rem !important; height: 3.2rem !important; }
@@ -157,16 +172,19 @@ def risposta_html(passo, esito, con_domande: bool = True) -> str:
         voci = "".join(f'<li><span class="comp">{escape(i.componente)}</span>{_barra(i.probabilita)}<br>{escape(i.motivo)}</li>'
                        for i in passo.ipotesi)
         parti.append(f'<ol class="ipotesi">{voci}</ol>')
-    parti.append(
-        '<div class="misura">'
-        '<p class="cosa">Prossima misura</p>'
-        f'<p class="dove">{escape(m.dove)}<span class="modo">{escape(m.modalita)}</span></p>'
-        f'<p class="condizioni">{escape(m.condizioni)}</p>'
-        '<p class="etichetta">Su una scheda sana</p>'
-        f'<p class="atteso">{escape(m.valore_atteso)}</p>'
-        '<p class="etichetta" style="margin-top:.55rem">Se il valore è diverso</p>'
-        f'<p class="se" style="margin-top:0">{escape(m.se_diverso)}</p>'
-        '</div>')
+    # Domanda di teoria ("che differenza c'è tra…"): nessuna misura da fare, niente riquadro vuoto con i trattini.
+    vuoto = lambda t: re.sub(r"[\s—–.-]", "", t or "") == ""
+    if not (vuoto(m.dove) or (m.modalita == "altro" and vuoto(m.valore_atteso))):
+        parti.append(
+            '<div class="misura">'
+            '<p class="cosa">Prossima misura</p>'
+            f'<p class="dove">{escape(m.dove)}<span class="modo">{escape(m.modalita)}</span></p>'
+            f'<p class="condizioni">{escape(m.condizioni)}</p>'
+            '<p class="etichetta">Su una scheda sana</p>'
+            f'<p class="atteso">{escape(m.valore_atteso)}</p>'
+            '<p class="etichetta" style="margin-top:.55rem">Se il valore è diverso</p>'
+            f'<p class="se" style="margin-top:0">{escape(m.se_diverso)}</p>'
+            '</div>')
     if con_domande and passo.domande_al_tecnico:      # nell'app le domande diventano campi da compilare
         parti.append("<p><b>Mi serve sapere</b></p><ul class=\"domande\">"
                      + "".join(f"<li>{escape(q)}</li>" for q in passo.domande_al_tecnico) + "</ul>")

@@ -156,7 +156,9 @@ def controlla(passo: PassoDiagnosi | PassoBreve, pagine_lette: dict[str, str]) -
     esito.avvisi = list(dict.fromkeys(esito.avvisi))        # niente doppioni
     passo = passo.model_copy(update={
         "fonti": dichiarate,
-        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + _utili(passo.avvertenze_sicurezza),
+        # Nella diagnosi solo gli avvisi dei CONTROLLI (regole fisse). Quelli scritti dal modello erano rumore o
+        # sbagliati ("corrente 0,002 A, quindi non forzare carichi", 20 nov): a un tecnico non servono.
+        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")],
     })
     return passo, esito
 
@@ -215,6 +217,7 @@ def controlla_procedura(proc: Procedura, pagine_lette: dict[str, str]) -> tuple[
     esito.avvisi = list(dict.fromkeys(esito.avvisi))
     proc = proc.model_copy(update={
         "fonti": dichiarate,
-        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + _utili(proc.avvertenze_sicurezza),
+        # Nella procedura (aria calda, saldatura) quelle del modello possono servire: al massimo 2, senza frasi di repertorio.
+        "avvertenze_sicurezza": [a for a in esito.avvisi if not a.startswith("Fonti")] + _utili(proc.avvertenze_sicurezza)[:2],
     })
     return proc, esito

@@ -5,3 +5,6 @@ primaryColor = "#E0A06A"
 backgroundColor = "#12402F"
 secondaryBackgroundColor = "#0B2A1F"
 textColor = "#E6EFE9"
+
+[client]
+toolbarMode = "minimal"     # niente pulsante "Deploy" in alto

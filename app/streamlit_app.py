@@ -137,10 +137,13 @@ with st.sidebar:
             st.caption(p)
 
 # ── chat
-st.markdown('<p class="serigrafia">DIAGNOSI-AL-BANCO REV 1.0</p>', unsafe_allow_html=True)
-st.title("Diagnosi al banco")
-st.markdown("Scrivi sintomi e misure già fatte: ricevi una misura alla volta, con il valore atteso e le pagine della wiki "
-            "da cui viene. Chiedi \"come sostituisco…\" o \"come programmo…\" per avere la procedura passo per passo.")
+def logo_base64() -> str:
+    import base64
+    return base64.b64encode((CARTELLA_IMMAGINI / "avatar_tecnico.png").read_bytes()).decode()
+
+
+if st.session_state.messaggi:          # a conversazione iniziata: solo una riga di intestazione, spazio alla chat
+    st.markdown('<p class="serigrafia">DIAGNOSI-AL-BANCO REV 1.0</p>', unsafe_allow_html=True)
 
 @st.cache_data(show_spinner=False)
 def guide_per(percorso: str) -> dict:
@@ -240,7 +243,28 @@ if st.session_state.get("scorri"):            # è appena arrivata una risposta:
     st.session_state.scorri = False
     scorri("start")
 
-msg = st.chat_input("Es.: non carica, 0,002 A con batteria e cavo, oppure: come sostituisco il CD3217?")
+# Pagina vuota: tre domande di esempio, un clic e partono (utile anche in demo).
+ESEMPI = {"iPad Air 4": "iPad Air 4",                        # etichetta corta -> domanda inviata
+          "Non carica dopo caffè": "Non carica e non viene rilevato dal PC dopo caduta nel caffè",
+          "Sostituire CD3217 e ROM": "Come sostituisco il CD3217 e programmo la ROM?"}
+SEGNAPOSTO = "Es.: non carica, 0,002 A con batteria e cavo, oppure: come sostituisco il CD3217?"
+if not st.session_state.messaggi:
+    # Pagina iniziale: logo, titolo, casella ed esempi tutti al centro (prima erano sparsi su tutta la pagina).
+    _, centro, _ = st.columns([1, 4, 1])
+    with centro:
+        st.markdown(f'''<div class="copertina"><img src="data:image/png;base64,{logo_base64()}" alt="">
+            <h1>Diagnosi al banco</h1>
+            <p>Sintomi e misure → la prossima misura, con il valore atteso e le fonti della wiki.<br>
+            "Come sostituisco…" → la procedura passo per passo.</p>
+            <p class="sigla">iPhone · iPad · REV 1.0</p></div>''', unsafe_allow_html=True)
+        msg = st.chat_input(SEGNAPOSTO)                  # dentro una colonna: resta al centro, non in fondo
+        with st.container(key="esempi"):
+            for col, (i, (etichetta, domanda)) in zip(st.columns(len(ESEMPI)), enumerate(ESEMPI.items())):
+                if col.button(etichetta, key=f"esempio-{i}", width="stretch", help=domanda):
+                    st.session_state.risposte_pronte = domanda
+                    st.rerun()
+else:
+    msg = st.chat_input(SEGNAPOSTO)
 msg = msg or st.session_state.pop("risposte_pronte", None)     # le risposte ai campi "Mi serve sapere"
 if msg:
     # Solo il modello (es. "iPad Air 4", "A2316"): elenco delle guide, senza chiamare l'LLM (zero token).
